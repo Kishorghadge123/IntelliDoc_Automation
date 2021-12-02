@@ -1,16 +1,10 @@
 package Pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
-import java.security.PublicKey;
-
 public class LoginPage {
-
 
     WebDriver driver = null;
 
@@ -21,14 +15,14 @@ public class LoginPage {
     By ErrorMsgBlankData = By.xpath("//span[contains (text(),'Please Enter Valid Data ...!')]");
     By ErrorMsgInvalidData = By.xpath("//span[contains (text(),'Something Went Wrong ...!')]");
 
-
+    //Constructor
     public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
 
     SoftAssert softAssert = new SoftAssert();
 
-    //TC 1.1 methods declaration
+    //Methods Declaration.
     public void setUsername(String text) {
         driver.findElement(userName).sendKeys(text);
     }
@@ -58,36 +52,14 @@ public class LoginPage {
         String expect = "Please Enter Valid Data ...!";
         softAssert.assertEquals(actual_msg, expect);
     }
-
-    public void VerifyAssertErrorInvalidData() {
-        String actual_msg = driver.findElement(ErrorMsgInvalidData).getText();
-        String expected_msg = "Something Went Wrong ...!";
-        softAssert.assertEquals(actual_msg, expected_msg);
-    }
-
     public void VerifyHomePage() {
         String actual_page = driver.getCurrentUrl();
         String expected_page = "https://alpha.neutrino-ai.com/#/home";
         softAssert.assertEquals(actual_page, expected_page);
     }
-
     public void VerifyAssertBack() {
         String actual_page = driver.getCurrentUrl();
         String expected_page = "https://alpha.neutrino-ai.com/#/home";
         softAssert.assertEquals(actual_page, expected_page);
     }
-
-    public void SoftAssertAll()
-    {
-        softAssert.assertAll();
-
-    }
-
 }
-
-
-
-
-
-
-

@@ -2,24 +2,16 @@ package Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
-
-import javax.swing.*;
 
 public class TemplatePage {
     WebDriver driver = null;
-
 
     By TemplateBtn = By.xpath("//i[@aria-describedby='cdk-describedby-message-4']");
     By UploadTemplate = By.xpath("//*[contains (text(),'Upload Template')]");
     By CreateTemplate = By.xpath("//span[contains(text(),'Create Template')]");
     By CancelCreateTemplate = By.xpath("//*[@id='close-modal']/span[1]/mat-icon");
-    By Templatename = By.xpath("//*[@data-placeholder='Template Name']");
+    By TemplateName = By.xpath("//*[@data-placeholder='Template Name']");
     By ChooseFile = By.xpath("//*[@id='faxDetailModal']/div/div/div[2]/div/form/div/input");
     By CloseBtn = By.xpath("//*[@id='close-modal']/span[1]/mat-icon");
     By SearchTemplate = By.xpath("//*[@data-placeholder='Search']");
@@ -30,7 +22,7 @@ public class TemplatePage {
     By TemplateDataInfo1 = By.xpath("//td[contains(text(),'Sample-page1')]");
     By TemplateDelete = By.xpath("//body[1]/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-new-training[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[2]/td[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[6]/button[2]/span[1]/mat-icon[1]");
     By ConfirmDeleteTemplate = By.xpath("//*[contains(text(),'Confirm')]");
-    By Templateongrid = By.xpath("//thead/tr[1]/th[1]/div[1]/div[1]");
+    By TemplateOnGrid = By.xpath("//thead/tr[1]/th[1]/div[1]/div[1]");
     By ZoomInIcon = By.xpath("//button[@mattooltip='Zoom In']");
     By ZoomOutIcon = By.xpath("//button[@mattooltip='Zoom Out']");
     By CropDragIcon = By.xpath("//button[@class='mat-focus-indicator mat-tooltip-trigger mx-1 mat-mini-fab mat-button-base mat-primary']/span[1]/mat-icon[1]");
@@ -46,7 +38,7 @@ public class TemplatePage {
     By CancelTraining = By.xpath("//div[@class='tr-button white_bg']/button[3]");
     By NavigateNext = By.xpath("//*[contains(text(),'navigate_next')]");
     By NavigateBack = By.xpath("//*[contains(text(),'navigate_before')]");
-    By TriningStatus = By.xpath("//tbody/tr[1]/td[4]");
+    By TrainingStatus = By.xpath("//tbody/tr[1]/td[4]");
 
 
     //Methods
@@ -72,7 +64,7 @@ public class TemplatePage {
     }
 
     public void ClickOnTemplateName(String text) {
-        driver.findElement(Templatename).sendKeys(text);
+        driver.findElement(TemplateName).sendKeys(text);
     }
 
     public void ClickOnChooseFileBtn() {
@@ -98,7 +90,7 @@ public class TemplatePage {
         driver.findElement(TemplateDataInfo).click();
     }
 
-    public void AssertCreatTemplate() {//driver.findElement(ExpandTemplate).getText().split(" ");
+    public void AssertCreatTemplate() {
         String TemplateName[] = driver.findElement(ExpandTemplate).getText().split(" ");
         String ActualTemplate = TemplateName[1].trim();
         String ExpectedTemplate = "Demo-New1";
@@ -108,7 +100,7 @@ public class TemplatePage {
 
     public void AssertTrainingStatus()
     {
-        String ActualStaus = driver.findElement(TriningStatus).getText();
+        String ActualStaus = driver.findElement(TrainingStatus).getText();
         String ExpectedStatus = "In Progress";
         softAssert.assertEquals(ActualStaus,ExpectedStatus);
     }
@@ -123,7 +115,7 @@ public class TemplatePage {
     }
 
     public void ClickOnTemplateGrid() {
-        driver.findElement(Templateongrid).click();
+        driver.findElement(TemplateOnGrid).click();
     }
 
     public void ClickOnZoomIn() {
@@ -194,7 +186,7 @@ public class TemplatePage {
     {
         driver.findElement(NavigateBack).click();
     }
-    public void ClickOnTemplatemorepagesInfo()
+    public void ClickOnTemplateMorePagesInfo()
     {
         driver.findElement(TemplateDataInfo1).click();
     }
@@ -204,20 +196,4 @@ public class TemplatePage {
         softAssert.assertAll();
 
     }
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-//    public void ClickOnCancelPatientInfo() { driver.findElement(CancelPatientInfo).click(); }
-
-

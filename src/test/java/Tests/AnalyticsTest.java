@@ -2,12 +2,8 @@ package Tests;
 
 import Base.BasePage;
 import Pages.AnalyticsPage;
-//import Pages.PageDocument;
-import Utilities.ReadProps;
 import Utilities.TakesScreen;
-import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
-
 import java.io.IOException;
 
 public class AnalyticsTest extends BasePage {

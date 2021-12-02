@@ -7,7 +7,6 @@ import Utilities.TakesScreen;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
-
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -38,40 +37,34 @@ public class RoleAccessTest extends BasePage {
             Thread.sleep(2000);
 
             //TC 11.2 Admin Role Access User tab
-
             roleAccessObj.clickAdminUser();
             Thread.sleep(5000);
             TakesScreen.takeSnapShot(driver, "test-output//RoleWiseTest//AdminRoleAccessUser.jpg");
 
             //TC 11.3 Admin Role Access Role tab
-
             roleAccessObj.clickAdminRole();
             Thread.sleep(5000);
             TakesScreen.takeSnapShot(driver, "test-output//RoleWiseTest//AdminRoleAccessRoles.jpg");
 
             //TC 11.4 Admin Role Access Template tab
-
             roleAccessObj.clickAdminTemplate();
             Thread.sleep(5000);
             TakesScreen.takeSnapShot(driver, "test-output//RoleWiseTest//AdminRoleAccessTemplate.jpg");
 
             //TC 11.5 Admin Role Access Project tab
-
             roleAccessObj.clickAdminProject();
             Thread.sleep(5000);
             TakesScreen.takeSnapShot(driver, "test-output//RoleWiseTest//AdminRoleAccessProject.jpg");
 
             //TC 11.7 Admin Role Access Analytics tab
-
             roleAccessObj.clickAdminAnalytic();
             Thread.sleep(5000);
             TakesScreen.takeSnapShot(driver, "test-output//RoleWiseTest//AdminRoleAccessAnalytics.jpg");
             roleAccessObj.ClickLogout();
             Thread.sleep(4000);
             TakesScreen.takeSnapShot(driver, "test-output//RoleWiseTest//AdminRoleLogOut.jpg");
-
             driver.navigate().refresh();
-
+            Thread.sleep(3000);
 
             //TC 11.8 Supervisor ROle Valid User Valid PWD
             roleAccessObj.setUsername(ReadProps.readAttr("SupervisorUser"));
@@ -84,14 +77,12 @@ public class RoleAccessTest extends BasePage {
             Thread.sleep(2000);
 
             //TC 11.9 Supervisor ROle Access Template
-
             roleAccessObj.clickSupervisorTemplate();
             Thread.sleep(7000);
             TakesScreen.takeSnapShot(driver, "test-output//RoleWiseTest//SupervisorRoleAccessTemplate.jpg");
 
 
             //TC 11.11 Supervisor ROle Access Document
-
             roleAccessObj.clickSupervisorDocument();
             Thread.sleep(8000);
             TakesScreen.takeSnapShot(driver, "test-output//RoleWiseTest//SupervisorRoleAccessDocument.jpg");
@@ -106,7 +97,6 @@ public class RoleAccessTest extends BasePage {
 
 
             //TC 11.13 Operator ROle Login with Valid ID and PWD
-
             roleAccessObj.setUsername(ReadProps.readAttr("Operatoruser"));
             Thread.sleep(2000);
             roleAccessObj.setPassword(ReadProps.readAttr("OperatorPwd"));
@@ -117,7 +107,6 @@ public class RoleAccessTest extends BasePage {
             Thread.sleep(2000);
 
             //TC 11.15 Operator ROle Access Document
-
             roleAccessObj.clickOperatorDocument();
             Thread.sleep(4000);
             TakesScreen.takeSnapShot(driver, "test-output//RoleWiseTest//OperatorRoleDocument.jpg");
@@ -126,7 +115,6 @@ public class RoleAccessTest extends BasePage {
             roleAccessObj.ClickLogout();
             Thread.sleep(4000);
             TakesScreen.takeSnapShot(driver, "test-output//RoleWiseTest//OperatorRolelogout.jpg");
-
             driver.close();
 
 

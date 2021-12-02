@@ -2,22 +2,14 @@ package Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
-import java.util.List;
-
 public class ProjectPage {
-
 
     WebDriver driver = null;
 
 
-    By addRoleUser = By.xpath("//body[1]/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-create-project[1]/mat-horizontal-stepper[1]/div[2]/div[1]/div[1]/mat-accordion[1]/mat-expansion-panel[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[2]/button[1]/span[1]/mat-icon[1]");
+    By AddRoleUser = By.xpath("//body[1]/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-create-project[1]/mat-horizontal-stepper[1]/div[2]/div[1]/div[1]/mat-accordion[1]/mat-expansion-panel[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[2]/button[1]/span[1]/mat-icon[1]");
 
     //Define Project
     By ProjectBtn = By.xpath("//i[@class='mat-tooltip-trigger fa fa-briefcase m-0 side-icon ng-star-inserted']");
@@ -29,16 +21,14 @@ public class ProjectPage {
     By SelectLeadAdmin = By.xpath("//span[contains(text(),' admin@test.com ')]");
     By SelectLead = By.xpath("//span[contains(text(),'qa1@email.com')]");
     By ClickStartDate = By.cssSelector("button[aria-label='Open calendar'][tabindex='0']");
-    // By ClickStartDate = By.xpath("//*[@id='cdk-step-content-1-0']/div/project-info-section/project-info/mat-card/form/div/div[3]/mat-form-field/div/div[1]/div[4]/mat-datepicker-toggle/button/span[1]/svg/path");
     By ClearStartDate = By.xpath("//input[@id='mat-input-3']");
-    By SelectStartDate = By.xpath("//div[contains(text(),'3')]");
-    // By ClickEndDate= By.xpath("//body/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-create-project[1]/div[2]/div[1]/project-info-section[1]/project-info[1]/mat-card[1]/form[1]/div[1]/div[4]/mat-form-field[1]/div[1]/div[1]/div[4]/mat-datepicker-toggle[1]/button[1]/span[1]/*[1]");
-    By ClickEndDate =By.xpath("/html/body/app-root/div/app-landing/div/div/main/div/app-create-project/div[2]/div/form/mat-card/div/div[4]/mat-form-field/div/div[1]/div[4]/mat-datepicker-toggle/button");
-    By ClearEndDate= By.xpath("//input[@id='mat-input-4']");
+    By SelectStartDate = By.xpath("//div[contains(text(),'7')]");
+    By ClickEndDate = By.xpath("/html/body/app-root/div/app-landing/div/div/main/div/app-create-project/div[2]/div/form/mat-card/div/div[4]/mat-form-field/div/div[1]/div[4]/mat-datepicker-toggle/button");
+    By ClearEndDate = By.xpath("//input[@id='mat-input-4']");
     By SelectEndDate = By.xpath("//div[contains(text(),'25')]");
     By ClickDocumentStructure = By.xpath("//*[@formcontrolname='documentStructure']");
     By SelectDocumentStructure = By.xpath("//span[contains(text(),'Structured ')]");
-    By SelectSemiStructure =By.xpath("//span[contains(text(),'Semi-Structured ')]");
+    By SelectSemiStructure = By.xpath("//span[contains(text(),'Semi-Structured ')]");
     By SelectFreeForm = By.xpath("//span[contains(text(),'Free-Form ')]");
     By ClickProcessingEngine = By.xpath("//*[@formcontrolname='processingEngine']/div[1]/div[2]");
     By SelectProcessingEngine = By.xpath("//span[contains(text(),'NN High')]");
@@ -48,28 +38,24 @@ public class ProjectPage {
     By Status = By.xpath("//*[@formcontrolname='status']/label/div");
 
     By DocumentAutoAssign = By.xpath("//*[@formcontrolname='autoAssignment']/label/div");
-    // By ClickTemplate = By.xpath("//span[contains(text(),'Templates')]");
     By ClickAddTemplate = By.xpath("//span[contains(text(),'Add Template')]");
     By SelectTemplate = By.xpath("//button[contains(text(),'QAAutoTemplate')]");
-    // By DeleteTemplate = By.xpath("//mat-icon[contains(text(),'delete')]");
     By AddFields = By.xpath("//span[contains(text(),' Add Fields ')]");
     By SelectField = By.xpath("//button[contains(text(),'PatientName')]");
     By ClickRoles = By.xpath("//span[contains(text(),'Roles')]");
     By AddRoleAdmin = By.xpath("//span[contains(text(),'Add Role')]");
-    By SelectRoleAdmin= By.xpath("//button[contains(text(),'AE Admin')]");
+    By SelectRoleAdmin = By.xpath("//button[contains(text(),'AE Admin')]");
     By SelectRoleSuperVisor = By.xpath("//button[contains(text(),'AE Supervisor')]");
-    By AddUser   = By.xpath("//body/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-create-project[1]/div[2]/div[1]/form[1]/project-info-section[1]/mat-accordion[1]/project-roles[1]/mat-expansion-panel[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/button[1]/span[1]/mat-icon[1]");
+    By AddUser = By.xpath("//body/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-create-project[1]/div[2]/div[1]/form[1]/project-info-section[1]/mat-accordion[1]/project-roles[1]/mat-expansion-panel[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/button[1]/span[1]/mat-icon[1]");
     By AddUserAdmin = By.xpath("//button[@class='mat-focus-indicator disabled-font-color mat-icon-button mat-button-base primary-font-color']");       //esc method
     By SelectUserAdmin = By.xpath("//span[contains(text(),'admin@test.com')]");
     By UpdateProject = By.xpath("//span[contains(text(),'Update')]");
     By RoleUserDisableEnable = By.xpath("//body/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-create-project[1]/div[2]/div[1]/form[1]/project-info-section[1]/mat-accordion[1]/project-roles[1]/mat-expansion-panel[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/mat-slide-toggle[1]/label[1]/div[1]");
-    By SuprvisorRoleDisable = By.xpath("//body/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-create-project[1]/div[2]/div[1]/form[1]/project-info-section[1]/mat-accordion[1]/project-roles[1]/mat-expansion-panel[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[3]/mat-slide-toggle[1]/label[1]/div[1]/div[1]/div[1]");
+    By SupervisorRoleDisable = By.xpath("//body/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-create-project[1]/div[2]/div[1]/form[1]/project-info-section[1]/mat-accordion[1]/project-roles[1]/mat-expansion-panel[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[3]/mat-slide-toggle[1]/label[1]/div[1]/div[1]/div[1]");
     By ClickDataset = By.xpath("//span[contains(text(),'Datasets')]");
     By AddDataset = By.xpath("//span[contains(text(),'Add Dataset')]");
-    // By SelectData = By.xpath("//body[1]/div[1]/div[2]/div[1]/div[1]/div[1]/button[4]");
     By SelectDataSample = By.xpath("//body[1]/div[1]/div[2]/div[1]/div[1]/div[1]/button[4]");
-    By AddData = By.xpath("//*[@id='mat-menu-panel-6']/div/div[14]/button");//*[@id="mat-menu-panel-1"]/div/button[7]
-    // By DeleteDataset = By.xpath("//body/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-create-project[1]/mat-horizontal-stepper[1]/div[2]/div[1]/div[1]/mat-accordion[1]/mat-expansion-panel[3]/div[1]/div[1]/div[1]/mat-table[1]/mat-row[1]/mat-cell[6]/button[1]/span[1]/mat-icon[1]");
+    By AddData = By.xpath("//*[@id='mat-menu-panel-6']/div/div[14]/button");
     By DocumentChanel = By.xpath("//span[contains(text(),'Document Ingestion Channels')]");
     By ChannelType = By.xpath("//*[@id='testa1']/div/div[2]/div");
     By SelectChannelType = By.xpath("//*[@id='mat-option-9']/span");
@@ -82,8 +68,8 @@ public class ProjectPage {
     By ValidationType = By.xpath("//*[@id='mat-select-value-5']/span");
     By SelectValidationType = By.xpath("//span[contains(text(),'Boolean')]");
     By DefaultValue = By.xpath("//input[@id='VariableValue']");
-    By ClickCancelonVariable = By.xpath("//*[@id='exampleModal']/div/div/div[2]/button[1]");
-    By ClickRuleset = By.xpath("//span[contains(text(),'Ruleset')]");
+    By ClickCancelVariable = By.xpath("//*[@id='exampleModal']/div/div/div[2]/button[1]");
+    By ClickRuleSet = By.xpath("//span[contains(text(),'Ruleset')]");
     By AddRule = By.xpath("//*[@id='cdk-accordion-child-4']/div/div/div[3]/div/button/span[1]");
     By RuleName = By.xpath("//body[1]/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-create-project[1]/mat-horizontal-stepper[1]/div[2]/div[2]/form[1]/div[1]/div[2]/mat-accordion[1]/mat-expansion-panel[2]/div[1]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/mat-form-field[1]/div[1]/div[1]/div[1]/input[1]");
     By DeleteRule = By.xpath("//mat-icon[contains(text(),'delete')]");
@@ -115,7 +101,7 @@ public class ProjectPage {
     By ErrorMsgRole = By.xpath("//span[contains(text(),'Role(s) cannot be empty')]");
     By ErrorMsgUser = By.xpath("//span[contains(text(),'Role cannot have empty users')]");
     By ErrorMsgDisableRole = By.xpath("//span[contains(text(),'AE Supervisor role is Disabled')]");
-    By Tablestructure = By.xpath("//*[contains(text(),' list ')]");
+    By TableStructure = By.xpath("//*[contains(text(),' list ')]");
     By SearchProject = By.xpath("//input[@data-placeholder='Search']");
 
     By RoleManagementBtn = By.xpath("//i[@class='mat-tooltip-trigger fa fa-id-card m-0 side-icon ng-star-inserted']");
@@ -128,20 +114,20 @@ public class ProjectPage {
     By LoginBtn = By.xpath("//button[@type='submit']");
     By Username = By.xpath("//input[@formcontrolname='userName']");
     By Password = By.xpath("//input[@formcontrolname='password']");
-    By EditProject  = By.xpath("//mat-icon[contains(text(),'create')]");
+    By EditProject = By.xpath("//mat-icon[contains(text(),'create')]");
 
     // User Updation
     By UserBtn = By.xpath("//i[@class='mat-tooltip-trigger fa fa-users m-0 side-icon ng-star-inserted']");
     By User = By.xpath("//td[contains(text(),' AE Admin ')]");
-    By SearchBtn  = By.xpath("//body[1]/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-user-management[1]/div[1]/div[1]/div[1]/mat-form-field[1]/div[1]/div[1]/div[3]/input[1]");
+    By SearchBtn = By.xpath("//body[1]/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-user-management[1]/div[1]/div[1]/div[1]/mat-form-field[1]/div[1]/div[1]/div[3]/input[1]");
     By DisableUser = By.xpath("//div[@class='mat-slide-toggle-thumb']");
-    By UpdateUser  = By.xpath("//button[@class='mat-focus-indicator float-right button-cls mat-raised-button mat-button-base mat-primary']");
-
+    By UpdateUser = By.xpath("//button[@class='mat-focus-indicator float-right button-cls mat-raised-button mat-button-base mat-primary']");
 
 
     public ProjectPage(WebDriver driver) {
         this.driver = driver;
     }
+
     SoftAssert softAssert = new SoftAssert();
 
 
@@ -160,21 +146,33 @@ public class ProjectPage {
     public void ClickOnLeadBtn() {
         driver.findElement(Lead).click();
     }
-    public void ClickSearchLead(String text){driver.findElement(SearchLead).sendKeys(text);}
-    public void ClearSearchLead(){driver.findElement(SearchLead).clear();}
+
+    public void ClickSearchLead(String text) {
+        driver.findElement(SearchLead).sendKeys(text);
+    }
+
+    public void ClearSearchLead() {
+        driver.findElement(SearchLead).clear();
+    }
 
     public void SelectOnLeadBtn() {
         driver.findElement(SelectLead).click();
     }
-    public void SelectOnLeadSampleBtn(){driver.findElement(SelectLeadSample).click();}
-    public void SelectOnLeadAdminBtn(){driver.findElement(SelectLeadAdmin).click();}
+
+    public void SelectOnLeadSampleBtn() {
+        driver.findElement(SelectLeadSample).click();
+    }
+
+    public void SelectOnLeadAdminBtn() {
+        driver.findElement(SelectLeadAdmin).click();
+    }
 
 
     public void ClickOnStartDateBtn() {
         driver.findElement(ClickStartDate).click();
     }
 
-    public void SelectOnStartDateBtn() {
+    public void SelectStartDateBtn() {
         driver.findElement(SelectStartDate).click();
     }
 
@@ -182,12 +180,17 @@ public class ProjectPage {
         driver.findElement(ClickDocumentStructure).click();
     }
 
-    public void SelectOnDocumentStructureBtn() {
+    public void SelectDocumentStructureBtn() {
         driver.findElement(SelectDocumentStructure).click();
     }
 
-    public void SelectOnSemiStructure(){driver.findElement(SelectSemiStructure).click();}
-    public void SelectOnFreeFormStructure(){driver.findElement(SelectFreeForm).click();}
+    public void SelectOnSemiStructure() {
+        driver.findElement(SelectSemiStructure).click();
+    }
+
+    public void SelectOnFreeFormStructure() {
+        driver.findElement(SelectFreeForm).click();
+    }
 
     public void ClickOnProcessingEngineBtn() {
         driver.findElement(ClickProcessingEngine).click();
@@ -217,20 +220,30 @@ public class ProjectPage {
         driver.findElement(DocumentAutoAssign).click();
     }
 
-    //    public void ClickOnClickTemplateBtn(){ driver.findElement(ClickTemplate).click(); }
     public void ClickOnAddTemplateBtn() {
         driver.findElement(ClickAddTemplate).click();
     }
-    public void ClickOnAddFieldsbtn(){driver.findElement(AddFields).click();}
-    public void SelectFieldValue(){driver.findElement(SelectField).click();}
 
-    public void ClickOnRoleUserDisableEnable(){driver.findElement(RoleUserDisableEnable).click();}
-    public void ClickOnSupervisorRoleDisable(){driver.findElement(SuprvisorRoleDisable).click();}
+    public void ClickOnAddFieldsbtn() {
+        driver.findElement(AddFields).click();
+    }
+
+    public void SelectFieldValue() {
+        driver.findElement(SelectField).click();
+    }
+
+    public void ClickOnRoleUserDisableEnable() {
+        driver.findElement(RoleUserDisableEnable).click();
+    }
+
+    public void ClickOnSupervisorRoleDisable() {
+        driver.findElement(SupervisorRoleDisable).click();
+    }
+
     public void ClickOnTemplateBtn() {
         driver.findElement(SelectTemplate).click();
     }
 
-    //    public void ClickOnDeleteTemplateBtn(){ driver.findElement(DeleteTemplate).click(); }
     public void ClickOnRolesBtn() {
         driver.findElement(ClickRoles).click();
     }
@@ -242,17 +255,19 @@ public class ProjectPage {
     public void ClickOnSelectRoleBtn() {
         driver.findElement(SelectRoleAdmin).click();
     }
+
     public void ClickOnSelectSupervisorRoleBtn() {
         driver.findElement(SelectRoleSuperVisor).click();
     }
 
 
-
-
     public void ClickOnAddUserBtn() {
         driver.findElement(AddUserAdmin).click();
     }
-    public void ClickOnAddUser(){driver.findElement(AddUser).click();}
+
+    public void ClickOnAddUser() {
+        driver.findElement(AddUser).click();
+    }
 
     public void ClickOnSelectUserBtn() {
         driver.findElement(SelectUserAdmin).click();
@@ -267,16 +282,15 @@ public class ProjectPage {
         driver.findElement(AddDataset).click();
     }
 
-   /* public void ClickOnSelectDataBtn() {
-        driver.findElement(SelectData).click();
-    }*/
 
     public void ClickOnSampleDataBtn() {
         driver.findElement(SelectDataSample).click();
     }
 
-    public void ClickOnSelectSampleDataBtn(){ driver.findElement(SelectDataSample).click(); }
-    // public void ClickOnDeleteDatasetBtn(){ driver.findElement(DeleteDataset).click(); }
+    public void ClickOnSelectSampleDataBtn() {
+        driver.findElement(SelectDataSample).click();
+    }
+
     public void ClickOnDocumentChannelBtn() {
         driver.findElement(DocumentChanel).click();
     }
@@ -319,11 +333,11 @@ public class ProjectPage {
     }
 
     public void ClickOnCancelVariable() {
-        driver.findElement(ClickCancelonVariable).click();
+        driver.findElement(ClickCancelVariable).click();
     }
 
-    public void ClickOnRulesetBtn() {
-        driver.findElement(ClickRuleset).click();
+    public void ClickOnRuleSetBtn() {
+        driver.findElement(ClickRuleSet).click();
     }
 
     public void ClickOnAddRuleBtn() {
@@ -334,7 +348,6 @@ public class ProjectPage {
         driver.findElement(RuleName).sendKeys(text);
     }
 
-    //public void ClickOnDeleteRuleBtn(){ driver.findElement(DeleteRule).click(); }
     public void ClickOnCancelRuleWorkbench() {
         driver.findElement(ClickCancelOnRuleWorkbench).click();
     }
@@ -393,7 +406,7 @@ public class ProjectPage {
         driver.findElement(FirstPage).click();
     }
 
-    public void ClickonDataset() {
+    public void ClickOnDataset() {
         driver.findElement(AddData).click();
     }
 
@@ -401,12 +414,12 @@ public class ProjectPage {
         driver.findElement(CreateButton).click();
     } //Method for createbutton on Project page
 
-    public void ClickonCancelOnProject() {
+    public void ClickOnCancelProject() {
         driver.findElement(CancelOnProject).click();
     }
 
     public void addUserInRole() {
-        driver.findElement(addRoleUser).click();
+        driver.findElement(AddRoleUser).click();
     }
 
     public void VerifyAssertForError() {
@@ -416,13 +429,13 @@ public class ProjectPage {
         softAssert.assertEquals(actual_msg, expect);
     }
 
-    public void VerifyAsertForUser() {
+    public void VerifyAssertForUser() {
         String actual_msg = driver.findElement(ErrorMsgRoleUser).getText();
         String expect = "Please add the attributes before creating the project.";
         softAssert.assertEquals(actual_msg, expect);
     }
 
-    public void VerifyAsserForTemplate() {
+    public void VerifyAssertForTemplate() {
         String actual_msg = driver.findElement(ErrorMsgTemplate).getText();
         String expect = "Please add the template before creating the project.";
         softAssert.assertEquals(actual_msg, expect);
@@ -433,86 +446,104 @@ public class ProjectPage {
         String expect = "Please check form data";
         softAssert.assertEquals(actual_msg, expect);
     }
+
     public void VerifyAssertForRole() {
         String actual_msg = driver.findElement(ErrorMsgRole).getText();
         String expect = "Role(s) cannot be empty";
         softAssert.assertEquals(actual_msg, expect);
     }
 
-    public void VerifyAssertForUser()
-    {
+    public void VerifyAsertForUser() {
         String actual_msg = driver.findElement(ErrorMsgUser).getText();
         String expect = "Role cannot have empty users";
         softAssert.assertEquals(actual_msg, expect);
-
     }
+
     public void VerifyAssertForLeadAdmin() {
         String actual_msg = driver.findElement(SelectLeadAdmin).getText();
         String expect = "admin@test.com";
         softAssert.assertEquals(actual_msg, expect);
     }
 
-    public void VerifyAssertForRoleDisable(){
+    public void VerifyAssertForRoleDisable() {
         String actual_msg = driver.findElement(ErrorMsgDisableRole).getText();
         String expect = "AE Supervisor role is Disabled";
         softAssert.assertEquals(actual_msg, expect);
     }
 
-    public void SoftAssertAll()
-    {
+    public void SoftAssertAll() {
         softAssert.assertAll();
-
     }
-    public void ClickEndDate(){driver.findElement(ClearEndDate).click();}
-    public void ClickStartDate(){driver.findElement(ClearStartDate).click();}
 
-public void ClearOnEndDate(){driver.findElement(ClearEndDate).clear();}
-public void ClearOnStartDate(){driver.findElement(ClearStartDate).clear();}
-    public void ClickOnEndDate()
-    {
+    public void ClickEndDate() {
+        driver.findElement(ClearEndDate).click();
+    }
+
+    public void ClickStartDate() {
+        driver.findElement(ClearStartDate).click();
+    }
+
+    public void ClearOnEndDate() {
+        driver.findElement(ClearEndDate).clear();
+    }
+
+    public void ClearOnStartDate() {
+        driver.findElement(ClearStartDate).clear();
+    }
+
+    public void ClickOnEndDate() {
         driver.findElement(ClickEndDate).click();
     }
 
-    public void SelectEndDate()
-    {
+    public void SelectEndDate() {
         driver.findElement(SelectEndDate).click();
     }
 
-    public void TableStructure()
-    {
-        driver.findElement(Tablestructure).click();
+    public void TableStructure() {
+        driver.findElement(TableStructure).click();
     }
 
-    public void SearchProject()
-    {
+    public void SearchProject() {
         driver.findElement(SearchProject).sendKeys("QA-AutoProject-Structured");
     }
-    public void SearchProjectAdmin(){driver.findElement(SearchProject).sendKeys("QA-AutoAdminProject");}
-    public void SearchProjectSemiStructure(){driver.findElement(SearchProject).sendKeys("QA-Automation-SemiStructured");}
 
-    public void ClickRoleManagementBtn() {driver.findElement(RoleManagementBtn).click();}
+    public void SearchProjectAdmin() {
+        driver.findElement(SearchProject).sendKeys("QA-AutoAdminProject");
+    }
+
+    public void SearchProjectSemiStructure() {
+        driver.findElement(SearchProject).sendKeys("QA-Automation-SemiStructured");
+    }
+
+    public void ClickRoleManagementBtn() {
+        driver.findElement(RoleManagementBtn).click();
+    }
+
     public void SearchCreatedRole(String text) {
         driver.findElement(SearchRole).sendKeys(text);
     }
+
     public void ClickEditRole() {
         driver.findElement(EditRole).click();
     }
+
     public void ClickActiveRole() {
         driver.findElement(ActiveRole).click();
     }
+
     public void ClickUpdateBtn() {
         driver.findElement(ClickUpdateBtn).click();
     }
 
-    public void SearchRoleProject()
-    {
+    public void SearchRoleProject() {
         driver.findElement(SearchRoleInProject).sendKeys("Auto Admin");
     }
+
     public void ClickLogout() {
         driver.findElement(Logout).click();
     }
-    //Admin Login
 
+    //Admin Login
     public void EnterUsername(String text) {
         driver.findElement(Username).sendKeys(text);
     }
@@ -524,30 +555,33 @@ public void ClearOnStartDate(){driver.findElement(ClearStartDate).clear();}
     public void ClickLoginButton() {
         driver.findElement(LoginBtn).click();
     }
-    public  void ClickOnEditProject(){driver.findElement(EditProject).click();}
 
-    public void ClickOnUpdateProject(){driver.findElement(UpdateProject).click();}
-// User Enable and disable
-    public  void ClickUserBtn(){driver.findElement(UserBtn).click();}
-    public  void SearchCreatedUser(String text){driver.findElement(SearchBtn).sendKeys(text);}
-    public  void SelectSearchedUser(){driver.findElement(User).click();}
-    public void ClickDisableUser(){driver.findElement(DisableUser).click();}
-    public void ClickUpdateUser(){driver.findElement(UpdateUser).click();}
-
-    /*public void SelectFields()
-    {
-        List<WebElement> Fields = driver.findElements(AddFields);
-int Fieldscount = Fields.size();
- for(int i =0 ; i<Fieldscount; i++)
-        {
-
-        }*/
-
+    public void ClickOnEditProject() {
+        driver.findElement(EditProject).click();
     }
 
+    public void ClickOnUpdateProject() {
+        driver.findElement(UpdateProject).click();
+    }
 
+    // User Enable and disable
+    public void ClickUserBtn() {
+        driver.findElement(UserBtn).click();
+    }
 
+    public void SearchCreatedUser(String text) {
+        driver.findElement(SearchBtn).sendKeys(text);
+    }
 
+    public void SelectSearchedUser() {
+        driver.findElement(User).click();
+    }
 
+    public void ClickDisableUser() {
+        driver.findElement(DisableUser).click();
+    }
 
-
+    public void ClickUpdateUser() {
+        driver.findElement(UpdateUser).click();
+    }
+}

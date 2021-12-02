@@ -1,11 +1,9 @@
 package Pages;
 
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class DatasetPage {
-
 
         WebDriver driver = null;
         By DatasetBtn = By.xpath("//body/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/app-sidebar[1]/mat-sidenav-container[1]/mat-sidenav[1]/div[1]/mat-nav-list[1]/mat-list-item[4]/div[1]/i[1]");
@@ -29,7 +27,6 @@ public class DatasetPage {
         By ValidationDropDown2 = By.xpath("//tbody/tr[2]/td[3]/mat-form-field[1]/div[1]/div[1]/div[1]/mat-select[1]/div[1]/div[2]");
         By ValidationRoles = By.xpath("//span[contains(text(),'Phone')]");
         By DisableDataset = By.xpath("//body[1]/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-dataset-editor[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[2]/td[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[5]/mat-slide-toggle[1]/label[1]/div[1]/div[1]/div[1]");
-
 
         By CreateDataset = By.xpath("//span[contains(text(),'Create Dataset')]");
         By NewDatasetCancelBtn = By.xpath("//body/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-dataset-editor[1]/div[4]/div[1]/div[1]/div[1]/button[1]/span[1]/mat-icon[1]");
@@ -57,10 +54,5 @@ public class DatasetPage {
         public void ClickCancelDatasetFileName(){ driver.findElement(CancelDatasetFile).click();}
         public void ClickAction(){ driver.findElement(Action).click();}
         public void ClickDisableUser(){driver.findElement(DisableDataset).click();}
-
-        // public void ClickChooseFile(){ driver.findElement(ChooseFile).click();}
         public void ClickAddDatasetCancelBtn(){ driver.findElement(NewDatasetCancelBtn).click();}
-
-
-
 }

@@ -5,7 +5,6 @@ import Pages.CreateUserPage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
 import org.testng.annotations.Test;
-
 import java.io.IOException;
 
 public class UpdateUserPlatformAdminTest extends BasePage {
@@ -24,7 +23,6 @@ public class UpdateUserPlatformAdminTest extends BasePage {
             System.out.println("Clicked user button");
 
             //Update user enable , disable user
-
             UserPageObj1.SearchCreatedUser(ReadProps.readAttr("Username"));
             Thread.sleep(2000);
             UserPageObj1.SelectSearchedUser();
@@ -53,7 +51,7 @@ public class UpdateUserPlatformAdminTest extends BasePage {
             //Blank name and Valid password
             UserPageObj1.SelectSearchedUser();
             Thread.sleep(1000);
-            UserPageObj1.ClicktoClearName();
+            UserPageObj1.ClickToClearName();
             Thread.sleep(2000);
             UserPageObj1.ClickUpdateUser();
             TakesScreen.takeSnapShot(driver, "test-output//PlatformAdminUpdateUser//BlankName.jpg");
@@ -65,7 +63,7 @@ public class UpdateUserPlatformAdminTest extends BasePage {
             //Blank UserName and Invalid Password
             UserPageObj1.SelectSearchedUser();
             Thread.sleep(1000);
-            UserPageObj1.ClicktoClearName();
+            UserPageObj1.ClickToClearName();
             Thread.sleep(2000);
             UserPageObj1.ClearPassword();
             Thread.sleep(3000);
@@ -83,7 +81,7 @@ public class UpdateUserPlatformAdminTest extends BasePage {
             Thread.sleep(2000);
             UserPageObj1.SelectSearchedUser();
             Thread.sleep(1000);
-            UserPageObj1.ClicktoClearName();
+            UserPageObj1.ClickToClearName();
             Thread.sleep(2000);
             UserPageObj1.EnterUserName(ReadProps.readAttr("EnterName"));
             Thread.sleep(2000);
@@ -100,7 +98,7 @@ public class UpdateUserPlatformAdminTest extends BasePage {
             //Blank UserName Blank Password
             UserPageObj1.SelectSearchedUser();
             Thread.sleep(1000);
-            UserPageObj1.ClicktoClearName();
+            UserPageObj1.ClickToClearName();
             Thread.sleep(2000);
             UserPageObj1.ClearPassword();
             Thread.sleep(3000);
@@ -115,7 +113,7 @@ public class UpdateUserPlatformAdminTest extends BasePage {
             //Invalid UserName Invalid Password
             UserPageObj1.SelectSearchedUser();
             Thread.sleep(1000);
-            UserPageObj1.ClicktoClearName();
+            UserPageObj1.ClickToClearName();
             Thread.sleep(2000);
             UserPageObj1.EnterUserName(ReadProps.readAttr("EnterName"));
             TakesScreen.takeSnapShot(driver, "test-output//PlatformAdminUpdateUser//InvalidCredentialsErrMsg.jpg");
@@ -171,9 +169,7 @@ public class UpdateUserPlatformAdminTest extends BasePage {
             TakesScreen.takeSnapShot(driver,"test-output//PlatformAdminUpdateUser//SpecialCharPwd.jpg");
             Thread.sleep(4000);
 
-
             //The password field must have at least 1 uppercase and 1 lowercase alphabet
-
             UserPageObj1.SelectSearchedUser();
             Thread.sleep(1000);
             UserPageObj1.ClearPassword();
@@ -185,9 +181,7 @@ public class UpdateUserPlatformAdminTest extends BasePage {
             TakesScreen.takeSnapShot(driver,"test-output//PlatformAdminUpdateUser//UpperLowerCasePwd.jpg");
             Thread.sleep(4000);
 
-
             //The password field length has to be minimum 8
-
             UserPageObj1.SelectSearchedUser();
             Thread.sleep(1000);
             UserPageObj1.ClearPassword();
@@ -200,7 +194,6 @@ public class UpdateUserPlatformAdminTest extends BasePage {
             Thread.sleep(4000);
 
             //The password field length has to be maximum 12
-
             UserPageObj1.SelectSearchedUser();
             Thread.sleep(1000);
             UserPageObj1.ClearPassword();
@@ -214,7 +207,6 @@ public class UpdateUserPlatformAdminTest extends BasePage {
 
 
             //Only Alphabets
-
             UserPageObj1.SelectSearchedUser();
             Thread.sleep(1000);
             UserPageObj1.ClearPassword();
@@ -225,7 +217,6 @@ public class UpdateUserPlatformAdminTest extends BasePage {
             Thread.sleep(3000);
             UserPageObj1.ClickUpdateUser();
             Thread.sleep(1000);
-
 
             //Only Digits
             UserPageObj1.SelectSearchedUser();
@@ -299,7 +290,6 @@ public class UpdateUserPlatformAdminTest extends BasePage {
             Thread.sleep(2000);
 
             // Only LessLowerLimit  less than minimum password length 7
-
             UserPageObj1.SelectSearchedUser();
             Thread.sleep(1000);
             UserPageObj1.ClearPassword();
@@ -313,12 +303,10 @@ public class UpdateUserPlatformAdminTest extends BasePage {
             UserPageObj1.ClickCancelBtn();
             Thread.sleep(2000);
 
-
-
             //Valid Update scenario required
             UserPageObj1.SelectSearchedUser();
             Thread.sleep(3000);
-            UserPageObj1.ClicktoClearName();
+            UserPageObj1.ClickToClearName();
             Thread.sleep(5000);
             UserPageObj1.EnterUserName(ReadProps.readAttr("ValidNameUP"));
             Thread.sleep(2000);
@@ -332,12 +320,12 @@ public class UpdateUserPlatformAdminTest extends BasePage {
             Thread.sleep(4000);
 
 
-            //Remove updation for script maintainace only
+            //Remove update for script maintained only
             UserPageObj1.SearchCreatedUser(ReadProps.readAttr("ValidNameUP"));
             Thread.sleep(2000);
             UserPageObj1.SelectUpdatedUser();
             Thread.sleep(1000);
-            UserPageObj1.ClicktoClearName();
+            UserPageObj1.ClickToClearName();
             Thread.sleep(2000);
             UserPageObj1.EnterUserName(ReadProps.readAttr("Username"));
             Thread.sleep(2000);
@@ -349,8 +337,6 @@ public class UpdateUserPlatformAdminTest extends BasePage {
             Thread.sleep(4000);
             UserPageObj1.LogOut();
             Thread.sleep(3000);
-
-
             driver.close();
         } catch (Exception e) {
             test.log(status.FAIL, e);

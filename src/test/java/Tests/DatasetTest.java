@@ -7,7 +7,6 @@ import Utilities.TakesScreen;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
-
 import java.io.IOException;
 
 public class DatasetTest extends BasePage {
@@ -133,7 +132,7 @@ public class DatasetTest extends BasePage {
 //            TakesScreen.takeSnapShot(driver, "test-output//Datasets//DatasetDisabled.jpg");
 //            Thread.sleep(4000);
 
-            driver.quit();
+            driver.close();
 
         } catch (Exception e) {
             test.log(status.FAIL, e);

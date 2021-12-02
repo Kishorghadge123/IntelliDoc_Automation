@@ -7,7 +7,6 @@ import Utilities.TakesScreen;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
-
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
@@ -25,17 +24,13 @@ public class CreateRoleAdminTest extends BasePage {
             test.log(status.PASS, "TestPassed");
             driver.get(ReadProps.readAttr("URL"));
             driver.manage().window().maximize();
-
-
             //Admin ROle
-
             CreateRolePageObj.EnterUsername(ReadProps.readAttr("AdminUser"));
             Thread.sleep(2000);
             CreateRolePageObj.EnterPassword(ReadProps.readAttr("AdminPwd"));
             Thread.sleep(2000);
             CreateRolePageObj.ClickLoginButton();
             Thread.sleep(12000);
-
             CreateRolePageObj.ClickRoleManagementBtn();
             Thread.sleep(4000);
             CreateRolePageObj.ClickCreateRoleBtn();
@@ -44,9 +39,7 @@ public class CreateRoleAdminTest extends BasePage {
             Thread.sleep(3000);
             System.out.println("Role button clicked");
 
-
             // Blank RoleName and blank permission
-
             CreateRolePageObj.ClickCreateButton();
             Thread.sleep(2000);
             CreateRolePageObj.VerifyError();
@@ -56,7 +49,7 @@ public class CreateRoleAdminTest extends BasePage {
             driver.navigate().refresh();
             Thread.sleep(4000);
 
-            // Valid Rolename and blank permission
+            // Valid RoleName and Blank permission
             CreateRolePageObj.EnterRoleName(ReadProps.readAttr("RoleName"));
             Thread.sleep(4000);
             CreateRolePageObj.ClickActiveRole();
@@ -71,7 +64,7 @@ public class CreateRoleAdminTest extends BasePage {
             Thread.sleep(4000);
 
             Robot r = new Robot();
-            //  Blank Rolename and Valid Permission
+            //  Blank RoleName and Valid Permission
             CreateRolePageObj.ClickActiveRole();
             Thread.sleep(4000);
             CreateRolePageObj.AddPermissionPlusBtn();
@@ -89,8 +82,7 @@ public class CreateRoleAdminTest extends BasePage {
             CreateRolePageObj.ClickCancelButton();
             Thread.sleep(2000);
 
-
-            //Valid Rolename Valid Permission
+            //Valid RoleName Valid Permission
            /*
             CreateRolePageObj.ClickCreateRoleBtn();
             Thread.sleep(4000);
@@ -113,7 +105,7 @@ public class CreateRoleAdminTest extends BasePage {
             Thread.sleep(2000);
             System.out.println("Role Created");*/
 
-            // Repeated Role..Doesnt allow repeat
+            // Repeated Role Doesn't allow repeat
             CreateRolePageObj.ClickCreateRoleBtn();
             Thread.sleep(4000);
             CreateRolePageObj.EnterRoleName(ReadProps.readAttr("RoleName"));
@@ -166,14 +158,13 @@ public class CreateRoleAdminTest extends BasePage {
             CreateRolePageObj.ClickUpdateBtn();
             Thread.sleep(3000);*/
 
-            //Remove all premission and disable active status
+            //Remove all permission and disable active status
             CreateRolePageObj.ClickEditRole();
             Thread.sleep(5000);
             CreateRolePageObj.ClickRemovePermission();
             Thread.sleep(2000);
             CreateRolePageObj.ClickRemovePermission();
             Thread.sleep(2000);
-
             CreateRolePageObj.ClickUpdateBtn();
             CreateRolePageObj.BlankPermission();
             System.out.println("Assert Verified Permissions cannot be blank");
@@ -181,7 +172,6 @@ public class CreateRoleAdminTest extends BasePage {
             Thread.sleep(3000);
             CreateRolePageObj.ClickCancelButton();
             Thread.sleep(2000);
-
 
             //Disable the Status of role and update
             CreateRolePageObj.ClickEditRole();
@@ -204,7 +194,6 @@ public class CreateRoleAdminTest extends BasePage {
             Thread.sleep(2000);
             driver.close();
             CreateRolePageObj.AssertAll();
-
 
         } catch (Exception e) {
             test.log(status.FAIL, e);

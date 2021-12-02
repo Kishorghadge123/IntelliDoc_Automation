@@ -4,7 +4,6 @@ import Base.BasePage;
 import Pages.ProjectPage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
-import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
 
 import java.awt.*;
@@ -12,8 +11,6 @@ import java.awt.event.KeyEvent;
 import java.io.IOException;
 
 public class UpdateProjectFlowTest extends BasePage{
-
-
 
         @Test
         public void UpdateProjectFlow() throws InterruptedException, IOException {
@@ -28,9 +25,6 @@ public class UpdateProjectFlowTest extends BasePage{
                 test.log(status.PASS, "TestPassed");
                 System.out.println("Successfully logged in");
                 Thread.sleep(8000);
-
-
-
                 // 5 Verify the working of platform admin for  Updating project by putting valid data
                 ProjectPageObj.ClickOnProjectBtn();
                 Thread.sleep(4000);
@@ -72,9 +66,6 @@ public class UpdateProjectFlowTest extends BasePage{
                 TakesScreen.takeSnapShot(driver, "test-output//ProjectTest//Lead.jpg");
                 ProjectPageObj.ClickOnUpdateProject();
                 Thread.sleep(3000);
-
-
-
 
                 //Verify the working of platform admin for Update Project button  when role and user status is disabled
                 ProjectPageObj.ClickOnProjectBtn();
@@ -121,7 +112,6 @@ public class UpdateProjectFlowTest extends BasePage{
                 Thread.sleep(4000);
                 ProjectPageObj.ClickOnUpdateProject();
                 Thread.sleep(4000);
-
 
                 // User status is enabled
                 ProjectPageObj.ClickUserBtn();
@@ -187,7 +177,7 @@ public class UpdateProjectFlowTest extends BasePage{
                 ProjectPageObj.VerifyAssertForRoleDisable();
                 Thread.sleep(2000);
                 System.out.println("AE supervisor role is disable");
-                ProjectPageObj.ClickonCancelOnProject();
+                ProjectPageObj.ClickOnCancelProject();
                 Thread.sleep(4000);
 
                 //Verify that while updating project role should not have an empty user
@@ -208,12 +198,10 @@ public class UpdateProjectFlowTest extends BasePage{
                 ProjectPageObj.VerifyAssertForUser();
                 Thread.sleep(2000);
                 System.out.println("empty user");
-                ProjectPageObj.ClickonCancelOnProject();
+                ProjectPageObj.ClickOnCancelProject();
                 Thread.sleep(4000);
                 ProjectPageObj.ClickLogout();
                 driver.navigate().refresh();
-
-
 
                 // Creation of Project By admin
                 // Create Project
@@ -223,7 +211,6 @@ public class UpdateProjectFlowTest extends BasePage{
                 Thread.sleep(2000);
                 ProjectPageObj.ClickLoginButton();
                 Thread.sleep(12000);
-
 
                 // 5 Verify the working of  admin for  Updating project by putting valid data
                 ProjectPageObj.ClickOnProjectBtn();
@@ -264,12 +251,8 @@ public class UpdateProjectFlowTest extends BasePage{
                 ProjectPageObj.SelectOnProcessingEngineBtn();
                 Thread.sleep(4000);
                 TakesScreen.takeSnapShot(driver, "test-output//ProjectUpdate//Lead.jpg");
-
                 ProjectPageObj.ClickOnUpdateProject();
                 Thread.sleep(3000);
-
-
-
 
                 //Verify the working of admin for Update Project button  when role and user status is disabled
                 ProjectPageObj.ClickOnProjectBtn();
@@ -317,7 +300,6 @@ public class UpdateProjectFlowTest extends BasePage{
                 Thread.sleep(4000);
                 ProjectPageObj.ClickOnUpdateProject();
                 Thread.sleep(2000);
-
 
                 // User status is enabled
                 ProjectPageObj.ClickUserBtn();
@@ -383,7 +365,7 @@ public class UpdateProjectFlowTest extends BasePage{
                 ProjectPageObj.VerifyAssertForRoleDisable();
                 Thread.sleep(2000);
                 System.out.println("AE supervisor role is disable");
-                ProjectPageObj.ClickonCancelOnProject();
+                ProjectPageObj.ClickOnCancelProject();
                 Thread.sleep(4000);
 
                 //Verify that while updating project role should not have an empty user
@@ -405,9 +387,8 @@ public class UpdateProjectFlowTest extends BasePage{
                 ProjectPageObj.VerifyAssertForUser();
                 Thread.sleep(2000);
                 System.out.println("empty user");
-                ProjectPageObj.ClickonCancelOnProject();
+                ProjectPageObj.ClickOnCancelProject();
                 Thread.sleep(4000);
-
 
               // Verify that project status is disabled for admin when the action checkbox  of the status is false
                 ProjectPageObj.ClickOnProjectBtn();
@@ -419,10 +400,8 @@ public class UpdateProjectFlowTest extends BasePage{
                 ProjectPageObj.ClickOnStatusBtn();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//ProjectUpdate//DisableProjectStatus.jpg");
-
                 ProjectPageObj.ClickOnUpdateProject();
                 Thread.sleep(2000);
-
 
                 // Verify that project status is enabled for admin when the action checkbox  of the status is True
                 ProjectPageObj.ClickOnProjectBtn();
@@ -434,19 +413,12 @@ public class UpdateProjectFlowTest extends BasePage{
                 ProjectPageObj.ClickOnStatusBtn();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//ProjectUpdate//EnableProjectStatus.jpg");
-
                 ProjectPageObj.ClickOnUpdateProject();
                 Thread.sleep(3000);
-
                 ProjectPageObj.ClickLogout();
-
-                driver.close();
-
                 ProjectPageObj.SoftAssertAll();
                 Thread.sleep(4000);
-
-
-
+                driver.close();
             } catch (Exception e) {
                 test.log(status.FAIL, e);
             }

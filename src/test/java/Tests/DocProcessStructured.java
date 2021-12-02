@@ -6,7 +6,6 @@ import Utilities.ReadProps;
 import Utilities.TakesScreen;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
-
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
@@ -56,9 +55,7 @@ public class DocProcessStructured extends BasePage {
                 Thread.sleep(3000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//Statuses.jpg");
 
-
-
-                //Searchbox Document
+                //SearchBox Document
                 DocPageObj.ClickSearchBox("BRE US Citizen.jpg");
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//DocumentSearched.jpg");
@@ -87,7 +84,7 @@ public class DocProcessStructured extends BasePage {
                 DocPageObj.ClickRefreshDocument();
                 Thread.sleep(3000);
 
-                //Hide Unhide Analytics
+                //Hide UnHide Analytics
                 DocPageObj.ClickHideAnalytics();
                 Thread.sleep(4000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//HideAnalytics.jpg");
@@ -95,7 +92,6 @@ public class DocProcessStructured extends BasePage {
                 DocPageObj.ClickUnhideAnalytics();
                 Thread.sleep(4000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//UnhideAnalytics.jpg");
-
 
                 // TC - Documents - filter
                 DocPageObj.ClickFilterDoc();
@@ -158,7 +154,6 @@ public class DocProcessStructured extends BasePage {
                 DocPageObj.SelectItemsPerPage();
                 Thread.sleep(3000);
 
-
                 //Next, Last, Previous and First Page
 
                 DocPageObj.ClickNextPage();
@@ -178,7 +173,6 @@ public class DocProcessStructured extends BasePage {
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//FirstItemPerPage.jpg");
                 Thread.sleep(4000);
 
-
                 // Anticlockwise , clockwise , Next Page , Previous Page
                 DocPageObj.ClickSearchBox("form 1040.pdf");
                 Thread.sleep(2000);
@@ -193,12 +187,10 @@ public class DocProcessStructured extends BasePage {
                 Thread.sleep(3000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//AntiClockWiseIcon.jpg");
 
-
                 //Clockwise
                 DocPageObj.ClickClockWiseIcon();
                 Thread.sleep(3000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//ClockWiseIcon.jpg");
-
 
                 //Zoom In
                 DocPageObj.ClickZoomIn();
@@ -210,7 +202,6 @@ public class DocProcessStructured extends BasePage {
                 Thread.sleep(4000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//ZoomOut.jpg");
 
-
                 //Navigate Right
                 DocPageObj.ClickNvgtRt();
                 Thread.sleep(3000);
@@ -220,7 +211,6 @@ public class DocProcessStructured extends BasePage {
                 DocPageObj.ClickNvgtLft();
                 Thread.sleep(5000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//PreviousPage.jpg");
-
                 driver.close();
 
             } catch (Exception e) {

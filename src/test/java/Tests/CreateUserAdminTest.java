@@ -4,15 +4,9 @@ import Base.BasePage;
 import Pages.CreateUserPage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
-
-import java.awt.*;
-import java.awt.event.KeyEvent;
 import java.io.IOException;
 
 public class CreateUserAdminTest extends BasePage {
@@ -30,7 +24,6 @@ public class CreateUserAdminTest extends BasePage {
             CreateUserPage UserPageObj = new CreateUserPage(driver);
             driver.get(ReadProps.readAttr("URL"));
             driver.manage().window().maximize();
-
 
             // Login with Admin
             UserPageObj.setUsername(ReadProps.readAttr("AdminUser"));
@@ -70,7 +63,6 @@ public class CreateUserAdminTest extends BasePage {
             System.out.println("User Created Successfully");
             Thread.sleep(2000);*/
 
-
             // Create user with Invalid data
             UserPageObj.ClickUserBtn();
             Thread.sleep(3000);
@@ -84,9 +76,7 @@ public class CreateUserAdminTest extends BasePage {
             UserPageObj.UserBlankAssert();
             System.out.println("Please Check Form Detail...!");
             TakesScreen.takeSnapShot(driver, "test-output//AdminUserCreation//AdminInvalidCredentials.jpg");
-            // UserPageObj.ClickCancelBtn();
-            //  Thread.sleep(3000);
-
+            Thread.sleep(2000);
             //Active and disable user
             UserPageObj.ClickUserBtn();
             Thread.sleep(3000);
@@ -106,10 +96,8 @@ public class CreateUserAdminTest extends BasePage {
             Thread.sleep(3000);
             UserPageObj.ClickUpdateUser();
             Thread.sleep(4000);
-
             UserPageObj.LogOut();
             Thread.sleep(6000);
-
             driver.close();
         } catch (Exception e) {
             test.log(status.FAIL, e);

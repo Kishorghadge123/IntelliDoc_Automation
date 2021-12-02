@@ -6,7 +6,6 @@ import Utilities.ReadProps;
 import Utilities.TakesScreen;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
-
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
@@ -35,7 +34,6 @@ public class DocProcessFreeForm extends BasePage {
                 DocPageObj.ClickArrowLeft();
                 Thread.sleep(3000);
 
-
                 //Search Project
                 DocPageObj.ClickDropDownBtn();
                 Thread.sleep(4000);
@@ -57,9 +55,7 @@ public class DocProcessFreeForm extends BasePage {
                 Thread.sleep(5000);
                 TakesScreen.takeSnapShot(driver, "test-output//FreeFormDocument//Statuses.jpg");
 
-
-
-                //Searchbox Document
+                //SearchBox Document
                 DocPageObj.ClickSearchBox("AN - OOLU2604599080.pdf");
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//FreeFormDocument//DocumentSearched.jpg");
@@ -74,12 +70,11 @@ public class DocProcessFreeForm extends BasePage {
                 DocPageObj.ClickDocumentBtn();
                 Thread.sleep(3000);
 
-
                 //Document refresh
                 DocPageObj.ClickRefreshDocument();
                 Thread.sleep(3000);
 
-                //Hide Unhide Analytics
+                //Hide UnHide Analytics
                 DocPageObj.ClickHideAnalytics();
                 Thread.sleep(4000);
                 TakesScreen.takeSnapShot(driver, "test-output//FreeFormDocument//HideAnalytics.jpg");
@@ -87,7 +82,6 @@ public class DocProcessFreeForm extends BasePage {
                 DocPageObj.ClickUnhideAnalytics();
                 Thread.sleep(4000);
                 TakesScreen.takeSnapShot(driver, "test-output//FreeFormDocument//UnhideAnalytics.jpg");
-
 
                 // TC - Documents - filter
                 DocPageObj.ClickFilterDoc();
@@ -170,7 +164,6 @@ public class DocProcessFreeForm extends BasePage {
                 TakesScreen.takeSnapShot(driver, "test-output//FreeFormDocument//FirstItemPerPage.jpg");
                 Thread.sleep(4000);
 
-
                 // Anticlockwise , clockwise , Next Page , Previous Page
                 DocPageObj.ClickSearchBox("3.tif");
                 Thread.sleep(2000);
@@ -185,12 +178,10 @@ public class DocProcessFreeForm extends BasePage {
                 Thread.sleep(3000);
                 TakesScreen.takeSnapShot(driver, "test-output//FreeFormDocument//AntiClockWiseIcon.jpg");
 
-
                 //Clockwise
                 DocPageObj.ClickClockWiseIcon();
                 Thread.sleep(3000);
                 TakesScreen.takeSnapShot(driver, "test-output//FreeFormDocument//ClockWiseIcon.jpg");
-
 
                 //Zoom In
                 DocPageObj.ClickZoomIn();
@@ -202,7 +193,6 @@ public class DocProcessFreeForm extends BasePage {
                 Thread.sleep(4000);
                 TakesScreen.takeSnapShot(driver, "test-output//FreeFormDocument//ZoomOut.jpg");
 
-
                 //Navigate Right
                 DocPageObj.ClickNvgtRt();
                 Thread.sleep(3000);
@@ -212,7 +202,6 @@ public class DocProcessFreeForm extends BasePage {
                 DocPageObj.ClickNvgtLft();
                 Thread.sleep(5000);
                 TakesScreen.takeSnapShot(driver, "test-output//FreeFormDocument//PreviousPage.jpg");
-
                 driver.close();
 
             } catch (Exception e) {

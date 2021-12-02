@@ -5,9 +5,7 @@ import Pages.DocumentPage;
 import Pages.ProjectPage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
-import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
-
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
@@ -43,7 +41,7 @@ public class ProjectFlowSemiStructure extends BasePage{
             Thread.sleep(4000);
             ProjectPageObj.ClickOnStartDateBtn();
             Thread.sleep(4000);
-            ProjectPageObj.SelectOnStartDateBtn();
+            ProjectPageObj.SelectStartDateBtn();
             Thread.sleep(4000);
             ProjectPageObj.ClickOnEndDate();
             Thread.sleep(4000);
@@ -73,19 +71,11 @@ public class ProjectFlowSemiStructure extends BasePage{
             Thread.sleep(4000);
             r.keyPress(KeyEvent.VK_ESCAPE);
             Thread.sleep(2000);
-           // ProjectPageObj.ClickonCancelOnProject();
-            Thread.sleep(4000);
-          //  ProjectPageObj.ClickonCreate();
            TakesScreen.takeSnapShot(driver, "test-output//ProjectTestSemiStructured//CreateProject.jpg");
             Thread.sleep(4000);
             System.out.println("Project Created");
-
-
-
-
-
-
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
                 test.log(status.FAIL, e);
             }
         }

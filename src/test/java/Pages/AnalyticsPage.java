@@ -4,18 +4,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-
 public class AnalyticsPage {
-
 
     WebDriver driver = null;
 
     By AnalyticsBtn = By.xpath("//i[@class='mat-tooltip-trigger fa fa-cubes m-0 side-icon ng-star-inserted']");
-    By OrganizationDownarrow =By.xpath("//span[@class='mat-expansion-indicator ng-tns-c157-6 ng-trigger ng-trigger-indicatorRotate ng-star-inserted']");
+    By OrganizationDownArrow =By.xpath("//span[@class='mat-expansion-indicator ng-tns-c157-6 ng-trigger ng-trigger-indicatorRotate ng-star-inserted']");
     By TotalUser = By.xpath("//div[contains(text(),' Users ')]");
     By Document = By.xpath("//*[@class='mat-expansion-panel analytics ng-tns-c156-5 mat-expanded mat-expansion-panel-spacing']/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]");
     By Processed = By.xpath("//*[@class='mat-expansion-panel analytics ng-tns-c156-5 mat-expanded mat-expansion-panel-spacing']/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]");
-    By ReadytoProcess = By.xpath("//*[@class='mat-expansion-panel analytics ng-tns-c156-5 mat-expanded mat-expansion-panel-spacing']/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]");
+    By ReadyToProcess = By.xpath("//*[@class='mat-expansion-panel analytics ng-tns-c156-5 mat-expanded mat-expansion-panel-spacing']/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]");
     By Rejected = By.xpath("//*[@class='mat-expansion-panel analytics ng-tns-c156-5 mat-expanded mat-expansion-panel-spacing']/div[1]/div[1]/div[1]/div[1]/div[1]/div[5]");
     By ValidationTime = By.xpath("//*[@class='mat-expansion-panel analytics ng-tns-c156-5 mat-expanded mat-expansion-panel-spacing']/div[1]/div[1]/div[1]/div[1]/div[1]/div[6]");
     By SProcessedBar = By.xpath("//div[@class='row ng-star-inserted']/div[1]/div[1]/div[2]/div[1]");
@@ -30,7 +28,7 @@ public class AnalyticsPage {
     By MCProcessedBar = By.xpath("//div[@class='row ng-star-inserted']/div[4]/div[1]/div[2]/div[1]");
     By MCReadyBar = By.xpath("//div[@class='row ng-star-inserted']/div[4]/div[1]/div[2]/div[2]");
     By MCRejectedBar = By.xpath("//div[@class='row ng-star-inserted']/div[4]/div[1]/div[2]/div[3]");
-    By ProjectDownarrow=By.xpath("//button[@class='mat-focus-indicator mat-menu-trigger white_bg mat-button mat-button-base mat-primary ng-star-inserted']");
+    By ProjectDownArrow=By.xpath("//button[@class='mat-focus-indicator mat-menu-trigger white_bg mat-button mat-button-base mat-primary ng-star-inserted']");
     By SearchProject=By.xpath("//input[@placeholder='Search']");
     By SelectProject=By.xpath("//span[contains(text(),'Abcd new')]");
     By SelectDropDown= By.xpath("//body[1]/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-analytics[1]/div[2]/mat-accordion[1]/mat-expansion-panel[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/mat-form-field[1]/div[1]/div[1]/div[1]/mat-select[1]");
@@ -39,7 +37,6 @@ public class AnalyticsPage {
     By SelectDaily = By.xpath("//span[contains(text(),'Daily')]");
     By SelectOverall = By.xpath("//body/div[1]/div[2]/div[1]/div[1]/div[1]/mat-option[4]/span[1]");
     By TotalDocument = By.xpath("//div[@class='white_bg rounded_5px box_shadow px-2 py-2 h-100 d-flex-center flex-column']");
-   // By Document = By.xpath("//div[@class='mat-sort-header-content ng-tns-c166-13']");
     By Received = By.xpath("//div[@class='mat-sort-header-content ng-tns-c166-14']");
     By LastPage = By.xpath("//button[@class='mat-focus-indicator mat-tooltip-trigger mat-paginator-navigation-last mat-icon-button mat-button-base ng-star-inserted']");
     By FirstPage = By.xpath("//button[@class='mat-focus-indicator mat-tooltip-trigger mat-paginator-navigation-first mat-icon-button mat-button-base ng-star-inserted']");
@@ -57,9 +54,9 @@ public class AnalyticsPage {
     public void ClickAnalyticsBtn() {
         driver.findElement(AnalyticsBtn).click();
     }
-    //Organization Statistic
+    //Organization Statistics
    public  void ClickOrganizationArrow(){
-        driver.findElement(OrganizationDownarrow).click();
+        driver.findElement(OrganizationDownArrow).click();
     }
 
     public  void HoverTotalUser(){
@@ -88,7 +85,7 @@ public void HoverProcessed()
 public void HoverReadytoProcess()
 {
     Actions action = new Actions(driver);
-    WebElement element= driver.findElement(ReadytoProcess);
+    WebElement element= driver.findElement(ReadyToProcess);
     action.moveToElement(element).build().perform();
 }
 
@@ -106,9 +103,8 @@ public void HoverValidationTime()
     action.moveToElement(element).build().perform();
 }
 
-
-    public void HoverStructuredBar(){
-
+    public void HoverStructuredBar()
+    {
         Actions action = new Actions(driver);
         WebElement element1= driver.findElement(SProcessedBar);
         action.moveToElement(element1).build().perform();
@@ -118,9 +114,7 @@ public void HoverValidationTime()
 
         WebElement element3= driver.findElement(SRejectedBar);
         action.moveToElement(element3).build().perform();
-
     }
-
 
     public void HoverSemiStructured()
     {
@@ -162,14 +156,9 @@ public void HoverValidationTime()
     }
 
 
-
-
-
-
-
     //Project Statistics
     public  void ClickProjectArrow(){
-        driver.findElement(ProjectDownarrow).click();
+        driver.findElement(ProjectDownArrow).click();
     }
     public void ClickSearchProject(){driver.findElement(SearchProject).click();}
     public void ClickSelectProject(){driver.findElement(SelectProject).click();}
@@ -190,6 +179,3 @@ public void HoverValidationTime()
     public  void ClickProjectStatisticArrow(){driver.findElement(ProjectStatisticArrow).click();}
 
 }
-
-
-

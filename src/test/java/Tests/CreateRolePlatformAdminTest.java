@@ -1,11 +1,9 @@
 package Tests;
 import Base.BasePage;
-import Pages.CreateUserPage;
 import Pages.CreateRolePage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
 import org.testng.annotations.Test;
-
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
@@ -19,11 +17,9 @@ public class CreateRolePlatformAdminTest extends BasePage
             BasePage.LoginTest();
 
             Thread.sleep(8000);
-
             CreateRolePage CreateRolePageObj = new CreateRolePage(driver);
             test.log(status.INFO, "TestInformation");
             test.log(status.PASS, "TestPassed");
-
 
             CreateRolePageObj.ClickRoleManagementBtn();
             Thread.sleep(4000);
@@ -31,9 +27,7 @@ public class CreateRolePlatformAdminTest extends BasePage
             TakesScreen.takeSnapShot(driver,"test-output//PlatformAdminRoles//Role button clicked.jpg");
             Thread.sleep(3000);
             System.out.println("Role button clicked");
-
             // Blank RoleName and blank permission
-
             CreateRolePageObj.ClickCreateButton();
             TakesScreen.takeSnapShot(driver,"test-output//PlatformAdminRoles//BlankRoleNameCreated.jpg");
             System.out.println("Assert Verified Please check form data and permission cannot be empty");
@@ -41,7 +35,7 @@ public class CreateRolePlatformAdminTest extends BasePage
             driver.navigate().refresh();
             Thread.sleep(4000);
 
-            // Valid Rolename and blank permission
+            // Valid RoleName and blank permission
             CreateRolePageObj.EnterRoleName(ReadProps.readAttr("RoleName"));
             Thread.sleep(4000);
             CreateRolePageObj.ClickActiveRole();
@@ -54,7 +48,7 @@ public class CreateRolePlatformAdminTest extends BasePage
             Thread.sleep(4000);
             Robot r = new Robot();
 
-            //  Blank Rolename and Valid Permission
+            //  Blank RoleName and Valid Permission
             CreateRolePageObj.ClickActiveRole();
             Thread.sleep(4000);
             CreateRolePageObj.AddPermissionPlusBtn();
@@ -70,7 +64,7 @@ public class CreateRolePlatformAdminTest extends BasePage
             CreateRolePageObj.ClickCancelButton();
             Thread.sleep(2000);
 
-            //Valid Rolename Valid Permission
+            //Valid RoleName Valid Permission
 /*
             CreateRolePageObj.ClickCreateRoleBtn();
             Thread.sleep(4000);
@@ -252,8 +246,6 @@ public class CreateRolePlatformAdminTest extends BasePage
             Thread.sleep(2000);
             driver.close();
             CreateRolePageObj.AssertAll();
-
-
         }
         catch (Exception e)
         {

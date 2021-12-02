@@ -1,8 +1,9 @@
 package Pages;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-public class EditProfilePage {
+
+public class EditProfilePage
+{
     WebDriver driver = null;
     By Profile = By.xpath("//div[@class='profileImageIcon ng-star-inserted']");
     By NightMode = By.xpath("//*[contains(text(),'Night Mode')]");
@@ -11,7 +12,7 @@ public class EditProfilePage {
     By Cancel = By.xpath("//mat-icon[contains(text(),'close')]");
     By Visible = By.xpath("//mat-icon[contains(text(),'visibility')]");
     By Remove = By.xpath("//span[contains(text(),'Remove')]");
-    By SavePrfl = By.xpath("//span[contains(text(),'Save')]");
+    By SaveProfile = By.xpath("//span[contains(text(),'Save')]");
 
     public EditProfilePage(WebDriver driver) {
         this.driver = driver;
@@ -38,6 +39,6 @@ public class EditProfilePage {
     }
     public void SaveProfile()
     {
-        driver.findElement(SavePrfl).click();
+        driver.findElement(SaveProfile).click();
     }
 }

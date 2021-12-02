@@ -1,8 +1,6 @@
 package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class RoleAccess {
     WebDriver driver = null;
@@ -33,12 +31,7 @@ public class RoleAccess {
     public void clickLoginButton() {
         driver.findElement(loginBtn).click();
     }
-    public void clickAdminUser(){
-       // WebDriverWait wait = new WebDriverWait(driver, 20);
-      //  wait.until(ExpectedConditions.elementToBeClickable(By.xpath("i[@class='mat-tooltip-trigger fa fa-users m-0 side-icon ng-star-inserted']")));
-        driver.findElement(User).click();
-
-    }
+    public void clickAdminUser() {driver.findElement(User).click();}
     public  void clickAdminRole(){driver.findElement(Role).click();}
     public void clickAdminTemplate(){driver.findElement(Template).click();}
     public void ClickLogout(){driver.findElement(Logout).click();}
@@ -51,5 +44,4 @@ public class RoleAccess {
     public void clickSupervisorAnalytics(){driver.findElement(Analytics).click();}
     public void ClearUserID(){driver.findElement(username).clear();}
     public void ClearPWD(){driver.findElement(password).clear();}
-
 }

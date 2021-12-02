@@ -1,11 +1,7 @@
 package Pages;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 public class DocumentPage {
-
-
-
 
         WebDriver driver = null;
 
@@ -25,7 +21,7 @@ public class DocumentPage {
         By SubmitDoc = By.xpath("//span[contains(text(),'Submit')]");
         By CancelEditDoc2 = By.xpath("/html[1]/body[1]/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-processed-forms[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/button[4]/span[1]");
         By HideAnalytics = By.xpath("//mat-expansion-panel-header/span[2]");
-        By UnhideAnalytics = By.xpath("//mat-expansion-panel-header/span[2]");
+        By UnHideAnalytics = By.xpath("//mat-expansion-panel-header/span[2]");
         By ClearSearchDocument = By.xpath("//mat-icon[contains(text(),'highlight_off')]");
         By RefreshDocuments = By.xpath("//mat-icon[contains(text(),'refresh')]");
         By DiscardUpdate = By.xpath("//body/div[1]/div[2]/div[1]/mat-dialog-container[1]/app-confirmation-dialog[1]/div[1]/div[1]/div[2]/button[2]");
@@ -64,8 +60,8 @@ public class DocumentPage {
         By FirstPage = By.xpath("//body/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-documents[1]/div[1]/div[3]/div[1]/mat-paginator[1]/div[1]/div[1]/div[2]/button[1]/span[1]/*[1]");
 
         By ClickPercentage = By.xpath("//body/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-documents[1]/div[1]/mat-accordion[1]/mat-expansion-panel[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/circle-progress[1]/*[1]");
-        By ClickAntiClkwise = By.xpath("//*[@id='rotate_left']/span[1]/i");
-        By ClickClkwise = By.xpath("//*[@mattooltip='Clockwise']");
+        By ClickAntiClkWise = By.xpath("//*[@id='rotate_left']/span[1]/i");
+        By ClickClkWise = By.xpath("//*[@mattooltip='Clockwise']");
         By ClickZoonIn = By.xpath("//*[@mattooltip='Zoom In']");
         By ClickZoomOut = By.xpath("//*[@class='fa fa-search-minus']");
         By ClickNavigateRight = By.xpath("//*[@mattooltip='Navigate Right']");
@@ -94,11 +90,10 @@ public class DocumentPage {
         public void ClickUpdateDoc(){driver.findElement(SubmitDoc).click();}
         public void ClickCancelEditDoc2(){ driver.findElement(CancelEditDoc2).click();}
         public void ClickHideAnalytics(){ driver.findElement(HideAnalytics).click();}
-        public void ClickUnhideAnalytics(){ driver.findElement(UnhideAnalytics).click();}
+        public void ClickUnhideAnalytics(){ driver.findElement(UnHideAnalytics).click();}
         public void ClickRefreshDocument(){driver.findElement(RefreshDocuments).click();}
 
-        //script enhancement
-
+        //Script Enhancement
         public void ClickFilterDoc(){driver.findElement(FilterDoc).click();}
         public void ClickSearchFilterDoc(String text){driver.findElement(SearchFilterDoc).sendKeys(text);}
         public void ClickFilterSearchIcon(){driver.findElement(FilterSearchIcon).click();}
@@ -112,13 +107,10 @@ public class DocumentPage {
         public void ClickUpdateSort(){driver.findElement(UpdateSort).click();}
         public void ClickReceivedSort(){driver.findElement(ReceivedSort).click();}
 
-
         //status filter
         public void ClickStatusFilter(){driver.findElement(StatusFilter).click();}
         public void ClickUncheckRejected(){driver.findElement(UncheckRejected).click();}
         public void ClickCheckProcessed(){driver.findElement(CheckProcessed).click();}
-
-
         public void ClickArrowRight(){driver.findElement(ArrowRight).click();}
         public void ClickArrowLeft(){driver.findElement(ArrowLeft).click();}
         public void ClickItemsPerPage(){driver.findElement(ItemsPerPage).click();}
@@ -128,13 +120,10 @@ public class DocumentPage {
         public void ClickPreviousPage(){driver.findElement(PreviousPage).click();}
         public void ClickFirstPage(){driver.findElement(FirstPage).click();}
         public void ClickPercentageIcon(){driver.findElement(ClickPercentage).click();}
-        public void ClickAntiWiseIcon(){driver.findElement(ClickAntiClkwise).click();}
-        public void ClickClockWiseIcon(){driver.findElement(ClickClkwise).click();}
+        public void ClickAntiWiseIcon(){driver.findElement(ClickAntiClkWise).click();}
+        public void ClickClockWiseIcon(){driver.findElement(ClickClkWise).click();}
         public void ClickZoomIn(){driver.findElement(ClickZoonIn).click();}
         public void ClickZoomOut(){driver.findElement(ClickZoomOut).click();}
         public void ClickNvgtRt(){driver.findElement(ClickNavigateRight).click();}
         public void ClickNvgtLft(){driver.findElement(ClickNavigateLeft).click();}
-
-
-
 }

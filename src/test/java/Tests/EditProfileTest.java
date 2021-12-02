@@ -5,21 +5,12 @@ import Pages.EditProfilePage;
 import Pages.LoginPage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
-import com.relevantcodes.extentreports.ExtentReports;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
-
 
 public class EditProfileTest extends BasePage {
-
 
     @Test
     public void EditProfileFlow() throws InterruptedException, IOException {
@@ -45,27 +36,23 @@ public class EditProfileTest extends BasePage {
             Thread.sleep(2000);
 
             //TC 12.2 Visible PWD On
-
             EditProfileObj.clickVisible();
             Thread.sleep(2000);
             TakesScreen.takeSnapShot(driver, "test-output//EditProfileTest//VisiblePWD.jpg");
             Thread.sleep(3000);
 
             //TC 12.3 Visible PWD Off
-
             EditProfileObj.clickVisible();
             Thread.sleep(4000);
             TakesScreen.takeSnapShot(driver, "test-output//EditProfileTest//InVisiblePWD.jpg");
             loginPageObjects.clickLoginButton();
             Thread.sleep(10000);
 
-            //TC 12.4 Profiel Icon
-
+            //TC 12.4 Profile Icon
             EditProfileObj.ProfileButton();
             Thread.sleep(3000);
 
             //TC 12.5 Night Mode , Day Mode
-
             EditProfileObj.NightModeButton();
             Thread.sleep(1000);
             TakesScreen.takeSnapShot(driver, "test-output//EditProfileTest//NightMode.jpg");
@@ -75,7 +62,6 @@ public class EditProfileTest extends BasePage {
             TakesScreen.takeSnapShot(driver, "test-output//EditProfileTest//DayMode.jpg");
 
             //TC 12.6 Edit Profile
-
             EditProfileObj.EditProfileButton();
             Thread.sleep(3000);
             TakesScreen.takeSnapShot(driver, "test-output//EditProfileTest//EditProfileButton.jpg");
@@ -109,11 +95,7 @@ public class EditProfileTest extends BasePage {
             Thread.sleep(3000);
             EditProfileObj.SaveProfile();
             Thread.sleep(4000);*/
-
-
             driver.close();
-
-
         } catch (Exception e) {
             test.log(status.FAIL, e);
 

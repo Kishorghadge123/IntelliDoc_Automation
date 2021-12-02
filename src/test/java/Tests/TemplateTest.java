@@ -1,33 +1,15 @@
 package Tests;
 
 import Base.BasePage;
-import Pages.CreateUserPage;
-import Pages.CreateRolePage;
 import Pages.TemplatePage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
-import com.relevantcodes.extentreports.ExtentReports;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 import java.awt.*;
-import java.awt.event.KeyEvent;
 import java.io.IOException;
-import java.time.Duration;
-import java.util.NoSuchElementException;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 
 public class TemplateTest extends BasePage {
 
@@ -214,7 +196,7 @@ public class TemplateTest extends BasePage {
             Thread.sleep(4000);
             TakesScreen.takeSnapShot(driver, "test-output//Templates//ExpandTemplate.jpg");
             System.out.println("Template expanded");
-            TemplatePageObj.ClickOnTemplatemorepagesInfo();
+            TemplatePageObj.ClickOnTemplateMorePagesInfo();
             Thread.sleep(10000);
             TakesScreen.takeSnapShot(driver, "test-output//Templates//OpenTemplateFile.jpg");
             Thread.sleep(3000);
@@ -259,16 +241,11 @@ public class TemplateTest extends BasePage {
             Thread.sleep(4000);
             TemplatePageObj.ConfirmDeleteTemplate();
             Thread.sleep(6000);
-
-
             TemplatePageObj.SoftAssertAll();
             Thread.sleep(4000);
-
             driver.close();
-
-
-        } catch (Exception e) {
-            //test.log(status.FAIL, e);
+        }
+        catch (Exception e) {
             test.log(status.FAIL, e);
         }
 

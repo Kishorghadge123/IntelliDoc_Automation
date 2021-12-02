@@ -5,7 +5,6 @@ import Pages.DocumentPage;
 import Pages.ProjectPage;
 import Utilities.ReadProps;
 import org.testng.annotations.Test;
-
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
@@ -38,7 +37,7 @@ public class ProjectFlowFreeForm extends BasePage {
         Thread.sleep(4000);
         ProjectPageObj.ClickOnStartDateBtn();
         Thread.sleep(4000);
-        ProjectPageObj.SelectOnStartDateBtn();
+        ProjectPageObj.SelectStartDateBtn();
         Thread.sleep(4000);
         ProjectPageObj.ClickOnEndDate();
         Thread.sleep(4000);
@@ -73,15 +72,7 @@ public class ProjectFlowFreeForm extends BasePage {
         Thread.sleep(4000);
         r.keyPress(KeyEvent.VK_ESCAPE);
         Thread.sleep(4000);
-       // ProjectPageObj.ClickonCreate();
-        Thread.sleep(4000);
-
-
         driver.close();
-
-
-
-
     }
 
     catch (Exception e) {

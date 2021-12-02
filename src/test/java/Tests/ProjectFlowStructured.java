@@ -1,23 +1,14 @@
 package Tests;
 
 import Base.BasePage;
-import Pages.DatasetPage;
 import Pages.ProjectPage;
-import Pages.TemplatePage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
-
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
-import java.time.Duration;
-import java.util.concurrent.TimeUnit;
-
 
 public class ProjectFlowStructured extends BasePage {
 
@@ -35,14 +26,7 @@ public class ProjectFlowStructured extends BasePage {
             System.out.println("Successfully logged in");
             Thread.sleep(8000);
 
-            //TC 5.1 Arrow Right and Left in Panel
-            ProjectPageObj.ClickArrowRight();
-            Thread.sleep(3000);
-            ProjectPageObj.ClickArrowLeft();
-            Thread.sleep(3000);
-
-
-            //TC 5.2 Create new project with Blank information and also verify Create button
+            //TC 5.1 Create new project with Blank information and also verify Create button
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(4000);
             ProjectPageObj.ClickOnCreateProjectBtn();
@@ -56,9 +40,7 @@ public class ProjectFlowStructured extends BasePage {
             Thread.sleep(4000);
             System.out.println("Please check form data and role(s) cannot be empty");
 
-
-            //TC 5.3 Verify Next button with Blank information
-
+            //TC 5.2 Verify Next button with Blank information
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(4000);
             ProjectPageObj.ClickOnCreateProjectBtn();
@@ -67,12 +49,12 @@ public class ProjectFlowStructured extends BasePage {
             TakesScreen.takeSnapShot(driver, "test-output//ProjectTest//ProjectCreateBlankNext.jpg");
             Thread.sleep(4000);
 
-            //Test 5.4 Verify Cancel button with Blank information
+            //Test 5.3 Verify Cancel button with Blank information
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(4000);
             ProjectPageObj.ClickOnCreateProjectBtn();
             Thread.sleep(4000);
-            ProjectPageObj.ClickonCancelOnProject();
+            ProjectPageObj.ClickOnCancelProject();
             Thread.sleep(4000);
 
             //Disable one Role for test in Project
@@ -87,10 +69,7 @@ public class ProjectFlowStructured extends BasePage {
             ProjectPageObj.ClickUpdateBtn();
             Thread.sleep(4000);
 
-
-
-
-            // 5 Create project with with invalid project name
+            // 5.4 Create project with invalid project name
            ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(4000);
             ProjectPageObj.ClickOnCreateProjectBtn();
@@ -103,7 +82,7 @@ public class ProjectFlowStructured extends BasePage {
             Thread.sleep(4000);
             ProjectPageObj.ClickOnStartDateBtn();
             Thread.sleep(4000);
-            ProjectPageObj.SelectOnStartDateBtn();
+            ProjectPageObj.SelectStartDateBtn();
             Thread.sleep(4000);
             ProjectPageObj.ClickOnEndDate();
             Thread.sleep(4000);
@@ -120,7 +99,7 @@ public class ProjectFlowStructured extends BasePage {
             Thread.sleep(4000);
             TakesScreen.takeSnapShot(driver, "test-output//ProjectTest//DisableRoleNotFound.jpg");
 
-            //Enable the Role for script maintainance
+            //Enable the Role for script maintenance
             driver.navigate().refresh();
             Thread.sleep(4000);
             ProjectPageObj.ClickRoleManagementBtn();
@@ -133,10 +112,6 @@ public class ProjectFlowStructured extends BasePage {
             Thread.sleep(4000);
             ProjectPageObj.ClickUpdateBtn();
             Thread.sleep(4000);
-
-
-
-
 
             //Test 5.5  Create project with Project information without Template and Role
             ProjectPageObj.ClickOnProjectBtn();
@@ -151,7 +126,7 @@ public class ProjectFlowStructured extends BasePage {
             Thread.sleep(4000);
             ProjectPageObj.ClickOnStartDateBtn();
             Thread.sleep(4000);
-            ProjectPageObj.SelectOnStartDateBtn();
+            ProjectPageObj.SelectStartDateBtn();
             Thread.sleep(4000);
             ProjectPageObj.ClickOnEndDate();
             Thread.sleep(4000);
@@ -159,7 +134,7 @@ public class ProjectFlowStructured extends BasePage {
             Thread.sleep(4000);
             ProjectPageObj.ClickOnDocumentStructureBtn();
             Thread.sleep(4000);
-            ProjectPageObj.SelectOnDocumentStructureBtn();
+            ProjectPageObj.SelectDocumentStructureBtn();
             Thread.sleep(4000);
             ProjectPageObj.ClickOnProcessingEngineBtn();
             Thread.sleep(4000);
@@ -175,11 +150,10 @@ public class ProjectFlowStructured extends BasePage {
             Thread.sleep(4000);
             ProjectPageObj.ClickonCreate();
             TakesScreen.takeSnapShot(driver, "test-output//ProjectTest//ProjectCreateTemplateRoleEmpty.jpg");
-            ProjectPageObj.VerifyAsserForTemplate();
+            ProjectPageObj.VerifyAssertForTemplate();
             Thread.sleep(4000);
             System.out.println("Please add the template before creating the project.");
             Thread.sleep(4000);
-
 
             //Test 5.6 Create project without Role
             ProjectPageObj.ClickOnAddTemplateBtn();
@@ -192,7 +166,7 @@ public class ProjectFlowStructured extends BasePage {
             TakesScreen.takeSnapShot(driver, "test-output//ProjectTest//CreateProjectRolesUserEmpty.jpg");
             Thread.sleep(4000);
 
-            //Test 5.6 Create project without user
+            //Test 5.7 Create project without user
             ProjectPageObj.ClickOnRolesBtn();
             Thread.sleep(4000);
             ProjectPageObj.ClickOnAddRoleBtn();
@@ -209,18 +183,10 @@ public class ProjectFlowStructured extends BasePage {
             Thread.sleep(4000);
             r.keyPress(KeyEvent.VK_ESCAPE);
             Thread.sleep(4000);
-
-
-
-            //ProjectPageObj.ClickonCreate();
-            ProjectPageObj.ClickonCancelOnProject();
+            ProjectPageObj.ClickOnCancelProject();
             Thread.sleep(4000);
             TakesScreen.takeSnapShot(driver, "test-output//ProjectTest//CreatedProject.jpg");
-            // ProjectPageObj.VerifyAsertForUser();
             Thread.sleep(4000);
-
-
-
 
             //Create Project with disable status
             ProjectPageObj.ClickOnCreateProjectBtn();
@@ -233,7 +199,7 @@ public class ProjectFlowStructured extends BasePage {
             Thread.sleep(4000);
             ProjectPageObj.ClickOnStartDateBtn();
             Thread.sleep(4000);
-            ProjectPageObj.SelectOnStartDateBtn();
+            ProjectPageObj.SelectStartDateBtn();
             Thread.sleep(4000);
             ProjectPageObj.ClickOnEndDate();
             Thread.sleep(4000);
@@ -241,7 +207,7 @@ public class ProjectFlowStructured extends BasePage {
             Thread.sleep(4000);
             ProjectPageObj.ClickOnDocumentStructureBtn();
             Thread.sleep(4000);
-            ProjectPageObj.SelectOnDocumentStructureBtn();
+            ProjectPageObj.SelectDocumentStructureBtn();
             Thread.sleep(4000);
             ProjectPageObj.ClickOnProcessingEngineBtn();
             Thread.sleep(4000);
@@ -255,7 +221,7 @@ public class ProjectFlowStructured extends BasePage {
             Thread.sleep(4000);
             ProjectPageObj.ClickonCreate();
             TakesScreen.takeSnapShot(driver, "test-output//ProjectTest//ProjectCreateTemplateRoleEmpty.jpg");
-            ProjectPageObj.VerifyAsserForTemplate();
+            ProjectPageObj.VerifyAssertForTemplate();
             Thread.sleep(4000);
             System.out.println("Please add the template before creating the project.");
             Thread.sleep(4000);
@@ -276,16 +242,10 @@ public class ProjectFlowStructured extends BasePage {
             r.keyPress(KeyEvent.VK_ESCAPE);
             Thread.sleep(4000);
             ProjectPageObj.ClickonCreate();
-
             TakesScreen.takeSnapShot(driver, "test-output//ProjectTest//CreateProjectDisableStatus.jpg");
-            // ProjectPageObj.VerifyAsertForUser();
             Thread.sleep(4000);
             System.out.println("Project Created");
             Thread.sleep(4000);
-
-
-
-
 
             //TC 5.7  Create project only with Role information
             ProjectPageObj.ClickOnProjectBtn();
@@ -304,13 +264,11 @@ public class ProjectFlowStructured extends BasePage {
             Thread.sleep(4000);
             r.keyPress(KeyEvent.VK_ESCAPE);
             ProjectPageObj.ClickonCreate();
-            //ProjectPageObj.VerifyAssertForData();
             TakesScreen.takeSnapShot(driver, "test-output//ProjectTest//ProjectCreateOnlyRole.jpg");
             System.out.println("Please add the attributes before creating the project.");
             Thread.sleep(3000);
             ProjectPageObj.ClickLogout();
             Thread.sleep(2000);
-
 
             // Creation of Project By admin
             // Create Project
@@ -320,8 +278,6 @@ public class ProjectFlowStructured extends BasePage {
             Thread.sleep(2000);
             ProjectPageObj.ClickLoginButton();
             Thread.sleep(12000);
-
-
 
             //TC 5.8 Create new project with Blank information and also verify Create button
             ProjectPageObj.ClickOnProjectBtn();
@@ -336,9 +292,7 @@ public class ProjectFlowStructured extends BasePage {
             Thread.sleep(4000);
             System.out.println("Please check form data and role(s) cannot be empty");
 
-
             //TC 5.9 Verify Next button with Blank information
-
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(4000);
             ProjectPageObj.ClickOnCreateProjectBtn();
@@ -352,7 +306,7 @@ public class ProjectFlowStructured extends BasePage {
             Thread.sleep(4000);
             ProjectPageObj.ClickOnCreateProjectBtn();
             Thread.sleep(4000);
-            ProjectPageObj.ClickonCancelOnProject();
+            ProjectPageObj.ClickOnCancelProject();
             Thread.sleep(4000);
 
             //Disable one Role for test in Project
@@ -367,10 +321,7 @@ public class ProjectFlowStructured extends BasePage {
             ProjectPageObj.ClickUpdateBtn();
             Thread.sleep(4000);
 
-
-
-
-            // 5.11 Create project with with invalid project name
+            // 5.11 Create project with invalid project name
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(4000);
             ProjectPageObj.ClickOnCreateProjectBtn();
@@ -383,7 +334,7 @@ public class ProjectFlowStructured extends BasePage {
             Thread.sleep(4000);
             ProjectPageObj.ClickOnStartDateBtn();
             Thread.sleep(4000);
-            ProjectPageObj.SelectOnStartDateBtn();
+            ProjectPageObj.SelectStartDateBtn();
             Thread.sleep(4000);
             ProjectPageObj.ClickOnEndDate();
             Thread.sleep(4000);
@@ -400,7 +351,7 @@ public class ProjectFlowStructured extends BasePage {
             Thread.sleep(4000);
             TakesScreen.takeSnapShot(driver, "test-output//ProjectTest-Admin//DisableRoleNotFound.jpg");
 
-            //Enable the Role for script maintainance
+            //Enable the Role for script maintenance
             driver.navigate().refresh();
             Thread.sleep(4000);
             ProjectPageObj.ClickRoleManagementBtn();
@@ -413,10 +364,6 @@ public class ProjectFlowStructured extends BasePage {
             Thread.sleep(4000);
             ProjectPageObj.ClickUpdateBtn();
             Thread.sleep(4000);
-
-
-
-
 
             //Test 5.11  Create project with Project information without Template and Role
             ProjectPageObj.ClickOnProjectBtn();
@@ -431,7 +378,7 @@ public class ProjectFlowStructured extends BasePage {
             Thread.sleep(4000);
             ProjectPageObj.ClickOnStartDateBtn();
             Thread.sleep(4000);
-            ProjectPageObj.SelectOnStartDateBtn();
+            ProjectPageObj.SelectStartDateBtn();
             Thread.sleep(4000);
             ProjectPageObj.ClickOnEndDate();
             Thread.sleep(4000);
@@ -439,7 +386,7 @@ public class ProjectFlowStructured extends BasePage {
             Thread.sleep(4000);
             ProjectPageObj.ClickOnDocumentStructureBtn();
             Thread.sleep(4000);
-            ProjectPageObj.SelectOnDocumentStructureBtn();
+            ProjectPageObj.SelectDocumentStructureBtn();
             Thread.sleep(4000);
             ProjectPageObj.ClickOnProcessingEngineBtn();
             Thread.sleep(4000);
@@ -455,11 +402,10 @@ public class ProjectFlowStructured extends BasePage {
             Thread.sleep(4000);
             ProjectPageObj.ClickonCreate();
             TakesScreen.takeSnapShot(driver, "test-output//ProjectTest-Admin//ProjectCreateTemplateRoleEmpty.jpg");
-            ProjectPageObj.VerifyAsserForTemplate();
+            ProjectPageObj.VerifyAssertForTemplate();
             Thread.sleep(4000);
             System.out.println("Please add the template before creating the project.");
             Thread.sleep(4000);
-
 
             //Test 5.12 Create project without Role
             ProjectPageObj.ClickOnAddTemplateBtn();
@@ -489,20 +435,12 @@ public class ProjectFlowStructured extends BasePage {
             Thread.sleep(4000);
             r.keyPress(KeyEvent.VK_ESCAPE);
             Thread.sleep(4000);
-
-
-            //ProjectPageObj.ClickonCreate();
-            ProjectPageObj.ClickonCancelOnProject();
+            ProjectPageObj.ClickOnCancelProject();
             Thread.sleep(4000);
             TakesScreen.takeSnapShot(driver, "test-output//ProjectTest-Admin//CreatedProject.jpg");
-            // ProjectPageObj.VerifyAsertForUser();
             Thread.sleep(4000);
             System.out.println("Project Created  click on cancel");
             Thread.sleep(4000);
-
-            //Time Scenario
-
-
 
             //Create Project with disable status
             ProjectPageObj.ClickOnCreateProjectBtn();
@@ -515,7 +453,7 @@ public class ProjectFlowStructured extends BasePage {
             Thread.sleep(4000);
             ProjectPageObj.ClickOnStartDateBtn();
             Thread.sleep(4000);
-            ProjectPageObj.SelectOnStartDateBtn();
+            ProjectPageObj.SelectStartDateBtn();
             Thread.sleep(4000);
             ProjectPageObj.ClickOnEndDate();
             Thread.sleep(4000);
@@ -523,7 +461,7 @@ public class ProjectFlowStructured extends BasePage {
             Thread.sleep(4000);
             ProjectPageObj.ClickOnDocumentStructureBtn();
             Thread.sleep(4000);
-            ProjectPageObj.SelectOnDocumentStructureBtn();
+            ProjectPageObj.SelectDocumentStructureBtn();
             Thread.sleep(4000);
             ProjectPageObj.ClickOnProcessingEngineBtn();
             Thread.sleep(4000);
@@ -537,7 +475,7 @@ public class ProjectFlowStructured extends BasePage {
             Thread.sleep(4000);
             ProjectPageObj.ClickonCreate();
             TakesScreen.takeSnapShot(driver, "test-output//ProjectTest-Admin//ProjectCreateTemplateRoleEmpty.jpg");
-            ProjectPageObj.VerifyAsserForTemplate();
+            ProjectPageObj.VerifyAssertForTemplate();
             Thread.sleep(4000);
             System.out.println("Please add the template before creating the project.");
             Thread.sleep(4000);
@@ -557,17 +495,10 @@ public class ProjectFlowStructured extends BasePage {
             Thread.sleep(4000);
             r.keyPress(KeyEvent.VK_ESCAPE);
            Thread.sleep(2000);
-          //  ProjectPageObj.ClickonCreate();
-
             TakesScreen.takeSnapShot(driver, "test-output//ProjectTest-Admin//CreateProjectDisableStatus.jpg");
-            // ProjectPageObj.VerifyAsertForUser();
             Thread.sleep(4000);
             System.out.println("Project Created");
             Thread.sleep(4000);
-
-
-
-
 
             //TC 5.13  Create project only with Role information
             ProjectPageObj.ClickOnProjectBtn();
@@ -586,14 +517,9 @@ public class ProjectFlowStructured extends BasePage {
             Thread.sleep(4000);
             r.keyPress(KeyEvent.VK_ESCAPE);
             ProjectPageObj.ClickonCreate();
-            //ProjectPageObj.VerifyAssertForData();
             TakesScreen.takeSnapShot(driver, "test-output//ProjectTest-Admin//ProjectCreateOnlyRole.jpg");
             System.out.println("Please add the attributes before creating the project.");
             Thread.sleep(3000);
-
-
-
-
 
             //Items Per Page
             ProjectPageObj.ClickOnProjectBtn();
@@ -612,7 +538,6 @@ public class ProjectFlowStructured extends BasePage {
             Thread.sleep(3000);
             r.keyPress(KeyEvent.VK_ESCAPE);
             Thread.sleep(3000);
-
 
             //Table structure
             ProjectPageObj.ClickOnProjectBtn();

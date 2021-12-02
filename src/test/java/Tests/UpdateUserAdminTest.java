@@ -7,7 +7,6 @@ import Utilities.TakesScreen;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
-
 import java.io.IOException;
 
 public class UpdateUserAdminTest extends BasePage {
@@ -23,10 +22,8 @@ public class UpdateUserAdminTest extends BasePage {
             driver.get(ReadProps.readAttr("URL"));
             driver.manage().window().maximize();
 
-
             //Admin Login
-
-            UserPageObj1.setUsername(ReadProps.readAttr("AdminUser"));
+           UserPageObj1.setUsername(ReadProps.readAttr("AdminUser"));
             Thread.sleep(2000);
             UserPageObj1.setPassword(ReadProps.readAttr("AdminPwd"));
             Thread.sleep(2000);
@@ -65,7 +62,7 @@ public class UpdateUserAdminTest extends BasePage {
             //Update with Blank name
             UserPageObj1.SelectSearchedAdminUser();
             Thread.sleep(1000);
-            UserPageObj1.ClicktoClearName();
+            UserPageObj1.ClickToClearName();
             Thread.sleep(2000);
             UserPageObj1.ClickUpdateUser();
             Thread.sleep(1000);
@@ -78,7 +75,7 @@ public class UpdateUserAdminTest extends BasePage {
             //Update with Invalid UserName
             UserPageObj1.SelectSearchedAdminUser();
             Thread.sleep(1000);
-            UserPageObj1.ClicktoClearName();
+            UserPageObj1.ClickToClearName();
             Thread.sleep(2000);
             UserPageObj1.EnterUserName(ReadProps.readAttr("EnterName"));
             Thread.sleep(2000);
@@ -93,7 +90,7 @@ public class UpdateUserAdminTest extends BasePage {
             // Update with Valid Name
             UserPageObj1.SelectSearchedAdminUser();
             Thread.sleep(3000);
-            UserPageObj1.ClicktoClearName();
+            UserPageObj1.ClickToClearName();
             Thread.sleep(3000);
             UserPageObj1.EnterUserName(ReadProps.readAttr("ValidNameUP"));
             Thread.sleep(2000);
@@ -102,23 +99,19 @@ public class UpdateUserAdminTest extends BasePage {
             TakesScreen.takeSnapShot(driver, "test-output//AdminUpdateUser//UpdatewithValid.jpg");
             Thread.sleep(4000);
 
-            // Remove updation for script maintainace only
+            // Remove Update for script maintains only
             UserPageObj1.SearchCreatedUser(ReadProps.readAttr("ValidNameUP"));
             Thread.sleep(2000);
             UserPageObj1.SelectUpdatedUser();
             Thread.sleep(1000);
-            UserPageObj1.ClicktoClearName();
+            UserPageObj1.ClickToClearName();
             Thread.sleep(2000);
             UserPageObj1.EnterUserName(ReadProps.readAttr("AdminUserNm"));
             Thread.sleep(2000);
             UserPageObj1.ClickUpdateUser();
             Thread.sleep(4000);
-
-
             UserPageObj1.LogOut();
             Thread.sleep(3000);
-
-
             driver.close();
         } catch (Exception e) {
             test.log(status.FAIL, e);

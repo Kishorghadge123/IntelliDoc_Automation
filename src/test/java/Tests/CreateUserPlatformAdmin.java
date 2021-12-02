@@ -4,13 +4,7 @@ import Base.BasePage;
 import Pages.CreateUserPage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
-
-import java.awt.*;
-import java.awt.event.KeyEvent;
 import java.io.IOException;
 
 public class CreateUserPlatformAdmin extends BasePage {
@@ -33,7 +27,6 @@ public class CreateUserPlatformAdmin extends BasePage {
             Thread.sleep(500);
 
             TakesScreen.takeSnapShot(driver, "test-output//PlatformAdminUserCreation//BlankNameID.jpg");
-            //UserPageObj.UserBlankAssert();
             System.out.println("Please Check Form Detail...!");
             Thread.sleep(3000);
             driver.navigate().refresh();
@@ -41,7 +34,6 @@ public class CreateUserPlatformAdmin extends BasePage {
 
             // Valid Username Blank ID
             UserPageObj.EnterUserName(ReadProps.readAttr("CUName"));
-            //UserPageObj.EnterUserName("Sample");
 
             Thread.sleep(2000);
             UserPageObj.ClickCreateBtn();
@@ -50,7 +42,6 @@ public class CreateUserPlatformAdmin extends BasePage {
             Thread.sleep(3000);
             System.out.println("Please Check Form Detail...!");
             Thread.sleep(2000);
-
             driver.navigate().refresh();
             Thread.sleep(4000);
 
@@ -101,7 +92,7 @@ public class CreateUserPlatformAdmin extends BasePage {
             driver.navigate().refresh();
             Thread.sleep(3000);
 
-            // Create User with Existing user name and ID
+            // Create User with Existing username and ID
             UserPageObj.EnterUserName(ReadProps.readAttr("CUName"));
             Thread.sleep(2000);
             UserPageObj.EnterEmail(ReadProps.readAttr("CUEmail"));
@@ -116,8 +107,7 @@ public class CreateUserPlatformAdmin extends BasePage {
             UserPageObj.ClickCancelBtn();
             Thread.sleep(3000);
 
-
-            //Creation Of User
+            //Creation Of User-Whenever we have to run on new env then these lines are used.
           /*  UserPageObj.ClickCreateUserBtn();
             Thread.sleep(2000);
             UserPageObj.EnterUserName(ReadProps.readAttr("Username"));
@@ -209,14 +199,11 @@ public class CreateUserPlatformAdmin extends BasePage {
             Thread.sleep(2000);
             driver.navigate().refresh();
             Thread.sleep(3000);
-
-
             // At the time of create user need to remove comment from assertion
 
            UserPageObj.CreateTimeAssert();
                 Thread.sleep(2000);
          System.out.println("Time Assert Pass ");*/
-
 
 
             //Search for already Created user
@@ -236,7 +223,6 @@ public class CreateUserPlatformAdmin extends BasePage {
             Thread.sleep(5000);
             UserPageObj.LogOut();
             Thread.sleep(4000);
-
             driver.close();
             UserPageObj.AssertAll();
 
