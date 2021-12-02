@@ -27,7 +27,6 @@ public class LoginTest extends BasePage {
             WebDriver driver = new ChromeDriver();
             LoginPage loginPageObjects = new LoginPage(driver);
 
-
             driver.get(ReadProps.readAttr("URL"));
             String actualTitle = driver.getTitle();
             String expectedTitle = "IntelliDoc";
@@ -36,355 +35,293 @@ public class LoginTest extends BasePage {
             driver.manage().window().maximize();
             Thread.sleep(2000);
 
-
-            // Identify logo
+            // Identify Logo
             WebElement i = driver.findElement(By.xpath("//img[contains(@class,'img-fluid login-logo')]"));
             Boolean p = (Boolean) ((JavascriptExecutor) driver).executeScript("return arguments[0].complete " + "&& typeof arguments[0].naturalWidth != \"undefined\" " + "&& arguments[0].naturalWidth > 0", i);
 
-            //verify if status is true
+            //Verify logo Matched or not.
             if (p) {
-                System.out.println("Logo validation completed successfully");
+                System.out.println("Logo Matched!");
             } else {
-                System.out.println("Logo validation failed");
+                System.out.println("Logo Unmatched!");
             }
-
             Thread.sleep(2000);
-            driver.manage().deleteAllCookies();
-
-
-            //TC 1.1 - Login with blank user id and blank password
+            //TC 1.1 - Login with Blank Username and Blank Password for Platform Admin.
             loginPageObjects.clickLoginButton();
-            Thread.sleep(500);
-
             loginPageObjects.VerifyAssertError();
-            Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//BlankUserNamePWD.jpg");
-            System.out.println("Please Enter Valid Data !");
+            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//BlankID&Pwd.jpg");
+            System.out.println("Please Enter Valid Data!");
             Thread.sleep(2000);
 
-
-            //TC 1.2 - Login with invalid user-id and blank password
+            //TC 1.2 - Login with Invalid Username and Blank Password for Platform Admin.
             loginPageObjects.setUsername(ReadProps.readAttr("InvalidUsername"));
             Thread.sleep(2000);
+            loginPageObjects.clickLoginButton();
+            loginPageObjects.VerifyAssertError();
+            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//InvalidID&BlankPwd.jpg");
+            System.out.println("Login Failed - Invalid Username and Blank Password");
+            Thread.sleep(2000);
+
+            //TC 1.3 - Login with Blank Username and Valid Password for Platform Admin.
+            loginPageObjects.ClearUserID();
+            Thread.sleep(2000);
+            loginPageObjects.setPassword(ReadProps.readAttr("Password"));
+            Thread.sleep(1000);
+            loginPageObjects.clickLoginButton();
+            Thread.sleep(3000);
+            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//BlankID&ValidPwd.jpg");
+            System.out.println("Login Failed - Blank Username and Valid Password");
+            Thread.sleep(2000);
+
+            //TC 1.4 - Login with Blank Username and Invalid Password for Platform Admin.
+            loginPageObjects.ClearPWD();
+            Thread.sleep(2000);
+            loginPageObjects.setPassword(ReadProps.readAttr("InvalidPassword"));
+            Thread.sleep(1000);
+            loginPageObjects.clickLoginButton();
+            Thread.sleep(2000);
+            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//BlankID&InvalidPwd.jpg");
+            System.out.println("Login Failed - Blank Username and Invalid Password");
+            Thread.sleep(2000);
+
+            //TC 1.5 - Login with Valid Username and Blank Password for Platform Admin.
+            loginPageObjects.ClearPWD();
+            Thread.sleep(2000);
+            loginPageObjects.setUsername(ReadProps.readAttr("UserID"));
+            Thread.sleep(1000);
+            loginPageObjects.clickLoginButton();
+            Thread.sleep(2000);
+            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//ValidID&BlankPwd.jpg");
+            System.out.println("Login Failed - Valid Username and Blank Password");
+            Thread.sleep(2000);
+            driver.navigate().refresh();
+            Thread.sleep(3000);
+
+            //TC 1.6 - Login with Invalid Username and Invalid Password for Platform Admin.
+            loginPageObjects.setUsername(ReadProps.readAttr("InvalidUsername"));
+            Thread.sleep(1000);
+            loginPageObjects.setPassword(ReadProps.readAttr("InvalidPassword"));
+            Thread.sleep(1000);
             loginPageObjects.clickLoginButton();
             Thread.sleep(1000);
-
-            loginPageObjects.VerifyAssertError();
-            Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//InvalidIDBlankPWD.jpg");
-            System.out.println("Login failed - Invalid UserID and Blank PWD !");
+            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//InvalidID&InvalidPwd.jpg");
+            System.out.println("Login Failed - Invalid Username and Invalid Password");
             Thread.sleep(2000);
 
-            //TC 1.3 - Login with blank user-id and valid password
-            loginPageObjects.ClearUserID();
-            Thread.sleep(2000);
-            loginPageObjects.setPassword(ReadProps.readAttr("Password"));
-            Thread.sleep(2000);
-            loginPageObjects.clickLoginButton();
-            //Thread.sleep(300);
-            //loginPageObjects.VerifyAssertError();
-
-            Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//BlankIDValidPWD.jpg");
-            System.out.println("Login failed - Blank UserID and Valid PWD !");
-            Thread.sleep(2000);
-
-            //TC 1.4 - Login with blank user-id and invalid password
-            loginPageObjects.ClearPWD();
-            Thread.sleep(2000);
-            loginPageObjects.setPassword(ReadProps.readAttr("InvalidPassword"));
-            Thread.sleep(2000);
-            loginPageObjects.clickLoginButton();
-            Thread.sleep(700);
-
-            //loginPageObjects.VerifyAssertError();
-
-            Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//BlankIDInvalidPWD.jpg");
-            System.out.println("Login failed - Blank UserID and invalid PWD !");
-            Thread.sleep(2000);
-
-
-            //TC 1.5 - Login with valid user-id and blank password
-            loginPageObjects.setUsername(ReadProps.readAttr("UserID"));
-            Thread.sleep(2000);
-            loginPageObjects.ClearPWD();
-            Thread.sleep(2000);
-            loginPageObjects.clickLoginButton();
-            Thread.sleep(300);
-
-            //loginPageObjects.VerifyAssertError();
-
-            Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//ValidIDBlankPWD.jpg");
-            System.out.println("Login failed - Valid UserID and Blank PWD");
-            Thread.sleep(2000);
+            //TC 1.7 - Login with Invalid Username and Valid Password for Platform Admin.
             driver.navigate().refresh();
             Thread.sleep(3000);
-
-            //TC 1.6 - Login with invalid userID and invalid password
             loginPageObjects.setUsername(ReadProps.readAttr("InvalidUsername"));
-            Thread.sleep(2000);
-            loginPageObjects.setPassword(ReadProps.readAttr("InvalidPassword"));
-            Thread.sleep(2000);
-            loginPageObjects.clickLoginButton();
-            Thread.sleep(700);
-            // loginPageObjects.VerifyAssertErrorInvalidData();
-            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//InvalidIDInvalidPWD.jpg");
-            Thread.sleep(2000);
-            System.out.println("Login failed - Invalid UserID and Invalid PWD");
-
-            //TC 1.7 - Login with invalid user-id and valid password
-            loginPageObjects.ClearPWD();
-            Thread.sleep(2000);
+            Thread.sleep(1000);
             loginPageObjects.setPassword(ReadProps.readAttr("Password"));
-            Thread.sleep(2000);
+            Thread.sleep(1000);
             loginPageObjects.clickLoginButton();
-            Thread.sleep(700);
-            //loginPageObjects.VerifyAssertErrorInvalidData();
             Thread.sleep(2000);
-            System.out.println("Login failed - Invalid UserID and Valid PWD");
+            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//InvalidID&ValidPwd.jpg");
+            System.out.println("Login Failed - Invalid Username and Valid Password");
+            Thread.sleep(2000);
 
-            //TC 1.8 - Login with valid user-id and invalid password
-            loginPageObjects.ClearUserID();
-            Thread.sleep(2000);
-            loginPageObjects.setUsername(ReadProps.readAttr("UserID"));
-            Thread.sleep(2000);
-            loginPageObjects.ClearPWD();
-            Thread.sleep(2000);
-            loginPageObjects.setPassword(ReadProps.readAttr("InvalidPassword"));
-            Thread.sleep(2000);
-            loginPageObjects.clickLoginButton();
-            Thread.sleep(700);
-
-            // loginPageObjects.VerifyAssertErrorInvalidData();
-            Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//ValidIDInvalidPWD.jpg");
-            Thread.sleep(2000);
-            System.out.println("Login failed - Valid UserID and invalid PWD");
+            //TC 1.8 - Login with Valid Username and Invalid Password for Platform Admin.
             driver.navigate().refresh();
             Thread.sleep(3000);
-            System.out.println("Page refreshed successfully");
+            loginPageObjects.setUsername(ReadProps.readAttr("UserID"));
+            Thread.sleep(1000);
+            loginPageObjects.setPassword(ReadProps.readAttr("InvalidPassword"));
+            Thread.sleep(1000);
+            loginPageObjects.clickLoginButton();
+            Thread.sleep(1000);
+            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//ValidID&InvalidPwd.jpg");
+            System.out.println("Login Failed - Valid Username and Invalid Password");
             Thread.sleep(2000);
 
-            //TC 1.9 Login with valid userID and valid PWD
+            //TC 1.9 Login with Valid Username and Valid Password for Platform Admin.
+            driver.navigate().refresh();
+            Thread.sleep(3000);
             loginPageObjects.setUsername(ReadProps.readAttr("UserID"));
-            Thread.sleep(2000);
+            Thread.sleep(1000);
             loginPageObjects.setPassword(ReadProps.readAttr("Password"));
-            Thread.sleep(2000);
+            Thread.sleep(1000);
             loginPageObjects.clickLoginButton();
             Thread.sleep(8000);
             loginPageObjects.VerifyHomePage();
-            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//LoginSuccessful.jpg");
-            System.out.println("Login Successfully - Valid UserID and Valid PWD");
-            Thread.sleep(5000);
+            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//LoginSuccess.jpg");
+            System.out.println("Login Success - Valid Username and Valid Password");
+            Thread.sleep(2000);
 
-
-            //TC 1.10 - Navigate to backward and forward
+            //TC 1.10 - Navigate Backward for Platform Admin.
             driver.navigate().back();
-            Thread.sleep(500);
-
             loginPageObjects.VerifyAssertBack();
-            // Thread.sleep(4000);
-            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//NavigateBackward.jpg");
-            Thread.sleep(4000);
+            Thread.sleep(2000);
+            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//NavigateBack.jpg");
             System.out.println("Navigated to backward successfully");
-            driver.navigate().forward();
-            Thread.sleep(6000);
-            loginPageObjects.VerifyHomePage();
-            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//NavigateForward.jpg");
-            System.out.println("Navigated to forward successfully");
+            Thread.sleep(2000);
 
-
-            //TC 1.11 - Logout
+            //TC 1.11 - Logout for Platform Admin.
             loginPageObjects.ClickLogoutBtn();
-            Thread.sleep(4000);
-            loginPageObjects.VerifyAssertBack();
-            Thread.sleep(500);
-
+            Thread.sleep(2000);
             TakesScreen.takeSnapShot(driver, "test-output//LoginPage//Logout.jpg");
-            System.out.println("Logging out successfully");
+            System.out.println("Logout Success");
             Thread.sleep(2000);
 
-            //TC 1 - Admin Login with invalid userID and invalid password
+            //TC 1.12 - Admin Login with Invalid Username and Invalid Password.
             loginPageObjects.setUsername(ReadProps.readAttr("AdminInvalidUser"));
-            Thread.sleep(2000);
+            Thread.sleep(1000);
             loginPageObjects.setPassword(ReadProps.readAttr("AdminInvalidPwd"));
-            Thread.sleep(2000);
-            loginPageObjects.clickLoginButton();
-            Thread.sleep(500);
-
-            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//AdminInvalidIDInvalidPWD.jpg");
-            Thread.sleep(2000);
-            loginPageObjects.ClearUserID();
-            Thread.sleep(2000);
-            loginPageObjects.ClearPWD();
-            Thread.sleep(2000);
-            System.out.println("Login failed - Invalid UserID and Invalid PWD");
-
-            //TC 1.2 - Admin Login with invalid user-id and valid password
-            loginPageObjects.setUsername(ReadProps.readAttr("AdminInvalidUser"));
-            Thread.sleep(2000);
-            loginPageObjects.setPassword(ReadProps.readAttr("AdminPwd"));
-            Thread.sleep(2000);
+            Thread.sleep(1000);
             loginPageObjects.clickLoginButton();
             Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//AdminInvalidIDValidPWD.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//AdminInvalidID&InvalidPwd.jpg");
+            System.out.println("Login Failed - Admin Invalid Username and Invalid Password");
             Thread.sleep(2000);
-            loginPageObjects.ClearUserID();
-            Thread.sleep(2000);
-            loginPageObjects.ClearPWD();
-            Thread.sleep(2000);
-            System.out.println("Login failed - Invalid UserID and Valid PWD");
 
-            //TC 1.3 - Admin Login with valid user-id and invalid password
-            loginPageObjects.setUsername(ReadProps.readAttr("AdminUser"));
-            Thread.sleep(2000);
-            loginPageObjects.ClearPWD();
-            Thread.sleep(2000);
-            loginPageObjects.setPassword(ReadProps.readAttr("AdminInvalidPwd"));
-            Thread.sleep(2000);
-            loginPageObjects.clickLoginButton();
-            Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//AdminValidIDInvalidPWD.jpg");
-            Thread.sleep(2000);
-            System.out.println("Login failed - Valid UserID and invalid PWD");
+            //TC 1.13 - Admin Login with Invalid Username and Valid Password.
             driver.navigate().refresh();
             Thread.sleep(3000);
-
-
-            //TC 11.1 Admin Role Login with valid user-id and valid password
-            loginPageObjects.setUsername(ReadProps.readAttr("AdminUser"));
-            Thread.sleep(2000);
+            loginPageObjects.setUsername(ReadProps.readAttr("AdminInvalidUser"));
+            Thread.sleep(1000);
             loginPageObjects.setPassword(ReadProps.readAttr("AdminPwd"));
+            Thread.sleep(1000);
+            loginPageObjects.clickLoginButton();
             Thread.sleep(2000);
+            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//AdminInvalidID&ValidPwd.jpg");
+            System.out.println("Login Failed - Admin Invalid Username and Valid Password");
+            Thread.sleep(2000);
+
+            //TC 1.14 - Admin Login with Valid Username and Invalid Password.
+            driver.navigate().refresh();
+            Thread.sleep(3000);
+            loginPageObjects.setUsername(ReadProps.readAttr("AdminUser"));
+            Thread.sleep(1000);
+            loginPageObjects.setPassword(ReadProps.readAttr("AdminInvalidPwd"));
+            Thread.sleep(1000);
+            loginPageObjects.clickLoginButton();
+            Thread.sleep(2000);
+            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//AdminValidID&InvalidPwd.jpg");
+            System.out.println("Login Failed - Admin Valid Username and Invalid Password");
+            Thread.sleep(2000);
+
+            //TC 1.15 Admin Role Login with Valid Username and Valid Password.
+            driver.navigate().refresh();
+            Thread.sleep(3000);
+            loginPageObjects.setUsername(ReadProps.readAttr("AdminUser"));
+            Thread.sleep(1000);
+            loginPageObjects.setPassword(ReadProps.readAttr("AdminPwd"));
+            Thread.sleep(1000);
             loginPageObjects.clickLoginButton();
             Thread.sleep(8000);
-            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//AdminValid.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//AdminLoginSuccess.jpg");
+            System.out.println("Login Success - Admin Valid Username and Valid Password");
             Thread.sleep(2000);
             loginPageObjects.ClickLogoutBtn();
-            Thread.sleep(4000);
+            Thread.sleep(2000);
 
-            //TC 11.1 Supervisor Role Login with In valid user-id and In valid password
-
-            loginPageObjects.setUsername(ReadProps.readAttr("SupervisorInvalidUser"));
-            Thread.sleep(2000);
-            loginPageObjects.setPassword(ReadProps.readAttr("SupervisorInvalidPwd"));
-            Thread.sleep(2000);
-            loginPageObjects.clickLoginButton();
-            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//SupervisorInvalidIDInvalidPWD.jpg");
-            Thread.sleep(2000);
-            loginPageObjects.ClearUserID();
-            Thread.sleep(2000);
-            loginPageObjects.ClearPWD();
-            Thread.sleep(2000);
-            System.out.println("Login failed - Invalid UserID and Invalid PWD");
-
-            //TC 1.7 - Supervisor ROle  Login with invalid user-id and valid password
-            loginPageObjects.setUsername(ReadProps.readAttr("SupervisorInvalidUser"));
-            Thread.sleep(2000);
-            loginPageObjects.setPassword(ReadProps.readAttr("SupervisorPwd"));
-            Thread.sleep(2000);
-            loginPageObjects.clickLoginButton();
-            Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//SupervisorInvalidIDValidPWD.jpg");
-            Thread.sleep(2000);
-            loginPageObjects.ClearUserID();
-            Thread.sleep(2000);
-            loginPageObjects.ClearPWD();
-            Thread.sleep(2000);
-            System.out.println("Login failed - Invalid UserID and Valid PWD");
-
-            //TC 1.8 - Supervisor ROle  Login with valid user-id and invalid password
-            loginPageObjects.setUsername(ReadProps.readAttr("SupervisorUser"));
-            Thread.sleep(2000);
-            loginPageObjects.ClearPWD();
-            Thread.sleep(2000);
-            loginPageObjects.setPassword(ReadProps.readAttr("SupervisorInvalidPwd"));
-            Thread.sleep(2000);
-            loginPageObjects.clickLoginButton();
-            Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//SupervisorValidIDInvalidPWD.jpg");
-            Thread.sleep(2000);
-            System.out.println("Login failed - Valid UserID and invalid PWD");
+            //TC 1.16 Supervisor Role Login with InValid Username and Invalid Password.
             driver.navigate().refresh();
             Thread.sleep(3000);
-
-            //TC 11.8 Supervisor ROle Valid User Valid PWD
-            loginPageObjects.setUsername(ReadProps.readAttr("SupervisorUser"));
+            loginPageObjects.setUsername(ReadProps.readAttr("SupervisorInvalidUser"));
+            Thread.sleep(1000);
+            loginPageObjects.setPassword(ReadProps.readAttr("SupervisorInvalidPwd"));
+            Thread.sleep(1000);
+            loginPageObjects.clickLoginButton();
             Thread.sleep(2000);
+            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//SupervisorInvalidID&InvalidPwd.jpg");
+            System.out.println("Login Failed - Supervisor Invalid Username and Invalid Password");
+            Thread.sleep(2000);
+
+            //TC 1.17 - Supervisor ROle  Login with Invalid Username and Valid Password.
+            driver.navigate().refresh();
+            Thread.sleep(3000);
+            loginPageObjects.setUsername(ReadProps.readAttr("SupervisorInvalidUser"));
+            Thread.sleep(1000);
             loginPageObjects.setPassword(ReadProps.readAttr("SupervisorPwd"));
-            Thread.sleep(2000);
+            Thread.sleep(1000);
             loginPageObjects.clickLoginButton();
-            Thread.sleep(5000);
-            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//SupervisorValid.jpg");
+            Thread.sleep(2000);
+            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//SupervisorInvalidID&ValidPwd.jpg");
+            System.out.println("Login Failed - Supervisor Invalid Username and Valid Password");
+            Thread.sleep(2000);
+
+            //TC 1.18 - Supervisor ROle  Login with Valid Username and Invalid Password.
+            driver.navigate().refresh();
+            Thread.sleep(3000);
+            loginPageObjects.setUsername(ReadProps.readAttr("SupervisorUser"));
+            Thread.sleep(1000);
+            loginPageObjects.setPassword(ReadProps.readAttr("SupervisorInvalidPwd"));
+            Thread.sleep(1000);
+            loginPageObjects.clickLoginButton();
+            Thread.sleep(2000);
+            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//SupervisorValidID&InvalidPwd.jpg");
+            System.out.println("Login Failed - Supervisor Valid Username and Invalid Password");
+            Thread.sleep(2000);
+
+            //TC 1.19 Supervisor ROle Valid User Valid Password.
+            driver.navigate().refresh();
+            Thread.sleep(3000);
+            loginPageObjects.setUsername(ReadProps.readAttr("SupervisorUser"));
+            Thread.sleep(1000);
+            loginPageObjects.setPassword(ReadProps.readAttr("SupervisorPwd"));
+            Thread.sleep(1000);
+            loginPageObjects.clickLoginButton();
+            Thread.sleep(8000);
+            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//SupervisorValidLogin.jpg");
+            System.out.println("Login Success - Supervisor Valid Username and Valid Password");
+            Thread.sleep(2000);
             loginPageObjects.ClickLogoutBtn();
-            Thread.sleep(4000);
-
-
-            //TC 1 - Operator ROle  Login with invalid userID and invalid password
-            loginPageObjects.setUsername(ReadProps.readAttr("OperatorInvaliduser"));
             Thread.sleep(2000);
+
+
+            //TC 1.20 - Operator ROle  Login with Invalid Username and Invalid Password.
+            driver.navigate().refresh();
+            Thread.sleep(3000);
+            loginPageObjects.setUsername(ReadProps.readAttr("OperatorInvalidUser"));
+            Thread.sleep(1000);
             loginPageObjects.setPassword(ReadProps.readAttr("OperatorInvalidPwd"));
-            Thread.sleep(2000);
+            Thread.sleep(1000);
             loginPageObjects.clickLoginButton();
-            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//OperatorInvalidIDInvalidPWD.jpg");
             Thread.sleep(2000);
-            loginPageObjects.ClearUserID();
+            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//OperatorInvalidID&InvalidPWD.jpg");
+            System.out.println("Login Failed - Operator Invalid Username and Invalid Password");
             Thread.sleep(2000);
-            loginPageObjects.ClearPWD();
-            Thread.sleep(2000);
-            System.out.println("Login failed - Invalid UserID and Invalid PWD");
 
-            //TC 1.7 - Operator ROle  Login with invalid user-id and valid password
-            loginPageObjects.setUsername(ReadProps.readAttr("OperatorInvaliduser"));
-            Thread.sleep(2000);
+            //TC 1.21 - Operator ROle  Login with Invalid Username and Valid Password.
+            driver.navigate().refresh();
+            Thread.sleep(3000);
+            loginPageObjects.setUsername(ReadProps.readAttr("OperatorInvalidUser"));
+            Thread.sleep(1000);
             loginPageObjects.setPassword(ReadProps.readAttr("OperatorPwd"));
-            Thread.sleep(2000);
+            Thread.sleep(1000);
             loginPageObjects.clickLoginButton();
             Thread.sleep(2000);
             TakesScreen.takeSnapShot(driver, "test-output//LoginPage//OperatorInvalidIDValidPWD.jpg");
-            Thread.sleep(2000);
-            loginPageObjects.ClearUserID();
-            Thread.sleep(2000);
-            loginPageObjects.ClearPWD();
-            Thread.sleep(2000);
-            System.out.println("Login failed - Invalid UserID and Valid PWD");
+            System.out.println("Login Failed - Invalid Username and Valid Password");
 
-            //TC 1.8 - Operator ROle  Login with valid user-id and invalid password
-            loginPageObjects.setUsername(ReadProps.readAttr("Operatoruser"));
-            Thread.sleep(2000);
-            loginPageObjects.ClearPWD();
-            Thread.sleep(2000);
-            loginPageObjects.setPassword(ReadProps.readAttr("OperatorInvalidPwd"));
-            Thread.sleep(2000);
-            loginPageObjects.clickLoginButton();
-            Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//OperatorValidIDInvalidPWD.jpg");
-            Thread.sleep(2000);
-            System.out.println("Login failed - Valid UserID and invalid PWD");
+            //TC 1.22 - Operator ROle  Login with Valid Username and Invalid Password.
             driver.navigate().refresh();
             Thread.sleep(3000);
-
-
-            //TC 11.13 Operator ROle Login with Valid ID and PWD
-
-            loginPageObjects.setUsername(ReadProps.readAttr("Operatoruser"));
-            Thread.sleep(2000);
-            loginPageObjects.setPassword(ReadProps.readAttr("OperatorPwd"));
-            Thread.sleep(2000);
+            loginPageObjects.setUsername(ReadProps.readAttr("OperatorUser"));
+            Thread.sleep(1000);
+            loginPageObjects.setPassword(ReadProps.readAttr("OperatorInvalidPwd"));
+            Thread.sleep(1000);
             loginPageObjects.clickLoginButton();
-            Thread.sleep(4000);
-            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//OperatorValid.jpg");
+            Thread.sleep(2000);
+            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//OperatorValidID&InvalidPWD.jpg");
+            System.out.println("Login Failed - Valid Username and Invalid Password");
+            Thread.sleep(2000);
+
+            //TC 1.23 Operator ROle Login with Valid Username and Password.
+            driver.navigate().refresh();
+            Thread.sleep(3000);
+            loginPageObjects.setUsername(ReadProps.readAttr("OperatorUser"));
+            Thread.sleep(1000);
+            loginPageObjects.setPassword(ReadProps.readAttr("OperatorPwd"));
+            Thread.sleep(1000);
+            loginPageObjects.clickLoginButton();
+            Thread.sleep(8000);
+            TakesScreen.takeSnapShot(driver, "test-output//LoginPage//OperatorValidLogin.jpg");
+            System.out.println("Login Success - Operator Valid Username and Invalid Password");
             loginPageObjects.ClickLogoutBtn();
             Thread.sleep(4000);
-
-
             driver.close();
-            loginPageObjects.SoftAssertAll();
-            Thread.sleep(4000);
-
-
         } catch (Exception e) {
             test.log(status.FAIL, e);
         }

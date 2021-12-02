@@ -27,7 +27,7 @@ public class BasePage {
         public static void startTest()
         {
             report = new ExtentReports("ExtentReportResults.html");
-            test = report.startTest("ExtentDemo");
+            test = report.startTest("IntelliDoc");
         }
 
         public static void LoginTest() throws InterruptedException, IOException, Exception {

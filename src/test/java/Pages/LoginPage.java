@@ -14,7 +14,7 @@ public class LoginPage {
 
     WebDriver driver = null;
 
-    By username = By.xpath("//input[@formcontrolname='userName']");
+    By userName = By.xpath("//input[@formcontrolname='userName']");
     By password = By.xpath("//input[@formcontrolname='password']");
     By loginBtn = By.xpath("//button[@type='submit']");
     By Logout = By.xpath("//span[@mattooltip='Logout']");
@@ -30,7 +30,7 @@ public class LoginPage {
 
     //TC 1.1 methods declaration
     public void setUsername(String text) {
-        driver.findElement(username).sendKeys(text);
+        driver.findElement(userName).sendKeys(text);
     }
 
     public void setPassword(String text) {
@@ -46,7 +46,7 @@ public class LoginPage {
     }
 
     public void ClearUserID() {
-        driver.findElement(username).clear();
+        driver.findElement(userName).clear();
     }
 
     public void ClearPWD() {
@@ -67,13 +67,13 @@ public class LoginPage {
 
     public void VerifyHomePage() {
         String actual_page = driver.getCurrentUrl();
-        String expected_page = "https://alpha.neutrino-ai.com/#/home/project-management";
+        String expected_page = "https://alpha.neutrino-ai.com/#/home";
         softAssert.assertEquals(actual_page, expected_page);
     }
 
     public void VerifyAssertBack() {
         String actual_page = driver.getCurrentUrl();
-        String expected_page = "https://alpha.neutrino-ai.com/#/login";
+        String expected_page = "https://alpha.neutrino-ai.com/#/home";
         softAssert.assertEquals(actual_page, expected_page);
     }
 

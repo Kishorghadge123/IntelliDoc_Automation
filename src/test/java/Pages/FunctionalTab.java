@@ -9,8 +9,8 @@ public class FunctionalTab {
 
         WebDriver driver = null;
 
-        By Nicon = By.xpath("//*[@id='sidenav']/div/ul/li/img");
-        By HorizontalUser = By.xpath("//span[contains(text(),'Users')]");
+        By NIcon = By.xpath("//*[@id='sidenav']/div/ul/li/img");
+        By HorizontalUsers = By.xpath("//span[contains(text(),'Users')]");
         By HorizontalRoles = By.xpath("//span[contains(text(),'Roles')]");
         By HorzintalTemplates = By.xpath("//span[contains(text(),'Templates')]");
         By HorizontalDataset = By.xpath("//span[contains(text(),'Data Sets')]");
@@ -18,7 +18,7 @@ public class FunctionalTab {
         By HorizontalDcuments = By.xpath("//span[contains(text(),'Documents')]");
         By HorizontalAnalytics = By.xpath("//span[contains(text(),'Analytics')]");
 
-        By VerticalUser = By.xpath("//*[@id='sidenav']/div/mat-nav-list/mat-list-item[1]/div/i");
+        By VerticalUsers = By.xpath("//*[@id='sidenav']/div/mat-nav-list/mat-list-item[1]/div/i");
         By VerticalRoles = By.xpath("//*[@id='sidenav']/div/mat-nav-list/mat-list-item[2]/div/i");
         By VerticalTemplates = By.xpath("//*[@id='sidenav']/div/mat-nav-list/mat-list-item[3]/div/i");
         By VerticalDataset = By.xpath("//*[@id='sidenav']/div/mat-nav-list/mat-list-item[4]/div/i");
@@ -30,15 +30,15 @@ public class FunctionalTab {
 
         public FunctionalTab(WebDriver driver) { this.driver = driver;}
 
-        public void ClickNicon(){ driver.findElement(Nicon).click();}
-        public void ClickHorizontalUser(){ driver.findElement(HorizontalUser).click();}
+        public void ClickNicon(){ driver.findElement(NIcon).click();}
+        public void ClickHorizontalUser(){ driver.findElement(HorizontalUsers).click();}
         public void ClickHorizontalRoles(){ driver.findElement(HorizontalRoles).click();}
         public void ClickHorzintalTemplates(){ driver.findElement(HorzintalTemplates).click();}
         public void ClickHorizontalDataset(){ driver.findElement(HorizontalDataset).click();}
         public void ClickHorizontalProjects(){ driver.findElement(HorizontalProjects).click();}
         public void ClickHorizontalDcuments(){ driver.findElement(HorizontalDcuments).click();}
         public void ClickHorizontalAnalytics(){ driver.findElement(HorizontalAnalytics).click();}
-        public void ClickVerticalUser(){ driver.findElement(VerticalUser).click();}
+        public void ClickVerticalUser(){ driver.findElement(VerticalUsers).click();}
         public void ClickVerticalRoles(){ driver.findElement(VerticalRoles).click();}
         public void ClickVerticalTemplates(){ driver.findElement(VerticalTemplates).click();}
         public void ClickVerticalDataset(){ driver.findElement(VerticalDataset).click();}

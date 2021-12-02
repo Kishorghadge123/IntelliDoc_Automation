@@ -13,10 +13,6 @@ import java.io.IOException;
 
 public class DocProcessStructured extends BasePage {
 
-
-
-
-
         @Test
         public void DocumentFlow() throws InterruptedException, IOException {
             try {
@@ -37,7 +33,6 @@ public class DocProcessStructured extends BasePage {
                 Thread.sleep(3000);
                 DocPageObj.ClickArrowLeft();
                 Thread.sleep(3000);
-
 
                 //Search Project
                 DocPageObj.ClickDropDownBtn();

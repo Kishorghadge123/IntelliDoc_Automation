@@ -16,7 +16,6 @@ public class AnalyticsTest extends BasePage {
     public void AnalyticsFlow() throws InterruptedException, IOException {
         try {
             BasePage.LoginTest();
-            //Robot r = new Robot();
             Thread.sleep(8000);
             AnalyticsPage AnalyticsPageObj = new AnalyticsPage(driver);
             test.log(status.INFO, "TestInformation");
@@ -24,7 +23,6 @@ public class AnalyticsTest extends BasePage {
 
             AnalyticsPageObj.ClickAnalyticsBtn();
             Thread.sleep(6000);
-
 
             //Organization Statistics
             AnalyticsPageObj.ClickOrganizationArrow();
@@ -41,7 +39,7 @@ public class AnalyticsTest extends BasePage {
             TakesScreen.takeSnapShot(driver, "test-output//Analytics//HoverProcessed.jpg");
             Thread.sleep(1000);
             AnalyticsPageObj.HoverReadytoProcess();
-            TakesScreen.takeSnapShot(driver, "test-output//Analytics//HoverReadytoProcess.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//Analytics//HoverReadyToProcess.jpg");
             Thread.sleep(1000);
             AnalyticsPageObj.HoverRejected();
             TakesScreen.takeSnapShot(driver, "test-output//Analytics//HoverRejected.jpg");
@@ -59,7 +57,7 @@ public class AnalyticsTest extends BasePage {
             Thread.sleep(2000);
             AnalyticsPageObj.HoverMedicalChart();
             Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver, "test-output//Analytics//HoverProgressbar.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//Analytics//HoverProgressBar.jpg");
             AnalyticsPageObj.ClickOrganizationArrow();
             Thread.sleep(2000);
 
@@ -88,7 +86,6 @@ public class AnalyticsTest extends BasePage {
             Thread.sleep(2000);
             AnalyticsPageObj.ClickSelectDaily();
             Thread.sleep(2000);
-
             driver.close();
 
         } catch (Exception e) {

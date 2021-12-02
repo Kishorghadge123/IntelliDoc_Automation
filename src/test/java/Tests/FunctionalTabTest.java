@@ -25,11 +25,8 @@ public class FunctionalTabTest extends BasePage {
             BasePage.LoginTest();
             Thread.sleep(10000);
             FunctionalTab FunctionalTabObj = new FunctionalTab(driver);
-            //  driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS); // pageload timeout
-            // driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
             test.log(status.INFO, "TestInformation");
             test.log(status.PASS, "TestPassed");
-
 
             //TC 3.1 Horizontal Tab
             FunctionalTabObj.ClickNicon();
