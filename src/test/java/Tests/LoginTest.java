@@ -144,7 +144,7 @@ public class LoginTest extends BasePage {
             loginPageObjects.VerifyHomePage();
             TakesScreen.takeSnapShot(driver, "test-output//LoginPage//LoginSuccess.jpg");
             System.out.println("Login Success - Valid Username and Valid Password");
-            Thread.sleep(2000);
+            Thread.sleep(4000);
 
             //TC 1.10 - Navigate Backward for Platform Admin.
             driver.navigate().back();
@@ -206,7 +206,7 @@ public class LoginTest extends BasePage {
             loginPageObjects.setPassword(ReadProps.readAttr("AdminPwd"));
             Thread.sleep(1000);
             loginPageObjects.clickLoginButton();
-            Thread.sleep(8000);
+            Thread.sleep(6000);
             TakesScreen.takeSnapShot(driver, "test-output//LoginPage//AdminLoginSuccess.jpg");
             System.out.println("Login Success - Admin Valid Username and Valid Password");
             Thread.sleep(2000);
@@ -260,7 +260,7 @@ public class LoginTest extends BasePage {
             loginPageObjects.setPassword(ReadProps.readAttr("SupervisorPwd"));
             Thread.sleep(1000);
             loginPageObjects.clickLoginButton();
-            Thread.sleep(8000);
+            Thread.sleep(6000);
             TakesScreen.takeSnapShot(driver, "test-output//LoginPage//SupervisorValidLogin.jpg");
             System.out.println("Login Success - Supervisor Valid Username and Valid Password");
             Thread.sleep(2000);
@@ -313,7 +313,7 @@ public class LoginTest extends BasePage {
             loginPageObjects.setPassword(ReadProps.readAttr("OperatorPwd"));
             Thread.sleep(1000);
             loginPageObjects.clickLoginButton();
-            Thread.sleep(8000);
+            Thread.sleep(6000);
             TakesScreen.takeSnapShot(driver, "test-output//LoginPage//OperatorValidLogin.jpg");
             System.out.println("Login Success - Operator Valid Username and Invalid Password");
             loginPageObjects.ClickLogoutBtn();
