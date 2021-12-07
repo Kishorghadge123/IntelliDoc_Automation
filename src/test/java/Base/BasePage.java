@@ -8,9 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 
 public class BasePage {
 
@@ -20,7 +18,7 @@ public class BasePage {
         public static ExtentReports report;
 
         @BeforeClass
-        public static void startTest()
+        public void startTest()
         {
             report = new ExtentReports("ExtentReportResults.html");
             test = report.startTest("IntelliDoc");
@@ -36,16 +34,13 @@ public class BasePage {
             loginPageObjects.setUsername(ReadProps.readAttr("UserID"));
             loginPageObjects.setPassword(ReadProps.readAttr("Password"));
             loginPageObjects.clickLoginButton();
-            Thread.sleep(8000);
+            Thread.sleep(9000);
         }
 
         @AfterClass
-        public static void endTest()
+        public void endTest()
         {
             report.endTest(test);
             report.flush();
         }
-
     }
-
-

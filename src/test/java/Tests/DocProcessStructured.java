@@ -27,16 +27,10 @@ public class DocProcessStructured extends BasePage {
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//DocumentTab.jpg");
                 Thread.sleep(3000);
 
-                //Arrow Right and Left
-                DocPageObj.ClickArrowRight();
-                Thread.sleep(3000);
-                DocPageObj.ClickArrowLeft();
-                Thread.sleep(3000);
-
                 //Search Project
                 DocPageObj.ClickDropDownBtn();
                 Thread.sleep(4000);
-                DocPageObj.ClickSearchProject(ReadProps.readAttr("StructuredProjecteName"));
+                DocPageObj.ClickSearchProject(ReadProps.readAttr("StructuredProjectName"));
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//ProjectListDropDown.jpg");
                 Thread.sleep(3000);

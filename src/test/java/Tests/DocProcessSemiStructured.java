@@ -28,12 +28,6 @@ public class DocProcessSemiStructured extends BasePage
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//DocumentTab.jpg");
                 Thread.sleep(3000);
 
-                //Arrow Right and Left
-                DocPageObj.ClickArrowRight();
-                Thread.sleep(3000);
-                DocPageObj.ClickArrowLeft();
-                Thread.sleep(3000);
-
                 //Search Project
                 DocPageObj.ClickDropDownBtn();
                 Thread.sleep(4000);

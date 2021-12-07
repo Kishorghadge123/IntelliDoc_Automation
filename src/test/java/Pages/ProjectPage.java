@@ -22,10 +22,10 @@ public class ProjectPage {
     By SelectLead = By.xpath("//span[contains(text(),'qa1@email.com')]");
     By ClickStartDate = By.cssSelector("button[aria-label='Open calendar'][tabindex='0']");
     By ClearStartDate = By.xpath("//input[@id='mat-input-3']");
-    By SelectStartDate = By.xpath("//div[contains(text(),'7')]");
+    By SelectStartDate = By.xpath("//div[contains(text(),'10')]");
     By ClickEndDate = By.xpath("/html/body/app-root/div/app-landing/div/div/main/div/app-create-project/div[2]/div/form/mat-card/div/div[4]/mat-form-field/div/div[1]/div[4]/mat-datepicker-toggle/button");
     By ClearEndDate = By.xpath("//input[@id='mat-input-4']");
-    By SelectEndDate = By.xpath("//div[contains(text(),'25')]");
+    By SelectEndDate = By.xpath("//div[contains(text(),'30')]");
     By ClickDocumentStructure = By.xpath("//*[@formcontrolname='documentStructure']");
     By SelectDocumentStructure = By.xpath("//span[contains(text(),'Structured ')]");
     By SelectSemiStructure = By.xpath("//span[contains(text(),'Semi-Structured ')]");
@@ -39,7 +39,7 @@ public class ProjectPage {
 
     By DocumentAutoAssign = By.xpath("//*[@formcontrolname='autoAssignment']/label/div");
     By ClickAddTemplate = By.xpath("//span[contains(text(),'Add Template')]");
-    By SelectTemplate = By.xpath("//button[contains(text(),'QAAutoTemplate')]");
+    By SelectTemplate = By.xpath("//button[contains(text(),'PE_TEMPLATE')]");
     By AddFields = By.xpath("//span[contains(text(),' Add Fields ')]");
     By SelectField = By.xpath("//button[contains(text(),'PatientName')]");
     By ClickRoles = By.xpath("//span[contains(text(),'Roles')]");
