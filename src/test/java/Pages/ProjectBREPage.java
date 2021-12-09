@@ -32,7 +32,7 @@ public class ProjectBREPage {
 
     By Save = By.xpath("//span[contains(text(),'Save ')]");
     By AddAction = By.xpath("//span[contains(text(),'Add Action')]");
-    By SaveAction = By.xpath("//body/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-create-project[1]/div[4]/div[1]/project-rule-section[1]/mat-drawer-container[1]/mat-drawer[2]/div[1]/rule-edit-sidebar[1]/div[1]/div[2]/div[1]/div[1]/div[2]/button[1]/span[1]");
+   // By SaveAction = By.xpath("//body/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-create-project[1]/div[4]/div[1]/project-rule-section[1]/mat-drawer-container[1]/mat-drawer[2]/div[1]/rule-edit-sidebar[1]/div[1]/div[2]/div[1]/div[1]/div[2]/button[1]/span[1]");
     By ExpandVariables = By.xpath("//span[contains(text(),'Variables')]");
     By AddVariablesButton = By.xpath("//body/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-create-project[1]/div[3]/div[1]/project-data-section[1]/mat-accordion[1]/project-variables[1]/mat-expansion-panel[1]/div[1]/div[1]/div[1]/button[1]/span[1]");
     By VariableName = By.xpath("//input[@id='variableName']");
@@ -50,7 +50,6 @@ public class ProjectBREPage {
     By SelectVariable = By.xpath("//span[contains(text(),'Variable1')]");
     By VariableDropdown = By.xpath("//body/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-create-project[1]/div[4]/div[1]/project-rule-section[1]/mat-drawer-container[1]/mat-drawer[2]/div[1]/rule-edit-sidebar[1]/div[1]/div[3]/div[2]/div[1]/div[3]/mat-form-field[1]/div[1]/div[1]/div[3]/mat-select[1]/div[1]/div[1]/span[1]");
     By Project = By.xpath("//span[contains(text(),'AutoSample3')]");
-    By SelectStructuredProject = By.xpath("//span[contains(text(),'QA-AutoProject-Structured')]");
     By FalseBoxSelection = By.xpath("//body/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-create-project[1]/div[4]/div[1]/project-rule-section[1]/mat-drawer-container[1]/mat-drawer-content[1]/div[2]/div[1]/div[1]/div[1]/div[2]/app-tree-node[1]/div[1]/div[1]/div[1]/app-tree-node[1]/div[2]/div[1]/div[1]/div[2]/mat-card[1]/div[1]/div[1]/span[1]");
     By TrueBoxSelection = By.xpath("//body/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-create-project[1]/div[4]/div[1]/project-rule-section[1]/mat-drawer-container[1]/mat-drawer-content[1]/div[2]/div[1]/div[1]/div[1]/div[2]/app-tree-node[1]/div[1]/div[1]/div[1]/app-tree-node[1]/div[1]/div[1]/div[1]/div[2]/mat-card[1]/div[1]/div[1]");
     //Constructor
@@ -99,7 +98,7 @@ public class ProjectBREPage {
     public  void SelectTrueBox(){driver.findElement(TrueBoxSelection).click();}
     public  void SelectFalseBox(){driver.findElement(FalseBoxSelection).click();}
     public  void ClickOnFalseBoxButton(){driver.findElement(FalseBox).click();}
-    public  void ClickOnSaveAction(){driver.findElement(SaveAction).click();}
+  //  public  void ClickOnSaveAction(){driver.findElement(SaveAction).click();}
     public  void EnterActionValue(String text){ driver.findElement(ActionValue).sendKeys(text);}
     public  void ClickOnVariableDropdown(){driver.findElement(VariableDropdown).click();}
     public  void SelectVariable(){driver.findElement(SelectVariable).click();}

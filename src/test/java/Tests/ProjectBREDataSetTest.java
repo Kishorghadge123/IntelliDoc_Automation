@@ -169,9 +169,9 @@ public class ProjectBREDataSetTest extends BasePage {
             ProjectBREDataSetPageObj.ClickOnFirstDataSetBox();
             TakesScreen.takeSnapShot(driver, "test-output//ProjectBRETest//FirstConditionBox.jpg");
             Thread.sleep(1000);
-            ProjectBREPageObj.ClickOnCreateProjectButton();
-            Thread.sleep(6000);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectBRETest//ProjectCreatedSuccessfully.jpg");
+//            ProjectBREPageObj.ClickOnCreateProjectButton();
+//            Thread.sleep(6000);
+//            TakesScreen.takeSnapShot(driver, "test-output//ProjectBRETest//ProjectCreatedSuccessfully.jpg");
             Thread.sleep(3000);
             //Document should be uploaded from backend to check the output.
         }
