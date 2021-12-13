@@ -16,8 +16,9 @@ public class CreateRolePage {
     By ViewDocumentPermission = By.xpath("//span[contains(text(),'View Document' )]");
     By ClickCancel = By.xpath("//span[contains(text(),'Cancel')]");
     By SearchRole = By.xpath("//body[1]/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-role-management[1]/div[1]/div[1]/div[1]/mat-form-field[1]/div[1]/div[1]/div[3]/input[1]");
-    By EditRole = By.xpath("//span[contains(text(),'Auto Admin')]");
-    By ProcessDocumentPermission = By.xpath("//span[contains(text(),'Process Document')]");
+    By EditRole = By.xpath("//span[contains(text(),'AutoAdmin10')]");
+    By EditRolePA = By.xpath("//span[contains(text(),'AutoAdminPA10')]");
+    By ProcessDocumentPermission = By.xpath("//span[contains(text(),' Process Document ')]");
     By CreateUserPermission = By.xpath("//span[contains(text(),'Create User')]");
     By CreateProject = By.xpath("//span[contains(text(),'Create Project')]");
     By ViewUser = By.xpath("//span[contains(text(),'View User')]");
@@ -30,12 +31,13 @@ public class CreateRolePage {
     By RemoveProcessDocPermission = By.xpath("//body/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-create-edit-role[1]/div[1]/form[1]/mat-card[1]/div[1]/div[5]/div[1]/div[1]/div[1]/mat-chip-list[1]/div[1]/mat-chip[3]/mat-icon[1]");
     By UpdateRole = By.xpath("//span[contains(text(),'Update Role')]");
     By ClickUpdateBtn = By.xpath("//span[contains(text(),'Update' )]");
-    By RemovePermission = By.xpath("//body/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-create-edit-role[1]/div[1]/form[1]/mat-card[1]/div[1]/div[5]/div[1]/div[1]/div[1]/mat-chip-list[1]/div[1]/mat-chip[1]/mat-icon[1]");
+    By RemovePermission = By.xpath("//mat-icon[contains(text(),'cancel')]");
+
     By Logout = By.xpath("//i[@class='fa fa-power-off']");
     By LoginBtn = By.xpath("//button[@type='submit']");
     By Username = By.xpath("//input[@formcontrolname='userName']");
     By Password = By.xpath("//input[@formcontrolname='password']");
-    By ErrorMsg = By.xpath("//simple-snack-bar[@class='mat-simple-snackbar ng-star-inserted']");
+    //By ErrorMsg = By.xpath("//simple-snack-bar[@class='mat-simple-snackbar ng-star-inserted']");
     By UpdatedTime = By.xpath("//tbody[@role='rowgroup']/tr[1]/td[3]");
     By CreatedTime = By.xpath("//tbody[@role='rowgroup']/tr[1]/td[4]");
 
@@ -95,6 +97,9 @@ public class CreateRolePage {
         driver.findElement(EditRole).click();
     }
 
+    public void ClickEditRole1() {
+        driver.findElement(EditRolePA).click();
+    }
     public void ClickProcessDocPermission() {
         driver.findElement(ProcessDocumentPermission).click();
     }
@@ -133,26 +138,26 @@ public class CreateRolePage {
         String ExpectedRole = "Auto Admin";
         softAssert.assertEquals(ActualRole, ExpectedRole);
     }
-   public void VerifyError(){
-       String Actual_Msg=driver.findElement(ErrorMsg).getText();
-       String Expected_Msg="Please check form data and permission cannot be empty";
-       softAssert.assertEquals(Actual_Msg, Expected_Msg);
-   }
-   public  void BlankName(){
-       String Actual_Msg=driver.findElement(ErrorMsg).getText();
-       String Expected_Msg="Please check form data";
-       softAssert.assertEquals(Actual_Msg, Expected_Msg);
-   }
-   public void  BlankPermission(){
-       String Actual_Msg=driver.findElement(ErrorMsg).getText();
-       String Expected_Msg="Permission cannot be empty";
-       softAssert.assertEquals(Actual_Msg, Expected_Msg);
-   }
-   public void RoleNameExist(){
-       String Actual_Msg=driver.findElement(ErrorMsg).getText();
-       String Expected_Msg="Role exist with name Auto Admin";
-       softAssert.assertEquals(Actual_Msg, Expected_Msg);
-    }
+//   public void VerifyError(){
+//       String Actual_Msg=driver.findElement(ErrorMsg).getText();
+//       String Expected_Msg="Please check form data and permission cannot be empty";
+//       softAssert.assertEquals(Actual_Msg, Expected_Msg);
+//   }
+//   public  void BlankName(){
+//       String Actual_Msg=driver.findElement(ErrorMsg).getText();
+//       String Expected_Msg="Please check form data";
+//       softAssert.assertEquals(Actual_Msg, Expected_Msg);
+//   }
+//   public void  BlankPermission(){
+//       String Actual_Msg=driver.findElement(ErrorMsg).getText();
+//       String Expected_Msg="Permission cannot be empty";
+//       softAssert.assertEquals(Actual_Msg, Expected_Msg);
+//   }
+//   public void RoleNameExist(){
+//       String Actual_Msg=driver.findElement(ErrorMsg).getText();
+//       String Expected_Msg="Role exist with name Auto Admin";
+//       softAssert.assertEquals(Actual_Msg, Expected_Msg);
+//    }
     public void CreateTimeAssert()
     {
         String UpdateTime=driver.findElement(UpdatedTime).getText();

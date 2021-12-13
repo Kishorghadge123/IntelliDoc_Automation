@@ -22,72 +22,48 @@ public class CreateRolePlatformAdminTest extends BasePage
             test.log(status.PASS, "TestPassed");
 
             CreateRolePageObj.ClickRoleManagementBtn();
-            Thread.sleep(4000);
+            Thread.sleep(5000);
             CreateRolePageObj.ClickCreateRoleBtn();
-            TakesScreen.takeSnapShot(driver,"test-output//PlatformAdminRoles//Role button clicked.jpg");
             Thread.sleep(3000);
+            TakesScreen.takeSnapShot(driver,"test-output//PlatformAdminRoles//Role button clicked.jpg");
+            Thread.sleep(2000);
             System.out.println("Role button clicked");
-            // Blank RoleName and blank permission
+            // Blank RoleName and Blank permission
             CreateRolePageObj.ClickCreateButton();
             TakesScreen.takeSnapShot(driver,"test-output//PlatformAdminRoles//BlankRoleNameCreated.jpg");
             System.out.println("Assert Verified Please check form data and permission cannot be empty");
             Thread.sleep(3000);
             driver.navigate().refresh();
-            Thread.sleep(4000);
+            Thread.sleep(5000);
 
-            // Valid RoleName and blank permission
-            CreateRolePageObj.EnterRoleName(ReadProps.readAttr("RoleName"));
-            Thread.sleep(4000);
+            // Valid RoleName and Blank permission
+            CreateRolePageObj.EnterRoleName(ReadProps.readAttr("RoleNamePA"));//Change everytime before u ran
+            Thread.sleep(2000);
             CreateRolePageObj.ClickActiveRole();
-            Thread.sleep(4000);
+            Thread.sleep(2000);
             CreateRolePageObj.ClickCreateButton();
             TakesScreen.takeSnapShot(driver,"test-output//PlatformAdminRoles//ValidName_BLankPermissionRole.jpg");
             System.out.println("Assert Verified Permissions cannot be blank");
-            Thread.sleep(3000);
+            Thread.sleep(2000);
             driver.navigate().refresh();
-            Thread.sleep(4000);
+            Thread.sleep(5000);
             Robot r = new Robot();
 
             //  Blank RoleName and Valid Permission
             CreateRolePageObj.ClickActiveRole();
             Thread.sleep(4000);
             CreateRolePageObj.AddPermissionPlusBtn();
-            Thread.sleep(4000);
-            CreateRolePageObj.SelectViewDocumentPermission();
             Thread.sleep(2000);
+            CreateRolePageObj.SelectViewDocumentPermission();
+            Thread.sleep(1000);
             r.keyPress(KeyEvent.VK_ESCAPE);
-            Thread.sleep(7000);
+            Thread.sleep(1000);
             CreateRolePageObj.ClickCreateButton();
             TakesScreen.takeSnapShot(driver,"test-output//PlatformAdminRoles//BlankName_ValidPermission.jpg");
             System.out.println(" Assert verified Please check form data");
             Thread.sleep(3000);
             CreateRolePageObj.ClickCancelButton();
-            Thread.sleep(2000);
-
-            //Valid RoleName Valid Permission
-/*
-            CreateRolePageObj.ClickCreateRoleBtn();
-            Thread.sleep(4000);
-            CreateRolePageObj.EnterRoleName(ReadProps.readAttr("RoleName"));
-            Thread.sleep(4000);
-            CreateRolePageObj.ClickActiveRole();
-            Thread.sleep(4000);
-            CreateRolePageObj.AddPermissionPlusBtn();
-            Thread.sleep(4000);
-            CreateRolePageObj.SelectCreateUserPermission();
-            Thread.sleep(1000);
-            r.keyPress(KeyEvent.VK_ESCAPE);
-            Thread.sleep(5000);
-             CreateRolePageObj.SelectViewDocumentPermission();
-            //Thread.sleep(3000);
-            r.keyPress(KeyEvent.VK_ESCAPE);
-            Thread.sleep(5000)
-            TakesScreen.takeSnapShot(driver,"test-output//Roles//RoleDetails.jpg");
-            System.out.println("Role with valid rolename valid permission");
-            CreateRolePageObj.ClickCreateButton();
-            Thread.sleep(4000);
-            CreateRolePageObj.CreateTimeAssert();*/
-            Thread.sleep(2000);
+            Thread.sleep(3000);
 
          /*   // Create AE admin role
             CreateRolePageObj.EnterRoleName(ReadProps.readAttr("AdminRole"));
@@ -162,88 +138,97 @@ public class CreateRolePlatformAdminTest extends BasePage
             CreateRolePageObj.ClickCreateButton();
             Thread.sleep(4000);*/
 
-            // Repeated Role..Doesnt allow repeat role
+            // Valid Role with Valid Name and Permission.
             CreateRolePageObj.ClickCreateRoleBtn();
             Thread.sleep(4000);
-            CreateRolePageObj.EnterRoleName(ReadProps.readAttr("RoleName"));
-            Thread.sleep(4000);
+            CreateRolePageObj.EnterRoleName(ReadProps.readAttr("RoleNamePA"));//Change everytime before u ran
+            Thread.sleep(2000);
             CreateRolePageObj.AddPermissionPlusBtn();
-            Thread.sleep(4000);
-            CreateRolePageObj.ClickProcessDocPermission();
+            Thread.sleep(2000);
+            CreateRolePageObj.SelectViewDocumentPermission();
             Thread.sleep(1000);
             r.keyPress(KeyEvent.VK_ESCAPE);
-            Thread.sleep(6000);
+            Thread.sleep(1000);
+            CreateRolePageObj.ClickCreateButton();
+            TakesScreen.takeSnapShot(driver,"test-output//PlatformAdminRoles//RoleCreatedSuccessfully.jpg");
+            System.out.println("Role Created Successfully");
+            Thread.sleep(5000);
+
+            // Repeated Role Doesn't allow repeat role
+            CreateRolePageObj.ClickCreateRoleBtn();
+            Thread.sleep(4000);
+            CreateRolePageObj.EnterRoleName(ReadProps.readAttr("RoleNamePA"));//Change everytime before u ran
+            Thread.sleep(2000);
+            CreateRolePageObj.AddPermissionPlusBtn();
+            Thread.sleep(2000);
+            CreateRolePageObj.SelectViewDocumentPermission();
+            Thread.sleep(1000);
+            r.keyPress(KeyEvent.VK_ESCAPE);
+            Thread.sleep(1000);
             CreateRolePageObj.ClickCreateButton();
             TakesScreen.takeSnapShot(driver,"test-output//PlatformAdminRoles//RepeatedRole.jpg");
             System.out.println(" Assertion verified Role exist with name AE Admin");
             Thread.sleep(4000);
             CreateRolePageObj.ClickCancelButton();
-            Thread.sleep(2000);
-
+            Thread.sleep(3000);
 
             // TC 1.5 - Search role
-            CreateRolePageObj.SearchCreatedRole(ReadProps.readAttr("RoleName"));
+            CreateRolePageObj.SearchCreatedRole(ReadProps.readAttr("RoleNamePA"));
             TakesScreen.takeSnapShot(driver,"test-output//PlatformAdminRoles//SearchRole.jpg");
             Thread.sleep(3000);
             System.out.println("Role searched");
 
-            //update Role with Valid Data
-            CreateRolePageObj.ClickEditRole();
+            //Update Role with Valid Data
+            CreateRolePageObj.ClickEditRole1();
             Thread.sleep(5000);
+            CreateRolePageObj.ClickRemovePermission();
+            Thread.sleep(2000);
             CreateRolePageObj.AddPermissionPlusBtn();
-            Thread.sleep(4000);
+            Thread.sleep(2000);
             CreateRolePageObj.ClickProcessDocPermission();
             Thread.sleep(1000);
             r.keyPress(KeyEvent.VK_ESCAPE);
-            Thread.sleep(6000);
+            Thread.sleep(1000);
+            CreateRolePageObj.ClickUpdateBtn();
+            Thread.sleep(3000);
             TakesScreen.takeSnapShot(driver,"test-output//PlatformAdminRoles//UpdateRole.jpg");
             Thread.sleep(3000);
-            CreateRolePageObj.ClickUpdateBtn();
-            Thread.sleep(3000);
-            CreateRolePageObj.UpdateTimeAssert();
-            Thread.sleep(2000);
+            //CreateRolePageObj.UpdateTimeAssert();
+            //Thread.sleep(2000);
 
-            //Update Role removing permission
-           /* CreateRolePageObj.ClickEditRole();
-            Thread.sleep(5000);
-            CreateRolePageObj.RemoveProcessPermission();
-            TakesScreen.takeSnapShot(driver,"test-output//PlatformAdminRoles//RemoveProcessDocpermission.jpg");
-            Thread.sleep(3000);
-            CreateRolePageObj.ClickUpdateBtn();
-            Thread.sleep(3000);*/
-
-            //Remove all premission and disable active status
-            CreateRolePageObj.ClickEditRole();
+            //Remove all permission
+            CreateRolePageObj.ClickEditRole1();
             Thread.sleep(5000);
             CreateRolePageObj.ClickRemovePermission();
             Thread.sleep(2000);
-            CreateRolePageObj.ClickRemovePermission();
-             Thread.sleep(2000);
             CreateRolePageObj.ClickUpdateBtn();
+            Thread.sleep(2000);
             TakesScreen.takeSnapShot(driver,"test-output//PlatformAdminRoles//BlankPermission.jpg");
-            Thread.sleep(3000);
-            CreateRolePageObj.ClickCancelButton();
             Thread.sleep(2000);
+            CreateRolePageObj.ClickCancelButton();
+            Thread.sleep(3000);
 
             //Disable the Status of role and update
-            CreateRolePageObj.ClickEditRole();
+            CreateRolePageObj.ClickEditRole1();
             Thread.sleep(5000);
             CreateRolePageObj.ClickActiveRole();
+            Thread.sleep(1000);
             TakesScreen.takeSnapShot(driver,"test-output//PlatformAdminRoles//ActiveRole.jpg");
             Thread.sleep(3000);
             CreateRolePageObj.ClickUpdateBtn();
             Thread.sleep(4000);
 
             //Enable the Status of role and update
-            CreateRolePageObj.ClickEditRole();
+            CreateRolePageObj.ClickEditRole1();
             Thread.sleep(5000);
             CreateRolePageObj.ClickActiveRole();
-            TakesScreen.takeSnapShot(driver,"test-output//PlatformAdminRoles//InacvtiveRole.jpg");
+            Thread.sleep(2000);
+            TakesScreen.takeSnapShot(driver,"test-output//PlatformAdminRoles//InactiveRole.jpg");
             Thread.sleep(3000);
             CreateRolePageObj.ClickUpdateBtn();
             Thread.sleep(3000);
             CreateRolePageObj.ClickLogout();
-            Thread.sleep(2000);
+            Thread.sleep(5000);
             driver.close();
             CreateRolePageObj.AssertAll();
         }

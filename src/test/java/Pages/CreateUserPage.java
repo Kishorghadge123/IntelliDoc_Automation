@@ -12,33 +12,36 @@ public class CreateUserPage extends BasePage
     By EnterUserName = By.xpath("//body[1]/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-create-edit-user[1]/div[1]/form[1]/mat-card[1]/div[1]/div[1]/mat-form-field[1]/div[1]/div[1]/div[3]/input[1]");
     By EnterEmail  = By.xpath("//body[1]/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-create-edit-user[1]/div[1]/form[1]/mat-card[1]/div[1]/div[2]/mat-form-field[1]/div[1]/div[1]/div[3]/input[1]");
     By ActiveUser = By.xpath("//div[@class='mat-slide-toggle-thumb']");
-    By CancelBtn = By.xpath("//span[contains(text(),'Cancel')]");
+   // By CancelBtn = By.xpath("//span[contains(text(),'Cancel')]");
     By SearchBtn  = By.xpath("//body[1]/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-user-management[1]/div[1]/div[1]/div[1]/mat-form-field[1]/div[1]/div[1]/div[3]/input[1]");
     By DisableUser = By.xpath("//div[@class='mat-slide-toggle-thumb']");
     By UpdateUser  = By.xpath("//button[@class='mat-focus-indicator float-right button-cls mat-raised-button mat-button-base mat-primary']");
     By Password  = By.xpath("//body[1]/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-create-edit-user[1]/div[1]/form[1]/mat-card[1]/div[1]/div[3]/mat-form-field[1]/div[1]/div[1]/div[3]/input[1]");
     By PlatformUser = By.xpath("//td[contains(text(),' AutoSampleBB ')]");
     By UserUpdated = By.xpath("//td[contains(text(),' AutoSampleUpdate ')]");
-    By AdminUser = By.xpath("//td[contains(text(),' AutoAdminUser ')]");
+    By AdminUser = By.xpath("//td[contains(text(),' AutoAdminUserD ')]");//Change everytime before u ran
     By UpdatedTime = By.xpath("//tbody[@role='rowgroup']/tr[1]/td[3]");
     By CreatedTime = By.xpath("//tbody[@role='rowgroup']/tr[1]/td[4]");
     By logout = By.xpath("//span[@mattooltip='Logout']");
+    By CancelButton = By.xpath("//span[contains(text(),'Cancel')]");
     By username = By.xpath("//input[@formcontrolname='userName']");
     By password = By.xpath("//input[@formcontrolname='password']");
     By loginBtn = By.xpath("//button[@type='submit']");
-    By BlankErrorMsg = By.xpath(("//span[contains(text(),'Please Check Form Detail ...!')]"));
+    //By BlankErrorMsg = By.xpath(("//span[contains(text(),'Please Check Form Detail ...!')]"));
     By ExistErrorMsg = By.xpath("//span[contains(text(),'User exists with email sampleemail@email.com')]");
 
     public CreateUserPage(WebDriver driver) {
         this.driver = driver;
     }
     public  void ClickUserBtn(){driver.findElement(UserBtn).click();}
+    public  void ClickOnCancelBtn(){driver.findElement(CancelButton).click();}
+    //public void ClickCancelBtn(){driver.findElement(CancelBtn).click();}
     public void ClickCreateUserBtn(){driver.findElement(CreateUserBtn).click();}
     public void ClickCreateBtn(){driver.findElement(CreateBtn).click();}
     public void EnterUserName(String text) {driver.findElement(EnterUserName).sendKeys(text);}
     public void EnterEmail(String text){driver.findElement(EnterEmail).sendKeys(text);}
     public void ClickActiveUser(){driver.findElement(ActiveUser).click();}
-    public void ClickCancelBtn(){driver.findElement(CancelBtn).click();}
+
     public  void SearchCreatedUser(String text){driver.findElement(SearchBtn).sendKeys(text);}
     public  void SelectSearchedUser(){driver.findElement(PlatformUser).click();}
     public  void SelectSearchedAdminUser(){driver.findElement(AdminUser).click();}
@@ -64,12 +67,12 @@ public class CreateUserPage extends BasePage
         softAssert.assertEquals(UpdateTime, CreateTime);
 
     }
-    public void UserBlankAssert()
-    {
-        String ActBlankErrMsg=driver.findElement(BlankErrorMsg).getText();
-        String ExpctdBlankErrMsg="Please Check Form Detail ...!";
-        softAssert.assertEquals(ActBlankErrMsg, ExpctdBlankErrMsg);
-    }
+//    public void UserBlankAssert()
+//    {
+//        String ActBlankErrMsg=driver.findElement(BlankErrorMsg).getText();
+//        String ExpctdBlankErrMsg="Please Check Form Detail ...!";
+//        softAssert.assertEquals(ActBlankErrMsg, ExpctdBlankErrMsg);
+//    }
     public void UserExistAssert()
     {
         String ActExistErrMsg = driver.findElement(ExistErrorMsg).getText();

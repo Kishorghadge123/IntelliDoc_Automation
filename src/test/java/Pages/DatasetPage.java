@@ -15,7 +15,6 @@ public class DatasetPage {
         By ActionBtn = By.xpath("//tbody/tr[1]/td[5]/div[1]/button[1]/span[1]/mat-icon[1]");
 
         By SearchBox = By.xpath("//body[1]/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-dataset-editor[1]/div[1]/div[1]/div[2]/mat-form-field[1]/div[1]/div[1]/div[3]/input[1]");        //driver.clear();
-        By ExpandDataset = By.xpath("//body[1]/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-dataset-editor[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]");
         By ExpandDataset1 = By.xpath("//tbody/tr[1]/td[1]");
 
         By DatasetFile = By.xpath("//td[contains(text(),'sampledata.csv')]");
@@ -48,11 +47,9 @@ public class DatasetPage {
         public void ClickCategoryCancelBtn(){driver.findElement(CategoryCancelBtn).click();}
 
         public void ClickSearchBox(String text){ driver.findElement(SearchBox).sendKeys(text);}
-        public void ClickExpandDataset(){ driver.findElement(ExpandDataset).click();}
         public void ClickExpand1(){driver.findElement(ExpandDataset1).click();}
         public void ClickDatasetFileName(){ driver.findElement(DatasetFile).click();}
         public void ClickCancelDatasetFileName(){ driver.findElement(CancelDatasetFile).click();}
-        public void ClickAction(){ driver.findElement(Action).click();}
         public void ClickDisableUser(){driver.findElement(DisableDataset).click();}
         public void ClickAddDatasetCancelBtn(){ driver.findElement(NewDatasetCancelBtn).click();}
 }

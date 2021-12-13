@@ -16,8 +16,8 @@ public class TemplatePage {
     By CloseBtn = By.xpath("//*[@id='close-modal']/span[1]/mat-icon");
     By SearchTemplate = By.xpath("//*[@data-placeholder='Search']");
     By ExpandTemplate = By.xpath("//tbody/tr[1]/td[1]");
-    By ExpandTemplateMore = By.xpath("//td[contains(text(),'Demo-New2')]");
-
+    By ExpandTemplateMore = By.xpath("//td[contains(text(),'AutoSampleMPTemp')]");
+    By Cancel = By.xpath("//span[contains(text(),' Cancel ')]");
     By TemplateDataInfo = By.xpath("//td[contains(text(),'Template1')]");
     By TemplateDataInfo1 = By.xpath("//td[contains(text(),'Sample-page1')]");
     By TemplateDelete = By.xpath("//body[1]/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-new-training[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[2]/td[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[6]/button[2]/span[1]/mat-icon[1]");
@@ -93,7 +93,7 @@ public class TemplatePage {
     public void AssertCreatTemplate() {
         String TemplateName[] = driver.findElement(ExpandTemplate).getText().split(" ");
         String ActualTemplate = TemplateName[1].trim();
-        String ExpectedTemplate = "Demo-New1";
+        String ExpectedTemplate = "Demo-New3";
         softAssert.assertEquals(ActualTemplate, ExpectedTemplate);
 
     }
@@ -104,7 +104,9 @@ public class TemplatePage {
         String ExpectedStatus = "In Progress";
         softAssert.assertEquals(ActualStaus,ExpectedStatus);
     }
-
+    public void ClickCancel() {
+        driver.findElement(Cancel).click();
+    }
 
     public void DeleteTemplate() {
         driver.findElement(TemplateDelete).click();

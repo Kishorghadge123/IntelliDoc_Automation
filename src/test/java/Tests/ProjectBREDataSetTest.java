@@ -15,7 +15,7 @@ import java.io.IOException;
 public class ProjectBREDataSetTest extends BasePage {
 
     @Test
-    public void AnalyticsFlow() throws InterruptedException, IOException {
+    public void ProjectBREDataSetFlow() throws InterruptedException, IOException {
         try {
             BasePage.LoginTest();
             Robot r = new Robot();

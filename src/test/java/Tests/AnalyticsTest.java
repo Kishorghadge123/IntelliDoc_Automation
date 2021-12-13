@@ -18,11 +18,13 @@ public class AnalyticsTest extends BasePage {
             test.log(status.PASS, "TestPassed");
 
             AnalyticsPageObj.ClickAnalyticsBtn();
-            Thread.sleep(6000);
-
+            Thread.sleep(5000);
+            TakesScreen.takeSnapShot(driver, "test-output//Analytics//AnalyticsPage.jpg");
             //Organization Statistics
             AnalyticsPageObj.ClickOrganizationArrow();
-            Thread.sleep(2000);
+            Thread.sleep(1000);
+            TakesScreen.takeSnapShot(driver, "test-output//Analytics//OrganizationStatistics.jpg");
+            Thread.sleep(1000);
             AnalyticsPageObj.ClickOrganizationArrow();
             Thread.sleep(2000);
             AnalyticsPageObj.HoverTotalUser();

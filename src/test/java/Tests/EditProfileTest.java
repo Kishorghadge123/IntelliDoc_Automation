@@ -49,7 +49,7 @@ public class EditProfileTest extends BasePage {
             //TC 12.3 Profile Icon
             EditProfileObj.ProfileButton();
             Thread.sleep(1000);
-            TakesScreen.takeSnapShot(driver, "test-output//EditProfileTest//NightMode.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//EditProfileTest//Profile.jpg");
             Thread.sleep(2000);
 
             //TC 12.4 Night Mode , Day Mode
@@ -69,7 +69,9 @@ public class EditProfileTest extends BasePage {
 
             //TC 12.6 Edit Profile Cancel.
             EditProfileObj.CancelButton();
-            Thread.sleep(4000);
+            Thread.sleep(1000);
+            TakesScreen.takeSnapShot(driver, "test-output//EditProfileTest//Cancel.jpg");
+            Thread.sleep(2000);
             driver.close();
         }
         catch (Exception e) {

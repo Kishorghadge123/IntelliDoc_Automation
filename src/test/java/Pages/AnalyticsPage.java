@@ -9,7 +9,7 @@ public class AnalyticsPage {
     WebDriver driver = null;
 
     By AnalyticsBtn = By.xpath("//i[@class='mat-tooltip-trigger fa fa-cubes m-0 side-icon ng-star-inserted']");
-    By OrganizationDownArrow =By.xpath("//span[@class='mat-expansion-indicator ng-tns-c157-6 ng-trigger ng-trigger-indicatorRotate ng-star-inserted']");
+    By OrganizationStatistics =By.xpath("//span[contains(text(),'Organization Statistics')]");
     By TotalUser = By.xpath("//div[contains(text(),' Users ')]");
     By Document = By.xpath("//*[@class='mat-expansion-panel analytics ng-tns-c156-5 mat-expanded mat-expansion-panel-spacing']/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]");
     By Processed = By.xpath("//*[@class='mat-expansion-panel analytics ng-tns-c156-5 mat-expanded mat-expansion-panel-spacing']/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]");
@@ -44,7 +44,7 @@ public class AnalyticsPage {
     By NextPage = By.xpath("//button[@class='mat-focus-indicator mat-tooltip-trigger mat-paginator-navigation-next mat-icon-button mat-button-base']");
     By Document_Manual = By.xpath("//div[@class='mat-sort-header-content ng-tns-c166-14']");
     By Received_Manual = By.xpath("//div[@class='mat-sort-header-content ng-tns-c166-15']");
-    By ProjectStatisticArrow = By.xpath("//span[@class='mat-expansion-indicator ng-tns-c157-8 ng-trigger ng-trigger-indicatorRotate ng-star-inserted']");
+    By ProjectStatisticArrow = By.xpath("//span[contains(text(),'Project Statistics')]");
 
 
     public AnalyticsPage(WebDriver driver) {
@@ -56,7 +56,7 @@ public class AnalyticsPage {
     }
     //Organization Statistics
    public  void ClickOrganizationArrow(){
-        driver.findElement(OrganizationDownArrow).click();
+        driver.findElement(OrganizationStatistics).click();
     }
 
     public  void HoverTotalUser(){

@@ -22,7 +22,7 @@ public class ProjectPage {
     By SelectLead = By.xpath("//span[contains(text(),'qa1@email.com')]");
     By ClickStartDate = By.cssSelector("button[aria-label='Open calendar'][tabindex='0']");
     By ClearStartDate = By.xpath("//input[@id='mat-input-3']");
-    By SelectStartDate = By.xpath("//div[contains(text(),'13')]");
+    By SelectStartDate = By.xpath("//div[contains(text(),'14')]");//Change this before running
     By ClickEndDate = By.xpath("/html/body/app-root/div/app-landing/div/div/main/div/app-create-project/div[2]/div/form/mat-card/div/div[4]/mat-form-field/div/div[1]/div[4]/mat-datepicker-toggle/button");
     By ClearEndDate = By.xpath("//input[@id='mat-input-4']");
     By SelectEndDate = By.xpath("//div[contains(text(),'30')]");
@@ -116,7 +116,7 @@ public class ProjectPage {
     By Password = By.xpath("//input[@formcontrolname='password']");
     By EditProject = By.xpath("//mat-icon[contains(text(),'create')]");
 
-    // User Updation
+    // User Update
     By UserBtn = By.xpath("//i[@class='mat-tooltip-trigger fa fa-users m-0 side-icon ng-star-inserted']");
     By User = By.xpath("//td[contains(text(),' AE Admin ')]");
     By SearchBtn = By.xpath("//body[1]/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-user-management[1]/div[1]/div[1]/div[1]/mat-form-field[1]/div[1]/div[1]/div[3]/input[1]");
@@ -410,9 +410,9 @@ public class ProjectPage {
         driver.findElement(AddData).click();
     }
 
-    public void ClickonCreate() {
+    public void ClickOnCreate() {
         driver.findElement(CreateButton).click();
-    } //Method for createbutton on Project page
+    } //Method for Create Button on Project page
 
     public void ClickOnCancelProject() {
         driver.findElement(CancelOnProject).click();

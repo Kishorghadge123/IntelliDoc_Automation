@@ -56,7 +56,7 @@ public class RoleAccessTest extends BasePage {
             Thread.sleep(5000);
             TakesScreen.takeSnapShot(driver, "test-output//RoleWiseTest//AdminRoleAccessProject.jpg");
 
-            //TC 11.7 Admin Role Access Analytics tab
+            //TC 11.6 Admin Role Access Analytics tab
             roleAccessObj.clickAdminAnalytic();
             Thread.sleep(5000);
             TakesScreen.takeSnapShot(driver, "test-output//RoleWiseTest//AdminRoleAccessAnalytics.jpg");
@@ -66,7 +66,7 @@ public class RoleAccessTest extends BasePage {
             driver.navigate().refresh();
             Thread.sleep(3000);
 
-            //TC 11.8 Supervisor ROle Valid User Valid PWD
+            //TC 11.7 Supervisor ROle Valid User Valid PWD
             roleAccessObj.setUsername(ReadProps.readAttr("SupervisorUser"));
             Thread.sleep(2000);
             roleAccessObj.setPassword(ReadProps.readAttr("SupervisorPwd"));
@@ -81,14 +81,12 @@ public class RoleAccessTest extends BasePage {
             Thread.sleep(7000);
             TakesScreen.takeSnapShot(driver, "test-output//RoleWiseTest//SupervisorRoleAccessTemplate.jpg");
 
-
-            //TC 11.11 Supervisor ROle Access Document
+            //TC 11.10 Supervisor ROle Access Document
             roleAccessObj.clickSupervisorDocument();
             Thread.sleep(8000);
             TakesScreen.takeSnapShot(driver, "test-output//RoleWiseTest//SupervisorRoleAccessDocument.jpg");
 
-            //TC 11.12 Supervisor ROle Access Analytics
-
+            //TC 11.11 Supervisor ROle Access Analytics
             roleAccessObj.ClickLogout();
             Thread.sleep(4000);
             TakesScreen.takeSnapShot(driver, "test-output//RoleWiseTest//SupervisorRolelogout.jpg");
@@ -96,7 +94,7 @@ public class RoleAccessTest extends BasePage {
             driver.navigate().refresh();
 
 
-            //TC 11.13 Operator ROle Login with Valid ID and PWD
+            //TC 11.12 Operator ROle Login with Valid ID and PWD
             roleAccessObj.setUsername(ReadProps.readAttr("Operatoruser"));
             Thread.sleep(2000);
             roleAccessObj.setPassword(ReadProps.readAttr("OperatorPwd"));
@@ -106,15 +104,16 @@ public class RoleAccessTest extends BasePage {
             TakesScreen.takeSnapShot(driver, "test-output//RoleWiseTest//OperatorRole.jpg");
             Thread.sleep(2000);
 
-            //TC 11.15 Operator ROle Access Document
+            //TC 11.13 Operator Role Access Document
             roleAccessObj.clickOperatorDocument();
             Thread.sleep(4000);
             TakesScreen.takeSnapShot(driver, "test-output//RoleWiseTest//OperatorRoleDocument.jpg");
 
-            //TC 11.16 Operator ROle Access Analytics
+            //TC 11.14 Operator Role Access Analytics
             roleAccessObj.ClickLogout();
             Thread.sleep(4000);
             TakesScreen.takeSnapShot(driver, "test-output//RoleWiseTest//OperatorRolelogout.jpg");
+            Thread.sleep(2000);
             driver.close();
 
 

@@ -34,7 +34,7 @@ public class BasePage {
             loginPageObjects.setUsername(ReadProps.readAttr("UserID"));
             loginPageObjects.setPassword(ReadProps.readAttr("Password"));
             loginPageObjects.clickLoginButton();
-            Thread.sleep(9000);
+            Thread.sleep(8000);
         }
 
         @AfterClass
