@@ -78,7 +78,7 @@ public class ProjectBREDataSetTest extends BasePage {
             Thread.sleep(2000);
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("window.scrollBy(0,-1000)", "");
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectBRETest//ProjectDetails.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectBREDataSetTest//ProjectDetails.jpg");
             Thread.sleep(3000);
             js.executeScript("window.scrollBy(0,1000)", "");
             //Navigate to Data Page.
@@ -92,7 +92,7 @@ public class ProjectBREDataSetTest extends BasePage {
             Thread.sleep(1000);
             ProjectBREDataSetPageObj.SelectDataSet();
             Thread.sleep(1000);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectBRETest//DataSetAdded.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectBREDataSetTest//DataSetAdded.jpg");
             Thread.sleep(2000);
             ProjectBREPage ProjectBREPageObj = new ProjectBREPage(driver);
             //Navigate to Rules Page.
@@ -112,21 +112,21 @@ public class ProjectBREDataSetTest extends BasePage {
             Thread.sleep(2000);
             ProjectBREPageObj.ClickOnAddRulesButton();
             Thread.sleep(1000);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectBRETest//AddRule.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectBREDataSetTest//AddRule.jpg");
             Thread.sleep(2000);
             ProjectBREPageObj.ClickOnDeleteRulesButton();
             Thread.sleep(1000);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectBRETest//DeleteRule.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectBREDataSetTest//DeleteRule.jpg");
             Thread.sleep(2000);
             ProjectBREPageObj.ClickOnAddRulesButton();
             Thread.sleep(2000);
             ProjectBREPageObj.ClickOnExpandFirstRule();
             Thread.sleep(1000);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectBRETest//ExpandRule.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectBREDataSetTest//ExpandRule.jpg");
             Thread.sleep(2000);
             ProjectBREPageObj.ClickOnContractRuleButton();
             Thread.sleep(1000);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectBRETest//ContractRule.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectBREDataSetTest//ContractRule.jpg");
             Thread.sleep(2000);
             ProjectBREPageObj.ClickOnVisibility();
             Thread.sleep(2000);
@@ -164,10 +164,10 @@ public class ProjectBREDataSetTest extends BasePage {
             ProjectBREDataSetPageObj.SelectDataSetHeader();
             Thread.sleep(1000);
             ProjectBREPageObj.ClickOnSave();
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectBRETest//ConditionSavedSuccessfully.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectBREDataSetTest//ConditionSavedSuccessfully.jpg");
             Thread.sleep(1000);
             ProjectBREDataSetPageObj.ClickOnFirstDataSetBox();
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectBRETest//FirstConditionBox.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectBREDataSetTest//FirstConditionBox.jpg");
             Thread.sleep(1000);
 //            ProjectBREPageObj.ClickOnCreateProjectButton();
 //            Thread.sleep(6000);
@@ -179,5 +179,4 @@ public class ProjectBREDataSetTest extends BasePage {
             test.log(status.FAIL, e);
         }
     }
-
 }

@@ -111,7 +111,7 @@ public class UpdateUserAdminTest extends BasePage {
             UserPageObj1.ClickUpdateUser();
             Thread.sleep(4000);
             UserPageObj1.LogOut();
-            Thread.sleep(3000);
+            Thread.sleep(4000);
             driver.close();
         } catch (Exception e) {
             test.log(status.FAIL, e);

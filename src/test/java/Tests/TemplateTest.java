@@ -26,7 +26,6 @@ public class TemplateTest extends BasePage {
             Thread.sleep(8000);
 
             TemplatePage TemplatePageObj = new TemplatePage(driver);
-            //WebDriverWait wait=new WebDriverWait(driver, 30);
 
             driver.manage().deleteAllCookies();
 
@@ -50,32 +49,32 @@ public class TemplateTest extends BasePage {
             System.out.println("Template name entered");
             Thread.sleep(3000);
             WebElement upload_file = driver.findElement(By.xpath("//body/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-new-training[1]/div[3]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/input[1]"));
-            upload_file.sendKeys("C:\\Users\\juee.ningshetti\\OneDrive\\Desktop\\Template format\\Template1.jpg");
-            System.out.println("File choosen");
+            upload_file.sendKeys("C:\\Users\\kumar\\Downloads\\Template1.jpg");
+            System.out.println("File chosen");
             Thread.sleep(3000);
             TakesScreen.takeSnapShot(driver, "test-output//Templates//InvalidName.jpg");
             TemplatePageObj.ClickCancelCreateTemplate();
             Thread.sleep(3000);
 
 
-            // TC 1.2 - Create template with valid name and no choosen file
+            // TC 1.2 - Create template with valid name and no chosen file
             TemplatePageObj.ClickOnUploadTemplateBtn();
             Thread.sleep(4000);
             TemplatePageObj.ClickOnTemplateName(ReadProps.readAttr("TNameUnique"));
             Thread.sleep(4000);
             TakesScreen.takeSnapShot(driver, "test-output//Templates//NoFileChoose.jpg");
-            System.out.println("Template with valid name and no choosen file");
+            System.out.println("Template with valid name and no chosen file");
             TemplatePageObj.ClickCancelCreateTemplate();
             Thread.sleep(3000);
 
-            // TC 1.3 - Create template with Already exist name and choosen file
+            // TC 1.3 - Create template with Already exist name and chosen file
             TemplatePageObj.ClickOnUploadTemplateBtn();
             Thread.sleep(4000);
             TemplatePageObj.ClickOnTemplateName(ReadProps.readAttr("TExistName"));
             System.out.println("Template name entered");
             Thread.sleep(6000);
-            upload_file.sendKeys("C:\\Users\\juee.ningshetti\\OneDrive\\Desktop\\Template format\\Template1.jpg");
-            System.out.println("File choosen");
+            upload_file.sendKeys("C:\\Users\\kumar\\Downloads\\Template1.jpg");
+            System.out.println("File chosen");
             Thread.sleep(3000);
             TemplatePageObj.ClickCreateTemplate();
             Thread.sleep(4000);
@@ -84,16 +83,15 @@ public class TemplateTest extends BasePage {
             Thread.sleep(3000);
 
 
-            // TC 1.4 - Create template with Unique name and choosen file
+            // TC 1.4 - Create template with Unique name and chosen file
             TemplatePageObj.ClickOnUploadTemplateBtn();
             Thread.sleep(4000);
             TemplatePageObj.ClickOnTemplateName(ReadProps.readAttr("TNameUnique"));
             System.out.println("Template name entered");
             Thread.sleep(6000);
-            upload_file.sendKeys("C:\\Users\\juee.ningshetti\\IdeaProjects\\Intellidoc\\Files\\Template format\\Template1.jpg");
-            System.out.println("File choosen");
+            upload_file.sendKeys("C:\\Users\\kumar\\Downloads\\Template1.jpg");
+            System.out.println("File chosen");
             Thread.sleep(3000);
-            // TakesScreen.takeSnapShot(driver, "test-output//Templates//CreateTemplateDetails.jpg");
             TemplatePageObj.ClickCreateTemplate();
             Thread.sleep(6000);
             TakesScreen.takeSnapShot(driver, "test-output//Templates//TemplateCreated.jpg");
@@ -152,10 +150,8 @@ public class TemplateTest extends BasePage {
             TemplatePageObj.AssertMap();
             Thread.sleep(2000);
             TakesScreen.takeSnapShot(driver, "test-output//Templates/MapError.jpg");
-
             TemplatePageObj.ClickCancelTraining();
             Thread.sleep(3000);
-
 
             // TC 1.5- Delete created template
             TemplatePageObj.ClickOnSearchTemplate(ReadProps.readAttr("TNameUnique"));
@@ -164,7 +160,7 @@ public class TemplateTest extends BasePage {
             Thread.sleep(4000);
             TemplatePageObj.DeleteTemplate();
             Thread.sleep(4000);
-            TakesScreen.takeSnapShot(driver, "test-output//Templates//DeleteTemplateWindw.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//Templates//DeleteTemplateWindow.jpg");
             TemplatePageObj.ConfirmDeleteTemplate();
             Thread.sleep(6000);
             Thread.sleep(4000);
@@ -180,10 +176,9 @@ public class TemplateTest extends BasePage {
             Thread.sleep(8000);
             System.out.println("Template name entered");
             WebElement upload_file1 = driver.findElement(By.xpath("//*[@id='faxDetailModal']/div/div/div[2]/div/form/div/input"));
-            upload_file1.sendKeys("C:\\Users\\juee.ningshetti\\IdeaProjects\\Intellidoc\\Files\\Template format\\Sample.pdf");
-            System.out.println("File choosen");
+            upload_file1.sendKeys("C:\\Users\\kumar\\Downloads\\Sample.pdf");
+            System.out.println("File chosen");
             Thread.sleep(6000);
-            // TakesScreen.takeSnapShot(driver, "test-output//Templates//CreateTemplateDetails.jpg");
             TemplatePageObj.ClickCreateTemplate();
             Thread.sleep(15000);
             TakesScreen.takeSnapShot(driver, "test-output//Templates//TemplateCreated.jpg");
