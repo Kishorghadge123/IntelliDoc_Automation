@@ -206,7 +206,7 @@ public class ProjectBRETest extends BasePage {
             Thread.sleep(1000);
             ProjectBREPageObj.SelectFalseBox();
             TakesScreen.takeSnapShot(driver, "test-output//ProjectBRETest//FalseActionSavedSuccessfully.jpg");
-            Thread.sleep(2000);
+            Thread.sleep(4000);
 //            ProjectBREPageObj.ClickOnCreateProjectButton();
 //            Thread.sleep(6000);
 //            TakesScreen.takeSnapShot(driver, "test-output//ProjectBRETest//ProjectCreatedSuccessfully.jpg");
@@ -399,6 +399,7 @@ public class ProjectBRETest extends BasePage {
 //            TakesScreen.takeSnapShot(driver, "test-output//ProjectBRETest//ProjectCreatedSuccessfully.jpg");
 //            Thread.sleep(2000);
 //            //Document should be uploaded from backend to check the output.
+            driver.close();
 
         }
         catch (Exception e) {

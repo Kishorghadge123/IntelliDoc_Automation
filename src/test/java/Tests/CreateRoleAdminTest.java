@@ -83,7 +83,7 @@ public class CreateRoleAdminTest extends BasePage {
             Thread.sleep(2000);
             CreateRolePageObj.ClickActiveRole();
             Thread.sleep(2000);
-            CreateRolePageObj.EnterRoleName(ReadProps.readAttr("RoleName"));//Change everytime before u ran
+            CreateRolePageObj.EnterRoleName(ReadProps.readAttr("RoleName"));//Change everytime before u run
             Thread.sleep(2000);
             CreateRolePageObj.AddPermissionPlusBtn();
             Thread.sleep(2000);
