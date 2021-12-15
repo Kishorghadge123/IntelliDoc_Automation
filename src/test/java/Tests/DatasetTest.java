@@ -39,7 +39,7 @@ public class DatasetTest extends BasePage {
             // TC 1.3 - Create category with Valid name
            DatasetPageObj.ClickAddCategoryBtn();
             Thread.sleep(2000);
-            DatasetPageObj.ClickCategoryName(ReadProps.readAttr("DName"));
+            DatasetPageObj.ClickCategoryName(ReadProps.readAttr("DName"));//Change before executing
             Thread.sleep(2000);
             DatasetPageObj.ClickCreateCategory();
             Thread.sleep(1000);
@@ -57,7 +57,7 @@ public class DatasetTest extends BasePage {
             // TC 1.5 - Perform action to add dataset with name and no chosen file
             DatasetPageObj.ClickActionBtn();
             Thread.sleep(1000);
-            DatasetPageObj.ClickDatasetName(ReadProps.readAttr("DName"));
+            DatasetPageObj.ClickDatasetName(ReadProps.readAttr("DName"));//Change before executing
             Thread.sleep(1000);
             TakesScreen.takeSnapShot(driver, "test-output//Datasets//Action-Name+NoFile.jpg");
             Thread.sleep(1000);
@@ -67,7 +67,7 @@ public class DatasetTest extends BasePage {
             // TC 1.6 - Perform action to add dataset with name, chosen file (.csv) but no validation type
             DatasetPageObj.ClickActionBtn();
             Thread.sleep(1000);
-            DatasetPageObj.ClickDatasetName(ReadProps.readAttr("DName"));
+            DatasetPageObj.ClickDatasetName(ReadProps.readAttr("DName"));//Change before executing
             Thread.sleep(1000);
             WebElement upload_file = driver.findElement(By.xpath("//body/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-dataset-editor[1]/div[4]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/input[1]"));
             upload_file.sendKeys("C:\\Users\\kumar\\Downloads\\sampledata.csv");
@@ -80,7 +80,7 @@ public class DatasetTest extends BasePage {
             // TC 1.7 - Perform action to add dataset file in the created category with name, chosen file and validation type
             DatasetPageObj.ClickActionBtn();
             Thread.sleep(1000);
-            DatasetPageObj.ClickDatasetName(ReadProps.readAttr("DName"));
+            DatasetPageObj.ClickDatasetName(ReadProps.readAttr("DName"));//Change before executing
             Thread.sleep(1000);
             WebElement upload_file1 = driver.findElement(By.xpath("//body/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-dataset-editor[1]/div[4]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/input[1]"));
             upload_file1.sendKeys("C:\\Users\\kumar\\Downloads\\sampledata.csv");
@@ -106,7 +106,7 @@ public class DatasetTest extends BasePage {
             Thread.sleep(4000);
 
             // TC 1.8 - Search created category and click to expand it
-            DatasetPageObj.ClickSearchBox(ReadProps.readAttr("DName"));
+            DatasetPageObj.ClickSearchBox(ReadProps.readAttr("DName"));//Change before executing
             Thread.sleep(2000);
             DatasetPageObj.ClickExpand1();
             Thread.sleep(2000);
