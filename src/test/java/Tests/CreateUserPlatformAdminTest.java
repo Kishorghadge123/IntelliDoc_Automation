@@ -7,17 +7,15 @@ import Utilities.TakesScreen;
 import org.testng.annotations.Test;
 import java.io.IOException;
 
-public class CreateUserPlatformAdmin extends BasePage {
+public class CreateUserPlatformAdminTest extends BasePage {
     @Test
     public void CreateUserPlatformAdminFlow() throws InterruptedException, IOException {
         try {
             BasePage.LoginTest();
-
-            Thread.sleep(10000);
+            Thread.sleep(8000);
             CreateUserPage UserPageObj = new CreateUserPage(driver);
             test.log(status.INFO, "TestInformation");
             test.log(status.PASS, "TestPassed");
-
             //Blank username and Blank ID
             UserPageObj.ClickUserBtn();
             Thread.sleep(3000);
@@ -25,12 +23,11 @@ public class CreateUserPlatformAdmin extends BasePage {
             Thread.sleep(2000);
             UserPageObj.ClickCreateBtn();
             Thread.sleep(500);
-
             TakesScreen.takeSnapShot(driver, "test-output//PlatformAdminUserCreation//BlankNameID.jpg");
             System.out.println("Please Check Form Detail...!");
-            Thread.sleep(3000);
+            Thread.sleep(2000);
             driver.navigate().refresh();
-            Thread.sleep(4000);
+            Thread.sleep(5000);
 
             // Valid Username Blank ID
             UserPageObj.EnterUserName(ReadProps.readAttr("CUName"));

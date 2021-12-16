@@ -10,7 +10,7 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 
-public class UpdateProjectFlowTest extends BasePage{
+public class UpdateProjectTest extends BasePage{
 
         @Test
         public void UpdateProjectFlow() throws InterruptedException, IOException {
@@ -18,39 +18,36 @@ public class UpdateProjectFlowTest extends BasePage{
 
                 BasePage.LoginTest();
                 Robot r = new Robot();
-                Thread.sleep(8000);
-
+                Thread.sleep(9000);
                 ProjectPage ProjectPageObj = new ProjectPage(driver);
                 test.log(status.INFO, "TestInformation");
                 test.log(status.PASS, "TestPassed");
-                System.out.println("Successfully logged in");
-                Thread.sleep(8000);
-                // 5 Verify the working of platform admin for  Updating project by putting valid data
+                // 5 Verify the working of platform Admin for  Updating Project by entering Valid Data
                 ProjectPageObj.ClickOnProjectBtn();
-                Thread.sleep(4000);
+                Thread.sleep(5000);
                 ProjectPageObj.SearchProject();
-                Thread.sleep(6000);
+                Thread.sleep(2000);
                 ProjectPageObj.ClickOnEditProject();
-                Thread.sleep(3000);
+                Thread.sleep(2000);
                 ProjectPageObj.ClickOnLeadBtn();
-                Thread.sleep(4000);
+                Thread.sleep(2000);
                 ProjectPageObj.SelectOnLeadSampleBtn();
                 Thread.sleep(4000);
                 ProjectPageObj.ClickOnProcessingEngineBtn();
                 Thread.sleep(4000);
                 ProjectPageObj.SelectOnProcessingEngineLowBtn();
-                Thread.sleep(3000);
+                Thread.sleep(2000);
                 r.keyPress(KeyEvent.VK_ESCAPE);
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//ProjectTest//Lead&ProcessingEngine.jpg");
                 ProjectPageObj.ClickOnUpdateProject();
-                Thread.sleep(3000);
+                Thread.sleep(5000);
 
-                //to maintain script
+                //To maintain script
                 ProjectPageObj.ClickOnProjectBtn();
-                Thread.sleep(4000);
+                Thread.sleep(5000);
                 ProjectPageObj.SearchProject();
-                Thread.sleep(4000);
+                Thread.sleep(2000);
                 ProjectPageObj.ClickOnEditProject();
                 Thread.sleep(2000);
                 ProjectPageObj.ClickOnLeadBtn();
@@ -71,15 +68,15 @@ public class UpdateProjectFlowTest extends BasePage{
                 ProjectPageObj.ClickOnProjectBtn();
                 Thread.sleep(4000);
                 ProjectPageObj.SearchProject();
-                Thread.sleep(4000);
+                Thread.sleep(2000);
                 ProjectPageObj.ClickOnEditProject();
                 Thread.sleep(2000);
                 ProjectPageObj.ClickOnRolesBtn();
-                Thread.sleep(4000);
+                Thread.sleep(2000);
                 ProjectPageObj.ClickOnRoleUserDisableEnable();
                 Thread.sleep(2000);
                 ProjectPageObj.ClickOnUpdateProject();
-                Thread.sleep(4000);
+                Thread.sleep(5000);
 
                 // User Disable
                 ProjectPageObj.ClickUserBtn();
@@ -97,19 +94,20 @@ public class UpdateProjectFlowTest extends BasePage{
 
                 //  Verify that all Disabled roles are not displayed in add role list while updating a project by platform admin
                 ProjectPageObj.ClickOnProjectBtn();
-                Thread.sleep(4000);
+                Thread.sleep(5000);
                 ProjectPageObj.SearchProject();
-                Thread.sleep(4000);
+                Thread.sleep(2000);
                 ProjectPageObj.ClickOnEditProject();
-                Thread.sleep(3000);
+                Thread.sleep(2000);
                 ProjectPageObj.ClickOnLeadBtn();
-                Thread.sleep(3000);
+                Thread.sleep(2000);
                 ProjectPageObj.ClickSearchLead("admin@test.com");
                 TakesScreen.takeSnapShot(driver, "test-output//ProjectUpdate//UserNotDisplayed.jpg");
-                Thread.sleep(4000);
+                Thread.sleep(2000);
                 ProjectPageObj.ClearSearchLead();
+                Thread.sleep(1000);
                 r.keyPress(KeyEvent.VK_ESCAPE);
-                Thread.sleep(4000);
+                Thread.sleep(2000);
                 ProjectPageObj.ClickOnUpdateProject();
                 Thread.sleep(4000);
 

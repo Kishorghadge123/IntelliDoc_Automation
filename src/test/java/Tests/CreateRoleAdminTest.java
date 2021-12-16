@@ -24,13 +24,14 @@ public class CreateRoleAdminTest extends BasePage {
             test.log(status.PASS, "TestPassed");
             driver.get(ReadProps.readAttr("URL"));
             driver.manage().window().maximize();
+            Thread.sleep(1000);
             //Admin ROle
             CreateRolePageObj.EnterUsername(ReadProps.readAttr("AdminUser"));
             Thread.sleep(1000);
             CreateRolePageObj.EnterPassword(ReadProps.readAttr("AdminPwd"));
             Thread.sleep(1000);
             CreateRolePageObj.ClickLoginButton();
-            Thread.sleep(10000);
+            Thread.sleep(8000);
             CreateRolePageObj.ClickRoleManagementBtn();
             Thread.sleep(5000);
             CreateRolePageObj.ClickCreateRoleBtn();

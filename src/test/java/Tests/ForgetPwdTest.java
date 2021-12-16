@@ -19,9 +19,9 @@ public class ForgetPwdTest extends BasePage {
             WebDriver driver = new ChromeDriver();
             ForgetPwdPage FwdPwdObj = new ForgetPwdPage(driver);
             driver.get(ReadProps.readAttr("URL"));
-            Thread.sleep(6000);
             driver.manage().window().maximize();
             Thread.sleep(2000);
+
             //2.1 Click on Cancel button on Forgot Password Screen.
             FwdPwdObj.ClickForgetPwdBtn();
             TakesScreen.takeSnapShot(driver, "test-output//ForgotPassword//ForgetPwdScreen.jpg");
@@ -62,15 +62,7 @@ public class ForgetPwdTest extends BasePage {
             FwdPwdObj.ClickCancelBtn();
             Thread.sleep(2000);
 
-            //TC 2.5 Something went wrong(The User without any Permission)
-//            FwdPwdObj.ClickForgetPwdBtn();
-//            Thread.sleep(2000);
-
-
-
-
-
-            //TC 2.6 Disable user
+            //TC 2.5 Disable user
             FwdPwdObj.ClickForgetPwdBtn();
             Thread.sleep(2000);
             FwdPwdObj.ClickEmailBtn(ReadProps.readAttr("DisabledUser"));

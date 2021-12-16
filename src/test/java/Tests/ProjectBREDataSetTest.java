@@ -73,14 +73,15 @@ public class ProjectBREDataSetTest extends BasePage {
             ProjectPageObj.ClickOnAddUserBtn();
             Thread.sleep(2000);
             ProjectPageObj.ClickOnSelectUserBtn();
-            Thread.sleep(3000);
+            Thread.sleep(1000);
             r.keyPress(KeyEvent.VK_ESCAPE);
-            Thread.sleep(2000);
+            Thread.sleep(1000);
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("window.scrollBy(0,-1000)", "");
             TakesScreen.takeSnapShot(driver, "test-output//ProjectBREDataSetTest//ProjectDetails.jpg");
-            Thread.sleep(3000);
+            Thread.sleep(2000);
             js.executeScript("window.scrollBy(0,1000)", "");
+            Thread.sleep(1000);
             //Navigate to Data Page.
             ProjectPageObj.ClickNextPage();
             Thread.sleep(1000);
@@ -172,7 +173,7 @@ public class ProjectBREDataSetTest extends BasePage {
 //            ProjectBREPageObj.ClickOnCreateProjectButton();
 //            Thread.sleep(6000);
 //            TakesScreen.takeSnapShot(driver, "test-output//ProjectBRETest//ProjectCreatedSuccessfully.jpg");
-          driver.close();
+              driver.close();
             //Document should be uploaded from backend to check the output.
         }
         catch (Exception e) {

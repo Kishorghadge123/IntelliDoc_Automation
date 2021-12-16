@@ -10,24 +10,20 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 
-public class DocProcessFreeForm extends BasePage {
+public class DocProcessFreeFormTest extends BasePage {
 
 
         @Test
-        public void DocumentFlow() throws InterruptedException, IOException {
+        public void DocProcessFreeFormFlow() throws InterruptedException, IOException {
             try {
                 BasePage.LoginTest();
-                Thread.sleep(9000);
+                Thread.sleep(8000);
                 Robot r = new Robot();
                 DocumentPage DocPageObj = new DocumentPage(driver);
                 test.log(status.INFO, "TestInformation");
                 test.log(status.PASS, "TestPassed");
-
                 DocPageObj.ClickDocumentBtn();
                 Thread.sleep(5000);
-                TakesScreen.takeSnapShot(driver, "test-output//FreeFormDocument//DocumentTab.jpg");
-                Thread.sleep(2000);
-
                 //Search Project
                 DocPageObj.ClickDropDownBtn();
                 Thread.sleep(2000);
@@ -165,7 +161,7 @@ public class DocProcessFreeForm extends BasePage {
                 DocPageObj.ClickSearchDocument();
                 Thread.sleep(2000);
                 DocPageObj.ClickViewDocIcon();
-                Thread.sleep(8000);
+                Thread.sleep(10000);
                 TakesScreen.takeSnapShot(driver, "test-output//FreeFormDocument//OpenDocument.jpg");
                 DocPageObj.ClickAntiWiseIcon();
                 Thread.sleep(2000);

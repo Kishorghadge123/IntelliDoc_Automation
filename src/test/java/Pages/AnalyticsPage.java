@@ -36,16 +36,8 @@ public class AnalyticsPage {
     By SelectWeekly = By.xpath("//span[contains(text(),'Weekly')]");
     By SelectDaily = By.xpath("//span[contains(text(),'Daily')]");
     By SelectOverall = By.xpath("//body/div[1]/div[2]/div[1]/div[1]/div[1]/mat-option[4]/span[1]");
-    By TotalDocument = By.xpath("//div[@class='white_bg rounded_5px box_shadow px-2 py-2 h-100 d-flex-center flex-column']");
-    By Received = By.xpath("//div[@class='mat-sort-header-content ng-tns-c166-14']");
-    By LastPage = By.xpath("//button[@class='mat-focus-indicator mat-tooltip-trigger mat-paginator-navigation-last mat-icon-button mat-button-base ng-star-inserted']");
-    By FirstPage = By.xpath("//button[@class='mat-focus-indicator mat-tooltip-trigger mat-paginator-navigation-first mat-icon-button mat-button-base ng-star-inserted']");
-    By PreviousPage = By.xpath("//button[@class='mat-focus-indicator mat-tooltip-trigger mat-paginator-navigation-previous mat-icon-button mat-button-base']");
-    By NextPage = By.xpath("//button[@class='mat-focus-indicator mat-tooltip-trigger mat-paginator-navigation-next mat-icon-button mat-button-base']");
-    By Document_Manual = By.xpath("//div[@class='mat-sort-header-content ng-tns-c166-14']");
-    By Received_Manual = By.xpath("//div[@class='mat-sort-header-content ng-tns-c166-15']");
-    By ProjectStatisticArrow = By.xpath("//span[contains(text(),'Project Statistics')]");
-
+    By SortByDocuments = By.xpath("//thead/tr[1]/th[1]/div[1]/div[1]");
+    By SortByReceived = By.xpath("//div[contains(text(),'Received')]");
 
     public AnalyticsPage(WebDriver driver) {
         this.driver = driver;
@@ -54,8 +46,16 @@ public class AnalyticsPage {
     public void ClickAnalyticsBtn() {
         driver.findElement(AnalyticsBtn).click();
     }
-    //Organization Statistics
-   public  void ClickOrganizationArrow(){
+
+    public void ClickOnSortByReceived() {
+        driver.findElement(SortByReceived).click();
+    }
+
+    public void ClickOnSortByDocuments() {
+        driver.findElement(SortByDocuments).click();
+    }
+
+    public  void ClickOrganizationArrow(){
         driver.findElement(OrganizationStatistics).click();
     }
 
@@ -82,7 +82,7 @@ public void HoverProcessed()
 
 }
 
-public void HoverReadytoProcess()
+public void HoverReadyToProcess()
 {
     Actions action = new Actions(driver);
     WebElement element= driver.findElement(ReadyToProcess);
@@ -155,9 +155,7 @@ public void HoverValidationTime()
         action.moveToElement(element3).build().perform();
     }
 
-
-    //Project Statistics
-    public  void ClickProjectArrow(){
+    public  void ClickProjectDownArrow(){
         driver.findElement(ProjectDownArrow).click();
     }
     public void ClickSearchProject(){driver.findElement(SearchProject).click();}
@@ -167,15 +165,4 @@ public void HoverValidationTime()
     public void ClickSelectWeekly(){driver.findElement(SelectWeekly).click();}
     public void ClickSelectDaily(){driver.findElement(SelectDaily).click();}
     public void ClickSelectOverall(){driver.findElement(SelectOverall).click();}
-    public  void HoverTotalDocument(){driver.findElement(TotalDocument).click();}
-    public void ClickDocument(){driver.findElement(Document).click();}
-    public void ClickReceived(){driver.findElement(Received).click();}
-    public void ClickLastPage(){driver.findElement(LastPage).click();}
-    public void ClickFirstPage(){driver.findElement(FirstPage).click();}
-    public void ClickPreviousPage(){driver.findElement(PreviousPage).click();}
-    public  void ClickNextPage(){driver.findElement(NextPage).click();}
-    public void ClickDocumentManual(){driver.findElement(Document_Manual).click();}
-    public  void ClickReceivedManual(){driver.findElement(Received_Manual).click();}
-    public  void ClickProjectStatisticArrow(){driver.findElement(ProjectStatisticArrow).click();}
-
 }

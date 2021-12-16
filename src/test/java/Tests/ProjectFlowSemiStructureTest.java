@@ -10,7 +10,7 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 
-public class ProjectFlowSemiStructure extends BasePage{
+public class ProjectFlowSemiStructureTest extends BasePage{
     @Test
     public void ProjectFlowSemiStructure() throws InterruptedException, IOException {
         try {
@@ -18,13 +18,10 @@ public class ProjectFlowSemiStructure extends BasePage{
             BasePage.LoginTest();
             Robot r = new Robot();
             Thread.sleep(8000);
-
             ProjectPage ProjectPageObj = new ProjectPage(driver);
             DocumentPage DocPageObj = new DocumentPage(driver);
-
             test.log(status.INFO, "TestInformation");
             test.log(status.PASS, "TestPassed");
-            System.out.println("Successfully logged in");
             Thread.sleep(2000);
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(2000);
@@ -67,10 +64,7 @@ public class ProjectFlowSemiStructure extends BasePage{
             ProjectPageObj.ClickOnSelectUserBtn();
             Thread.sleep(1000);
             r.keyPress(KeyEvent.VK_ESCAPE);
-            Thread.sleep(1000);
-           TakesScreen.takeSnapShot(driver, "test-output//ProjectTestSemiStructured//CreateProject.jpg");
-            System.out.println("Project Created");
-            Thread.sleep(2000);
+            Thread.sleep(3000);
             driver.close();
         }
         catch (Exception e) {

@@ -95,7 +95,7 @@ public class RoleAccessTest extends BasePage {
 
 
             //TC 11.12 Operator ROle Login with Valid ID and PWD
-            roleAccessObj.setUsername(ReadProps.readAttr("Operatoruser"));
+            roleAccessObj.setUsername(ReadProps.readAttr("OperatorUser"));
             Thread.sleep(2000);
             roleAccessObj.setPassword(ReadProps.readAttr("OperatorPwd"));
             Thread.sleep(2000);
@@ -112,7 +112,7 @@ public class RoleAccessTest extends BasePage {
             //TC 11.14 Operator Role Access Analytics
             roleAccessObj.ClickLogout();
             Thread.sleep(4000);
-            TakesScreen.takeSnapShot(driver, "test-output//RoleWiseTest//OperatorRolelogout.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//RoleWiseTest//OperatorRoleLogout.jpg");
             Thread.sleep(2000);
             driver.close();
 

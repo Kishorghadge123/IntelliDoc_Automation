@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
-public class ProjectFlowFreeForm extends BasePage {
+public class ProjectFlowFreeFormTest extends BasePage {
 
     @Test
             public void FreeFormProjectFlow(){
@@ -18,15 +18,12 @@ public class ProjectFlowFreeForm extends BasePage {
         BasePage.LoginTest();
         Robot r = new Robot();
         Thread.sleep(8000);
-
         ProjectPage ProjectPageObj = new ProjectPage(driver);
         DocumentPage DocPageObj = new DocumentPage(driver);
-
         test.log(status.INFO, "TestInformation");
         test.log(status.PASS, "TestPassed");
-        Thread.sleep(2000);
         ProjectPageObj.ClickOnCreateProjectBtn();
-        Thread.sleep(4000);
+        Thread.sleep(5000);
         ProjectPageObj.ClickOnProjectNameBtn(ReadProps.readAttr("FreeFormProjectName"));
         Thread.sleep(2000);
         ProjectPageObj.ClickOnLeadBtn();
@@ -53,7 +50,7 @@ public class ProjectFlowFreeForm extends BasePage {
         Thread.sleep(2000);
         ProjectPageObj.ClickOnDocumentAutoAssignBtn();
         Thread.sleep(2000);
-        ProjectPageObj.ClickOnAddFieldsbtn();
+        ProjectPageObj.ClickOnAddFieldBtn();
         Thread.sleep(2000);
         ProjectPageObj.SelectFieldValue();
         Thread.sleep(2000);
@@ -68,7 +65,7 @@ public class ProjectFlowFreeForm extends BasePage {
         ProjectPageObj.ClickOnSelectUserBtn();
         Thread.sleep(1000);
         r.keyPress(KeyEvent.VK_ESCAPE);
-        Thread.sleep(2000);
+        Thread.sleep(4000);
         driver.close();
     }
 

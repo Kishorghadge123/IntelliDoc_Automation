@@ -15,7 +15,6 @@ public class CreateUserAdminTest extends BasePage {
     @Test
     public void CreateUserAdminFlow() throws InterruptedException, IOException {
         try {
-
             test.log(status.INFO, "TestInformation");
             test.log(status.PASS, "TestPassed");
             String projectPath = System.getProperty("user.dir");
@@ -31,7 +30,7 @@ public class CreateUserAdminTest extends BasePage {
             UserPageObj.setPassword(ReadProps.readAttr("AdminPwd"));
             Thread.sleep(2000);
             UserPageObj.clickLoginButton();
-            Thread.sleep(9000);
+            Thread.sleep(8000);
             TakesScreen.takeSnapShot(driver, "test-output//AdminUserCreation//AdminValidLoginSuccess.jpg");
             Thread.sleep(2000);
 

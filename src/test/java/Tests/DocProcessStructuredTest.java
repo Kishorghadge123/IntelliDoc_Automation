@@ -10,10 +10,10 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 
-public class DocProcessStructured extends BasePage {
+public class DocProcessStructuredTest extends BasePage {
 
         @Test
-        public void DocumentFlow() throws InterruptedException, IOException {
+        public void DocProcessStructuredTestFlow() throws InterruptedException, IOException {
             try {
                 BasePage.LoginTest();
                 Thread.sleep(8000);
@@ -21,25 +21,21 @@ public class DocProcessStructured extends BasePage {
                 DocumentPage DocPageObj = new DocumentPage(driver);
                 test.log(status.INFO, "TestInformation");
                 test.log(status.PASS, "TestPassed");
-
                 DocPageObj.ClickDocumentBtn();
                 Thread.sleep(5000);
-                TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//DocumentTab.jpg");
-                Thread.sleep(3000);
-
                 //Search Project
                 DocPageObj.ClickDropDownBtn();
-                Thread.sleep(2000);
+                Thread.sleep(1000);
                 DocPageObj.ClickSearchProject(ReadProps.readAttr("StructuredProjectName"));
-                Thread.sleep(2000);
+                Thread.sleep(1000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//ProjectListDropDown.jpg");
-                Thread.sleep(2000);
+                Thread.sleep(1000);
                 DocPageObj.ClickSelectStructuredProject();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//ProjectSelected.jpg");
-                Thread.sleep(2000);
+                Thread.sleep(1000);
                 DocPageObj.ClickStatusFilter();
-                Thread.sleep(2000);
+                Thread.sleep(1000);
                 DocPageObj.ClickCheckProcessed();
                 Thread.sleep(2000);
                 System.out.println("Status filter updated");
@@ -51,9 +47,9 @@ public class DocProcessStructured extends BasePage {
 
                 //SearchBox Document
                 DocPageObj.ClickSearchBox("BRE US Citizen.jpg");
-                Thread.sleep(2000);
+                Thread.sleep(1000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//DocumentSearched.jpg");
-                Thread.sleep(2000);
+                Thread.sleep(1000);
                 DocPageObj.ClickSearchDocument();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//OpenDocument.jpg");
@@ -83,7 +79,7 @@ public class DocProcessStructured extends BasePage {
                 Thread.sleep(2000);
                 DocPageObj.ClickUnhideAnalytics();
                 Thread.sleep(2000);
-                TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//UnhideAnalytics.jpg");
+                TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//UnHideAnalytics.jpg");
 
                 // TC - Documents - filter
                 DocPageObj.ClickFilterDoc();
@@ -167,12 +163,12 @@ public class DocProcessStructured extends BasePage {
                 // Anticlockwise , clockwise , Next Page , Previous Page
                 DocPageObj.ClickSearchBox("form 1040.pdf");
                 Thread.sleep(1000);
-                TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//DocumentMorePage.jpg");
+                TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//DocumentMorePages.jpg");
                 Thread.sleep(1000);
                 DocPageObj.ClickSearchDocument();
                 Thread.sleep(1000);
                 DocPageObj.ClickViewDocIcon();
-                Thread.sleep(15000);
+                Thread.sleep(16000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//OpenDocument.jpg");
                 DocPageObj.ClickAntiWiseIcon();
                 Thread.sleep(2000);

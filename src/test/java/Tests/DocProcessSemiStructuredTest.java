@@ -10,11 +10,11 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 
-public class DocProcessSemiStructured extends BasePage
+public class DocProcessSemiStructuredTest extends BasePage
   {
 
         @Test
-        public void DocumentFlow() throws InterruptedException, IOException {
+        public void DocProcessSemiStructuredTestFlow() throws InterruptedException, IOException {
             try {
                 BasePage.LoginTest();
                 Thread.sleep(8000);
@@ -22,25 +22,21 @@ public class DocProcessSemiStructured extends BasePage
                 DocumentPage DocPageObj = new DocumentPage(driver);
                 test.log(status.INFO, "TestInformation");
                 test.log(status.PASS, "TestPassed");
-
                 DocPageObj.ClickDocumentBtn();
                 Thread.sleep(5000);
-                TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//DocumentTab.jpg");
-                Thread.sleep(2000);
-
                 //Search Project
                 DocPageObj.ClickDropDownBtn();
-                Thread.sleep(2000);
+                Thread.sleep(1000);
                 DocPageObj.ClickSearchProject(ReadProps.readAttr("SemiStructuredProject"));
-                Thread.sleep(2000);
+                Thread.sleep(1000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//ProjectListDropDown.jpg");
                 Thread.sleep(2000);
                 DocPageObj.ClickSelectSemiStructuredProject();
-                Thread.sleep(2000);
+                Thread.sleep(1000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//ProjectSelected.jpg");
-                Thread.sleep(2000);
+                Thread.sleep(1000);
                 DocPageObj.ClickStatusFilter();
-                Thread.sleep(2000);
+                Thread.sleep(1000);
                 DocPageObj.ClickCheckProcessed();
                 Thread.sleep(2000);
                 System.out.println("Status filter updated");
@@ -70,16 +66,14 @@ public class DocProcessSemiStructured extends BasePage
                 //Document refresh
                 DocPageObj.ClickRefreshDocument();
                 Thread.sleep(5000);
-
                 //Hide UnHide Analytics
                 DocPageObj.ClickHideAnalytics();
-                Thread.sleep(4000);
+                Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//HideAnalytics.jpg");
                 Thread.sleep(2000);
                 DocPageObj.ClickUnhideAnalytics();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//UnhideAnalytics.jpg");
-
 
                 // TC - Documents - filter
                 DocPageObj.ClickFilterDoc();
@@ -95,11 +89,11 @@ public class DocProcessSemiStructured extends BasePage
                 DocPageObj.ClickFilterDoc();
                 Thread.sleep(2000);
                 DocPageObj.ClickCancelFilterSearch();
-                Thread.sleep(1000);
+                Thread.sleep(2000);
                 r.keyPress(KeyEvent.VK_ESCAPE);
-                Thread.sleep(1000);
+                Thread.sleep(2000);
 
-                //sorting
+                //Sorting
                 DocPageObj.ClickDocSort();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//DocumentSort.jpg");
@@ -142,9 +136,7 @@ public class DocProcessSemiStructured extends BasePage
                 DocPageObj.SelectItemsPerPage();
                 Thread.sleep(2000);
 
-
                 //Next, Last, Previous and First Page
-
                 DocPageObj.ClickNextPage();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//NextItemPerPage.jpg");
@@ -163,46 +155,45 @@ public class DocProcessSemiStructured extends BasePage
                 Thread.sleep(2000);
 
                 // Anticlockwise , clockwise , Next Page , Previous Page
-                DocPageObj.ClickSearchBox("form 1040.pdf");
+                DocPageObj.ClickSearchBox("4.tif");
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//DocumentMorePage.jpg");
                 Thread.sleep(2000);
                 DocPageObj.ClickSearchDocument();
                 Thread.sleep(2000);
                 DocPageObj.ClickViewDocIcon();
-                Thread.sleep(8000);
+                Thread.sleep(6000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//OpenDocument.jpg");
                 Thread.sleep(2000);
-//                DocPageObj.ClickAntiWiseIcon();
-//                Thread.sleep(2000);
-//                TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//AntiClockWiseIcon.jpg");
-//
-//                //Clockwise
-//                DocPageObj.ClickClockWiseIcon();
-//                Thread.sleep(2000);
-//                TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//ClockWiseIcon.jpg");
-//
-//                //Zoom In
-//                DocPageObj.ClickZoomIn();
-//                Thread.sleep(2000);
-//                TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//ZoomIn.jpg");
-//
-//                //ZoomOut
-//                DocPageObj.ClickZoomOut();
-//                Thread.sleep(2000);
-//                TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//ZoomOut.jpg");
-//
-//                //Navigate Right
-//                DocPageObj.ClickNvgtRt();
-//                Thread.sleep(2000);
-//                TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//NextPage.jpg");
-//
-//                //Navigate Back
-//                DocPageObj.ClickNvgtLft();
-//                Thread.sleep(2000);
-//                TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//PreviousPage.jpg");
-//                Thread.sleep(3000);
+                DocPageObj.ClickAntiWiseIcon();
                 Thread.sleep(2000);
+                TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//AntiClockWiseIcon.jpg");
+
+                //Clockwise
+                DocPageObj.ClickClockWiseIcon();
+                Thread.sleep(2000);
+                TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//ClockWiseIcon.jpg");
+
+                //Zoom In
+                DocPageObj.ClickZoomIn();
+                Thread.sleep(2000);
+                TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//ZoomIn.jpg");
+
+                //ZoomOut
+                DocPageObj.ClickZoomOut();
+                Thread.sleep(2000);
+                TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//ZoomOut.jpg");
+
+                //Navigate Right
+                DocPageObj.ClickNvgtRt();
+                Thread.sleep(2000);
+                TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//NextPage.jpg");
+
+                //Navigate Back
+                DocPageObj.ClickNvgtLft();
+                Thread.sleep(2000);
+                TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//PreviousPage.jpg");
+                Thread.sleep(3000);
                 driver.close();
 
             } catch (Exception e) {

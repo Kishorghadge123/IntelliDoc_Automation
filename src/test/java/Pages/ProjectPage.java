@@ -22,7 +22,7 @@ public class ProjectPage {
     By SelectLead = By.xpath("//span[contains(text(),'qa1@email.com')]");
     By ClickStartDate = By.cssSelector("button[aria-label='Open calendar'][tabindex='0']");
     By ClearStartDate = By.xpath("//input[@id='mat-input-3']");
-    By SelectStartDate = By.xpath("//div[contains(text(),'14')]");//Change this before running
+    By SelectStartDate = By.xpath("//div[contains(text(),'16')]");//Change this before running
     By ClickEndDate = By.xpath("/html/body/app-root/div/app-landing/div/div/main/div/app-create-project/div[2]/div/form/mat-card/div/div[4]/mat-form-field/div/div[1]/div[4]/mat-datepicker-toggle/button");
     By ClearEndDate = By.xpath("//input[@id='mat-input-4']");
     By SelectEndDate = By.xpath("//div[contains(text(),'30')]");
@@ -87,7 +87,7 @@ public class ProjectPage {
     By ArrowLeft = By.xpath("//mat-icon[contains(text(),'keyboard_arrow_left')]");
     By ItemsPerPage = By.xpath("//*[@aria-label='Items per page:']");
     By SelectItems = By.xpath("//span[contains(text(),'50')]");
-    By NextPage = By.xpath("//span[contains(text(),'Next')]");
+    By NextPage = By.xpath("//span[contains(text(),' Next')]");
     By LastPage = By.xpath("//*[@aria-label='Last page']");
     By PreviousPage = By.xpath("//*[@aria-label='Previous page']");
 
@@ -95,18 +95,17 @@ public class ProjectPage {
     By CancelOnProject = By.xpath("//*[contains(text(),'Cancel')]");
 
     By ErrorMsgBlank = By.xpath("//span[contains(text(),'Please add the attributes before creating the project.')]");
-    By ErrorMsgRoleUser = By.xpath("//span[contains(text(),'Please add the attributes before creating the project.')]");
+    By ErrorMsgRoleUser = By.xpath("//span[contains(text(),'Role cannot have empty users')]");
     By ErrorMsgTemplate = By.xpath("//span[contains(text(),'Please add the template before creating the project.')]");
-    By ErrorMsgData = By.xpath("//span[contains(text(),'Please add the attributes before creating the project.')]");
+    By ErrorMsgData = By.xpath("//span[contains(text(),'Please check form data')]");
     By ErrorMsgRole = By.xpath("//span[contains(text(),'Role(s) cannot be empty')]");
-    By ErrorMsgUser = By.xpath("//span[contains(text(),'Role cannot have empty users')]");
     By ErrorMsgDisableRole = By.xpath("//span[contains(text(),'AE Supervisor role is Disabled')]");
     By TableStructure = By.xpath("//*[contains(text(),' list ')]");
     By SearchProject = By.xpath("//input[@data-placeholder='Search']");
 
     By RoleManagementBtn = By.xpath("//i[@class='mat-tooltip-trigger fa fa-id-card m-0 side-icon ng-star-inserted']");
     By SearchRole = By.xpath("//body[1]/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-role-management[1]/div[1]/div[1]/div[1]/mat-form-field[1]/div[1]/div[1]/div[3]/input[1]");
-    By EditRole = By.xpath("//span[contains(text(),'Auto Admin')]");
+    By EditRole = By.xpath("//span[contains(text(),' AutoAdmin1 ')]");
     By ActiveRole = By.xpath("//div[@class='mat-slide-toggle-thumb']");
     By ClickUpdateBtn = By.xpath("//span[contains(text(),'Update' )]");
     By SearchRoleInProject = By.xpath("//input[@placeholder='Search']");
@@ -224,7 +223,7 @@ public class ProjectPage {
         driver.findElement(ClickAddTemplate).click();
     }
 
-    public void ClickOnAddFieldsbtn() {
+    public void ClickOnAddFieldBtn() {
         driver.findElement(AddFields).click();
     }
 
@@ -422,7 +421,7 @@ public class ProjectPage {
         driver.findElement(AddRoleUser).click();
     }
 
-    public void VerifyAssertForError() {
+    public void VerifyAssertForBlank() {
 
         String actual_msg = driver.findElement(ErrorMsgBlank).getText();
         String expect = "Please add the attributes before creating the project.";
@@ -431,11 +430,11 @@ public class ProjectPage {
 
     public void VerifyAssertForUser() {
         String actual_msg = driver.findElement(ErrorMsgRoleUser).getText();
-        String expect = "Please add the attributes before creating the project.";
+        String expect = "Role cannot have empty users.";
         softAssert.assertEquals(actual_msg, expect);
     }
 
-    public void VerifyAssertForTemplate() {
+    public void VerifyAssertForNoTemplate() {
         String actual_msg = driver.findElement(ErrorMsgTemplate).getText();
         String expect = "Please add the template before creating the project.";
         softAssert.assertEquals(actual_msg, expect);
@@ -453,11 +452,6 @@ public class ProjectPage {
         softAssert.assertEquals(actual_msg, expect);
     }
 
-    public void VerifyAsertForUser() {
-        String actual_msg = driver.findElement(ErrorMsgUser).getText();
-        String expect = "Role cannot have empty users";
-        softAssert.assertEquals(actual_msg, expect);
-    }
 
     public void VerifyAssertForLeadAdmin() {
         String actual_msg = driver.findElement(SelectLeadAdmin).getText();

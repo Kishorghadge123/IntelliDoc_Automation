@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import java.io.IOException;
 
-public class DatasetTest extends BasePage {
+public class DataSetTest extends BasePage {
 
     @Test
     public void DataSetFlow() throws InterruptedException, IOException {
@@ -20,9 +20,8 @@ public class DatasetTest extends BasePage {
             DatasetPage DatasetPageObj = new DatasetPage(driver);
             test.log(status.INFO, "TestInformation");
             test.log(status.PASS, "TestPassed");
-
             DatasetPageObj.ClickDatasetBtn();
-            Thread.sleep(3000);
+            Thread.sleep(4000);
             // TC 1.1 - Create category with blank name
             DatasetPageObj.ClickAddCategoryBtn();
             Thread.sleep(1000);
