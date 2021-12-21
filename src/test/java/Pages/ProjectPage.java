@@ -22,12 +22,20 @@ public class ProjectPage {
     By SelectLead = By.xpath("//span[contains(text(),'qa1@email.com')]");
     By ClickStartDate = By.cssSelector("button[aria-label='Open calendar'][tabindex='0']");
     By ClearStartDate = By.xpath("//input[@id='mat-input-3']");
-    By SelectStartDate = By.xpath("//div[contains(text(),'16')]");//Change this before running
+    By SelectStartDate = By.xpath("//div[contains(text(),'22')]");//Change this before running
     By ClickEndDate = By.xpath("/html/body/app-root/div/app-landing/div/div/main/div/app-create-project/div[2]/div/form/mat-card/div/div[4]/mat-form-field/div/div[1]/div[4]/mat-datepicker-toggle/button");
     By ClearEndDate = By.xpath("//input[@id='mat-input-4']");
     By SelectEndDate = By.xpath("//div[contains(text(),'30')]");
     By ClickDocumentStructure = By.xpath("//*[@formcontrolname='documentStructure']");
     By SelectDocumentStructure = By.xpath("//span[contains(text(),'Structured ')]");
+
+    By SelectDocumentStructureMedical = By.xpath("//span[contains(text(),'Medical Chart')]");
+
+    By AddEntity = By.xpath("//body/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-create-project[1]/div[2]/div[1]/form[1]/project-info-section[1]/mat-accordion[1]/project-entitys[1]/mat-expansion-panel[1]/div[1]/div[1]/div[2]/button[1]/span[1]");
+
+    By PatientDemoGraphics = By.xpath("//body/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/button[1]");
+    By ChronicConditions = By.xpath("//body/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/button[1]");
+
     By SelectSemiStructure = By.xpath("//span[contains(text(),'Semi-Structured ')]");
     By SelectFreeForm = By.xpath("//span[contains(text(),'Free-Form ')]");
     By ClickProcessingEngine = By.xpath("//*[@formcontrolname='processingEngine']/div[1]/div[2]");
@@ -36,7 +44,7 @@ public class ProjectPage {
     By StraightThroughProcess = By.xpath("//*[@formcontrolname='staightThroughProcessing']/label/div");
     By DocumentScore = By.xpath("//input[@formcontrolname='score']");
     By Status = By.xpath("//*[@formcontrolname='status']/label/div");
-
+    By Attributes = By.xpath("//span[contains(text(),'Attributes')]");
     By DocumentAutoAssign = By.xpath("//*[@formcontrolname='autoAssignment']/label/div");
     By ClickAddTemplate = By.xpath("//span[contains(text(),'Add Template')]");
     By SelectTemplate = By.xpath("//button[contains(text(),'PE_TEMPLATE')]");
@@ -114,7 +122,7 @@ public class ProjectPage {
     By Username = By.xpath("//input[@formcontrolname='userName']");
     By Password = By.xpath("//input[@formcontrolname='password']");
     By EditProject = By.xpath("//mat-icon[contains(text(),'create')]");
-
+    By DeleteAttributeFieldName = By.xpath("//body/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-create-project[1]/div[2]/div[1]/form[1]/project-info-section[1]/mat-accordion[1]/project-attributes[1]/mat-expansion-panel[1]/div[1]/div[1]/div[1]/mat-table[1]/mat-row[1]/mat-cell[3]/button[1]/span[1]/mat-icon[1]");
     // User Update
     By UserBtn = By.xpath("//i[@class='mat-tooltip-trigger fa fa-users m-0 side-icon ng-star-inserted']");
     By User = By.xpath("//td[contains(text(),' AE Admin ')]");
@@ -129,6 +137,9 @@ public class ProjectPage {
 
     SoftAssert softAssert = new SoftAssert();
 
+    public void ClickOnDeleteAttributeFieldName() {
+        driver.findElement(DeleteAttributeFieldName).click();
+    }
 
     public void ClickOnProjectBtn() {
         driver.findElement(ProjectBtn).click();
@@ -144,6 +155,23 @@ public class ProjectPage {
 
     public void ClickOnLeadBtn() {
         driver.findElement(Lead).click();
+    }
+
+    public void ClickOnAttributes() {
+        driver.findElement(Attributes).click();
+    }
+
+    public void SelectPatientGraphics() {
+        driver.findElement(PatientDemoGraphics).click();
+    }
+
+    public void SelectChronicConditions() {
+        driver.findElement(ChronicConditions).click();
+    }
+
+
+    public void ClickOnAddEntity() {
+        driver.findElement(AddEntity).click();
     }
 
     public void ClickSearchLead(String text) {
@@ -182,6 +210,12 @@ public class ProjectPage {
     public void SelectDocumentStructureBtn() {
         driver.findElement(SelectDocumentStructure).click();
     }
+
+
+    public void SelectDocumentStructureMedicalBtn() {
+        driver.findElement(SelectDocumentStructureMedical).click();
+    }
+
 
     public void SelectOnSemiStructure() {
         driver.findElement(SelectSemiStructure).click();

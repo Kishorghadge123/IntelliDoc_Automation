@@ -16,7 +16,7 @@ public class CreateUserPage extends BasePage
     By SearchBtn  = By.xpath("//body[1]/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-user-management[1]/div[1]/div[1]/div[1]/mat-form-field[1]/div[1]/div[1]/div[3]/input[1]");
     By DisableUser = By.xpath("//div[@class='mat-slide-toggle-thumb']");
     By UpdateUser  = By.xpath("//button[@class='mat-focus-indicator float-right button-cls mat-raised-button mat-button-base mat-primary']");
-    By Password  = By.xpath("//body[1]/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-create-edit-user[1]/div[1]/form[1]/mat-card[1]/div[1]/div[3]/mat-form-field[1]/div[1]/div[1]/div[3]/input[1]");
+    By Password  = By.xpath("//input[@type='password']");
     By PlatformUser = By.xpath("//td[contains(text(),' AutoSampleBB ')]");
     By UserUpdated = By.xpath("//td[contains(text(),' AutoSampleUpdate ')]");
     By AdminUser = By.xpath("//td[contains(text(),' AutoAdminUserD ')]");//Change everytime before u ran

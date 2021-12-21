@@ -140,7 +140,7 @@ public class LoginTest extends BasePage {
             loginPageObjects.setPassword(ReadProps.readAttr("Password"));
             Thread.sleep(1000);
             loginPageObjects.clickLoginButton();
-            Thread.sleep(8000);
+            Thread.sleep(12000);
             loginPageObjects.VerifyHomePage();
             TakesScreen.takeSnapShot(driver, "test-output//LoginPage//LoginSuccess.jpg");
             System.out.println("Login Success - Valid Username and Valid Password");
@@ -156,7 +156,7 @@ public class LoginTest extends BasePage {
 
             //TC 1.11 - Logout for Platform Admin.
             loginPageObjects.ClickLogoutBtn();
-            Thread.sleep(2000);
+            Thread.sleep(5000);
             TakesScreen.takeSnapShot(driver, "test-output//LoginPage//Logout.jpg");
             System.out.println("Logout Success");
             Thread.sleep(2000);
@@ -206,7 +206,7 @@ public class LoginTest extends BasePage {
             loginPageObjects.setPassword(ReadProps.readAttr("AdminPwd"));
             Thread.sleep(1000);
             loginPageObjects.clickLoginButton();
-            Thread.sleep(6000);
+            Thread.sleep(12000);
             TakesScreen.takeSnapShot(driver, "test-output//LoginPage//AdminLoginSuccess.jpg");
             System.out.println("Login Success - Admin Valid Username and Valid Password");
             Thread.sleep(2000);
@@ -260,7 +260,7 @@ public class LoginTest extends BasePage {
             loginPageObjects.setPassword(ReadProps.readAttr("SupervisorPwd"));
             Thread.sleep(1000);
             loginPageObjects.clickLoginButton();
-            Thread.sleep(6000);
+            Thread.sleep(10000);
             TakesScreen.takeSnapShot(driver, "test-output//LoginPage//SupervisorValidLogin.jpg");
             System.out.println("Login Success - Supervisor Valid Username and Valid Password");
             Thread.sleep(2000);
@@ -313,11 +313,11 @@ public class LoginTest extends BasePage {
             loginPageObjects.setPassword(ReadProps.readAttr("OperatorPwd"));
             Thread.sleep(1000);
             loginPageObjects.clickLoginButton();
-            Thread.sleep(6000);
+            Thread.sleep(10000);
             TakesScreen.takeSnapShot(driver, "test-output//LoginPage//OperatorValidLogin.jpg");
             System.out.println("Login Success - Operator Valid Username and Invalid Password");
             loginPageObjects.ClickLogoutBtn();
-            Thread.sleep(4000);
+            Thread.sleep(5000);
             driver.close();
         }
         catch (Exception e) {

@@ -19,12 +19,11 @@ public class ProjectFlowStructuredTest extends BasePage {
 
             BasePage.LoginTest();
             Robot r = new Robot();
-            Thread.sleep(8000);
             ProjectPage ProjectPageObj = new ProjectPage(driver);
             test.log(status.INFO, "TestInformation");
             test.log(status.PASS, "TestPassed");
 
-            //TC 5.1 Create new project with Blank information and also verify Create button for Platform Admin.
+            //TC 5.1 Create new project with Blank information and also Verify Create button for Platform Admin.
             ProjectPageObj.ClickOnCreateProjectBtn();
             Thread.sleep(4000);
             JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -32,7 +31,7 @@ public class ProjectFlowStructuredTest extends BasePage {
             Thread.sleep(1000);
             ProjectPageObj.ClickOnCreate();
             ProjectPageObj.VerifyAssertForBlank();
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectTest//ProjectCreateBlank.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowStructured//ProjectCreateBlank.jpg");
             System.out.println("Please add the attributes before creating the project.");
             Thread.sleep(2000);
 
@@ -44,7 +43,7 @@ public class ProjectFlowStructuredTest extends BasePage {
             js.executeScript("window.scrollBy(0,10000)", "");
             Thread.sleep(1000);
             ProjectPageObj.ClickNextPage();
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectTest//ProjectCreateBlankNext.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowStructured//ProjectCreateBlankNext.jpg");
             Thread.sleep(2000);
 
             //TC 5.3 Verify Cancel button with Blank information for Platform Admin.
@@ -65,7 +64,7 @@ public class ProjectFlowStructuredTest extends BasePage {
             ProjectPageObj.ClickOnProjectNameBtn(ReadProps.readAttr("ProjectInvalidName"));
             Thread.sleep(1000);
             ProjectPageObj.ClickOnLeadBtn();
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectTest//InvalidName.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowStructured//InvalidName.jpg");
             Thread.sleep(2000);
             ProjectPageObj.SelectOnLeadBtn();
             Thread.sleep(2000);
@@ -108,11 +107,11 @@ public class ProjectFlowStructuredTest extends BasePage {
             ProjectPageObj.ClickOnSelectUserBtn();
             Thread.sleep(1000);
             r.keyPress(KeyEvent.VK_ESCAPE);
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             ProjectPageObj.ClickOnCreate();
             ProjectPageObj.VerifyAssertForData();
             Thread.sleep(200);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectTest//PleaseCheckFormData.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowStructured//PleaseCheckFormData.jpg");
             Thread.sleep(2000);
 
             //TC 5.5  Create project with Project information without Template for Platform Admin.
@@ -152,7 +151,7 @@ public class ProjectFlowStructuredTest extends BasePage {
             Thread.sleep(2000);
             ProjectPageObj.ClickOnCreate();
             Thread.sleep(200);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectTest//ProjectCreateWithoutTemplate.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowStructured//ProjectCreateWithoutTemplate.jpg");
             ProjectPageObj.VerifyAssertForNoTemplate();
             Thread.sleep(2000);
 
@@ -164,7 +163,7 @@ public class ProjectFlowStructuredTest extends BasePage {
             ProjectPageObj.ClickOnCreate();
             ProjectPageObj.VerifyAssertForRole();
             Thread.sleep(200);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectTest//CreateProjectWithoutRole.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowStructured//CreateProjectWithoutRole.jpg");
             Thread.sleep(2000);
 
             //TC 5.7 Create project without User for Platform Admin.
@@ -176,7 +175,7 @@ public class ProjectFlowStructuredTest extends BasePage {
             Thread.sleep(2000);
             ProjectPageObj.ClickOnCreate();
             Thread.sleep(200);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectTest//CreateProjectWithEmptyUsers.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowStructured//CreateProjectWithEmptyUsers.jpg");
             ProjectPageObj.VerifyAssertForUser();
             Thread.sleep(2000);
 
@@ -211,7 +210,7 @@ public class ProjectFlowStructuredTest extends BasePage {
             Thread.sleep(2000);
             ProjectPageObj.ClickOnDocumentScoreBtn(ReadProps.readAttr("Score"));
             Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectTest//StatusNotEnabled.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowStructured//StatusNotEnabled.jpg");
             ProjectPageObj.ClickOnDocumentAutoAssignBtn();
             Thread.sleep(2000);
             ProjectPageObj.ClickOnAddTemplateBtn();
@@ -229,10 +228,10 @@ public class ProjectFlowStructuredTest extends BasePage {
             ProjectPageObj.ClickOnSelectUserBtn();
             Thread.sleep(1000);
             r.keyPress(KeyEvent.VK_ESCAPE);
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             ProjectPageObj.ClickOnCreate();
             Thread.sleep(6000);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectTest//StatusNotEnabledProjectCreated.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowStructured//StatusNotEnabledProjectCreated.jpg");
             System.out.println("Project With Status Not Enabled Created Successfully");
             Thread.sleep(2000);
 
@@ -249,9 +248,11 @@ public class ProjectFlowStructuredTest extends BasePage {
             Thread.sleep(2000);
             ProjectPageObj.ClickOnSelectUserBtn();
             Thread.sleep(2000);
+            Thread.sleep(1000);
             r.keyPress(KeyEvent.VK_ESCAPE);
+            Thread.sleep(2000);
             ProjectPageObj.ClickOnCreate();
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectTest//ProjectCreateOnlyRole.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowStructured//ProjectCreateOnlyRole.jpg");
             System.out.println("Please add the attributes before creating the project.");
             Thread.sleep(2000);
             ProjectPageObj.ClickLogout();
@@ -269,7 +270,7 @@ public class ProjectFlowStructuredTest extends BasePage {
             Thread.sleep(4000);
             ProjectPageObj.ClickOnCreate();
             ProjectPageObj.VerifyAssertForBlank();
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectTest//ProjectCreateBlankForAdmin.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowStructured//ProjectCreateBlankForAdmin.jpg");
             System.out.println("Please add the attributes before creating the project.");
             Thread.sleep(2000);
 
@@ -279,7 +280,7 @@ public class ProjectFlowStructuredTest extends BasePage {
             ProjectPageObj.ClickOnCreateProjectBtn();
             Thread.sleep(4000);
             ProjectPageObj.ClickNextPage();
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectTest//ProjectCreateBlankNextAdmin.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowStructured//ProjectCreateBlankNextAdmin.jpg");
             Thread.sleep(2000);
 
             //TC 5.12 Verify Cancel button with Blank Information for Admin.
@@ -299,7 +300,7 @@ public class ProjectFlowStructuredTest extends BasePage {
             ProjectPageObj.ClickOnProjectNameBtn(ReadProps.readAttr("ProjectInvalidName"));
             Thread.sleep(1000);
             ProjectPageObj.ClickOnLeadBtn();
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectTest//InvalidNameAdmin.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowStructured//InvalidNameAdmin.jpg");
             Thread.sleep(2000);
             ProjectPageObj.SelectOnLeadBtn();
             Thread.sleep(2000);
@@ -342,11 +343,11 @@ public class ProjectFlowStructuredTest extends BasePage {
             ProjectPageObj.ClickOnSelectUserBtn();
             Thread.sleep(1000);
             r.keyPress(KeyEvent.VK_ESCAPE);
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             ProjectPageObj.ClickOnCreate();
             ProjectPageObj.VerifyAssertForData();
             Thread.sleep(200);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectTest//PleaseCheckFormDataAdmin.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowStructured//PleaseCheckFormDataAdmin.jpg");
             Thread.sleep(2000);
 
             //TC 5.14 Create project with Project information without Template for Admin.
@@ -386,7 +387,7 @@ public class ProjectFlowStructuredTest extends BasePage {
             Thread.sleep(2000);
             ProjectPageObj.ClickOnCreate();
             Thread.sleep(200);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectTest//ProjectCreateWithoutTemplateAdmin.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowStructured//ProjectCreateWithoutTemplateAdmin.jpg");
             ProjectPageObj.VerifyAssertForNoTemplate();
             Thread.sleep(2000);
 
@@ -398,7 +399,7 @@ public class ProjectFlowStructuredTest extends BasePage {
             ProjectPageObj.ClickOnCreate();
             ProjectPageObj.VerifyAssertForRole();
             Thread.sleep(200);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectTest//CreateProjectWithoutRoleAdmin.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowStructured//CreateProjectWithoutRoleAdmin.jpg");
             Thread.sleep(2000);
 
             //TC 5.16 Create project without User for Admin.
@@ -410,7 +411,7 @@ public class ProjectFlowStructuredTest extends BasePage {
             Thread.sleep(2000);
             ProjectPageObj.ClickOnCreate();
             Thread.sleep(200);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectTest//CreateProjectWithEmptyUsersAdmin.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowStructured//CreateProjectWithEmptyUsersAdmin.jpg");
             ProjectPageObj.VerifyAssertForUser();
             Thread.sleep(2000);
 
@@ -445,7 +446,7 @@ public class ProjectFlowStructuredTest extends BasePage {
             Thread.sleep(2000);
             ProjectPageObj.ClickOnDocumentScoreBtn(ReadProps.readAttr("Score"));
             Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectTest//StatusNotEnabledAdmin.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowStructured//StatusNotEnabledAdmin.jpg");
             ProjectPageObj.ClickOnDocumentAutoAssignBtn();
             Thread.sleep(2000);
             ProjectPageObj.ClickOnAddTemplateBtn();
@@ -463,10 +464,10 @@ public class ProjectFlowStructuredTest extends BasePage {
             ProjectPageObj.ClickOnSelectUserBtn();
             Thread.sleep(1000);
             r.keyPress(KeyEvent.VK_ESCAPE);
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             ProjectPageObj.ClickOnCreate();
             Thread.sleep(6000);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectTest//StatusNotEnabledProjectCreatedAdmin.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowStructured//StatusNotEnabledProjectCreatedAdmin.jpg");
             System.out.println("Project With Status Not Enabled Created Successfully Admin");
             Thread.sleep(2000);
 
@@ -483,22 +484,24 @@ public class ProjectFlowStructuredTest extends BasePage {
             Thread.sleep(2000);
             ProjectPageObj.ClickOnSelectUserBtn();
             Thread.sleep(2000);
+            Thread.sleep(1000);
             r.keyPress(KeyEvent.VK_ESCAPE);
+            Thread.sleep(2000);
             ProjectPageObj.ClickOnCreate();
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectTest//ProjectCreateOnlyRoleAdmin.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowStructured//ProjectCreateOnlyRoleAdmin.jpg");
             System.out.println("Please add the attributes before creating the project.");
             Thread.sleep(2000);
             ProjectPageObj.ClickLogout();
             System.out.println("Logout Success for Admin");
             Thread.sleep(5000);
 
-            //TC 5.19 Items Per Page.
+            //TC 5.19 Table Structure.
             LoginPage loginPageObjects = new LoginPage(driver);
             loginPageObjects.setUsername(ReadProps.readAttr("UserID"));
             Thread.sleep(1000);
             loginPageObjects.setPassword(ReadProps.readAttr("Password"));
             loginPageObjects.clickLoginButton();
-            Thread.sleep(8000);
+            Thread.sleep(10000);
             ProjectPageObj.ClickOnTableStructure();
             Thread.sleep(6000);
             driver.navigate().refresh();
@@ -506,11 +509,12 @@ public class ProjectFlowStructuredTest extends BasePage {
             ProjectPageObj.ClickOnTableStructure();
             Thread.sleep(6000);
 
-            //TC 5.20 Verify Footer Item per page,Next Page, Previous Page, Last Page, First Page.
+            //TC 5.20 Verify Footer Item per page.
             ProjectPageObj.ClickItemsPerPage();
             Thread.sleep(2000);
             ProjectPageObj.SelectItemsPerPage();
             Thread.sleep(2000);
+            Thread.sleep(1000);
             r.keyPress(KeyEvent.VK_ESCAPE);
             Thread.sleep(4000);
             driver.close();

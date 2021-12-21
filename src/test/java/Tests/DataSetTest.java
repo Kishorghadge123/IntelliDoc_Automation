@@ -16,7 +16,6 @@ public class DataSetTest extends BasePage {
 
         try {
             BasePage.LoginTest();
-            Thread.sleep(8000);
             DatasetPage DatasetPageObj = new DatasetPage(driver);
             test.log(status.INFO, "TestInformation");
             test.log(status.PASS, "TestPassed");

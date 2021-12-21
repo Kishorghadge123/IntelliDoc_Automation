@@ -1,32 +1,34 @@
 package Tests;
 
 import Base.BasePage;
-import Pages.DocumentPage;
+import Pages.LoginPage;
 import Pages.ProjectPage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 
-public class ProjectFlowSemiStructureTest extends BasePage{
+public class ProjectFlowMedicalChart extends BasePage {
+
     @Test
-    public void ProjectFlowSemiStructure() throws InterruptedException, IOException {
+    public void ProjectFlow() throws InterruptedException, IOException {
         try {
 
             BasePage.LoginTest();
             Robot r = new Robot();
             ProjectPage ProjectPageObj = new ProjectPage(driver);
-            DocumentPage DocPageObj = new DocumentPage(driver);
             test.log(status.INFO, "TestInformation");
             test.log(status.PASS, "TestPassed");
-            Thread.sleep(2000);
+
+            //TC Platform Admin.
             ProjectPageObj.ClickOnProjectBtn();
-            Thread.sleep(2000);
+            Thread.sleep(6000);
             ProjectPageObj.ClickOnCreateProjectBtn();
             Thread.sleep(2000);
-            ProjectPageObj.ClickOnProjectNameBtn(ReadProps.readAttr("SemiStructuredProjectName"));
+            ProjectPageObj.ClickOnProjectNameBtn(ReadProps.readAttr("MedicalChartProjectName"));//change this name in Obj file.
             Thread.sleep(2000);
             ProjectPageObj.ClickOnLeadBtn();
             Thread.sleep(2000);
@@ -42,17 +44,19 @@ public class ProjectFlowSemiStructureTest extends BasePage{
             Thread.sleep(2000);
             ProjectPageObj.ClickOnDocumentStructureBtn();
             Thread.sleep(2000);
-            ProjectPageObj.SelectOnSemiStructure();
-            Thread.sleep(2000);
-            ProjectPageObj.ClickOnStraightThroughProcessBtn();
-            Thread.sleep(2000);
-            ProjectPageObj.ClickOnDocumentScoreBtn(ReadProps.readAttr("Score"));
-            Thread.sleep(2000);
-            ProjectPageObj.ClickOnDeleteAttributeFieldName();
+            ProjectPageObj.SelectDocumentStructureMedicalBtn();
             Thread.sleep(2000);
             ProjectPageObj.ClickOnStatusBtn();
             Thread.sleep(2000);
             ProjectPageObj.ClickOnDocumentAutoAssignBtn();
+            Thread.sleep(2000);
+            ProjectPageObj.ClickOnAddEntity();
+            Thread.sleep(2000);
+            ProjectPageObj.SelectPatientGraphics();
+            Thread.sleep(2000);
+            ProjectPageObj.ClickOnAddEntity();
+            Thread.sleep(2000);
+            ProjectPageObj.SelectChronicConditions();
             Thread.sleep(2000);
             ProjectPageObj.ClickOnRolesBtn();
             Thread.sleep(2000);
@@ -66,15 +70,22 @@ public class ProjectFlowSemiStructureTest extends BasePage{
             Thread.sleep(1000);
             r.keyPress(KeyEvent.VK_ESCAPE);
             Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowSemi-Structured//PleaseAddAttributes.jpg");
+            ProjectPageObj.ClickNextPage();
             Thread.sleep(4000);
 
 
 
-           // driver.close();
+
+
+
+
+
+
+            driver.close();
+        } catch (Exception e) {
+            test.log(status.FAIL, e);
         }
-        catch (Exception e) {
-                test.log(status.FAIL, e);
-            }
-        }
+
     }
+}
+

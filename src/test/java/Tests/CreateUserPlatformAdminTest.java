@@ -12,7 +12,6 @@ public class CreateUserPlatformAdminTest extends BasePage {
     public void CreateUserPlatformAdminFlow() throws InterruptedException, IOException {
         try {
             BasePage.LoginTest();
-            Thread.sleep(8000);
             CreateUserPage UserPageObj = new CreateUserPage(driver);
             test.log(status.INFO, "TestInformation");
             test.log(status.PASS, "TestPassed");

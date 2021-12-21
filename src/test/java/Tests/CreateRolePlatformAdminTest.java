@@ -15,7 +15,6 @@ public class CreateRolePlatformAdminTest extends BasePage
     {
         try {
             BasePage.LoginTest();
-            Thread.sleep(8000);
             CreateRolePage CreateRolePageObj = new CreateRolePage(driver);
             test.log(status.INFO, "TestInformation");
             test.log(status.PASS, "TestPassed");

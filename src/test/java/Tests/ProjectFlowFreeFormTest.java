@@ -4,6 +4,7 @@ import Base.BasePage;
 import Pages.DocumentPage;
 import Pages.ProjectPage;
 import Utilities.ReadProps;
+import Utilities.TakesScreen;
 import org.testng.annotations.Test;
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -17,11 +18,11 @@ public class ProjectFlowFreeFormTest extends BasePage {
 
         BasePage.LoginTest();
         Robot r = new Robot();
-        Thread.sleep(8000);
         ProjectPage ProjectPageObj = new ProjectPage(driver);
         DocumentPage DocPageObj = new DocumentPage(driver);
         test.log(status.INFO, "TestInformation");
         test.log(status.PASS, "TestPassed");
+        //TC 16.1 Verify the working of Platform Admin for checking all the functionalities for Project Page.
         ProjectPageObj.ClickOnCreateProjectBtn();
         Thread.sleep(5000);
         ProjectPageObj.ClickOnProjectNameBtn(ReadProps.readAttr("FreeFormProjectName"));
@@ -50,10 +51,6 @@ public class ProjectFlowFreeFormTest extends BasePage {
         Thread.sleep(2000);
         ProjectPageObj.ClickOnDocumentAutoAssignBtn();
         Thread.sleep(2000);
-        ProjectPageObj.ClickOnAddFieldBtn();
-        Thread.sleep(2000);
-        ProjectPageObj.SelectFieldValue();
-        Thread.sleep(2000);
         ProjectPageObj.ClickOnRolesBtn();
         Thread.sleep(2000);
         ProjectPageObj.ClickOnAddRoleBtn();
@@ -65,7 +62,22 @@ public class ProjectFlowFreeFormTest extends BasePage {
         ProjectPageObj.ClickOnSelectUserBtn();
         Thread.sleep(1000);
         r.keyPress(KeyEvent.VK_ESCAPE);
+        Thread.sleep(2000);
+
+        //TC 16.2 Creating Project without adding the Attributes.
+        ProjectPageObj.ClickOnCreate();
+        TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowFree-Form//PleaseAddAttributes.jpg");
+        Thread.sleep(2000);
+
+        //TC 16.3 Create Project with Attributes.
+        ProjectPageObj.ClickOnAttributes();
+        Thread.sleep(2000);
+        ProjectPageObj.ClickOnAddFieldBtn();
+        Thread.sleep(2000);
+        ProjectPageObj.SelectFieldValue();
         Thread.sleep(4000);
+        ProjectPageObj.ClickOnCreate();
+        Thread.sleep(10000);
         driver.close();
     }
 

@@ -16,14 +16,14 @@ public class DocProcessStructuredTest extends BasePage {
         public void DocProcessStructuredTestFlow() throws InterruptedException, IOException {
             try {
                 BasePage.LoginTest();
-                Thread.sleep(8000);
                 Robot r = new Robot();
                 DocumentPage DocPageObj = new DocumentPage(driver);
                 test.log(status.INFO, "TestInformation");
                 test.log(status.PASS, "TestPassed");
                 DocPageObj.ClickDocumentBtn();
                 Thread.sleep(5000);
-                //Search Project
+
+                //13.1 Search Project.
                 DocPageObj.ClickDropDownBtn();
                 Thread.sleep(1000);
                 DocPageObj.ClickSearchProject(ReadProps.readAttr("StructuredProjectName"));
@@ -42,10 +42,10 @@ public class DocProcessStructuredTest extends BasePage {
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//StatusFilter.jpg");
                 Thread.sleep(1000);
                 r.keyPress(KeyEvent.VK_ESCAPE);
-                Thread.sleep(1000);
+                Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//Statuses.jpg");
 
-                //SearchBox Document
+                //13.2 SearchBox Document.
                 DocPageObj.ClickSearchBox("BRE US Citizen.jpg");
                 Thread.sleep(1000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//DocumentSearched.jpg");
@@ -54,7 +54,7 @@ public class DocProcessStructuredTest extends BasePage {
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//OpenDocument.jpg");
 
-                //Update document and cancel it
+                //13.3 Update Document and Cancel it.
                 DocPageObj.ClickViewDocIcon();
                 Thread.sleep(8000);
                 DocPageObj.ClickExpansionPanel();
@@ -67,12 +67,10 @@ public class DocProcessStructuredTest extends BasePage {
                 Thread.sleep(2000);
                 DocPageObj.ClickClearSearch();
                 Thread.sleep(2000);
-
-                //Document refresh
                 DocPageObj.ClickRefreshDocument();
                 Thread.sleep(5000);
 
-                //Hide UnHide Analytics
+                //13.4 Hide and UnHide Analytics.
                 DocPageObj.ClickHideAnalytics();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//HideAnalytics.jpg");
@@ -81,7 +79,7 @@ public class DocProcessStructuredTest extends BasePage {
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//UnHideAnalytics.jpg");
 
-                // TC - Documents - filter
+                //13.5 Documents filter.
                 DocPageObj.ClickFilterDoc();
                 Thread.sleep(2000);
                 DocPageObj.ClickSearchFilterDoc("BRE");
@@ -91,15 +89,15 @@ public class DocProcessStructuredTest extends BasePage {
                 DocPageObj.ClickFilterSearchIcon();
                 Thread.sleep(1000);
                 r.keyPress(KeyEvent.VK_ESCAPE);
-                Thread.sleep(1000);
+                Thread.sleep(2000);
                 DocPageObj.ClickFilterDoc();
                 Thread.sleep(2000);
                 DocPageObj.ClickCancelFilterSearch();
                 Thread.sleep(1000);
                 r.keyPress(KeyEvent.VK_ESCAPE);
-                Thread.sleep(1000);
+                Thread.sleep(2000);
 
-                //sorting
+                //13.6 sorting.
                 DocPageObj.ClickDocSort();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//DocumentSort.jpg");
@@ -135,14 +133,14 @@ public class DocProcessStructuredTest extends BasePage {
                 js.executeScript("window.scrollBy(0,10000)", "");
                 Thread.sleep(3000);
 
-                //Items Per Page
+                //13.7 Items Per Page.
                 DocPageObj.ClickItemsPerPage();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//ItemsPerPage.jpg");
                 DocPageObj.SelectItemsPerPage();
                 Thread.sleep(2000);
 
-                //Next, Last, Previous and First Page
+                //13.8 Next Page, Previous Page, Last Page and First Page.
                 DocPageObj.ClickNextPage();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//NextItemPerPage.jpg");
@@ -160,7 +158,7 @@ public class DocProcessStructuredTest extends BasePage {
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//FirstItemPerPage.jpg");
                 Thread.sleep(1000);
 
-                // Anticlockwise , clockwise , Next Page , Previous Page
+                //13.9 Anti-Clock Wise, Clock Wise, Zoom IN, Zoom Out, Navigate Right and Navigate Left.
                 DocPageObj.ClickSearchBox("form 1040.pdf");
                 Thread.sleep(1000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//DocumentMorePages.jpg");
@@ -170,6 +168,7 @@ public class DocProcessStructuredTest extends BasePage {
                 DocPageObj.ClickViewDocIcon();
                 Thread.sleep(16000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//OpenDocument.jpg");
+                Thread.sleep(2000);
                 DocPageObj.ClickAntiWiseIcon();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//AntiClockWiseIcon.jpg");
@@ -198,7 +197,7 @@ public class DocProcessStructuredTest extends BasePage {
                 DocPageObj.ClickNvgtLft();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//PreviousPage.jpg");
-                Thread.sleep(2000);
+                Thread.sleep(3000);
                 driver.close();
 
             } catch (Exception e) {
@@ -206,8 +205,3 @@ public class DocProcessStructuredTest extends BasePage {
             }
         }
     }
-
-
-
-
-

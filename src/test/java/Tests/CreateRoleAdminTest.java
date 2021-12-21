@@ -31,7 +31,7 @@ public class CreateRoleAdminTest extends BasePage {
             CreateRolePageObj.EnterPassword(ReadProps.readAttr("AdminPwd"));
             Thread.sleep(1000);
             CreateRolePageObj.ClickLoginButton();
-            Thread.sleep(8000);
+            Thread.sleep(12000);
             CreateRolePageObj.ClickRoleManagementBtn();
             Thread.sleep(5000);
             CreateRolePageObj.ClickCreateRoleBtn();

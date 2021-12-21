@@ -9,6 +9,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 public class BasePage {
 
@@ -19,8 +22,8 @@ public class BasePage {
 
         @BeforeClass
         public void startTest()
-        {
-            report = new ExtentReports("ExtentReportResults.html");
+        {   String timestamp = new SimpleDateFormat("yyyy_MM_dd__hh_mm_ss").format(new Date());
+            report = new ExtentReports("ExtentReportResults"+timestamp+".html");
             test = report.startTest("IntelliDoc");
         }
 
@@ -34,7 +37,7 @@ public class BasePage {
             loginPageObjects.setUsername(ReadProps.readAttr("UserID"));
             loginPageObjects.setPassword(ReadProps.readAttr("Password"));
             loginPageObjects.clickLoginButton();
-            Thread.sleep(8000);
+            Thread.sleep(12000);
         }
 
         @AfterClass

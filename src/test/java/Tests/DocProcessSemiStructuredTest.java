@@ -17,14 +17,13 @@ public class DocProcessSemiStructuredTest extends BasePage
         public void DocProcessSemiStructuredTestFlow() throws InterruptedException, IOException {
             try {
                 BasePage.LoginTest();
-                Thread.sleep(8000);
                 Robot r = new Robot();
                 DocumentPage DocPageObj = new DocumentPage(driver);
                 test.log(status.INFO, "TestInformation");
                 test.log(status.PASS, "TestPassed");
                 DocPageObj.ClickDocumentBtn();
                 Thread.sleep(5000);
-                //Search Project
+                //TC 12.1 Search Project.
                 DocPageObj.ClickDropDownBtn();
                 Thread.sleep(1000);
                 DocPageObj.ClickSearchProject(ReadProps.readAttr("SemiStructuredProject"));
@@ -43,10 +42,10 @@ public class DocProcessSemiStructuredTest extends BasePage
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//StatusFilter.jpg");
                 Thread.sleep(1000);
                 r.keyPress(KeyEvent.VK_ESCAPE);
-                Thread.sleep(1000);
+                Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//Statuses.jpg");
 
-                //SearchBox Document
+                //12.2 SearchBox Document
                 DocPageObj.ClickSearchBox("AN - OOLU2604599081.pdf");
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//FreeFormDocument//DocumentSearched.jpg");
@@ -55,18 +54,17 @@ public class DocProcessSemiStructuredTest extends BasePage
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//FreeFormDocument//OpenDocument.jpg");
 
-                //Update document and cancel it
+                //12.3 Update document and cancel it.
                 DocPageObj.ClickViewDocIcon();
                 Thread.sleep(8000);
                 DocPageObj.ClickDocumentBtn();
                 Thread.sleep(1000);
                 DocPageObj.ClickClearSearch();
                 Thread.sleep(1000);
-
-                //Document refresh
                 DocPageObj.ClickRefreshDocument();
                 Thread.sleep(5000);
-                //Hide UnHide Analytics
+
+                //12.4 Hide and UnHide Analytics.
                 DocPageObj.ClickHideAnalytics();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//HideAnalytics.jpg");
@@ -75,7 +73,7 @@ public class DocProcessSemiStructuredTest extends BasePage
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//UnhideAnalytics.jpg");
 
-                // TC - Documents - filter
+                //TC 12.5 Documents filter.
                 DocPageObj.ClickFilterDoc();
                 Thread.sleep(2000);
                 DocPageObj.ClickSearchFilterDoc("AN");
@@ -85,15 +83,15 @@ public class DocProcessSemiStructuredTest extends BasePage
                 DocPageObj.ClickFilterSearchIcon();
                 Thread.sleep(1000);
                 r.keyPress(KeyEvent.VK_ESCAPE);
-                Thread.sleep(1000);
+                Thread.sleep(2000);
                 DocPageObj.ClickFilterDoc();
                 Thread.sleep(2000);
                 DocPageObj.ClickCancelFilterSearch();
-                Thread.sleep(2000);
+                Thread.sleep(1000);
                 r.keyPress(KeyEvent.VK_ESCAPE);
                 Thread.sleep(2000);
 
-                //Sorting
+                //12.6 Sorting.
                 DocPageObj.ClickDocSort();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//DocumentSort.jpg");
@@ -129,14 +127,14 @@ public class DocProcessSemiStructuredTest extends BasePage
                 js.executeScript("window.scrollBy(0,10000)", "");
                 Thread.sleep(3000);
 
-                //Items Per Page
+                //12.7 Items Per Page.
                 DocPageObj.ClickItemsPerPage();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//ItemsPerPage.jpg");
                 DocPageObj.SelectItemsPerPage();
                 Thread.sleep(2000);
 
-                //Next, Last, Previous and First Page
+                //12.8 Next Page, Previous Page, Last Page and First Page.
                 DocPageObj.ClickNextPage();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//NextItemPerPage.jpg");
@@ -154,7 +152,7 @@ public class DocProcessSemiStructuredTest extends BasePage
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//FirstItemPerPage.jpg");
                 Thread.sleep(2000);
 
-                // Anticlockwise , clockwise , Next Page , Previous Page
+                //12.9 Anti-Clock Wise, Clock Wise, Zoom IN, Zoom Out, Navigate Right and Navigate Left.
                 DocPageObj.ClickSearchBox("4.tif");
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//DocumentMorePage.jpg");
@@ -168,28 +166,27 @@ public class DocProcessSemiStructuredTest extends BasePage
                 DocPageObj.ClickAntiWiseIcon();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//AntiClockWiseIcon.jpg");
-
-                //Clockwise
+                Thread.sleep(2000);
                 DocPageObj.ClickClockWiseIcon();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//ClockWiseIcon.jpg");
 
-                //Zoom In
+                // Zoom In.
                 DocPageObj.ClickZoomIn();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//ZoomIn.jpg");
 
-                //ZoomOut
+                // ZoomOut.
                 DocPageObj.ClickZoomOut();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//ZoomOut.jpg");
 
-                //Navigate Right
+                // Navigate Right.
                 DocPageObj.ClickNvgtRt();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//NextPage.jpg");
 
-                //Navigate Back
+                // Navigate Back.
                 DocPageObj.ClickNvgtLft();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//PreviousPage.jpg");

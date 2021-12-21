@@ -30,7 +30,7 @@ public class CreateUserAdminTest extends BasePage {
             UserPageObj.setPassword(ReadProps.readAttr("AdminPwd"));
             Thread.sleep(2000);
             UserPageObj.clickLoginButton();
-            Thread.sleep(8000);
+            Thread.sleep(12000);
             TakesScreen.takeSnapShot(driver, "test-output//AdminUserCreation//AdminValidLoginSuccess.jpg");
             Thread.sleep(2000);
 

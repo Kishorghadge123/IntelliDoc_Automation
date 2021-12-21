@@ -17,14 +17,14 @@ public class DocProcessFreeFormTest extends BasePage {
         public void DocProcessFreeFormFlow() throws InterruptedException, IOException {
             try {
                 BasePage.LoginTest();
-                Thread.sleep(8000);
                 Robot r = new Robot();
                 DocumentPage DocPageObj = new DocumentPage(driver);
                 test.log(status.INFO, "TestInformation");
                 test.log(status.PASS, "TestPassed");
                 DocPageObj.ClickDocumentBtn();
                 Thread.sleep(5000);
-                //Search Project
+
+                //TC 11.1 Search Project.
                 DocPageObj.ClickDropDownBtn();
                 Thread.sleep(2000);
                 DocPageObj.ClickSearchProject(ReadProps.readAttr("FreeFormProjectName"));
@@ -41,12 +41,12 @@ public class DocProcessFreeFormTest extends BasePage {
                 DocPageObj.ClickCheckProcessed();
                 Thread.sleep(1000);
                 r.keyPress(KeyEvent.VK_ESCAPE);
-                Thread.sleep(1000);
+                Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//FreeFormDocument//StatusFilter.jpg");
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//FreeFormDocument//Statuses.jpg");
 
-                //SearchBox Document
+                //11.2 SearchBox Document.
                 DocPageObj.ClickSearchBox("AN - OOLU2604599081.pdf");
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//FreeFormDocument//DocumentSearched.jpg");
@@ -55,17 +55,15 @@ public class DocProcessFreeFormTest extends BasePage {
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//FreeFormDocument//OpenDocument.jpg");
 
-                //Update document and cancel it
+                //11.3 Update document and cancel it.
                 DocPageObj.ClickViewDocIcon();
                 Thread.sleep(8000);
                 DocPageObj.ClickDocumentBtn();
                 Thread.sleep(3000);
-
-                //Document refresh
                 DocPageObj.ClickRefreshDocument();
                 Thread.sleep(3000);
 
-                //Hide UnHide Analytics
+                //11.4 Hide and UnHide Analytics.
                 DocPageObj.ClickHideAnalytics();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//FreeFormDocument//HideAnalytics.jpg");
@@ -74,7 +72,7 @@ public class DocProcessFreeFormTest extends BasePage {
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//FreeFormDocument//UnHideAnalytics.jpg");
 
-                // TC - Documents - filter
+                //TC 11.5 Documents filter.
                 DocPageObj.ClickFilterDoc();
                 Thread.sleep(2000);
                 DocPageObj.ClickSearchFilterDoc("AN");
@@ -84,15 +82,15 @@ public class DocProcessFreeFormTest extends BasePage {
                 DocPageObj.ClickFilterSearchIcon();
                 Thread.sleep(1000);
                 r.keyPress(KeyEvent.VK_ESCAPE);
-                Thread.sleep(1000);
+                Thread.sleep(2000);
                 DocPageObj.ClickFilterDoc();
                 Thread.sleep(2000);
                 DocPageObj.ClickCancelFilterSearch();
                 Thread.sleep(1000);
                 r.keyPress(KeyEvent.VK_ESCAPE);
-                Thread.sleep(1000);
+                Thread.sleep(2000);
 
-                //sorting
+                //TC 11.6 Sorting.
                 DocPageObj.ClickDocSort();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//FreeFormDocument//DocumentSort.jpg");
@@ -128,14 +126,14 @@ public class DocProcessFreeFormTest extends BasePage {
                 js.executeScript("window.scrollBy(0,10000)", "");
                 Thread.sleep(3000);
 
-                //Items Per Page
+                //TC 11.7 Items Per Page.
                 DocPageObj.ClickItemsPerPage();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//FreeFormDocument//ItemsPerPage.jpg");
                 DocPageObj.SelectItemsPerPage();
                 Thread.sleep(2000);
 
-                //Next, Last, Previous and First Page
+                //11.8 Next Page, Previous Page, Last Page and First Page.
                 DocPageObj.ClickNextPage();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//FreeFormDocument//NextItemPerPage.jpg");
@@ -153,7 +151,7 @@ public class DocProcessFreeFormTest extends BasePage {
                 TakesScreen.takeSnapShot(driver, "test-output//FreeFormDocument//FirstItemPerPage.jpg");
                 Thread.sleep(2000);
 
-                // Anticlockwise , clockwise , Next Page , Previous Page
+                //11.9 Anti-Clock Wise, Clock Wise, Zoom IN, Zoom Out, Navigate Right and Navigate Left.
                 DocPageObj.ClickSearchBox("3.tif");
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//FreeFormDocument//DocumentMorePage.jpg");
@@ -166,28 +164,27 @@ public class DocProcessFreeFormTest extends BasePage {
                 DocPageObj.ClickAntiWiseIcon();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//FreeFormDocument//AntiClockWiseIcon.jpg");
-
-                //Clockwise
+                Thread.sleep(2000);
                 DocPageObj.ClickClockWiseIcon();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//FreeFormDocument//ClockWiseIcon.jpg");
 
-                //Zoom In
+                // Zoom In.
                 DocPageObj.ClickZoomIn();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//FreeFormDocument//ZoomIn.jpg");
 
-                //ZoomOut
+                // ZoomOut.
                 DocPageObj.ClickZoomOut();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//FreeFormDocument//ZoomOut.jpg");
 
-                //Navigate Right
+                // Navigate Right.
                 DocPageObj.ClickNvgtRt();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//FreeFormDocument//NextPage.jpg");
 
-                //Navigate Back
+                // Navigate Back.
                 DocPageObj.ClickNvgtLft();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//FreeFormDocument//PreviousPage.jpg");
