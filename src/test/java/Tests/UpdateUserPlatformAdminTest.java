@@ -4,6 +4,7 @@ import Base.BasePage;
 import Pages.CreateUserPage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
+import com.relevantcodes.extentreports.LogStatus;
 import org.testng.annotations.Test;
 import java.io.IOException;
 
@@ -14,8 +15,8 @@ public class UpdateUserPlatformAdminTest extends BasePage {
             BasePage.LoginTest();
             Thread.sleep(12000);
             CreateUserPage UserPageObj1 = new CreateUserPage(driver);
-            test.log(status.INFO, "TestInformation");
-            test.log(status.PASS, "TestPassed");
+            test.log(LogStatus.INFO, "TestInformation");
+            test.log(LogStatus.PASS, "TestPassed");
 
             UserPageObj1.ClickUserBtn();
             Thread.sleep(5000);
@@ -337,7 +338,7 @@ public class UpdateUserPlatformAdminTest extends BasePage {
             Thread.sleep(4000);
             driver.close();
         } catch (Exception e) {
-            test.log(status.FAIL, e);
+            test.log(LogStatus.FAIL, e);
         }
     }
 }

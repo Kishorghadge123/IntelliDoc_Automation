@@ -6,6 +6,7 @@ import Pages.ProjectBREPage;
 import Pages.ProjectPage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
+import com.relevantcodes.extentreports.LogStatus;
 import org.testng.annotations.Test;
 import org.openqa.selenium.JavascriptExecutor;
 import java.awt.*;
@@ -20,8 +21,8 @@ public class ProjectBREDataSetTest extends BasePage {
             BasePage.LoginTest();
             Robot r = new Robot();
             ProjectPage ProjectPageObj = new ProjectPage(driver);
-            test.log(status.INFO, "TestInformation");
-            test.log(status.PASS, "TestPassed");
+            test.log(LogStatus.INFO, "TestInformation");
+            test.log(LogStatus.PASS, "TestPassed");
             //Object creation
             ProjectBREDataSetPage ProjectBREDataSetPageObj = new ProjectBREDataSetPage(driver);
 
@@ -113,17 +114,17 @@ public class ProjectBREDataSetTest extends BasePage {
             Thread.sleep(2000);
             ProjectBREPageObj.ClickOnAddRulesButton();
             Thread.sleep(1000);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectBREDataSetTest//AddRule.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectBREDataSetTest//AddRule1.jpg");
             Thread.sleep(2000);
             ProjectBREPageObj.ClickOnDeleteRulesButton();
             Thread.sleep(1000);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectBREDataSetTest//DeleteRule.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectBREDataSetTest//DeleteRule1.jpg");
             Thread.sleep(2000);
             ProjectBREPageObj.ClickOnAddRulesButton();
             Thread.sleep(2000);
             ProjectBREPageObj.ClickOnExpandFirstRule();
             Thread.sleep(1000);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectBREDataSetTest//ExpandRule.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectBREDataSetTest//ExpandRule1.jpg");
             Thread.sleep(2000);
             ProjectBREPageObj.ClickOnContractRuleButton();
             Thread.sleep(1000);
@@ -133,13 +134,13 @@ public class ProjectBREDataSetTest extends BasePage {
             Thread.sleep(2000);
             ProjectBREPageObj.DoubleClickOnRule1();
             Thread.sleep(1000);
-            ProjectBREPageObj.ClickOnRule1();
+            ProjectBREPageObj.ClickOnRule();
             Thread.sleep(1000);
-            ProjectBREPageObj.ClickOnClearRule1();
+            ProjectBREPageObj.ClickOnClearRule();
             Thread.sleep(1000);
             ProjectBREPageObj.DoubleClickOnRule1Second();
             Thread.sleep(1000);
-            ProjectBREPageObj.ClickOnRule1();
+            ProjectBREPageObj.ClickOnRule();
             Thread.sleep(1000);
             ProjectBREPageObj.EnterRuleName("Sample Rule");
             Thread.sleep(1000);
@@ -173,11 +174,11 @@ public class ProjectBREDataSetTest extends BasePage {
 //            ProjectBREPageObj.ClickOnCreateProjectButton();
 //            Thread.sleep(6000);
 //            TakesScreen.takeSnapShot(driver, "test-output//ProjectBRETest//ProjectCreatedSuccessfully.jpg");
-              driver.close();
+             // driver.close();
             //Document should be uploaded from backend to check the output.
         }
         catch (Exception e) {
-            test.log(status.FAIL, e);
+            test.log(LogStatus.FAIL, e);
         }
     }
 }

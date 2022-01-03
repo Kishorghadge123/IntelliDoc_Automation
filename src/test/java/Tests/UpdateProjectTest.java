@@ -4,6 +4,7 @@ import Base.BasePage;
 import Pages.ProjectPage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
+import com.relevantcodes.extentreports.LogStatus;
 import org.testng.annotations.Test;
 
 import java.awt.*;
@@ -20,8 +21,8 @@ public class UpdateProjectTest extends BasePage{
                 Robot r = new Robot();
                 Thread.sleep(9000);
                 ProjectPage ProjectPageObj = new ProjectPage(driver);
-                test.log(status.INFO, "TestInformation");
-                test.log(status.PASS, "TestPassed");
+                test.log(LogStatus.INFO, "TestInformation");
+                test.log(LogStatus.PASS, "TestPassed");
                 // 5 Verify the working of platform Admin for  Updating Project by entering Valid Data
                 ProjectPageObj.ClickOnProjectBtn();
                 Thread.sleep(5000);
@@ -418,7 +419,7 @@ public class UpdateProjectTest extends BasePage{
                 Thread.sleep(4000);
                 driver.close();
             } catch (Exception e) {
-                test.log(status.FAIL, e);
+                test.log(LogStatus.FAIL, e);
             }
 
         }

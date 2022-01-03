@@ -5,6 +5,7 @@ import Pages.LoginPage;
 import Pages.ProjectPage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
+import com.relevantcodes.extentreports.LogStatus;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
 import java.awt.*;
@@ -20,8 +21,8 @@ public class ProjectFlowStructuredTest extends BasePage {
             BasePage.LoginTest();
             Robot r = new Robot();
             ProjectPage ProjectPageObj = new ProjectPage(driver);
-            test.log(status.INFO, "TestInformation");
-            test.log(status.PASS, "TestPassed");
+            test.log(LogStatus.INFO, "TestInformation");
+            test.log(LogStatus.PASS, "TestPassed");
 
             //TC 5.1 Create new project with Blank information and also Verify Create button for Platform Admin.
             ProjectPageObj.ClickOnCreateProjectBtn();
@@ -105,7 +106,7 @@ public class ProjectFlowStructuredTest extends BasePage {
             ProjectPageObj.ClickOnAddUserBtn();
             Thread.sleep(2000);
             ProjectPageObj.ClickOnSelectUserBtn();
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             r.keyPress(KeyEvent.VK_ESCAPE);
             Thread.sleep(2000);
             ProjectPageObj.ClickOnCreate();
@@ -119,7 +120,7 @@ public class ProjectFlowStructuredTest extends BasePage {
             Thread.sleep(6000);
             ProjectPageObj.ClickOnCreateProjectBtn();
             Thread.sleep(4000);
-            ProjectPageObj.ClickOnProjectNameBtn(ReadProps.readAttr("StructuredProjectName"));
+            ProjectPageObj.ClickOnProjectNameBtn(ReadProps.readAttr("StructuredProjectName1"));
             Thread.sleep(1000);
             ProjectPageObj.ClickOnLeadBtn();
             Thread.sleep(2000);
@@ -166,7 +167,7 @@ public class ProjectFlowStructuredTest extends BasePage {
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowStructured//CreateProjectWithoutRole.jpg");
             Thread.sleep(2000);
 
-            //TC 5.7 Create project without User for Platform Admin.
+            //TC 5.7 Create project without User for Platform Admin.(End-End Flow also covers here).
             ProjectPageObj.ClickOnRolesBtn();
             Thread.sleep(2000);
             ProjectPageObj.ClickOnAddRoleBtn();
@@ -178,6 +179,15 @@ public class ProjectFlowStructuredTest extends BasePage {
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowStructured//CreateProjectWithEmptyUsers.jpg");
             ProjectPageObj.VerifyAssertForUser();
             Thread.sleep(2000);
+            ProjectPageObj.ClickOnAddUserBtn();
+            Thread.sleep(2000);
+            ProjectPageObj.ClickOnSelectUserBtn();
+            Thread.sleep(2000);
+            r.keyPress(KeyEvent.VK_ESCAPE);
+            Thread.sleep(2000);
+            ProjectPageObj.ClickOnCreate();
+            Thread.sleep(8000);
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowStructured//ProjectCreatedSuccessfully.jpg");
 
             //TC 5.8 Create Project with Disable Status Platform Admin.
             ProjectPageObj.ClickOnProjectBtn();
@@ -226,7 +236,7 @@ public class ProjectFlowStructuredTest extends BasePage {
             ProjectPageObj.ClickOnAddUserBtn();
             Thread.sleep(2000);
             ProjectPageObj.ClickOnSelectUserBtn();
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             r.keyPress(KeyEvent.VK_ESCAPE);
             Thread.sleep(2000);
             ProjectPageObj.ClickOnCreate();
@@ -248,7 +258,6 @@ public class ProjectFlowStructuredTest extends BasePage {
             Thread.sleep(2000);
             ProjectPageObj.ClickOnSelectUserBtn();
             Thread.sleep(2000);
-            Thread.sleep(1000);
             r.keyPress(KeyEvent.VK_ESCAPE);
             Thread.sleep(2000);
             ProjectPageObj.ClickOnCreate();
@@ -341,7 +350,7 @@ public class ProjectFlowStructuredTest extends BasePage {
             ProjectPageObj.ClickOnAddUserBtn();
             Thread.sleep(2000);
             ProjectPageObj.ClickOnSelectUserBtn();
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             r.keyPress(KeyEvent.VK_ESCAPE);
             Thread.sleep(2000);
             ProjectPageObj.ClickOnCreate();
@@ -462,7 +471,7 @@ public class ProjectFlowStructuredTest extends BasePage {
             ProjectPageObj.ClickOnAddUserBtn();
             Thread.sleep(2000);
             ProjectPageObj.ClickOnSelectUserBtn();
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             r.keyPress(KeyEvent.VK_ESCAPE);
             Thread.sleep(2000);
             ProjectPageObj.ClickOnCreate();
@@ -484,7 +493,6 @@ public class ProjectFlowStructuredTest extends BasePage {
             Thread.sleep(2000);
             ProjectPageObj.ClickOnSelectUserBtn();
             Thread.sleep(2000);
-            Thread.sleep(1000);
             r.keyPress(KeyEvent.VK_ESCAPE);
             Thread.sleep(2000);
             ProjectPageObj.ClickOnCreate();
@@ -514,14 +522,16 @@ public class ProjectFlowStructuredTest extends BasePage {
             Thread.sleep(2000);
             ProjectPageObj.SelectItemsPerPage();
             Thread.sleep(2000);
-            Thread.sleep(1000);
             r.keyPress(KeyEvent.VK_ESCAPE);
             Thread.sleep(4000);
+
+            //Add a End to End Flow here.
+
+
             driver.close();
         } catch (Exception e) {
-            test.log(status.FAIL, e);
+            test.log(LogStatus.FAIL, e);
         }
-
     }
 }
 

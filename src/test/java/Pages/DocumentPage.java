@@ -12,6 +12,10 @@ public class DocumentPage {
         By SelectStructuredProject = By.xpath("//span[contains(text(),'QA-AutoProject-Structured')]");
         By SelectSemiStructuredProject = By.xpath("//span[contains(text(),'QA-AutoProject-SemiStructured')]");
         By SelectFreeFormProject = By.xpath("//span[contains(text(),'QA-AutoProject-FreeForm')]");
+        By SelectMedicalChartProject = By.xpath("//span[contains(text(),'QA-AutoProject-MedicalChart')]");
+
+        //span[contains(text(),'QA-AutoProject-MedicalChart1')]
+
         By SemiStructureDocument= By.xpath("//span[contains(text(),'QA-Automation-SemiStructured')]");
         By SearchDocument = By.xpath("//mat-icon[contains(text(),'search')]");
         By CancelDoc2 = By.xpath("//span[contains(text(),'Cancel')]");
@@ -69,7 +73,7 @@ public class DocumentPage {
 
 
 
-
+        //Constructor
         public DocumentPage(WebDriver driver) { this.driver = driver;}
 
         public void ClickDocumentBtn(){ driver.findElement(DocumentBtn).click();}
@@ -77,6 +81,8 @@ public class DocumentPage {
         public void ClickSearchProject(String text){ driver.findElement(SearchProject).sendKeys(text);}
         public void ClickSelectStructuredProject(){driver.findElement(SelectStructuredProject).click();}
         public void ClickSelectFreeFormProject(){driver.findElement(SelectFreeFormProject).click();}
+        public void ClickSelectMedicalChartProject(){driver.findElement(SelectMedicalChartProject).click();}
+
         public void ClickSelectSemiStructuredProject(){driver.findElement(SelectSemiStructuredProject).click();}
         public void ClickSearchBox(String text){ driver.findElement(SearchBox).sendKeys(text);}
         public void  ClickSearchDocument(){driver.findElement(SearchDocument).click();}
@@ -90,7 +96,7 @@ public class DocumentPage {
         public void ClickUpdateDoc(){driver.findElement(SubmitDoc).click();}
         public void ClickCancelEditDoc2(){ driver.findElement(CancelEditDoc2).click();}
         public void ClickHideAnalytics(){ driver.findElement(HideAnalytics).click();}
-        public void ClickUnhideAnalytics(){ driver.findElement(UnHideAnalytics).click();}
+        public void ClickUnHideAnalytics(){ driver.findElement(UnHideAnalytics).click();}
         public void ClickRefreshDocument(){driver.findElement(RefreshDocuments).click();}
 
         //Script Enhancement

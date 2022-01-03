@@ -4,6 +4,7 @@ import Base.BasePage;
 import Pages.DatasetPage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
+import com.relevantcodes.extentreports.LogStatus;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
@@ -17,8 +18,8 @@ public class DataSetTest extends BasePage {
         try {
             BasePage.LoginTest();
             DatasetPage DatasetPageObj = new DatasetPage(driver);
-            test.log(status.INFO, "TestInformation");
-            test.log(status.PASS, "TestPassed");
+            test.log(LogStatus.INFO, "TestInformation");
+            test.log(LogStatus.PASS, "TestPassed");
             DatasetPageObj.ClickDatasetBtn();
             Thread.sleep(4000);
             // TC 1.1 - Create category with blank name
@@ -68,7 +69,7 @@ public class DataSetTest extends BasePage {
             DatasetPageObj.ClickDatasetName(ReadProps.readAttr("DName"));//Change before executing
             Thread.sleep(1000);
             WebElement upload_file = driver.findElement(By.xpath("//body/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-dataset-editor[1]/div[4]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/input[1]"));
-            upload_file.sendKeys("C:\\Users\\kumar\\Downloads\\sampledata.csv");
+            upload_file.sendKeys("D:\\MavenProject\\sampledata.csv");
             Thread.sleep(1000);
             TakesScreen.takeSnapShot(driver, "test-output//Datasets//Action-Name+File_NoValidation.jpg");
             Thread.sleep(1000);
@@ -81,7 +82,7 @@ public class DataSetTest extends BasePage {
             DatasetPageObj.ClickDatasetName(ReadProps.readAttr("DName"));//Change before executing
             Thread.sleep(1000);
             WebElement upload_file1 = driver.findElement(By.xpath("//body/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-dataset-editor[1]/div[4]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/input[1]"));
-            upload_file1.sendKeys("C:\\Users\\kumar\\Downloads\\sampledata.csv");
+            upload_file1.sendKeys("D:\\MavenProject\\sampledata.csv");
             Thread.sleep(2000);
 
             //validation type as "name" for dataset to create a new dataset
@@ -126,7 +127,7 @@ public class DataSetTest extends BasePage {
             driver.close();
 
         } catch (Exception e) {
-            test.log(status.FAIL, e);
+            test.log(LogStatus.FAIL, e);
         }
     }
 

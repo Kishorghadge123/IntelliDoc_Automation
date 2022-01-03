@@ -31,7 +31,7 @@ public class CreateUserPage extends BasePage
     By ExistErrorMsg = By.xpath("//span[contains(text(),'User exists with email sampleemail@email.com')]");
 
     public CreateUserPage(WebDriver driver) {
-        this.driver = driver;
+        BasePage.driver = driver;
     }
     public  void ClickUserBtn(){driver.findElement(UserBtn).click();}
     public  void ClickOnCancelBtn(){driver.findElement(CancelButton).click();}
@@ -55,7 +55,7 @@ public class CreateUserPage extends BasePage
     SoftAssert softAssert = new SoftAssert();
 
     public void CreateUserAssert() {
-        String User[] = driver.findElement(PlatformUser).getText().split(" ");
+        String[] User = driver.findElement(PlatformUser).getText().split(" ");
         String ActualUser = User[1].trim();
         String ExpectedUser = "AutoSampleBB";
         softAssert.assertEquals(ActualUser, ExpectedUser);

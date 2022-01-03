@@ -3,6 +3,7 @@ package Tests;
 import Base.BasePage;
 import Pages.FunctionalTab;
 import Utilities.TakesScreen;
+import com.relevantcodes.extentreports.LogStatus;
 import org.testng.annotations.Test;
 import java.io.IOException;
 
@@ -13,8 +14,8 @@ public class FunctionalTabTest extends BasePage {
               try {
                      BasePage.LoginTest();
                      FunctionalTab FunctionalTabObj = new FunctionalTab(driver);
-                     test.log(status.INFO, "TestInformation");
-                     test.log(status.PASS, "TestPassed");
+                     test.log(LogStatus.INFO, "TestInformation");
+                     test.log(LogStatus.PASS, "TestPassed");
 
                      //TC 3.1 Click on N-Icon.
                      FunctionalTabObj.ClickNIcon();
@@ -120,7 +121,7 @@ public class FunctionalTabTest extends BasePage {
                      driver.close();
               }
               catch (Exception e) {
-                     test.log(status.FAIL, e);
+                     test.log(LogStatus.FAIL, e);
               }
        }
 

@@ -5,6 +5,7 @@ import Pages.DocumentPage;
 import Pages.ProjectPage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
+import com.relevantcodes.extentreports.LogStatus;
 import org.testng.annotations.Test;
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -19,8 +20,9 @@ public class ProjectFlowSemiStructureTest extends BasePage{
             Robot r = new Robot();
             ProjectPage ProjectPageObj = new ProjectPage(driver);
             DocumentPage DocPageObj = new DocumentPage(driver);
-            test.log(status.INFO, "TestInformation");
-            test.log(status.PASS, "TestPassed");
+            test.log(LogStatus.INFO, "TestInformation");
+            test.log(LogStatus.PASS, "TestPassed");
+            //TC 15.1 Checking all the functionalities on the Project Page.
             Thread.sleep(2000);
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(2000);
@@ -48,12 +50,21 @@ public class ProjectFlowSemiStructureTest extends BasePage{
             Thread.sleep(2000);
             ProjectPageObj.ClickOnDocumentScoreBtn(ReadProps.readAttr("Score"));
             Thread.sleep(2000);
+            //TC 15.2 Checking Delete Attribute.
             ProjectPageObj.ClickOnDeleteAttributeFieldName();
+            Thread.sleep(2000);
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowSemi-Structured//DeletedFieldNameAttribute.jpg");
             Thread.sleep(2000);
             ProjectPageObj.ClickOnStatusBtn();
             Thread.sleep(2000);
             ProjectPageObj.ClickOnDocumentAutoAssignBtn();
             Thread.sleep(2000);
+
+
+            //Create Scenarios create here.
+
+            //Add assertions as well.
+
             ProjectPageObj.ClickOnRolesBtn();
             Thread.sleep(2000);
             ProjectPageObj.ClickOnAddRoleBtn();
@@ -63,18 +74,22 @@ public class ProjectFlowSemiStructureTest extends BasePage{
             ProjectPageObj.ClickOnAddUserBtn();
             Thread.sleep(2000);
             ProjectPageObj.ClickOnSelectUserBtn();
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             r.keyPress(KeyEvent.VK_ESCAPE);
             Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowSemi-Structured//PleaseAddAttributes.jpg");
+            //15.3 Navigate to Data Page and Rules Page.
+            ProjectPageObj.ClickNextPage();
+            Thread.sleep(2000);
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowSemi-Structured//DataPage.jpg");
+            Thread.sleep(1000);
+            ProjectPageObj.ClickRulesPage();
+            Thread.sleep(2000);
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowSemi-Structured//RulesPage.jpg");
             Thread.sleep(4000);
-
-
-
-           // driver.close();
+           driver.close();
         }
         catch (Exception e) {
-                test.log(status.FAIL, e);
+                test.log(LogStatus.FAIL, e);
             }
         }
     }

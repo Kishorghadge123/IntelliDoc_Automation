@@ -5,6 +5,7 @@ import Pages.DocumentPage;
 import Pages.ProjectPage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
+import com.relevantcodes.extentreports.LogStatus;
 import org.testng.annotations.Test;
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -20,8 +21,8 @@ public class ProjectFlowFreeFormTest extends BasePage {
         Robot r = new Robot();
         ProjectPage ProjectPageObj = new ProjectPage(driver);
         DocumentPage DocPageObj = new DocumentPage(driver);
-        test.log(status.INFO, "TestInformation");
-        test.log(status.PASS, "TestPassed");
+        test.log(LogStatus.INFO, "TestInformation");
+        test.log(LogStatus.PASS, "TestPassed");
         //TC 16.1 Verify the working of Platform Admin for checking all the functionalities for Project Page.
         ProjectPageObj.ClickOnCreateProjectBtn();
         Thread.sleep(5000);
@@ -60,7 +61,7 @@ public class ProjectFlowFreeFormTest extends BasePage {
         ProjectPageObj.ClickOnAddUserBtn();
         Thread.sleep(2000);
         ProjectPageObj.ClickOnSelectUserBtn();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         r.keyPress(KeyEvent.VK_ESCAPE);
         Thread.sleep(2000);
 
@@ -75,13 +76,13 @@ public class ProjectFlowFreeFormTest extends BasePage {
         ProjectPageObj.ClickOnAddFieldBtn();
         Thread.sleep(2000);
         ProjectPageObj.SelectFieldValue();
+        Thread.sleep(1000);
+        TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowFree-Form//FieldValueSelected.jpg");
         Thread.sleep(4000);
-        ProjectPageObj.ClickOnCreate();
-        Thread.sleep(10000);
         driver.close();
     }
 
     catch (Exception e) {
-        test.log(status.FAIL, e);
+        test.log(LogStatus.FAIL, e);
     }}
 }

@@ -18,7 +18,7 @@
 <!--        <class name="Tests.DocProcessStructuredTest"><methods><include name="DocumentFlow"/></methods></class>-->
 <!--        <class name="Tests.ProjectFlowFreeFormTest"><methods><include name="FreeFormProjectFlow"/></methods></class>-->
 <!--        <class name="Tests.ProjectFlowSemiStructureTest"><methods><include name="ProjectFlowSemiStructure"/></methods></class>-->
-<!--        <class name="Tests.RoleAccessTest"><methods><include name="RoleWiseFlow"/></methods></class>-->
+<!--        <class name="Tests.RoleWiseTest"><methods><include name="RoleWiseFlow"/></methods></class>-->
 <!--        <class name="Tests.UpdateUserAdminTest"><methods><include name="UpdateUserAdminFlow"/></methods></class>-->
 <!--        <class name="Tests.UpdateUserPlatformAdminTest"><methods><include name="PlatformAdminUpdateUserFlow"/></methods></class>-->
     </classes>

@@ -4,6 +4,7 @@ import Base.BasePage;
 import Pages.CreateUserPage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
+import com.relevantcodes.extentreports.LogStatus;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
@@ -13,8 +14,8 @@ public class UpdateUserAdminTest extends BasePage {
     @Test
     public void UpdateUserAdminFlow() throws InterruptedException, IOException {
         try {
-            test.log(status.INFO, "TestInformation");
-            test.log(status.PASS, "TestPassed");
+            test.log(LogStatus.INFO, "TestInformation");
+            test.log(LogStatus.PASS, "TestPassed");
             String projectPath = System.getProperty("user.dir");
             System.setProperty("webdriver.chrome.driver", projectPath + ".\\Drivers\\chromedriver.exe");
             WebDriver driver = new ChromeDriver();
@@ -112,7 +113,7 @@ public class UpdateUserAdminTest extends BasePage {
             Thread.sleep(4000);
             driver.close();
         } catch (Exception e) {
-            test.log(status.FAIL, e);
+            test.log(LogStatus.FAIL, e);
         }
     }
 }

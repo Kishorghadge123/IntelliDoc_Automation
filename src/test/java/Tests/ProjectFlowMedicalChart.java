@@ -1,11 +1,9 @@
 package Tests;
-
 import Base.BasePage;
-import Pages.LoginPage;
 import Pages.ProjectPage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
-import org.openqa.selenium.JavascriptExecutor;
+import com.relevantcodes.extentreports.LogStatus;
 import org.testng.annotations.Test;
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -20,10 +18,10 @@ public class ProjectFlowMedicalChart extends BasePage {
             BasePage.LoginTest();
             Robot r = new Robot();
             ProjectPage ProjectPageObj = new ProjectPage(driver);
-            test.log(status.INFO, "TestInformation");
-            test.log(status.PASS, "TestPassed");
+            test.log(LogStatus.INFO, "TestInformation");
+            test.log(LogStatus.PASS, "TestPassed");
 
-            //TC Platform Admin.
+            //TC 17.1 Platform Admin.
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(6000);
             ProjectPageObj.ClickOnCreateProjectBtn();
@@ -50,6 +48,8 @@ public class ProjectFlowMedicalChart extends BasePage {
             Thread.sleep(2000);
             ProjectPageObj.ClickOnDocumentAutoAssignBtn();
             Thread.sleep(2000);
+
+            //TC 17.2 checking the Add Entities(Patient Demographics and Chronic Conditions).
             ProjectPageObj.ClickOnAddEntity();
             Thread.sleep(2000);
             ProjectPageObj.SelectPatientGraphics();
@@ -67,11 +67,25 @@ public class ProjectFlowMedicalChart extends BasePage {
             ProjectPageObj.ClickOnAddUserBtn();
             Thread.sleep(2000);
             ProjectPageObj.ClickOnSelectUserBtn();
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             r.keyPress(KeyEvent.VK_ESCAPE);
             Thread.sleep(2000);
+
+            //15.3 Navigate to Data Page and Rules Page.
             ProjectPageObj.ClickNextPage();
+            Thread.sleep(2000);
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowSemi-Structured//DataPage.jpg");
+            Thread.sleep(1000);
+            ProjectPageObj.ClickRulesPage();
+            Thread.sleep(2000);
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowSemi-Structured//RulesPage.jpg");
             Thread.sleep(4000);
+
+
+
+
+            //Add the New Scenarios for Eg: Adding the Chronic conditions and Negative scenarios.
+
 
 
 
@@ -83,7 +97,7 @@ public class ProjectFlowMedicalChart extends BasePage {
 
             driver.close();
         } catch (Exception e) {
-            test.log(status.FAIL, e);
+            test.log(LogStatus.FAIL, e);
         }
 
     }

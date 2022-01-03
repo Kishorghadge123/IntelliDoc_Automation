@@ -22,22 +22,20 @@ public class ProjectPage {
     By SelectLead = By.xpath("//span[contains(text(),'qa1@email.com')]");
     By ClickStartDate = By.cssSelector("button[aria-label='Open calendar'][tabindex='0']");
     By ClearStartDate = By.xpath("//input[@id='mat-input-3']");
-    By SelectStartDate = By.xpath("//div[contains(text(),'22')]");//Change this before running
+    By SelectStartDate = By.xpath("//div[contains(text(),'28')]");//Change this before running
     By ClickEndDate = By.xpath("/html/body/app-root/div/app-landing/div/div/main/div/app-create-project/div[2]/div/form/mat-card/div/div[4]/mat-form-field/div/div[1]/div[4]/mat-datepicker-toggle/button");
     By ClearEndDate = By.xpath("//input[@id='mat-input-4']");
     By SelectEndDate = By.xpath("//div[contains(text(),'30')]");
     By ClickDocumentStructure = By.xpath("//*[@formcontrolname='documentStructure']");
-    By SelectDocumentStructure = By.xpath("//span[contains(text(),'Structured ')]");
-
-    By SelectDocumentStructureMedical = By.xpath("//span[contains(text(),'Medical Chart')]");
-
+    By SelectStructure = By.xpath("//span[contains(text(),'Structured ')]");
+    By SelectMedical = By.xpath("//span[contains(text(),'Medical Chart')]");
+    By SelectFreeForm = By.xpath("//span[contains(text(),'Free-Form ')]");
+    By SelectSemiStructure = By.xpath("//span[contains(text(),'Semi-Structured ')]");
     By AddEntity = By.xpath("//body/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-create-project[1]/div[2]/div[1]/form[1]/project-info-section[1]/mat-accordion[1]/project-entitys[1]/mat-expansion-panel[1]/div[1]/div[1]/div[2]/button[1]/span[1]");
 
     By PatientDemoGraphics = By.xpath("//body/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/button[1]");
     By ChronicConditions = By.xpath("//body/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/button[1]");
 
-    By SelectSemiStructure = By.xpath("//span[contains(text(),'Semi-Structured ')]");
-    By SelectFreeForm = By.xpath("//span[contains(text(),'Free-Form ')]");
     By ClickProcessingEngine = By.xpath("//*[@formcontrolname='processingEngine']/div[1]/div[2]");
     By SelectProcessingEngine = By.xpath("//span[contains(text(),'NN High')]");
     By SelectProcessingEngineNNLow = By.xpath("//span[contains(text(),'NN Low')]");
@@ -67,7 +65,7 @@ public class ProjectPage {
     By DocumentChanel = By.xpath("//span[contains(text(),'Document Ingestion Channels')]");
     By ChannelType = By.xpath("//*[@id='testa1']/div/div[2]/div");
     By SelectChannelType = By.xpath("//*[@id='mat-option-9']/span");
-    By ClickNext = By.xpath("//span[contains(text(),'Next')]");
+    By RulesPage = By.xpath("//body[1]/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-create-project[1]/div[3]/div[1]/div[1]/button[4]");
 
     //Rules Workbench
     By CLickVariable = By.xpath("//span[contains(text(),'Variables')]");
@@ -83,11 +81,11 @@ public class ProjectPage {
     By DeleteRule = By.xpath("//mat-icon[contains(text(),'delete')]");
     By ClickCancelOnRuleWorkbench = By.xpath("//*[@id='cdk-step-content-0-1']/form/div/div[2]/div/button[3]/span[1]");
     By CreateButton = By.xpath("//body/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-create-project[1]/div[2]/div[1]/form[1]/div[1]/button[1]");
-    //Project Homepage
+    By CreateButton1 = By.xpath("//body/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-create-project[1]/div[4]/div[1]/div[1]/button[2]/span[1]");
     By ClickTableStructure = By.xpath("//*[@class='main']/div/app-project-management/div/div/div/ul/li[2]");
     By ClickGridStructure = By.xpath("//mat-icon[contains(text(),'grid_on')]");
     By ClickEdit = By.xpath("//body/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-project-management[1]/div[2]/div[1]/div[2]/mat-card[1]/div[1]/div[1]/div[2]/button[1]/span[1]/mat-icon[1]");
-    //navigate back
+
     By ClickSearchBox = By.xpath("//input[@placeholder='Search']");
     By ClickSearchBox1 = By.xpath("/html[1]/body[1]/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-project-management[1]/div[1]/div[1]/div[2]/mat-form-field[1]/div[1]/div[1]/div[3]/input[1]");
 
@@ -129,7 +127,6 @@ public class ProjectPage {
     By SearchBtn = By.xpath("//body[1]/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-user-management[1]/div[1]/div[1]/div[1]/mat-form-field[1]/div[1]/div[1]/div[3]/input[1]");
     By DisableUser = By.xpath("//div[@class='mat-slide-toggle-thumb']");
     By UpdateUser = By.xpath("//button[@class='mat-focus-indicator float-right button-cls mat-raised-button mat-button-base mat-primary']");
-
 
     public ProjectPage(WebDriver driver) {
         this.driver = driver;
@@ -208,12 +205,12 @@ public class ProjectPage {
     }
 
     public void SelectDocumentStructureBtn() {
-        driver.findElement(SelectDocumentStructure).click();
+        driver.findElement(SelectStructure).click();
     }
 
 
     public void SelectDocumentStructureMedicalBtn() {
-        driver.findElement(SelectDocumentStructureMedical).click();
+        driver.findElement(SelectMedical).click();
     }
 
 
@@ -336,9 +333,7 @@ public class ProjectPage {
         driver.findElement(SelectChannelType).click();
     }
 
-    public void ClickOnClickNextBtn() {
-        driver.findElement(ClickNext).click();
-    }
+
 
     //Rule Workbench
     public void ClickOnVariableBtn() {
@@ -431,6 +426,10 @@ public class ProjectPage {
         driver.findElement(LastPage).click();
     }
 
+    public void ClickRulesPage() {
+        driver.findElement(RulesPage).click();
+    }
+
     public void ClickPreviousPage() {
         driver.findElement(PreviousPage).click();
     }
@@ -445,7 +444,12 @@ public class ProjectPage {
 
     public void ClickOnCreate() {
         driver.findElement(CreateButton).click();
-    } //Method for Create Button on Project page
+    }
+
+    public void ClickOnCreate1() {
+        driver.findElement(CreateButton1).click();
+    }
+    //body/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-create-project[1]/div[4]/div[1]/div[1]/button[2]/span[1]
 
     public void ClickOnCancelProject() {
         driver.findElement(CancelOnProject).click();

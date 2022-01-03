@@ -3,6 +3,7 @@ package Tests;
 import Base.BasePage;
 import Pages.AnalyticsPage;
 import Utilities.TakesScreen;
+import com.relevantcodes.extentreports.LogStatus;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
 import java.io.IOException;
@@ -14,14 +15,16 @@ public class AnalyticsTest extends BasePage {
     public void AnalyticsFlow() throws InterruptedException, IOException {
         try {
             BasePage.LoginTest();
+            //Object Creation
             AnalyticsPage AnalyticsPageObj = new AnalyticsPage(driver);
-            test.log(status.INFO, "TestInformation");
-            test.log(status.PASS, "TestPassed");
+
+            test.log(LogStatus.INFO, "TestInformation");
+            test.log(LogStatus.PASS, "TestPassed");
             AnalyticsPageObj.ClickAnalyticsBtn();
             Thread.sleep(12000);
             TakesScreen.takeSnapShot(driver, "test-output//Analytics//AnalyticsPage.jpg");
 
-            // 10.1 Organization Statistics Hide and UnHide.
+            // 8.1 Organization Statistics Hide and UnHide.
             AnalyticsPageObj.ClickOrganizationArrow();
            Thread.sleep(3000);
             TakesScreen.takeSnapShot(driver, "test-output//Analytics//OrganizationStatisticsHide.jpg");
@@ -30,46 +33,46 @@ public class AnalyticsTest extends BasePage {
            Thread.sleep(3000);
             TakesScreen.takeSnapShot(driver, "test-output//Analytics//OrganizationStatisticsUnHide.jpg");
            Thread.sleep(3000);
-            // 10.2 Hover on Total Users.
+            // 8.2 Hover on Total Users.
             AnalyticsPageObj.HoverTotalUser();
            Thread.sleep(3000);
             TakesScreen.takeSnapShot(driver, "test-output//Analytics//HoverTotalUsers.jpg");
-            // 10.2 Hover on Total Documents.
+            // 8.3 Hover on Total Documents.
             AnalyticsPageObj.HoverDocuments();
             TakesScreen.takeSnapShot(driver, "test-output//Analytics//HoverTotalDocuments.jpg");
             Thread.sleep(3000);
-            // 10.3 Hover on Processed Documents.
+            // 8.4 Hover on Processed Documents.
             AnalyticsPageObj.HoverProcessed();
             TakesScreen.takeSnapShot(driver, "test-output//Analytics//HoverProcessed.jpg");
            Thread.sleep(3000);
-            // 10.3 Hover on Ready to Process Documents.
+            // 8.5 Hover on Ready to Process Documents.
             AnalyticsPageObj.HoverReadyToProcess();
             TakesScreen.takeSnapShot(driver, "test-output//Analytics//HoverReadyToProcess.jpg");
            Thread.sleep(3000);
-            // 10.4 Hover on Ready to Rejected Documents.
+            // 8.6 Hover on Ready to Rejected Documents.
             AnalyticsPageObj.HoverRejected();
             TakesScreen.takeSnapShot(driver, "test-output//Analytics//HoverRejected.jpg");
             Thread.sleep(3000);
-            // 10.5 Hover on Validation Time.
+            // 8.7 Hover on Validation Time.
             AnalyticsPageObj.HoverValidationTime();
             TakesScreen.takeSnapShot(driver, "test-output//Analytics//HoverValidationTime.jpg");
             Thread.sleep(3000);
-            // 10.6 Hover on Structured.
+            // 8.8 Hover on Structured.
             AnalyticsPageObj.HoverStructuredBar();
             Thread.sleep(3000);
             TakesScreen.takeSnapShot(driver, "test-output//Analytics//HoverStructureBar.jpg");
             Thread.sleep(3000);
-            // 10.7 Hover on Semi-Structured.
+            // 8.9 Hover on Semi-Structured.
             AnalyticsPageObj.HoverSemiStructured();
             Thread.sleep(3000);
             TakesScreen.takeSnapShot(driver, "test-output//Analytics//HoverSemi-StructureBar.jpg");
             Thread.sleep(3000);
-            // 10.8 Hover on Free-Form.
+            // 8.10 Hover on Free-Form.
             AnalyticsPageObj.HoverFreeForm();
             Thread.sleep(3000);
             TakesScreen.takeSnapShot(driver, "test-output//Analytics//HoverFree-FormBar.jpg");
             Thread.sleep(3000);
-            // 10.9 Hover on Medical-Chart.
+            // 8.11 Hover on Medical-Chart.
             AnalyticsPageObj.HoverMedicalChart();
             Thread.sleep(3000);
             TakesScreen.takeSnapShot(driver, "test-output//Analytics//HoverMedicalChartBar.jpg");
@@ -81,7 +84,7 @@ public class AnalyticsTest extends BasePage {
             Thread.sleep(3000);
             AnalyticsPageObj.ClickProjectDownArrow();
            Thread.sleep(3000);
-            //10.10 Search Project.
+            //8.12 Search Project.
             AnalyticsPageObj.ClickSearchProject();
            Thread.sleep(3000);
             AnalyticsPageObj.ClickSelectProject();
@@ -90,12 +93,12 @@ public class AnalyticsTest extends BasePage {
             Thread.sleep(3000);
             AnalyticsPageObj.ClickSelectDropDown();
             Thread.sleep(3000);
-            //10.11 OverAll Data
+            //8.13 OverAll Data.
             AnalyticsPageObj.ClickSelectOverall();
             Thread.sleep(3000);
             AnalyticsPageObj.ClickSelectDropDown();
             Thread.sleep(2000);
-            //10.12 Monthly Data
+            //8.14 Monthly Data.
             AnalyticsPageObj.ClickSelectMonthly();
             Thread.sleep(3000);
             JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -105,7 +108,7 @@ public class AnalyticsTest extends BasePage {
             Thread.sleep(3000);
             AnalyticsPageObj.ClickSelectDropDown();
             Thread.sleep(3000);
-            //10.13 Weekly Data
+            //8.15 Weekly Data.
             AnalyticsPageObj.ClickSelectWeekly();
             Thread.sleep(3000);
             js.executeScript("window.scrollBy(0,10000)", "");
@@ -114,7 +117,7 @@ public class AnalyticsTest extends BasePage {
             Thread.sleep(3000);
             AnalyticsPageObj.ClickSelectDropDown();
             Thread.sleep(3000);
-            //10.14 Daily Data
+            //8.16 Daily Data.
             AnalyticsPageObj.ClickSelectDaily();
             Thread.sleep(3000);
             js.executeScript("window.scrollBy(0,10000)", "");
@@ -128,11 +131,11 @@ public class AnalyticsTest extends BasePage {
             AnalyticsPageObj.ClickOnSortByDocuments();
            Thread.sleep(3000);
             TakesScreen.takeSnapShot(driver, "test-output//Analytics//SortByReceived.jpg");
-            Thread.sleep(5000);
+            Thread.sleep(4000);
             driver.close();
 
         } catch (Exception e) {
-            test.log(status.FAIL, e);
+            test.log(LogStatus.FAIL, e);
         }
     }
 }

@@ -4,6 +4,7 @@ import Base.BasePage;
 import Pages.DocumentPage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
+import com.relevantcodes.extentreports.LogStatus;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
 import java.awt.*;
@@ -19,8 +20,8 @@ public class DocProcessSemiStructuredTest extends BasePage
                 BasePage.LoginTest();
                 Robot r = new Robot();
                 DocumentPage DocPageObj = new DocumentPage(driver);
-                test.log(status.INFO, "TestInformation");
-                test.log(status.PASS, "TestPassed");
+                test.log(LogStatus.INFO, "TestInformation");
+                test.log(LogStatus.PASS, "TestPassed");
                 DocPageObj.ClickDocumentBtn();
                 Thread.sleep(5000);
                 //TC 12.1 Search Project.
@@ -69,7 +70,7 @@ public class DocProcessSemiStructuredTest extends BasePage
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//HideAnalytics.jpg");
                 Thread.sleep(2000);
-                DocPageObj.ClickUnhideAnalytics();
+                DocPageObj.ClickUnHideAnalytics();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//UnhideAnalytics.jpg");
 
@@ -190,11 +191,11 @@ public class DocProcessSemiStructuredTest extends BasePage
                 DocPageObj.ClickNvgtLft();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//PreviousPage.jpg");
-                Thread.sleep(3000);
+                Thread.sleep(4000);
                 driver.close();
 
             } catch (Exception e) {
-                test.log(status.FAIL, e);
+                test.log(LogStatus.FAIL, e);
             }
         }
     }

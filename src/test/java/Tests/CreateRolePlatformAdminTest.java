@@ -3,6 +3,7 @@ import Base.BasePage;
 import Pages.CreateRolePage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
+import com.relevantcodes.extentreports.LogStatus;
 import org.testng.annotations.Test;
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -16,8 +17,8 @@ public class CreateRolePlatformAdminTest extends BasePage
         try {
             BasePage.LoginTest();
             CreateRolePage CreateRolePageObj = new CreateRolePage(driver);
-            test.log(status.INFO, "TestInformation");
-            test.log(status.PASS, "TestPassed");
+            test.log(LogStatus.INFO, "TestInformation");
+            test.log(LogStatus.PASS, "TestPassed");
             CreateRolePageObj.ClickRoleManagementBtn();
             Thread.sleep(5000);
             CreateRolePageObj.ClickCreateRoleBtn();
@@ -231,7 +232,7 @@ public class CreateRolePlatformAdminTest extends BasePage
         }
         catch (Exception e)
         {
-            test.log(status.FAIL, e);
+            test.log(LogStatus.FAIL, e);
         }
     }
 }

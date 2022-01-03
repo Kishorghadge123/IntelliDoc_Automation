@@ -4,6 +4,7 @@ import Base.BasePage;
 import Pages.CreateRolePage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
+import com.relevantcodes.extentreports.LogStatus;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
@@ -20,8 +21,8 @@ public class CreateRoleAdminTest extends BasePage {
             System.setProperty("webdriver.chrome.driver", projectPath + ".\\Drivers\\chromedriver.exe");
             WebDriver driver = new ChromeDriver();
             CreateRolePage CreateRolePageObj = new CreateRolePage(driver);
-            test.log(status.INFO, "TestInformation");
-            test.log(status.PASS, "TestPassed");
+            test.log(LogStatus.INFO, "TestInformation");
+            test.log(LogStatus.PASS, "TestPassed");
             driver.get(ReadProps.readAttr("URL"));
             driver.manage().window().maximize();
             Thread.sleep(1000);
@@ -169,17 +170,15 @@ public class CreateRoleAdminTest extends BasePage {
             CreateRolePageObj.ClickEditRole();
             Thread.sleep(5000);
             CreateRolePageObj.ClickActiveRole();
-            TakesScreen.takeSnapShot(driver, "test-output//AdminRoles//InacvtiveRole.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//AdminRoles//InactiveRole.jpg");
             Thread.sleep(3000);
             CreateRolePageObj.ClickUpdateBtn();
             Thread.sleep(3000);
             CreateRolePageObj.ClickLogout();
             Thread.sleep(4000);
             driver.close();
-            CreateRolePageObj.AssertAll();
-
         } catch (Exception e) {
-            test.log(status.FAIL, e);
+            test.log(LogStatus.FAIL, e);
         }
     }
 }

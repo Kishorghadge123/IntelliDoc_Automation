@@ -4,6 +4,7 @@ import Base.BasePage;
 import Pages.DocumentPage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
+import com.relevantcodes.extentreports.LogStatus;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
 import java.awt.*;
@@ -18,8 +19,8 @@ public class DocProcessStructuredTest extends BasePage {
                 BasePage.LoginTest();
                 Robot r = new Robot();
                 DocumentPage DocPageObj = new DocumentPage(driver);
-                test.log(status.INFO, "TestInformation");
-                test.log(status.PASS, "TestPassed");
+                test.log(LogStatus.INFO, "TestInformation");
+                test.log(LogStatus.PASS, "TestPassed");
                 DocPageObj.ClickDocumentBtn();
                 Thread.sleep(5000);
 
@@ -75,7 +76,7 @@ public class DocProcessStructuredTest extends BasePage {
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//HideAnalytics.jpg");
                 Thread.sleep(2000);
-                DocPageObj.ClickUnhideAnalytics();
+                DocPageObj.ClickUnHideAnalytics();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//UnHideAnalytics.jpg");
 
@@ -173,27 +174,27 @@ public class DocProcessStructuredTest extends BasePage {
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//AntiClockWiseIcon.jpg");
 
-                //Clockwise
+                //Clockwise.
                 DocPageObj.ClickClockWiseIcon();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//ClockWiseIcon.jpg");
 
-                //Zoom In
+                //Zoom In.
                 DocPageObj.ClickZoomIn();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//ZoomIn.jpg");
 
-                //ZoomOut
+                //ZoomOut.
                 DocPageObj.ClickZoomOut();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//ZoomOut.jpg");
 
-                //Navigate Right
+                //Navigate Right.
                 DocPageObj.ClickNvgtRt();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//NextPage.jpg");
 
-                //Navigate Back
+                //Navigate Back.
                 DocPageObj.ClickNvgtLft();
                 Thread.sleep(2000);
                 TakesScreen.takeSnapShot(driver, "test-output//StructuredDocument//PreviousPage.jpg");
@@ -201,7 +202,7 @@ public class DocProcessStructuredTest extends BasePage {
                 driver.close();
 
             } catch (Exception e) {
-                test.log(status.FAIL, e);
+                test.log(LogStatus.FAIL, e);
             }
         }
     }
