@@ -24,7 +24,7 @@ public class ProjectFlowFreeFormTest extends BasePage {
             test.log(LogStatus.INFO, "FreeFormProject");
             test.log(LogStatus.PASS, "TestPassed");
 
-            //TC 16.1 Verify Create Project without adding the Attributes and Role
+            //TC 16.1 Verify Create Project without adding the Attributes and Role.
             ProjectPageObj.ClickOnCreateProjectBtn();
             Thread.sleep(5000);
             ProjectPageObj.ClickOnProjectNameBtn(ReadProps.readAttr("FreeFormProjectName1"));
@@ -58,8 +58,7 @@ public class ProjectFlowFreeFormTest extends BasePage {
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowFree-Form//ErrorAttribute.jpg");
             Thread.sleep(3000);
 
-
-            //TC 16.2 Verify Create Project without adding the Role..
+            //TC 16.2 Verify Create Project without adding the Role.
             ProjectPageObj.ClickOnAddFieldBtn();
             Thread.sleep(2000);
             ProjectPageObj.SelectFieldValue();
@@ -70,7 +69,6 @@ public class ProjectFlowFreeFormTest extends BasePage {
             ProjectPageObj.VerifyAssertForRole();
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowFree-Form//ErrorRole.jpg");
             Thread.sleep(2000);
-
 
             //TC 16.3 Verify Create Project without adding the User.
             ProjectPageObj.ClickOnRolesBtn();
@@ -84,8 +82,7 @@ public class ProjectFlowFreeFormTest extends BasePage {
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowFree-Form//ErrorUser.jpg");
             Thread.sleep(2000);
 
-
-            //TC 16.4 Verify Add User
+            //TC 16.4 Verify Add User.
             ProjectPageObj.ClickOnAddUserBtn();
             Thread.sleep(2000);
             ProjectPageObj.ClickOnSelectUserBtn();
@@ -93,7 +90,7 @@ public class ProjectFlowFreeFormTest extends BasePage {
             r.keyPress(KeyEvent.VK_ESCAPE);
             Thread.sleep(3000);
 
-            //TC16.5 Navigate Next to Data Page and Rules Page and Back also.
+            //TC16.5 Navigate Next to Data Page and Rules Page and Back to Project Page.
             ProjectPageObj.ClickNextPage();
             Thread.sleep(2000);
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowFree-Form//DataPage.jpg");
@@ -109,7 +106,7 @@ public class ProjectFlowFreeFormTest extends BasePage {
             Thread.sleep(2000);
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowFree-Form//BackDatapage.jpg");
 
-            //TC16.6 Verify Create Project
+            //TC16.6 Verify Create Project with Valid Details.
             ProjectPageObj.ClickOnCreate();
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowFree-Form//PleaseAddAttributes.jpg");
             Thread.sleep(8000);

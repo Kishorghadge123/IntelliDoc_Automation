@@ -55,7 +55,7 @@ public class ProjectFlowSemiStructureTest extends BasePage{
             Thread.sleep(2000);
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowSemi-Structured//DeletedFieldNameAttribute.jpg");
             Thread.sleep(2000);
-            //TC 15.3 Verify Create Project without Role
+            //TC 15.3 Verify Create Project without Role.
             ProjectPageObj.ClickOnStatusBtn();
             Thread.sleep(2000);
             ProjectPageObj.ClickOnDocumentAutoAssignBtn();
@@ -92,7 +92,7 @@ public class ProjectFlowSemiStructureTest extends BasePage{
             ProjectPageObj.CLickBackDataPage();
             Thread.sleep(2000);
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowSemi-Structured//BackDatapage.jpg");
-            //TC 15.5 Verify Create Project
+            //TC 15.5 Verify Create Project.
             ProjectPageObj.ClickOnCreate();
             Thread.sleep(8000);
             driver.close();

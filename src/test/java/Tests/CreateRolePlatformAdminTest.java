@@ -26,7 +26,7 @@ public class CreateRolePlatformAdminTest extends BasePage
             TakesScreen.takeSnapShot(driver,"test-output//PlatformAdminRoles//Role button clicked.jpg");
             Thread.sleep(2000);
             System.out.println("Role button clicked");
-            // Blank RoleName and Blank permission
+            // Blank RoleName and Blank permission.
             CreateRolePageObj.ClickCreateButton();
             TakesScreen.takeSnapShot(driver,"test-output//PlatformAdminRoles//BlankRoleNameCreated.jpg");
             System.out.println("Assert Verified Please check form data and permission cannot be empty");

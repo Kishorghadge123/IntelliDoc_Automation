@@ -190,7 +190,7 @@ public class ProjectFlowStructuredTest extends BasePage {
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowStructured//ProjectCreatedSuccessfully.jpg");
             Thread.sleep(2000);
 
-            //TC 14.9 Create Project with Disable Status Platform Admin.
+            //TC 14.9 Create Project with Disable Status for Platform Admin.
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(6000);
             ProjectPageObj.ClickOnCreateProjectBtn();
@@ -246,7 +246,7 @@ public class ProjectFlowStructuredTest extends BasePage {
             System.out.println("Project With Status Not Enabled Created Successfully");
             Thread.sleep(2000);
 
-            //TC 14.10  Create Project only with Role information Platform Admin.
+            //TC 14.10  Create Project only with Role information for Platform Admin.
             ProjectPageObj.ClickOnCreateProjectBtn();
             Thread.sleep(4000);
             ProjectPageObj.ClickOnRolesBtn();
@@ -425,7 +425,7 @@ public class ProjectFlowStructuredTest extends BasePage {
             ProjectPageObj.VerifyAssertForUser();
             Thread.sleep(2000);
 
-            //TC 14.18 Create Project with Disable Status Admin.
+            //TC 14.18 Create Project with Disable Status for Admin.
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(6000);
             ProjectPageObj.ClickOnCreateProjectBtn();

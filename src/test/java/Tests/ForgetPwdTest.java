@@ -53,7 +53,7 @@ public class ForgetPwdTest extends BasePage {
             FwdPwdObj.ClickCancelBtn();
             Thread.sleep(2000);
 
-            //2.4 User Does not Exist
+            //2.4 User Does not Exist.
             FwdPwdObj.ClickForgetPwdBtn();
             Thread.sleep(2000);
             FwdPwdObj.ClickEmailBtn(ReadProps.readAttr("Invalid2"));
@@ -65,7 +65,7 @@ public class ForgetPwdTest extends BasePage {
             FwdPwdObj.ClickCancelBtn();
             Thread.sleep(2000);
 
-            //TC 2.5 Disable user
+            //TC 2.5 Disable user.
             FwdPwdObj.ClickForgetPwdBtn();
             Thread.sleep(2000);
             FwdPwdObj.ClickEmailBtn(ReadProps.readAttr("DisabledUser"));

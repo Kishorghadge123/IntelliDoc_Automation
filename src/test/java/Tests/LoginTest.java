@@ -162,7 +162,7 @@ public class LoginTest extends BasePage {
             System.out.println("Logout Success");
             Thread.sleep(2000);
 
-            //TC 1.2 - Admin Login with Invalid Username and Password.
+            //TC 1.12 - Admin Login with Invalid Username and Password.
             loginPageObjects.setUsername(ReadProps.readAttr("AdminInvalidUser"));
             Thread.sleep(1000);
             loginPageObjects.setPassword(ReadProps.readAttr("AdminInvalidPwd"));

@@ -24,7 +24,7 @@ public class ProjectFlowMedicalChart extends BasePage {
             test.log(LogStatus.INFO, "ProjectFlowMedicalChart");
             test.log(LogStatus.PASS, "TestPassed");
 
-            //TC 17.1 Platform Admin.
+            //TC 17.1 Checking all the functionalities on the Project Page Platform Admin.
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(6000);
             ProjectPageObj.ClickOnCreateProjectBtn();
@@ -51,13 +51,14 @@ public class ProjectFlowMedicalChart extends BasePage {
             Thread.sleep(2000);
             ProjectPageObj.ClickOnDocumentAutoAssignBtn();
             Thread.sleep(2000);
-            //TC 17.2 Verify Create Project without Entities and Role
+
+            //TC 17.2 Verify Create Project without Entities and Role.
             ProjectPageObj.ClickOnCreate();
             ProjectPageObj.VerifyAssertForEntities();
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowMedicalChart//ErrorEntites.jpg");
             Thread.sleep(2000);
 
-            //TC 17.3 Verify Create Prject with Entities and without Role
+            //TC 17.3 Verify Create Project with Entities and without Role
             ProjectPageObj.ClickOnAddEntity();
             Thread.sleep(2000);
             ProjectPageObj.SelectPatientGraphics();
@@ -71,7 +72,7 @@ public class ProjectFlowMedicalChart extends BasePage {
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowMedicalChart//ErrorRole.jpg");
             Thread.sleep(2000);
 
-            //TC 17.4 Verify Create Project without User
+            //TC 17.4 Verify Create Project without User.
             ProjectPageObj.ClickOnRolesBtn();
             Thread.sleep(2000);
             ProjectPageObj.ClickOnAddRoleBtn();
@@ -105,7 +106,8 @@ public class ProjectFlowMedicalChart extends BasePage {
             ProjectPageObj.CLickBackDataPage();
             Thread.sleep(2000);
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowMedicalChart//BackDatapage.jpg");
-            //TC 17.7 Verify Create Project
+
+            //TC 17.7 Verify Create Project with Valid Details.
             ProjectPageObj.ClickOnCreate();
             Thread.sleep(8000);
             driver.close();
