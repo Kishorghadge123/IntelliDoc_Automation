@@ -25,8 +25,8 @@ public class DocumentPage {
         By ViewDoc3 = By.xpath("//span[contains(text(),'4.tif')]");
         By ViewDoc4 = By.xpath("//span[contains(text(),'3.tif')]");
         By ViewDoc5 = By.xpath("//span[contains(text(),'Processed.pdf')]");
-        By ViewFreeFormRejectedDoc = By.xpath("//span[contains(text(),'Pfizer4.jpg')]");
-        By ViewStructuredReadyDoc = By.xpath("//span[contains(text(),'Pfizer4.jpg')]");
+        By ViewFreeFormRejectedDoc = By.xpath("//span[contains(text(),'Pfizer5.jpg')]");
+        By ViewStructuredReadyDoc = By.xpath("//span[contains(text(),'Pfizer5.jpg')]");
 
         By ExpansionPanel = By.xpath("//mat-expansion-panel-header/span[2]");
         By ChangeEmail = By.xpath("/html[1]/body[1]/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-processed-forms[1]/div[1]/div[1]/div[2]/div[4]/mat-expansion-panel[1]/div[1]/div[1]/mat-table[1]/mat-row[1]/mat-cell[2]/div[1]/mat-form-field[1]/div[1]/div[1]/div[1]/input[1]");

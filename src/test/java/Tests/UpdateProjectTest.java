@@ -5,24 +5,27 @@ import Pages.ProjectPage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
 import com.relevantcodes.extentreports.LogStatus;
-import org.testng.annotations.Test;
-
+import org.testng.annotations.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
+@Listeners(Utilities.TestListeners.class)
 
 public class UpdateProjectTest extends BasePage{
-
+    @BeforeClass
+    public void login() throws Exception {
+        BasePage.driverInit();
+        BasePage.LoginTest();
+    }
+    @AfterClass
+    public void cleanUp() throws Exception {
+        driver.quit();
+    }
     @Test
     public void UpdateProjectFlow() throws InterruptedException, IOException {
         try {
-
-            BasePage.LoginTest();
             Robot r = new Robot();
             ProjectPage ProjectPageObj = new ProjectPage(driver);
-            test.log(LogStatus.INFO, "UpdateProject");
-            test.log(LogStatus.PASS, "TestPassed");
-
             //TC 21.1 Verify the working of Platform Admin for  Updating Project by entering Valid Data.
             ProjectPageObj.SearchProject();
             Thread.sleep(2000);
@@ -413,7 +416,6 @@ public class UpdateProjectTest extends BasePage{
             Thread.sleep(4000);
             ProjectPageObj.ClickLogout();
             Thread.sleep(4000);
-            driver.close();
         } catch (Exception e) {
             test.log(LogStatus.FAIL, e);
         }

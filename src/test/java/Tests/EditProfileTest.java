@@ -1,32 +1,31 @@
 package Tests;
-
 import Base.BasePage;
 import Pages.EditProfilePage;
 import Pages.LoginPage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
 import com.relevantcodes.extentreports.LogStatus;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
+
 import java.io.IOException;
-
+@Listeners(Utilities.TestListeners.class)
 public class EditProfileTest extends BasePage {
-
+    @BeforeClass
+    public void login() throws Exception {
+        BasePage.driverInit();
+    }
+    @AfterClass
+    public void cleanUp() throws Exception {
+        driver.quit();
+    }
     @Test
     public void EditProfileFlow() throws InterruptedException, IOException {
         try {
-
-            String projectPath = System.getProperty("user.dir");
-            System.setProperty("webdriver.chrome.driver", projectPath + ".\\Drivers\\chromedriver.exe");
-            WebDriver driver = new ChromeDriver();
-            EditProfilePage EditProfileObj = new EditProfilePage(driver);
-            test.log(LogStatus.INFO, "EditProfile");
-            test.log(LogStatus.PASS, "TestPassed");
-            LoginPage loginPageObjects = new LoginPage(driver);
             driver.get(ReadProps.readAttr("URL"));
             driver.manage().window().maximize();
-            Thread.sleep(1000);
+            Thread.sleep(8000);
+            EditProfilePage EditProfileObj = new EditProfilePage(driver);
+            LoginPage loginPageObjects = new LoginPage(driver);
             //TC 11.1 Visible Password On.
             loginPageObjects.setUsername(ReadProps.readAttr("UserID"));
             Thread.sleep(1000);
@@ -70,8 +69,7 @@ public class EditProfileTest extends BasePage {
             EditProfileObj.CancelButton();
             Thread.sleep(1000);
             TakesScreen.takeSnapShot(driver, "test-output//EditProfileTest//Cancel.jpg");
-            Thread.sleep(4000);
-            driver.close();
+            Thread.sleep(2000);
         }
         catch (Exception e) {
             test.log(LogStatus.FAIL, e);

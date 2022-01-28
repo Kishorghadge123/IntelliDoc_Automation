@@ -3,21 +3,19 @@ import Base.BasePage;
 import Pages.DatasetPage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
-import com.relevantcodes.extentreports.LogStatus;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
+
 @Listeners(Utilities.TestListeners.class)
 public class DataSetTest extends BasePage {
     static DatasetPage DatasetPageObj;
-    @BeforeTest
+    @BeforeClass
     public void login() throws Exception {
+        BasePage.driverInit();
         BasePage.LoginTest();
     }
-    @AfterTest
+    @AfterClass
     public void cleanUp() throws Exception {
         driver.quit();
     }

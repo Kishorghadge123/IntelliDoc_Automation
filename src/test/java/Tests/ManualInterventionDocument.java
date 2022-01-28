@@ -1,28 +1,24 @@
 package Tests;
-
 import Base.BasePage;
 import Pages.AnalyticsPage;
 import Pages.DocumentPage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
-
 @Listeners(Utilities.TestListeners.class)
 
 public class ManualInterventionDocument extends BasePage {
     static DocumentPage documentPageObj;
-    @BeforeTest
+    @BeforeClass
     public void login() throws Exception {
+        BasePage.driverInit();
         BasePage.LoginTest();
     }
-    @AfterTest
+    @AfterClass
     public void cleanUp() throws Exception {
         driver.quit();
     }
@@ -81,7 +77,6 @@ public class ManualInterventionDocument extends BasePage {
     }
 
     @Test(priority = 2)
-
     public void manual_intervention_structured_ready_document() throws Exception {
         Robot r = new Robot();
         documentPageObj.ClickDocumentBtn();
@@ -134,8 +129,5 @@ public class ManualInterventionDocument extends BasePage {
         documentPageObj.clickSubmitChanges();
         Thread.sleep(5000);
         TakesScreen.takeSnapShot(driver, "test-output//DocumentUpdate//SubmitChangesProcessedDoc-Structured.jpg");
-
     }
-
-
 }

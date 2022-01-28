@@ -10,6 +10,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
+
 public class BasePage {
 
     public static WebDriver driver;
@@ -17,17 +19,7 @@ public class BasePage {
     public static ExtentTest test;
     public static ExtentReports report;
 
-    @BeforeClass
-    public void startTest()
-    {   String timestamp = new SimpleDateFormat("yyyy_MM_dd__hh_mm_ss").format(new Date());
-        report = new ExtentReports("ExtentReportResults"+timestamp+".html");
-        test = report.startTest("IntelliDoc");
-    }
-
     public static void LoginTest() throws Exception {
-        String projectPath = System.getProperty("user.dir");
-        System.setProperty("webdriver.chrome.driver", projectPath + ".\\Drivers\\chromedriver.exe");
-        driver = new ChromeDriver();
         LoginPage loginPageObjects = new LoginPage(driver);
         driver.get(ReadProps.readAttr("URL"));
         driver.manage().window().maximize();
@@ -36,11 +28,11 @@ public class BasePage {
         loginPageObjects.clickLoginButton();
         Thread.sleep(10000);
     }
-
-    @AfterClass
-    public void endTest()
-    {
-        report.endTest(test);
-        report.flush();
+    public static void driverInit() throws Exception {
+        String projectPath = System.getProperty("user.dir");
+        System.setProperty("webdriver.chrome.driver", projectPath + ".\\Drivers\\chromedriver.exe");
+        driver = new ChromeDriver();
+        //driver.manage().window().maximize();
+        //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 }

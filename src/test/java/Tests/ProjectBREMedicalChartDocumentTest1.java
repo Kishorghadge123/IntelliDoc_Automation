@@ -5,18 +5,20 @@ import Pages.ProjectBREMedicalChartDocumentPage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
 import com.relevantcodes.extentreports.LogStatus;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import java.io.IOException;
-import org.testng.annotations.BeforeTest;
 
+@Listeners(Utilities.TestListeners.class)
 public class ProjectBREMedicalChartDocumentTest1 extends BasePage {
-    @BeforeTest
-    public void login() {
-        try {
-            BasePage.LoginTest();
-        } catch (Exception e) {
-            test.log(LogStatus.FAIL, e);
-        }}
+    @BeforeClass
+    public void login() throws Exception {
+        BasePage.driverInit();
+        BasePage.LoginTest();
+    }
+    @AfterClass
+    public void cleanUp() throws Exception {
+        driver.quit();
+    }
     @Test(priority = 1)
     public void verify_rejected_document_no_data_extracted_on_medical_chart() throws InterruptedException, IOException {
         try {
@@ -220,7 +222,6 @@ public class ProjectBREMedicalChartDocumentTest1 extends BasePage {
             Thread.sleep(2000);
             test.log(LogStatus.INFO, "ProjectBREMedicalChartDocument1TC6");
             test.log(LogStatus.PASS, "TestPassed");
-            driver.close();
         } catch (Exception e) {
             test.log(LogStatus.FAIL, e);
         }}

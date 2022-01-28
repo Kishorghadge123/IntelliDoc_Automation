@@ -5,20 +5,27 @@ import Pages.CreateUserPage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
 import com.relevantcodes.extentreports.LogStatus;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import java.io.IOException;
+@Listeners(Utilities.TestListeners.class)
 
 public class UpdateUserPlatformAdminTest extends BasePage {
+
+    @BeforeClass
+    public void login() throws Exception {
+        BasePage.driverInit();
+        BasePage.LoginTest();
+    }
+    @AfterClass
+    public void cleanUp() throws Exception {
+        driver.quit();
+    }
     @Test
     public void PlatformAdminUpdateUserFlow() throws InterruptedException, IOException {
         try {
-            BasePage.LoginTest();
             CreateUserPage UserPageObj1 = new CreateUserPage(driver);
-            test.log(LogStatus.INFO, "PlatformAdminUpdateUser");
-            test.log(LogStatus.PASS, "TestPassed");
             UserPageObj1.ClickUserBtn();
             Thread.sleep(5000);
-
             //TC 23.1 Update User enable, disable.
             UserPageObj1.SearchCreatedUser(ReadProps.readAttr("Username"));
             Thread.sleep(2000);
@@ -322,7 +329,6 @@ public class UpdateUserPlatformAdminTest extends BasePage {
 //            Thread.sleep(4000);
 //            UserPageObj1.LogOut();
             Thread.sleep(2000);
-            driver.close();
         } catch (Exception e) {
             test.log(LogStatus.FAIL, e);
         }

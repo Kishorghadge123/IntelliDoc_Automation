@@ -5,28 +5,27 @@ import Pages.CreateRolePage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
 import com.relevantcodes.extentreports.LogStatus;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
-
-
+@Listeners(Utilities.TestListeners.class)
 public class CreateUpdateRoleAdminTest extends BasePage {
+    @BeforeClass
+    public void login() throws Exception {
+        BasePage.driverInit();
+    }
+    @AfterClass
+    public void cleanUp() throws Exception {
+        driver.quit();
+    }
     @Test
     public void CreateRoleAdminFlow() throws InterruptedException, IOException {
         try {
-            String projectPath = System.getProperty("user.dir");
-            System.setProperty("webdriver.chrome.driver", projectPath + ".\\Drivers\\chromedriver.exe");
-            WebDriver driver = new ChromeDriver();
-            CreateRolePage CreateRolePageObj = new CreateRolePage(driver);
-            test.log(LogStatus.INFO, "CreateRoleAdmin");
-            test.log(LogStatus.PASS, "TestPassed");
             driver.get(ReadProps.readAttr("URL"));
             driver.manage().window().maximize();
-            Thread.sleep(2000);
-
+            Thread.sleep(8000);
+            CreateRolePage CreateRolePageObj = new CreateRolePage(driver);
             //TC 2.1 Login with Valid Admin details.
             CreateRolePageObj.EnterUsername(ReadProps.readAttr("AdminUser"));
             Thread.sleep(1000);
@@ -174,8 +173,6 @@ public class CreateUpdateRoleAdminTest extends BasePage {
             Thread.sleep(4000);
             CreateRolePageObj.ClickLogout();
             Thread.sleep(4000);
-            driver.close();
-
         } catch (Exception e) {
             test.log(LogStatus.FAIL, e);
         }

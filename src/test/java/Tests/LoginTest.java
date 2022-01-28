@@ -1,5 +1,4 @@
 package Tests;
-
 import Base.BasePage;
 import Pages.LoginPage;
 import Utilities.ReadProps;
@@ -7,27 +6,24 @@ import Utilities.TakesScreen;
 import com.relevantcodes.extentreports.LogStatus;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import static org.testng.Assert.assertEquals;
-
+@Listeners(Utilities.TestListeners.class)
 public class LoginTest extends BasePage {
-    WebDriver driver;
-
+    @BeforeClass
+    public void login() throws Exception {
+        BasePage.driverInit();
+    }
+    @AfterClass
+    public void cleanUp() throws Exception {
+        driver.quit();
+    }
     @Test
     public static void LoginTestFlow() throws Exception {
         try {
-
-            test.log(LogStatus.INFO, "TestInformation");
-            test.log(LogStatus.PASS, "TestPassed");
-            String projectPath = System.getProperty("user.dir");
-            System.setProperty("webdriver.chrome.driver", projectPath + ".\\Drivers\\chromedriver.exe");
-            WebDriver driver = new ChromeDriver();
             //Object creation
             LoginPage loginPageObjects = new LoginPage(driver);
-
             driver.get(ReadProps.readAttr("URL"));
             Thread.sleep(2000);
             String actualTitle = driver.getTitle();
@@ -319,7 +315,6 @@ public class LoginTest extends BasePage {
             System.out.println("Login Success - Operator Valid Username and Invalid Password");
             loginPageObjects.ClickLogoutBtn();
             Thread.sleep(5000);
-            driver.close();
         }
         catch (Exception e) {
             test.log(LogStatus.FAIL, e);

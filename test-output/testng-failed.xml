@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [All Test Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="C:/Users/kishor_ghadge/IdeaProjects/Maven_Project(failed)">
+    <classes>
+      <class name="Tests.ManualInterventionDocument">
+        <methods>
+          <include name="cleanUp"/>
+          <include name="manual_intervention_structured_ready_document"/>
+          <include name="login"/>
+          <include name="manual_intervention_freeform_rejected_document"/>
+        </methods>
+      </class> <!-- Tests.ManualInterventionDocument -->
+      <class name="Tests.ProjectFlowStructuredTest1">
+        <methods>
+          <include name="login"/>
+          <include name="cleanUp"/>
+          <include name="disable_active_project_on_Project_page"/>
+          <include name="verify_disabled_project_on_Project_page"/>
+        </methods>
+      </class> <!-- Tests.ProjectFlowStructuredTest1 -->
+      <class name="Tests.ProjectBREMedicalChartDocumentTest">
+        <methods>
+          <include name="ProjectBREMedicalChartDocumentFlow"/>
+          <include name="cleanUp"/>
+          <include name="login"/>
+        </methods>
+      </class> <!-- Tests.ProjectBREMedicalChartDocumentTest -->
+      <class name="Tests.ProjectBREMedicalChartDocumentTest1">
+        <methods>
+          <include name="login"/>
+          <include name="save_without_hcc_comments_on_medical_chart"/>
+          <include name="run_rule_for_invalid_physicians_sign_on_medical_chart"/>
+          <include name="save_with_hcc_comments_on_medical_chart"/>
+          <include name="cleanUp"/>
+          <include name="verify_icd_on_medical_chart"/>
+          <include name="verify_rejected_document_no_data_extracted_on_medical_chart"/>
+          <include name="edit_encounter_detail_and_enter_invalid_npi_physician_on_medical_chart"/>
+        </methods>
+      </class> <!-- Tests.ProjectBREMedicalChartDocumentTest1 -->
+      <class name="Tests.ProjectFlowStructuredTest">
+        <methods>
+          <include name="login"/>
+          <include name="ProjectFlow"/>
+          <include name="cleanUp"/>
+        </methods>
+      </class> <!-- Tests.ProjectFlowStructuredTest -->
+      <class name="Tests.ProjectFlowMedicalChart">
+        <methods>
+          <include name="login"/>
+          <include name="ProjectFlow"/>
+          <include name="cleanUp"/>
+        </methods>
+      </class> <!-- Tests.ProjectFlowMedicalChart -->
+      <class name="Tests.ProjectBREMedicalChartTest">
+        <methods>
+          <include name="login"/>
+          <include name="ProjectBREMedicalChartFlow"/>
+          <include name="cleanUp"/>
+        </methods>
+      </class> <!-- Tests.ProjectBREMedicalChartTest -->
+      <class name="Tests.DocProcessStructuredTest">
+        <methods>
+          <include name="anticlockwise_clockwise_zoomin_zoomout_navigate_right_left"/>
+          <include name="login"/>
+          <include name="search_project"/>
+          <include name="hide_unhide_analytics"/>
+          <include name="next_page_previous_page_first_page_last_page"/>
+          <include name="searchbox_document"/>
+          <include name="update_document_cancel"/>
+          <include name="sorting"/>
+          <include name="cleanUp"/>
+          <include name="documents_filter"/>
+          <include name="items_page"/>
+        </methods>
+      </class> <!-- Tests.DocProcessStructuredTest -->
+      <class name="Tests.RoleWiseTest">
+        <methods>
+          <include name="RoleWiseFlow"/>
+          <include name="cleanUp"/>
+          <include name="login"/>
+        </methods>
+      </class> <!-- Tests.RoleWiseTest -->
+      <class name="Tests.ProjectBRETest">
+        <methods>
+          <include name="ProjectBREFlow"/>
+          <include name="cleanUp"/>
+          <include name="login"/>
+        </methods>
+      </class> <!-- Tests.ProjectBRETest -->
+      <class name="Tests.DocProcessMedicalChart">
+        <methods>
+          <include name="create_chronic_condition"/>
+          <include name="login"/>
+          <include name="cleanUp"/>
+        </methods>
+      </class> <!-- Tests.DocProcessMedicalChart -->
+      <class name="Tests.ProjectFlowFreeFormTest">
+        <methods>
+          <include name="FreeFormProjectFlow"/>
+          <include name="login"/>
+          <include name="cleanUp"/>
+        </methods>
+      </class> <!-- Tests.ProjectFlowFreeFormTest -->
+      <class name="Tests.ForgetPwdTest">
+        <methods>
+          <include name="login"/>
+          <include name="click_on_cancel_button_on_forgot_password"/>
+          <include name="cleanUp"/>
+        </methods>
+      </class> <!-- Tests.ForgetPwdTest -->
+      <class name="Tests.UpdateUserAdminTest">
+        <methods>
+          <include name="UpdateUserAdminFlow"/>
+          <include name="cleanUp"/>
+          <include name="login"/>
+        </methods>
+      </class> <!-- Tests.UpdateUserAdminTest -->
+      <class name="Tests.UpdateProjectTest">
+        <methods>
+          <include name="cleanUp"/>
+          <include name="UpdateProjectFlow"/>
+          <include name="login"/>
+        </methods>
+      </class> <!-- Tests.UpdateProjectTest -->
+      <class name="Tests.ProjectBREDataSetTest">
+        <methods>
+          <include name="cleanUp"/>
+          <include name="login"/>
+          <include name="ProjectBREDataSetFlow"/>
+        </methods>
+      </class> <!-- Tests.ProjectBREDataSetTest -->
+      <class name="Tests.ProjectFlowSemiStructureTest">
+        <methods>
+          <include name="cleanUp"/>
+          <include name="ProjectFlowSemiStructure"/>
+          <include name="login"/>
+        </methods>
+      </class> <!-- Tests.ProjectFlowSemiStructureTest -->
+    </classes>
+  </test> <!-- C:/Users/kishor_ghadge/IdeaProjects/Maven_Project(failed) -->
+</suite> <!-- Failed suite [All Test Suite] -->

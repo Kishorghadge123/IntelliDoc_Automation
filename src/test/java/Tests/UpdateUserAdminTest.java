@@ -1,24 +1,28 @@
 package Tests;
-
 import Base.BasePage;
 import Pages.CreateUserPage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
 import com.relevantcodes.extentreports.LogStatus;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import java.io.IOException;
+@Listeners(Utilities.TestListeners.class)
 
 public class UpdateUserAdminTest extends BasePage {
+    @BeforeClass
+    public void login() throws Exception {
+        BasePage.driverInit();
+    }
+    @AfterClass
+    public void cleanUp() throws Exception {
+        driver.quit();
+    }
     @Test
     public void UpdateUserAdminFlow() throws InterruptedException, IOException {
         try {
-            test.log(LogStatus.INFO, "UpdateUserAdmin");
-            test.log(LogStatus.PASS, "TestPassed");
-            String projectPath = System.getProperty("user.dir");
-            System.setProperty("webdriver.chrome.driver", projectPath + ".\\Drivers\\chromedriver.exe");
-            WebDriver driver = new ChromeDriver();
+            driver.get(ReadProps.readAttr("URL"));
+            driver.manage().window().maximize();
+            Thread.sleep(8000);
             CreateUserPage UserPageObj1 = new CreateUserPage(driver);
             driver.get(ReadProps.readAttr("URL"));
             driver.manage().window().maximize();
@@ -110,7 +114,6 @@ public class UpdateUserAdminTest extends BasePage {
             Thread.sleep(4000);
             UserPageObj1.LogOut();
             Thread.sleep(4000);
-            driver.close();
         } catch (Exception e) {
             test.log(LogStatus.FAIL, e);
         }

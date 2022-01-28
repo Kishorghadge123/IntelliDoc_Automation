@@ -1,27 +1,29 @@
 package Tests;
-
 import Base.BasePage;
 import Pages.ForgetPwdPage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
 import com.relevantcodes.extentreports.LogStatus;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import java.io.IOException;
+@Listeners(Utilities.TestListeners.class)
 
 public class ForgetPwdTest extends BasePage {
-
+    @BeforeClass
+    public void login() throws Exception {
+        BasePage.driverInit();
+    }
+    @AfterClass
+    public void cleanUp() throws Exception {
+        driver.quit();
+    }
     @Test(priority = 1)
     public void click_on_cancel_button_on_forgot_password() throws InterruptedException, IOException {
         try {
-            String projectPath = System.getProperty("user.dir");
-            System.setProperty("webdriver.chrome.driver", projectPath + ".\\Drivers\\chromedriver.exe");
-            WebDriver driver = new ChromeDriver();
-            ForgetPwdPage FwdPwdObj = new ForgetPwdPage(driver);
             driver.get(ReadProps.readAttr("URL"));
             driver.manage().window().maximize();
-            Thread.sleep(2000);
+            Thread.sleep(8000);
+            ForgetPwdPage FwdPwdObj = new ForgetPwdPage(driver);
             //12.1 Click on Cancel button on Forgot Password Screen.
             FwdPwdObj.ClickForgetPwdBtn();
             TakesScreen.takeSnapShot(driver, "test-output//ForgotPassword//ForgetPwdScreen.jpg");
@@ -75,7 +77,6 @@ public class ForgetPwdTest extends BasePage {
             Thread.sleep(4000);
             test.log(LogStatus.INFO, "Disable User");
             test.log(LogStatus.PASS, "TestPassed");
-            driver.close();
         } catch (Exception e) {
             test.log(LogStatus.FAIL, e);
         }}}

@@ -8,21 +8,19 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import java.awt.*;
 @Listeners(Utilities.TestListeners.class)
 
 public class TemplateTest extends BasePage {
     static TemplatePage TemplatePageObj;
 
-    @BeforeTest
+    @BeforeClass
     public void login() throws Exception {
+        BasePage.driverInit();
         BasePage.LoginTest();
     }
-    @AfterTest
+    @AfterClass
     public void cleanUp() throws Exception {
         driver.quit();
     }

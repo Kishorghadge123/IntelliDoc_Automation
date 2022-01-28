@@ -1,28 +1,34 @@
 package Tests;
-
 import Base.BasePage;
 import Pages.ProjectBREPage;
 import Pages.ProjectPage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
 import com.relevantcodes.extentreports.LogStatus;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.openqa.selenium.JavascriptExecutor;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
-
+@Listeners(Utilities.TestListeners.class)
 public class ProjectBRETest extends BasePage {
-
+    @BeforeClass
+    public void login() throws Exception {
+        BasePage.driverInit();
+        BasePage.LoginTest();
+    }
+    @AfterClass
+    public void cleanUp() throws Exception {
+        driver.quit();
+    }
     @Test
     public void ProjectBREFlow() throws InterruptedException, IOException {
         try {
-            BasePage.LoginTest();
             Robot r = new Robot();
             ProjectPage ProjectPageObj = new ProjectPage(driver);
-            test.log(LogStatus.INFO, "ProjectBRE");
-            test.log(LogStatus.PASS, "TestPassed");
-
             //Object Creation.
             ProjectBREPage ProjectBREPageObj = new ProjectBREPage(driver);
             ProjectPageObj.ClickOnCreateProjectBtn();
@@ -464,7 +470,6 @@ public class ProjectBRETest extends BasePage {
             TakesScreen.takeSnapShot(driver, "test-output//ProjectBRETest//BREProjectCreatedSuccessfully.jpg");
             Thread.sleep(3000);
             //Upload the Document in this Project for the Results.
-            driver.close();
         }
         catch (Exception e) {
             test.log(LogStatus.FAIL, e);

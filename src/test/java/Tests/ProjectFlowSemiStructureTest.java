@@ -6,17 +6,25 @@ import Pages.ProjectPage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
 import com.relevantcodes.extentreports.LogStatus;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
+@Listeners(Utilities.TestListeners.class)
 
 public class ProjectFlowSemiStructureTest extends BasePage{
+    @BeforeClass
+    public void login() throws Exception {
+        BasePage.driverInit();
+        BasePage.LoginTest();
+    }
+    @AfterClass
+    public void cleanUp() throws Exception {
+        driver.quit();
+    }
     @Test
     public void ProjectFlowSemiStructure() throws InterruptedException, IOException {
         try {
-
-            BasePage.LoginTest();
             Robot r = new Robot();
             ProjectPage ProjectPageObj = new ProjectPage(driver);
             DocumentPage DocPageObj = new DocumentPage(driver);
@@ -100,7 +108,6 @@ public class ProjectFlowSemiStructureTest extends BasePage{
             ProjectPageObj.ClickOnCreate();
             Thread.sleep(9000);
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowSemi-Structured//ProjectCreatedSuccess.jpg");
-            driver.close();
         }
         catch (Exception e) {
             test.log(LogStatus.FAIL, e);

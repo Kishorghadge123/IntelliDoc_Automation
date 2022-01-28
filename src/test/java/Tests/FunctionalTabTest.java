@@ -2,20 +2,18 @@ package Tests;
 import Base.BasePage;
 import Pages.FunctionalTabPage;
 import Utilities.TakesScreen;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 @Listeners(Utilities.TestListeners.class)
 
 public class FunctionalTabTest extends BasePage
 {
     static FunctionalTabPage FunctionalTabObj;
-    @BeforeTest
+    @BeforeClass
     public void login() throws Exception {
+        BasePage.driverInit();
         BasePage.LoginTest();
     }
-    @AfterTest
+    @AfterClass
     public void cleanUp() throws Exception {
         driver.quit();
     }

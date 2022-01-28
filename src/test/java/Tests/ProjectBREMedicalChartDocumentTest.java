@@ -1,21 +1,28 @@
 package Tests;
-
 import Base.BasePage;
 import Pages.DocumentPage;
 import Pages.ProjectBREMedicalChartDocumentPage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
 import com.relevantcodes.extentreports.LogStatus;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import java.io.IOException;
-
+@Listeners(Utilities.TestListeners.class)
 
 public class ProjectBREMedicalChartDocumentTest extends BasePage {
-
+    @BeforeClass
+    public void login() throws Exception {
+        BasePage.driverInit();
+        BasePage.LoginTest();
+    }
+    @AfterClass
+    public void cleanUp() throws Exception {
+        driver.quit();
+    }
     @Test
     public void ProjectBREMedicalChartDocumentFlow() throws InterruptedException, IOException {
         try {
-            BasePage.LoginTest();
+
             //Object Creation.
             ProjectBREMedicalChartDocumentPage ProjectBREMedicalChartDocumentPageObj = new ProjectBREMedicalChartDocumentPage(driver);
             test.log(LogStatus.INFO, "ProjectBREMedicalChartDocument");
@@ -121,7 +128,6 @@ public class ProjectBREMedicalChartDocumentTest extends BasePage {
             Thread.sleep(2000);
             TakesScreen.takeSnapShot(driver, "test-output//ProjectBREMedicalChartDocumentTest//DeleteChronicCondition.jpg");
             Thread.sleep(2000);
-            driver.close();
         } catch (Exception e) {
             test.log(LogStatus.FAIL, e);
         }

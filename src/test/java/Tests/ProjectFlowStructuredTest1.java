@@ -4,18 +4,20 @@ import Pages.ProjectFlowStructuredPage1;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
 import com.relevantcodes.extentreports.LogStatus;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
-import java.io.IOException;
+import org.testng.annotations.*;
 
+import java.io.IOException;
+@Listeners(Utilities.TestListeners.class)
 public class ProjectFlowStructuredTest1 extends BasePage {
-    @BeforeTest
-    public void login() {
-        try {
-            BasePage.LoginTest();
-        } catch (Exception e) {
-            test.log(LogStatus.FAIL, e);
-        }}
+    @BeforeClass
+    public void login() throws Exception {
+        BasePage.driverInit();
+        BasePage.LoginTest();
+    }
+    @AfterClass
+    public void cleanUp() throws Exception {
+        driver.quit();
+    }
     @Test(priority = 1)
     public void disable_active_project_on_Project_page() throws InterruptedException, IOException {
         try {
@@ -72,7 +74,6 @@ public class ProjectFlowStructuredTest1 extends BasePage {
             Thread.sleep(1000);
             test.log(LogStatus.INFO, "ProjectStructuredTC2");
             test.log(LogStatus.PASS, "TestPassed");
-            driver.close();
         } catch (Exception e) {
             test.log(LogStatus.FAIL, e);
         }}}

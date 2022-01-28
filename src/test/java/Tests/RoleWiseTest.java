@@ -1,29 +1,31 @@
 package Tests;
-
 import Base.BasePage;
 import Pages.RoleAccess;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
 import com.relevantcodes.extentreports.LogStatus;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
+@Listeners(Utilities.TestListeners.class)
 
 public class RoleWiseTest extends BasePage {
+    @BeforeClass
+    public void login() throws Exception {
+        BasePage.driverInit();
+        BasePage.LoginTest();
+    }
+    @AfterClass
+    public void cleanUp() throws Exception {
+        driver.quit();
+    }
     @Test
     public void RoleWiseFlow() throws InterruptedException, IOException {
         try {
-            String projectPath = System.getProperty("user.dir");
-            System.setProperty("webdriver.chrome.driver", projectPath + ".\\Drivers\\chromedriver.exe");
-            WebDriver driver = new ChromeDriver();
+
             RoleAccess roleAccessObj = new RoleAccess(driver);
-            test.log(LogStatus.INFO, "RoleWise");
-            test.log(LogStatus.PASS, "TestPassed");
             driver.get(ReadProps.readAttr("URL"));
             driver.manage().window().maximize();
-
+            Thread.sleep(8000);
             //TC 19.1 Admin Role Login with valid Username and Valid password
             roleAccessObj.setUsername(ReadProps.readAttr("AdminUser"));
             Thread.sleep(2000);
@@ -115,7 +117,6 @@ public class RoleWiseTest extends BasePage {
             Thread.sleep(4000);
             TakesScreen.takeSnapShot(driver, "test-output//RoleWiseTest//OperatorRoleLogout.jpg");
             Thread.sleep(4000);
-            driver.close();
         } catch (Exception e) {
             test.log(LogStatus.FAIL, e);
         }

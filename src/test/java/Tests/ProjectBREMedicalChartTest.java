@@ -1,29 +1,34 @@
 package Tests;
-
 import Base.BasePage;
 import Pages.ProjectBREDataSetPage;
 import Pages.ProjectBREPage;
 import Pages.ProjectPage;
 import Utilities.ReadProps;
 import com.relevantcodes.extentreports.LogStatus;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 import Utilities.TakesScreen;
+@Listeners(Utilities.TestListeners.class)
+
 public class ProjectBREMedicalChartTest extends BasePage
 {
-
+    @BeforeClass
+    public void login() throws Exception {
+        BasePage.driverInit();
+        BasePage.LoginTest();
+    }
+    @AfterClass
+    public void cleanUp() throws Exception {
+        driver.quit();
+    }
     @Test
     public void ProjectBREMedicalChartFlow() throws InterruptedException, IOException {
         try {
-
-            BasePage.LoginTest();
             Robot r = new Robot();
             //Initializing Object for Project Page.
             ProjectPage ProjectPageObj = new ProjectPage(driver);
-            test.log(LogStatus.INFO, "ProjectBREMedicalChart");
-            test.log(LogStatus.PASS, "TestPassed");
             //TC 1 Check all the Functionalities on the Project Page.
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(6000);
@@ -226,7 +231,6 @@ public class ProjectBREMedicalChartTest extends BasePage
             TakesScreen.takeSnapShot(driver, "test-output//ProjectBREMedicalChart/MedicalChartProjectCreatedSuccessfully.jpg");
             Thread.sleep(2000);
             //for the Result please upload the Document from Backend.
-            driver.close();
         } catch (Exception e) {
             test.log(LogStatus.FAIL, e);
         }

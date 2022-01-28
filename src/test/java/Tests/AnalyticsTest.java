@@ -3,20 +3,17 @@ import Base.BasePage;
 import Pages.AnalyticsPage;
 import Utilities.TakesScreen;
 import org.openqa.selenium.JavascriptExecutor;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
-
+import org.testng.annotations.*;
 @Listeners(Utilities.TestListeners.class)
 public class AnalyticsTest extends BasePage
 {
     static AnalyticsPage AnalyticsPageObj;
-    @BeforeTest
+    @BeforeClass
     public void login() throws Exception {
+        BasePage.driverInit();
         BasePage.LoginTest();
     }
-    @AfterTest
+    @AfterClass
     public void cleanUp() throws Exception {
         driver.quit();
     }
@@ -25,17 +22,17 @@ public class AnalyticsTest extends BasePage
         //Object Creation.
         AnalyticsPageObj = new AnalyticsPage(driver);
         AnalyticsPageObj.ClickAnalyticsBtn();
-        Thread.sleep(10000);
+        Thread.sleep(8000);
         TakesScreen.takeSnapShot(driver, "test-output//Analytics//AnalyticsPage.jpg");
         // 1.1 Organization Statistics Hide and UnHide.
         AnalyticsPageObj.ClickOrganizationArrow();
-        Thread.sleep(3000);
+        Thread.sleep(2000);
         TakesScreen.takeSnapShot(driver, "test-output//Analytics//OrganizationStatisticsHide.jpg");
-        Thread.sleep(3000);
+        Thread.sleep(2000);
         AnalyticsPageObj.ClickOrganizationArrow();
-        Thread.sleep(3000);
+        Thread.sleep(2000);
         TakesScreen.takeSnapShot(driver, "test-output//Analytics//OrganizationStatisticsUnHide.jpg");
-        Thread.sleep(3000);
+        Thread.sleep(2000);
     }
     @Test(priority = 2)
     public void hover_total_users_on_Analytics_page() throws Exception {

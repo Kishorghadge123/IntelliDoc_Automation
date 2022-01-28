@@ -7,10 +7,8 @@ import Utilities.ReadProps;
 import Utilities.TakesScreen;
 import com.relevantcodes.extentreports.LogStatus;
 import org.openqa.selenium.JavascriptExecutor;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
+
 import java.awt.*;
 import java.awt.event.KeyEvent;
 @Listeners(Utilities.TestListeners.class)
@@ -18,11 +16,12 @@ import java.awt.event.KeyEvent;
 public class DocProcessMedicalChart extends BasePage
 {
     static DocumentPage DocPageObj;
-    @BeforeTest
+    @BeforeClass
     public void login() throws Exception {
+        BasePage.driverInit();
         BasePage.LoginTest();
     }
-    @AfterTest
+    @AfterClass
     public void cleanUp() throws Exception {
         driver.quit();
     }

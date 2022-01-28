@@ -5,27 +5,27 @@ import Pages.CreateUserPage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
 import com.relevantcodes.extentreports.LogStatus;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
+
 import java.io.IOException;
+@Listeners(Utilities.TestListeners.class)
 
 public class CreateUserAdminTest extends BasePage {
-    WebDriver driver;
-
+    @BeforeClass
+    public void login() throws Exception {
+        BasePage.driverInit();
+    }
+    @AfterClass
+    public void cleanUp() throws Exception {
+        driver.quit();
+    }
     @Test
     public void CreateUserAdminFlow() throws InterruptedException, IOException {
         try {
-            test.log(LogStatus.INFO, "CreateUserAdmin");
-            test.log(LogStatus.PASS, "TestPassed");
-            String projectPath = System.getProperty("user.dir");
-            System.setProperty("webdriver.chrome.driver", projectPath + ".\\Drivers\\chromedriver.exe");
-            WebDriver driver = new ChromeDriver();
-            CreateUserPage UserPageObj = new CreateUserPage(driver);
             driver.get(ReadProps.readAttr("URL"));
             driver.manage().window().maximize();
-            Thread.sleep(2000);
-
+            Thread.sleep(8000);
+            CreateUserPage UserPageObj = new CreateUserPage(driver);
             //TC 4.1 Valid Login with Admin credentials.
             UserPageObj.setUsername(ReadProps.readAttr("AdminUser"));
             Thread.sleep(2000);
@@ -98,7 +98,6 @@ public class CreateUserAdminTest extends BasePage {
             Thread.sleep(4000);
             UserPageObj.LogOut();
             Thread.sleep(5000);
-            driver.close();
         } catch (Exception e) {
             test.log(LogStatus.FAIL, e);
         }

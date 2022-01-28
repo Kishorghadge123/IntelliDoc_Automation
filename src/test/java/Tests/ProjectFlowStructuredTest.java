@@ -7,18 +7,25 @@ import Utilities.ReadProps;
 import Utilities.TakesScreen;
 import com.relevantcodes.extentreports.LogStatus;
 import org.openqa.selenium.JavascriptExecutor;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
+@Listeners(Utilities.TestListeners.class)
 
 public class ProjectFlowStructuredTest extends BasePage {
-
+    @BeforeClass
+    public void login() throws Exception {
+        BasePage.driverInit();
+        BasePage.LoginTest();
+    }
+    @AfterClass
+    public void cleanUp() throws Exception {
+        driver.quit();
+    }
     @Test
     public void ProjectFlow() throws InterruptedException, IOException {
         try {
-
-            BasePage.LoginTest();
             Robot r = new Robot();
             ProjectPage ProjectPageObj = new ProjectPage(driver);
             test.log(LogStatus.INFO, "ProjectFlow");
@@ -518,7 +525,6 @@ public class ProjectFlowStructuredTest extends BasePage {
             Thread.sleep(1000);
             r.keyPress(KeyEvent.VK_ESCAPE);
             Thread.sleep(3000);
-            driver.close();
         } catch (Exception e) {
             test.log(LogStatus.FAIL, e);
         }

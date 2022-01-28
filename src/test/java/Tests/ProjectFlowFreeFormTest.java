@@ -6,24 +6,31 @@ import Pages.ProjectPage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
 import com.relevantcodes.extentreports.LogStatus;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import java.awt.*;
 import java.awt.event.KeyEvent;
+@Listeners(Utilities.TestListeners.class)
 
 public class ProjectFlowFreeFormTest extends BasePage {
-
+    @BeforeClass
+    public void login() throws Exception {
+        BasePage.driverInit();
+        BasePage.LoginTest();
+    }
+    @AfterClass
+    public void cleanUp() throws Exception {
+        driver.quit();
+    }
     @Test
     public void FreeFormProjectFlow(){
-
         try {
 
-            BasePage.LoginTest();
             Robot r = new Robot();
             ProjectPage ProjectPageObj = new ProjectPage(driver);
             DocumentPage DocPageObj = new DocumentPage(driver);
-            test.log(LogStatus.INFO, "FreeFormProject");
-            test.log(LogStatus.PASS, "TestPassed");
-
             //TC 15.1 Verify Create Project without adding the Attributes and Role.
             ProjectPageObj.ClickOnCreateProjectBtn();
             Thread.sleep(5000);
@@ -111,7 +118,6 @@ public class ProjectFlowFreeFormTest extends BasePage {
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowFree-Form//PleaseAddAttributes.jpg");
             Thread.sleep(9000);
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowFree-Form//ProjectCreatedSuccess.jpg");
-            driver.close();
         }
 
         catch (Exception e) {
