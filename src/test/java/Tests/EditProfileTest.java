@@ -27,7 +27,7 @@ public class EditProfileTest extends BasePage {
             driver.get(ReadProps.readAttr("URL"));
             driver.manage().window().maximize();
             Thread.sleep(1000);
-            //TC 10.1 Visible Password On.
+            //TC 11.1 Visible Password On.
             loginPageObjects.setUsername(ReadProps.readAttr("UserID"));
             Thread.sleep(1000);
             loginPageObjects.setPassword(ReadProps.readAttr("Password"));
@@ -37,7 +37,7 @@ public class EditProfileTest extends BasePage {
             TakesScreen.takeSnapShot(driver, "test-output//EditProfileTest//PasswordVisible.jpg");
             Thread.sleep(1000);
 
-            //TC 10.2 Visible Password Off.
+            //TC 11.2 Visible Password Off.
             EditProfileObj.clickVisible();
             Thread.sleep(2000);
             TakesScreen.takeSnapShot(driver, "test-output//EditProfileTest//PasswordInvisible.jpg");
@@ -45,13 +45,13 @@ public class EditProfileTest extends BasePage {
             loginPageObjects.clickLoginButton();
             Thread.sleep(10000);
 
-            //TC 10.3 Profile Icon
+            //TC 11.3 Profile Icon
             EditProfileObj.ProfileButton();
             Thread.sleep(1000);
             TakesScreen.takeSnapShot(driver, "test-output//EditProfileTest//Profile.jpg");
             Thread.sleep(2000);
 
-            //TC 10.4 Night Mode , Day Mode
+            //TC 11.4 Night Mode , Day Mode
             EditProfileObj.NightModeButton();
             Thread.sleep(1000);
             TakesScreen.takeSnapShot(driver, "test-output//EditProfileTest//NightMode.jpg");
@@ -60,13 +60,13 @@ public class EditProfileTest extends BasePage {
             Thread.sleep(2000);
             TakesScreen.takeSnapShot(driver, "test-output//EditProfileTest//DayMode.jpg");
 
-            //TC 10.5 Edit Profile.
+            //TC 11.5 Edit Profile.
             EditProfileObj.EditProfileButton();
             Thread.sleep(3000);
             TakesScreen.takeSnapShot(driver, "test-output//EditProfileTest//EditProfileWindow.jpg");
             Thread.sleep(2000);
 
-            //TC 10.6 Edit Profile Cancel.
+            //TC 11.6 Edit Profile Cancel.
             EditProfileObj.CancelButton();
             Thread.sleep(1000);
             TakesScreen.takeSnapShot(driver, "test-output//EditProfileTest//Cancel.jpg");

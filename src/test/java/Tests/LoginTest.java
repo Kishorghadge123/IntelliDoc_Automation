@@ -20,7 +20,7 @@ public class LoginTest extends BasePage {
     public static void LoginTestFlow() throws Exception {
         try {
 
-            test.log(LogStatus.INFO, "Login");
+            test.log(LogStatus.INFO, "TestInformation");
             test.log(LogStatus.PASS, "TestPassed");
             String projectPath = System.getProperty("user.dir");
             System.setProperty("webdriver.chrome.driver", projectPath + ".\\Drivers\\chromedriver.exe");
@@ -45,14 +45,14 @@ public class LoginTest extends BasePage {
                 System.out.println("Logo Unmatched!");
             }
             Thread.sleep(2000);
-            //TC 1.1 - Login with Blank Username and Blank Password for Platform Admin.
+            //TC 14.1 - Login with Blank Username and Blank Password for Platform Admin.
             loginPageObjects.clickLoginButton();
             loginPageObjects.VerifyAssertError();
             TakesScreen.takeSnapShot(driver, "test-output//LoginPage//BlankID&Pwd.jpg");
             System.out.println("Please Enter Valid Data!");
             Thread.sleep(2000);
 
-            //TC 1.2 - Login with Invalid Username and Blank Password for Platform Admin.
+            //TC 14.2 - Login with Invalid Username and Blank Password for Platform Admin.
             loginPageObjects.setUsername(ReadProps.readAttr("InvalidUsername"));
             Thread.sleep(2000);
             loginPageObjects.clickLoginButton();
@@ -61,7 +61,7 @@ public class LoginTest extends BasePage {
             System.out.println("Login Failed - Invalid Username and Blank Password");
             Thread.sleep(2000);
 
-            //TC 1.3 - Login with Blank Username and Valid Password for Platform Admin.
+            //TC 14.3 - Login with Blank Username and Valid Password for Platform Admin.
             loginPageObjects.ClearUserID();
             Thread.sleep(2000);
             loginPageObjects.setPassword(ReadProps.readAttr("Password"));
@@ -72,7 +72,7 @@ public class LoginTest extends BasePage {
             System.out.println("Login Failed - Blank Username and Valid Password");
             Thread.sleep(2000);
 
-            //TC 1.4 - Login with Blank Username and Invalid Password for Platform Admin.
+            //TC 14.4 - Login with Blank Username and Invalid Password for Platform Admin.
             loginPageObjects.ClearPWD();
             Thread.sleep(2000);
             loginPageObjects.setPassword(ReadProps.readAttr("InvalidPassword"));
@@ -83,7 +83,7 @@ public class LoginTest extends BasePage {
             System.out.println("Login Failed - Blank Username and Invalid Password");
             Thread.sleep(2000);
 
-            //TC 1.5 - Login with Valid Username and Blank Password for Platform Admin.
+            //TC 14.5 - Login with Valid Username and Blank Password for Platform Admin.
             loginPageObjects.ClearPWD();
             Thread.sleep(2000);
             loginPageObjects.setUsername(ReadProps.readAttr("UserID"));
@@ -96,7 +96,7 @@ public class LoginTest extends BasePage {
             driver.navigate().refresh();
             Thread.sleep(3000);
 
-            //TC 1.6 - Login with Invalid Username and Password for Platform Admin.
+            //TC 14.6 - Login with Invalid Username and Password for Platform Admin.
             loginPageObjects.setUsername(ReadProps.readAttr("InvalidUsername"));
             Thread.sleep(1000);
             loginPageObjects.setPassword(ReadProps.readAttr("InvalidPassword"));
@@ -107,7 +107,7 @@ public class LoginTest extends BasePage {
             System.out.println("Login Failed - Invalid Username and Invalid Password");
             Thread.sleep(2000);
 
-            //TC 1.7 - Login with Invalid Username and Valid Password for Platform Admin.
+            //TC 14.7 - Login with Invalid Username and Valid Password for Platform Admin.
             driver.navigate().refresh();
             Thread.sleep(3000);
             loginPageObjects.setUsername(ReadProps.readAttr("InvalidUsername"));
@@ -120,7 +120,7 @@ public class LoginTest extends BasePage {
             System.out.println("Login Failed - Invalid Username and Valid Password");
             Thread.sleep(2000);
 
-            //TC 1.8 - Login with Valid Username and Invalid Password for Platform Admin.
+            //TC 14.8 - Login with Valid Username and Invalid Password for Platform Admin.
             driver.navigate().refresh();
             Thread.sleep(3000);
             loginPageObjects.setUsername(ReadProps.readAttr("UserID"));
@@ -133,7 +133,7 @@ public class LoginTest extends BasePage {
             System.out.println("Login Failed - Valid Username and Invalid Password");
             Thread.sleep(2000);
 
-            //TC 1.9 Login with Valid Username and Password for Platform Admin.
+            //TC 14.9 Login with Valid Username and Password for Platform Admin.
             driver.navigate().refresh();
             Thread.sleep(3000);
             loginPageObjects.setUsername(ReadProps.readAttr("UserID"));
@@ -147,7 +147,7 @@ public class LoginTest extends BasePage {
             System.out.println("Login Success - Valid Username and Valid Password");
             Thread.sleep(4000);
 
-            //TC 1.10 - Navigate Backward for Platform Admin.
+            //TC 14.10 - Navigate Backward for Platform Admin.
             driver.navigate().back();
             loginPageObjects.VerifyAssertBack();
             Thread.sleep(2000);
@@ -155,14 +155,14 @@ public class LoginTest extends BasePage {
             System.out.println("Navigated to backward successfully");
             Thread.sleep(2000);
 
-            //TC 1.11 - Logout for Platform Admin.
+            //TC 14.11 - Logout for Platform Admin.
             loginPageObjects.ClickLogoutBtn();
             Thread.sleep(5000);
             TakesScreen.takeSnapShot(driver, "test-output//LoginPage//Logout.jpg");
             System.out.println("Logout Success");
             Thread.sleep(2000);
 
-            //TC 1.12 - Admin Login with Invalid Username and Password.
+            //TC 14.2 - Admin Login with Invalid Username and Password.
             loginPageObjects.setUsername(ReadProps.readAttr("AdminInvalidUser"));
             Thread.sleep(1000);
             loginPageObjects.setPassword(ReadProps.readAttr("AdminInvalidPwd"));
@@ -173,7 +173,7 @@ public class LoginTest extends BasePage {
             System.out.println("Login Failed - Admin Invalid Username and Invalid Password");
             Thread.sleep(2000);
 
-            //TC 1.13 - Admin Login with Invalid Username and Valid Password.
+            //TC 14.13 - Admin Login with Invalid Username and Valid Password.
             driver.navigate().refresh();
             Thread.sleep(3000);
             loginPageObjects.setUsername(ReadProps.readAttr("AdminInvalidUser"));
@@ -186,7 +186,7 @@ public class LoginTest extends BasePage {
             System.out.println("Login Failed - Admin Invalid Username and Valid Password");
             Thread.sleep(2000);
 
-            //TC 1.14 - Admin Login with Valid Username and Invalid Password.
+            //TC 14.14 - Admin Login with Valid Username and Invalid Password.
             driver.navigate().refresh();
             Thread.sleep(3000);
             loginPageObjects.setUsername(ReadProps.readAttr("AdminUser"));
@@ -199,7 +199,7 @@ public class LoginTest extends BasePage {
             System.out.println("Login Failed - Admin Valid Username and Invalid Password");
             Thread.sleep(2000);
 
-            //TC 1.15 Admin Role Login with Valid Username and Password.
+            //TC 14.15 Admin Role Login with Valid Username and Password.
             driver.navigate().refresh();
             Thread.sleep(3000);
             loginPageObjects.setUsername(ReadProps.readAttr("AdminUser"));
@@ -207,14 +207,14 @@ public class LoginTest extends BasePage {
             loginPageObjects.setPassword(ReadProps.readAttr("AdminPwd"));
             Thread.sleep(1000);
             loginPageObjects.clickLoginButton();
-            Thread.sleep(12000);
+            Thread.sleep(10000);
             TakesScreen.takeSnapShot(driver, "test-output//LoginPage//AdminLoginSuccess.jpg");
             System.out.println("Login Success - Admin Valid Username and Valid Password");
             Thread.sleep(2000);
             loginPageObjects.ClickLogoutBtn();
             Thread.sleep(4000);
 
-            //TC 1.16 Supervisor Role Login with InValid Username and Password.
+            //TC 14.16 Supervisor Role Login with InValid Username and Password.
             driver.navigate().refresh();
             Thread.sleep(3000);
             loginPageObjects.setUsername(ReadProps.readAttr("SupervisorInvalidUser"));
@@ -227,7 +227,7 @@ public class LoginTest extends BasePage {
             System.out.println("Login Failed - Supervisor Invalid Username and Invalid Password");
             Thread.sleep(2000);
 
-            //TC 1.17 - Supervisor Role  Login with Invalid Username and Valid Password.
+            //TC 14.17 - Supervisor Role  Login with Invalid Username and Valid Password.
             driver.navigate().refresh();
             Thread.sleep(3000);
             loginPageObjects.setUsername(ReadProps.readAttr("SupervisorInvalidUser"));
@@ -240,7 +240,7 @@ public class LoginTest extends BasePage {
             System.out.println("Login Failed - Supervisor Invalid Username and Valid Password");
             Thread.sleep(2000);
 
-            //TC 1.18 - Supervisor Role  Login with Valid Username and Invalid Password.
+            //TC 14.18 - Supervisor Role  Login with Valid Username and Invalid Password.
             driver.navigate().refresh();
             Thread.sleep(3000);
             loginPageObjects.setUsername(ReadProps.readAttr("SupervisorUser"));
@@ -253,7 +253,7 @@ public class LoginTest extends BasePage {
             System.out.println("Login Failed - Supervisor Valid Username and Invalid Password");
             Thread.sleep(2000);
 
-            //TC 1.19 Supervisor Role Valid Username and Password.
+            //TC 14.19 Supervisor Role Valid Username and Password.
             driver.navigate().refresh();
             Thread.sleep(3000);
             loginPageObjects.setUsername(ReadProps.readAttr("SupervisorUser"));
@@ -268,7 +268,7 @@ public class LoginTest extends BasePage {
             loginPageObjects.ClickLogoutBtn();
             Thread.sleep(2000);
 
-            //TC 1.20 - Operator Role  Login with Invalid Username and Password.
+            //TC 14.20 - Operator Role  Login with Invalid Username and Password.
             driver.navigate().refresh();
             Thread.sleep(3000);
             loginPageObjects.setUsername(ReadProps.readAttr("OperatorInvalidUser"));
@@ -281,7 +281,7 @@ public class LoginTest extends BasePage {
             System.out.println("Login Failed - Operator Invalid Username and Invalid Password");
             Thread.sleep(2000);
 
-            //TC 1.21 - Operator Role  Login with Invalid Username and Valid Password.
+            //TC 14.21 - Operator Role  Login with Invalid Username and Valid Password.
             driver.navigate().refresh();
             Thread.sleep(3000);
             loginPageObjects.setUsername(ReadProps.readAttr("OperatorInvalidUser"));
@@ -293,7 +293,7 @@ public class LoginTest extends BasePage {
             TakesScreen.takeSnapShot(driver, "test-output//LoginPage//OperatorInvalidIDValidPWD.jpg");
             System.out.println("Login Failed - Invalid Username and Valid Password");
 
-            //TC 1.22 - Operator ROle  Login with Valid Username and Invalid Password.
+            //TC 14.22 - Operator ROle  Login with Valid Username and Invalid Password.
             driver.navigate().refresh();
             Thread.sleep(3000);
             loginPageObjects.setUsername(ReadProps.readAttr("OperatorUser"));
@@ -306,7 +306,7 @@ public class LoginTest extends BasePage {
             System.out.println("Login Failed - Valid Username and Invalid Password");
             Thread.sleep(2000);
 
-            //TC 1.23 Operator Role Login with Valid Username and Password.
+            //TC 14.23 Operator Role Login with Valid Username and Password.
             driver.navigate().refresh();
             Thread.sleep(3000);
             loginPageObjects.setUsername(ReadProps.readAttr("OperatorUser"));

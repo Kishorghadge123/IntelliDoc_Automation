@@ -23,13 +23,14 @@ public class UpdateUserAdminTest extends BasePage {
             driver.get(ReadProps.readAttr("URL"));
             driver.manage().window().maximize();
             Thread.sleep(2000);
-            //Admin Login
+
+            //TC 22.1 Admin Login with Valid Credentials.
             UserPageObj1.setUsername(ReadProps.readAttr("AdminUser"));
             Thread.sleep(2000);
             UserPageObj1.setPassword(ReadProps.readAttr("AdminPwd"));
             Thread.sleep(2000);
             UserPageObj1.clickLoginButton();
-            Thread.sleep(5000);
+            Thread.sleep(6000);
             TakesScreen.takeSnapShot(driver, "test-output//AdminUpdateUser//AdminValid.jpg");
             Thread.sleep(2000);
             UserPageObj1.ClickUserBtn();
@@ -38,27 +39,26 @@ public class UpdateUserAdminTest extends BasePage {
             Thread.sleep(2000);
             UserPageObj1.SelectSearchedAdminUser();
             Thread.sleep(2000);
-            System.out.println("Clicked edit button");
+
+            //TC 22.2 Disable User and Update.
             UserPageObj1.ClickDisableUser();
             Thread.sleep(2000);
             UserPageObj1.ClickUpdateUser();
             Thread.sleep(2000);
-            System.out.println("User updated");
             TakesScreen.takeSnapShot(driver, "test-output//AdminUpdateUser//AdminDisableUserFile.jpg");
             Thread.sleep(2000);
             UserPageObj1.SelectSearchedAdminUser();
             Thread.sleep(2000);
-            System.out.println("Clicked edit button");
+
+            //TC 22.3 Enable User and Update.
             UserPageObj1.ClickEnableUser();
             Thread.sleep(2000);
-            System.out.println("Enable User");
             UserPageObj1.ClickUpdateUser();
             Thread.sleep(2000);
-            System.out.println("User updated");
             TakesScreen.takeSnapShot(driver, "test-output//AdminUpdateUser//AdminEnableUser.jpg");
             Thread.sleep(2000);
 
-            //Update with Blank name
+            //TC 22.4 Update with Blank Name.
             UserPageObj1.SelectSearchedAdminUser();
             Thread.sleep(1000);
             UserPageObj1.ClickToClearName();
@@ -71,7 +71,7 @@ public class UpdateUserAdminTest extends BasePage {
             UserPageObj1.ClickOnCancelBtn();
             Thread.sleep(6000);
 
-            //Update with Invalid UserName
+            //TC 22.5 Update with Invalid UserName.
             UserPageObj1.SelectSearchedAdminUser();
             Thread.sleep(1000);
             UserPageObj1.ClickToClearName();
@@ -80,13 +80,12 @@ public class UpdateUserAdminTest extends BasePage {
             Thread.sleep(2000);
             UserPageObj1.ClickUpdateUser();
             TakesScreen.takeSnapShot(driver, "test-output//AdminUpdateUser//AdminInvalidCredentials.jpg");
-           // UserPageObj1.UserBlankAssert();
+            //UserPageObj1.UserBlankAssert();
             Thread.sleep(2000);
             UserPageObj1.ClickOnCancelBtn();
             Thread.sleep(6000);
 
-
-            // Update with Valid Name
+            //TC 22.6 Update with Valid Name.
             UserPageObj1.SelectSearchedAdminUser();
             Thread.sleep(2000);
             UserPageObj1.ClickToClearName();
@@ -98,7 +97,7 @@ public class UpdateUserAdminTest extends BasePage {
             TakesScreen.takeSnapShot(driver, "test-output//AdminUpdateUser//UpdateWithValid.jpg");
             Thread.sleep(2000);
 
-            // Remove Update for script maintains only
+            //Remove Update for script maintains only.
             UserPageObj1.SearchCreatedUser(ReadProps.readAttr("ValidNameUP"));
             Thread.sleep(2000);
             UserPageObj1.SelectUpdatedUser();

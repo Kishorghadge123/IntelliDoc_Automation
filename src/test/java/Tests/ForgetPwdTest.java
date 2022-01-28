@@ -12,48 +12,46 @@ import java.io.IOException;
 
 public class ForgetPwdTest extends BasePage {
 
-    @Test
-    public void ForgotPwdFlow() throws InterruptedException, IOException {
+    @Test(priority = 1)
+    public void click_on_cancel_button_on_forgot_password() throws InterruptedException, IOException {
         try {
             String projectPath = System.getProperty("user.dir");
             System.setProperty("webdriver.chrome.driver", projectPath + ".\\Drivers\\chromedriver.exe");
             WebDriver driver = new ChromeDriver();
-            test.log(LogStatus.INFO, "ForgotPassword");
-            test.log(LogStatus.PASS, "TestPassed");
             ForgetPwdPage FwdPwdObj = new ForgetPwdPage(driver);
             driver.get(ReadProps.readAttr("URL"));
             driver.manage().window().maximize();
             Thread.sleep(2000);
-
-            //2.1 Click on Cancel button on Forgot Password Screen.
+            //12.1 Click on Cancel button on Forgot Password Screen.
             FwdPwdObj.ClickForgetPwdBtn();
             TakesScreen.takeSnapShot(driver, "test-output//ForgotPassword//ForgetPwdScreen.jpg");
             Thread.sleep(2000);
             FwdPwdObj.ClickCancelBtn();
             TakesScreen.takeSnapShot(driver, "test-output//ForgotPassword//CancelLoginScreen.jpg");
             Thread.sleep(2000);
-
-            //TC 2.2 First Login is not Done By the User.
+            test.log(LogStatus.INFO, "click on cancel button on forgot password");
+            test.log(LogStatus.PASS, "TestPassed");
+            //TC 12.2 First Login is not Done By the User.
             FwdPwdObj.ClickForgetPwdBtn();
             Thread.sleep(2000);
             FwdPwdObj.ClickEmailBtn(ReadProps.readAttr("UserEmail"));
             FwdPwdObj.ClickSubmitBtn();
             Thread.sleep(950);
             TakesScreen.takeSnapShot(driver, "test-output//ForgotPassword//FirstLoginNotDone.jpg");
-            System.out.println("First login is not done the User");
             Thread.sleep(2000);
-
-            //TC 2.3 Invalid EmailID.
+            test.log(LogStatus.INFO, "First login is not done by the user");
+            test.log(LogStatus.PASS, "TestPassed");
+            //TC 12.3 Invalid EmailID.
             FwdPwdObj.ClickForgetPwdBtn();
             Thread.sleep(2000);
             FwdPwdObj.ClickEmailBtn(ReadProps.readAttr("Invalid1"));
             TakesScreen.takeSnapShot(driver, "test-output//ForgotPassword//InvalidEmailID.jpg");
             FwdPwdObj.VerifyAssertEmailID();
-            System.out.println("Please Check Email Id");
             FwdPwdObj.ClickCancelBtn();
             Thread.sleep(2000);
-
-            //2.4 User Does not Exist.
+            test.log(LogStatus.INFO, "invalid email id");
+            test.log(LogStatus.PASS, "TestPassed");
+            //12.4 User Does not Exist.
             FwdPwdObj.ClickForgetPwdBtn();
             Thread.sleep(2000);
             FwdPwdObj.ClickEmailBtn(ReadProps.readAttr("Invalid2"));
@@ -61,26 +59,23 @@ public class ForgetPwdTest extends BasePage {
             FwdPwdObj.ClickSubmitBtn();
             Thread.sleep(1000);
             TakesScreen.takeSnapShot(driver, "test-output//ForgotPassword//UserDoesn'tExist.jpg");
-            System.out.println("User Does not Exist");
             FwdPwdObj.ClickCancelBtn();
             Thread.sleep(2000);
-
-            //TC 2.5 Disable user.
+            test.log(LogStatus.INFO, "user doesn't exists");
+            test.log(LogStatus.PASS, "TestPassed");
+            //TC 12.5 Disable user.
             FwdPwdObj.ClickForgetPwdBtn();
             Thread.sleep(2000);
             FwdPwdObj.ClickEmailBtn(ReadProps.readAttr("DisabledUser"));
             Thread.sleep(1000);
             FwdPwdObj.ClickSubmitBtn();
             TakesScreen.takeSnapShot(driver, "test-output//ForgotPassword//DisableUser.jpg");
-            System.out.println("User is inactive. Please contact Administration");
             Thread.sleep(2000);
             FwdPwdObj.ClickCancelBtn();
             Thread.sleep(4000);
+            test.log(LogStatus.INFO, "Disable User");
+            test.log(LogStatus.PASS, "TestPassed");
             driver.close();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             test.log(LogStatus.FAIL, e);
-        }
-
-    }
-}
+        }}}

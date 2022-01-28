@@ -22,7 +22,8 @@ public class ProjectFlowSemiStructureTest extends BasePage{
             DocumentPage DocPageObj = new DocumentPage(driver);
             test.log(LogStatus.INFO, "ProjectFlowSemiStructure");
             test.log(LogStatus.PASS, "TestPassed");
-            //TC 15.1 Checking all the functionalities on the Project Page.
+
+            //TC 17.1 Checking all the functionalities on the Project Page.
             Thread.sleep(2000);
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(2000);
@@ -50,12 +51,14 @@ public class ProjectFlowSemiStructureTest extends BasePage{
             Thread.sleep(2000);
             ProjectPageObj.ClickOnDocumentScoreBtn(ReadProps.readAttr("Score"));
             Thread.sleep(2000);
-            //TC 15.2 Checking Delete Attribute.
+
+            //TC 17.2 Checking Delete Attribute.
             ProjectPageObj.ClickOnDeleteAttributeFieldName();
             Thread.sleep(2000);
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowSemi-Structured//DeletedFieldNameAttribute.jpg");
             Thread.sleep(2000);
-            //TC 15.3 Verify Create Project without Role.
+
+            //TC 17.3 Verify Create Project without Role.
             ProjectPageObj.ClickOnStatusBtn();
             Thread.sleep(2000);
             ProjectPageObj.ClickOnDocumentAutoAssignBtn();
@@ -77,7 +80,7 @@ public class ProjectFlowSemiStructureTest extends BasePage{
             r.keyPress(KeyEvent.VK_ESCAPE);
             Thread.sleep(2000);
 
-            //15.4 Navigate Next to Data Page and Rules Page and Back also.
+            //17.4 Navigate Next to Data Page and Rules Page and Back also.
             ProjectPageObj.ClickNextPage();
             Thread.sleep(2000);
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowSemi-Structured//DataPage.jpg");
@@ -88,13 +91,15 @@ public class ProjectFlowSemiStructureTest extends BasePage{
             Thread.sleep(4000);
             ProjectPageObj.ClickBackRulePage();
             Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowSemi-Structured//BackRulepage.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowSemi-Structured//BackRulePage.jpg");
             ProjectPageObj.CLickBackDataPage();
             Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowSemi-Structured//BackDatapage.jpg");
-            //TC 15.5 Verify Create Project.
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowSemi-Structured//BackDataPage.jpg");
+
+            //TC 17.5 Verify Create Project.
             ProjectPageObj.ClickOnCreate();
-            Thread.sleep(8000);
+            Thread.sleep(9000);
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowSemi-Structured//ProjectCreatedSuccess.jpg");
             driver.close();
         }
         catch (Exception e) {

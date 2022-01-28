@@ -22,7 +22,7 @@ public class ProjectPage {
     By SelectLead = By.xpath("//span[contains(text(),'qa1@email.com')]");
     By ClickStartDate = By.cssSelector("button[aria-label='Open calendar'][tabindex='0']");
     By ClearStartDate = By.xpath("//input[@id='mat-input-3']");
-    By SelectStartDate = By.xpath("//div[contains(text(),'7')]");//Change this before running
+    By SelectStartDate = By.xpath("//div[contains(text(),'28')]");//Change this before running
     By ClickEndDate = By.xpath("/html/body/app-root/div/app-landing/div/div/main/div/app-create-project/div[2]/div/form/mat-card/div/div[4]/mat-form-field/div/div[1]/div[4]/mat-datepicker-toggle/button");
     By ClearEndDate = By.xpath("//input[@id='mat-input-4']");
     By SelectEndDate = By.xpath("//div[contains(text(),'30')]");
@@ -115,7 +115,7 @@ public class ProjectPage {
     By SearchRole = By.xpath("//body[1]/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-role-management[1]/div[1]/div[1]/div[1]/mat-form-field[1]/div[1]/div[1]/div[3]/input[1]");
     By EditRole = By.xpath("//span[contains(text(),' AutoAdmin1 ')]");
     By ActiveRole = By.xpath("//div[@class='mat-slide-toggle-thumb']");
-    By ClickUpdateBtn = By.xpath("//span[contains(text(),'Update' )]");
+
     By SearchRoleInProject = By.xpath("//input[@placeholder='Search']");
     By Logout = By.xpath("//i[@class='fa fa-power-off']");
     By LoginBtn = By.xpath("//button[@type='submit']");
@@ -574,9 +574,7 @@ public class ProjectPage {
         driver.findElement(ActiveRole).click();
     }
 
-    public void ClickUpdateBtn() {
-        driver.findElement(ClickUpdateBtn).click();
-    }
+
 
     public void SearchRoleProject() {
         driver.findElement(SearchRoleInProject).sendKeys("Auto Admin");

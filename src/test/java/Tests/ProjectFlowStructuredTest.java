@@ -24,7 +24,7 @@ public class ProjectFlowStructuredTest extends BasePage {
             test.log(LogStatus.INFO, "ProjectFlow");
             test.log(LogStatus.PASS, "TestPassed");
 
-            //TC 14.1 Create new project with Blank information and also Verify 'Create' button for Platform Admin.
+            //TC 18.1 Create new project with Blank information and also Verify 'Create' button for Platform Admin.
             ProjectPageObj.ClickOnCreateProjectBtn();
             Thread.sleep(4000);
             JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -33,10 +33,9 @@ public class ProjectFlowStructuredTest extends BasePage {
             ProjectPageObj.ClickOnCreate();
             ProjectPageObj.VerifyAssertForBlank();
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowStructured//ProjectCreateBlank.jpg");
-            System.out.println("Please add the attributes before creating the project.");
             Thread.sleep(2000);
 
-            //TC 14.2 Verify Next button with Blank information for Platform Admin.
+            //TC 18.2 Verify Next button with Blank information for Platform Admin.
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(6000);
             ProjectPageObj.ClickOnCreateProjectBtn();
@@ -47,7 +46,7 @@ public class ProjectFlowStructuredTest extends BasePage {
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowStructured//ProjectCreateBlankNext.jpg");
             Thread.sleep(2000);
 
-            //TC 14.3 Verify Cancel button with Blank information for Platform Admin.
+            //TC 18.3 Verify Cancel button with Blank information for Platform Admin.
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(6000);
             ProjectPageObj.ClickOnCreateProjectBtn();
@@ -57,7 +56,7 @@ public class ProjectFlowStructuredTest extends BasePage {
             ProjectPageObj.ClickOnCancelProject();
             Thread.sleep(5000);
 
-            //TC 14.4 Create project with Invalid Project Name for Platform Admin.
+            //TC 18.4 Create project with Invalid Project Name for Platform Admin.
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(6000);
             ProjectPageObj.ClickOnCreateProjectBtn();
@@ -115,7 +114,7 @@ public class ProjectFlowStructuredTest extends BasePage {
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowStructured//PleaseCheckFormData.jpg");
             Thread.sleep(2000);
 
-            //TC 14.5  Create project with Project information without Template for Platform Admin.
+            //TC 18.5  Create project with Project information without Template for Platform Admin.
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(6000);
             ProjectPageObj.ClickOnCreateProjectBtn();
@@ -156,7 +155,7 @@ public class ProjectFlowStructuredTest extends BasePage {
             ProjectPageObj.VerifyAssertForNoTemplate();
             Thread.sleep(2000);
 
-            //TC 14.6 Create project without Role for Platform Admin.
+            //TC 18.6 Create project without Role for Platform Admin.
             ProjectPageObj.ClickOnAddTemplateBtn();
             Thread.sleep(2000);
             ProjectPageObj.ClickOnTemplateBtn();
@@ -167,7 +166,8 @@ public class ProjectFlowStructuredTest extends BasePage {
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowStructured//CreateProjectWithoutRole.jpg");
             Thread.sleep(2000);
 
-            //TC 14.7 Create Project without User for Platform Admin and TC 14.8 Create Project with Valid Data.
+            //TC 18.7 Create Project without User for Platform Admin and
+            //TC 18.8 Create Project with Valid Data.
             ProjectPageObj.ClickOnRolesBtn();
             Thread.sleep(2000);
             ProjectPageObj.ClickOnAddRoleBtn();
@@ -190,7 +190,7 @@ public class ProjectFlowStructuredTest extends BasePage {
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowStructured//ProjectCreatedSuccessfully.jpg");
             Thread.sleep(2000);
 
-            //TC 14.9 Create Project with Disable Status for Platform Admin.
+            //TC 18.9 Create Project with Disable Status for Platform Admin.
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(6000);
             ProjectPageObj.ClickOnCreateProjectBtn();
@@ -243,10 +243,9 @@ public class ProjectFlowStructuredTest extends BasePage {
             ProjectPageObj.ClickOnCreate();
             Thread.sleep(6000);
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowStructured//StatusNotEnabledProjectCreated.jpg");
-            System.out.println("Project With Status Not Enabled Created Successfully");
             Thread.sleep(2000);
 
-            //TC 14.10  Create Project only with Role information for Platform Admin.
+            //TC 18.10  Create Project only with Role information for Platform Admin.
             ProjectPageObj.ClickOnCreateProjectBtn();
             Thread.sleep(4000);
             ProjectPageObj.ClickOnRolesBtn();
@@ -263,13 +262,11 @@ public class ProjectFlowStructuredTest extends BasePage {
             Thread.sleep(1000);
             ProjectPageObj.ClickOnCreate();
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowStructured//ProjectCreateOnlyRole.jpg");
-            System.out.println("Please add the attributes before creating the project.");
             Thread.sleep(2000);
             ProjectPageObj.ClickLogout();
-            System.out.println("Logout Success");
             Thread.sleep(5000);
 
-            //TC 14.11 Create New Project with Blank information and also verify Create button for Admin.
+            //TC 18.11 Create New Project with Blank information and also verify Create button for Admin.
             ProjectPageObj.EnterUsername(ReadProps.readAttr("AdminUser"));
             Thread.sleep(2000);
             ProjectPageObj.EnterPassword(ReadProps.readAttr("AdminPwd"));
@@ -281,10 +278,9 @@ public class ProjectFlowStructuredTest extends BasePage {
             ProjectPageObj.ClickOnCreate();
             ProjectPageObj.VerifyAssertForBlank();
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowStructured//ProjectCreateBlankForAdmin.jpg");
-            System.out.println("Please add the attributes before creating the project.");
             Thread.sleep(2000);
 
-            //TC 14.12 Verify Next button with Blank information for Admin.
+            //TC 18.12 Verify Next button with Blank information for Admin.
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(6000);
             ProjectPageObj.ClickOnCreateProjectBtn();
@@ -293,7 +289,7 @@ public class ProjectFlowStructuredTest extends BasePage {
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowStructured//ProjectCreateBlankNextAdmin.jpg");
             Thread.sleep(2000);
 
-            //TC 14.13 Verify Cancel button with Blank Information for Admin.
+            //TC 18.13 Verify Cancel button with Blank Information for Admin.
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(6000);
             ProjectPageObj.ClickOnCreateProjectBtn();
@@ -302,7 +298,7 @@ public class ProjectFlowStructuredTest extends BasePage {
             System.out.println("Cancel Done for Admin");
             Thread.sleep(5000);
 
-            //TC 14.14 Create Project with Invalid Project Name for Admin.
+            //TC 18.14 Create Project with Invalid Project Name for Admin.
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(6000);
             ProjectPageObj.ClickOnCreateProjectBtn();
@@ -360,7 +356,7 @@ public class ProjectFlowStructuredTest extends BasePage {
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowStructured//PleaseCheckFormDataAdmin.jpg");
             Thread.sleep(2000);
 
-            //TC 14.15 Create project with Project information without Template for Admin.
+            //TC 18.15 Create project with Project information without Template for Admin.
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(6000);
             ProjectPageObj.ClickOnCreateProjectBtn();
@@ -401,7 +397,7 @@ public class ProjectFlowStructuredTest extends BasePage {
             ProjectPageObj.VerifyAssertForNoTemplate();
             Thread.sleep(2000);
 
-            //TC 14.16 Create project without Role for Admin.
+            //TC 18.16 Create project without Role for Admin.
             ProjectPageObj.ClickOnAddTemplateBtn();
             Thread.sleep(2000);
             ProjectPageObj.ClickOnTemplateBtn();
@@ -412,7 +408,7 @@ public class ProjectFlowStructuredTest extends BasePage {
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowStructured//CreateProjectWithoutRoleAdmin.jpg");
             Thread.sleep(2000);
 
-            //TC 14.17 Create project without User for Admin.
+            //TC 18.17 Create project without User for Admin.
             ProjectPageObj.ClickOnRolesBtn();
             Thread.sleep(2000);
             ProjectPageObj.ClickOnAddRoleBtn();
@@ -425,7 +421,7 @@ public class ProjectFlowStructuredTest extends BasePage {
             ProjectPageObj.VerifyAssertForUser();
             Thread.sleep(2000);
 
-            //TC 14.18 Create Project with Disable Status for Admin.
+            //TC 18.18 Create Project with Disable Status for Admin.
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(6000);
             ProjectPageObj.ClickOnCreateProjectBtn();
@@ -478,10 +474,9 @@ public class ProjectFlowStructuredTest extends BasePage {
             ProjectPageObj.ClickOnCreate();
             Thread.sleep(6000);
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowStructured//StatusNotEnabledProjectCreatedAdmin.jpg");
-            System.out.println("Project With Status Not Enabled Created Successfully Admin");
             Thread.sleep(2000);
 
-            //TC 14.19  Create Project only with Role information for Admin.
+            //TC 18.19  Create Project only with Role information for Admin.
             ProjectPageObj.ClickOnCreateProjectBtn();
             Thread.sleep(5000);
             ProjectPageObj.ClickOnRolesBtn();
@@ -498,13 +493,11 @@ public class ProjectFlowStructuredTest extends BasePage {
             Thread.sleep(1000);
             ProjectPageObj.ClickOnCreate();
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowStructured//ProjectCreateOnlyRoleAdmin.jpg");
-            System.out.println("Please add the attributes before creating the project.");
             Thread.sleep(2000);
             ProjectPageObj.ClickLogout();
-            System.out.println("Logout Success for Admin");
             Thread.sleep(5000);
 
-            //TC 14.20 Table Structure.
+            //TC 18.20 Table Structure.
             LoginPage loginPageObjects = new LoginPage(driver);
             loginPageObjects.setUsername(ReadProps.readAttr("UserID"));
             Thread.sleep(1000);
@@ -518,7 +511,7 @@ public class ProjectFlowStructuredTest extends BasePage {
             ProjectPageObj.ClickOnTableStructure();
             Thread.sleep(6000);
 
-            //TC 14.21 Verify Items per Page.
+            //TC 18.21 Verify Items per Page.
             ProjectPageObj.ClickItemsPerPage();
             Thread.sleep(2000);
             ProjectPageObj.SelectItemsPerPage();

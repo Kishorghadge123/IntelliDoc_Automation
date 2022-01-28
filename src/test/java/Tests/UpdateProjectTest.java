@@ -22,7 +22,8 @@ public class UpdateProjectTest extends BasePage{
             ProjectPage ProjectPageObj = new ProjectPage(driver);
             test.log(LogStatus.INFO, "UpdateProject");
             test.log(LogStatus.PASS, "TestPassed");
-            // 5 Verify the working of platform Admin for  Updating Project by entering Valid Data.
+
+            //TC 21.1 Verify the working of Platform Admin for  Updating Project by entering Valid Data.
             ProjectPageObj.SearchProject();
             Thread.sleep(2000);
             ProjectPageObj.ClickOnEditProject();
@@ -40,6 +41,7 @@ public class UpdateProjectTest extends BasePage{
             TakesScreen.takeSnapShot(driver, "test-output//ProjectTest//UpdateProjectPageDetails.jpg");
             ProjectPageObj.ClickOnUpdateProject();
             Thread.sleep(4000);
+
             //To maintain script
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(5000);
@@ -61,7 +63,7 @@ public class UpdateProjectTest extends BasePage{
             ProjectPageObj.ClickOnUpdateProject();
             Thread.sleep(4000);
 
-            //Verify the working of platform admin for Update Project button  when role and user status is disabled
+            //TC 21.2 Verify the working of Platform Admin for Update Project button when Role and User Status is Disabled.
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(4000);
             ProjectPageObj.SearchProject();
@@ -75,7 +77,7 @@ public class UpdateProjectTest extends BasePage{
             ProjectPageObj.ClickOnUpdateProject();
             Thread.sleep(4000);
 
-            // User Disable
+            //User Disable.
             ProjectPageObj.ClickUserBtn();
             Thread.sleep(3000);
             ProjectPageObj.SearchCreatedUser(ReadProps.readAttr("AdminRole"));
@@ -87,9 +89,9 @@ public class UpdateProjectTest extends BasePage{
             Thread.sleep(2000);
             ProjectPageObj.ClickUpdateUser();
             Thread.sleep(2000);
-            System.out.println("User updated disable ");
+            System.out.println("User updated disable");
 
-            //  Verify that all Disabled roles are not displayed in add role list while updating a project by platform admin
+            //TC 21.3 Verify that all Disabled roles are not displayed in add role list while updating a project by Platform Admin.
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(5000);
             ProjectPageObj.SearchProject();
@@ -108,7 +110,7 @@ public class UpdateProjectTest extends BasePage{
             ProjectPageObj.ClickOnUpdateProject();
             Thread.sleep(4000);
 
-            // User status is enabled
+            //User status is enabled.
             ProjectPageObj.ClickUserBtn();
             Thread.sleep(3000);
             ProjectPageObj.SearchCreatedUser(ReadProps.readAttr("AdminRole"));
@@ -123,7 +125,7 @@ public class UpdateProjectTest extends BasePage{
             Thread.sleep(3000);
             System.out.println("User Updated");
 
-            //Verify the working of platform admin for Update Project button  when role and user status is enabled
+            //TC 21.4 Verify the working of Platform Admin for Update Project button  when role and user status is enabled.
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(4000);
             ProjectPageObj.SearchProject();
@@ -137,7 +139,7 @@ public class UpdateProjectTest extends BasePage{
             ProjectPageObj.ClickOnUpdateProject();
             Thread.sleep(4000);
 
-            //  Verify that all enabled roles are displayed in add role list while updating a project by platform admin
+            //TC 21.5 Verify that all enabled roles are displayed in add role list while updating a project by Platform Admin.
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(4000);
             ProjectPageObj.SearchProject();
@@ -147,12 +149,12 @@ public class UpdateProjectTest extends BasePage{
             ProjectPageObj.ClickOnLeadBtn();
             Thread.sleep(2000);
             ProjectPageObj.SelectOnLeadAdminBtn();
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectUpdate//Userdisplayedinlead.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectUpdate//UserDisplayedInLead.jpg");
             Thread.sleep(2000);
             ProjectPageObj.ClickOnUpdateProject();
             Thread.sleep(4000);
 
-            //Verify that while updating project user should not able to add user when role is disabled for project
+            //TC 21.6 Verify that while updating project user should not able to add user when role is disabled for project.
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(4000);
             ProjectPageObj.SearchProject();
@@ -169,14 +171,13 @@ public class UpdateProjectTest extends BasePage{
             Thread.sleep(3000);
             ProjectPageObj.ClickOnAddUser();
             TakesScreen.takeSnapShot(driver, "test-output//ProjectUpdate//AESupervisorRoleDisabled.jpg");
-
             ProjectPageObj.VerifyAssertForRoleDisable();
             Thread.sleep(2000);
             System.out.println("AE supervisor role is disable");
             ProjectPageObj.ClickOnCancelProject();
             Thread.sleep(4000);
 
-            //Verify that while updating project role should not have an empty user
+            //TC 21.7 Verify that while updating project Role should not have an empty user.
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(4000);
             ProjectPageObj.SearchProject();
@@ -198,8 +199,8 @@ public class UpdateProjectTest extends BasePage{
             Thread.sleep(4000);
             ProjectPageObj.ClickLogout();
             Thread.sleep(3000);
-            // Creation of Project By admin
-            // Create Project
+
+            //Creation of Project By admin.
             ProjectPageObj.EnterUsername(ReadProps.readAttr("AdminUser"));
             Thread.sleep(2000);
             ProjectPageObj.EnterPassword(ReadProps.readAttr("AdminPwd"));
@@ -207,7 +208,7 @@ public class UpdateProjectTest extends BasePage{
             ProjectPageObj.ClickLoginButton();
             Thread.sleep(6000);
 
-            // 5 Verify the working of  admin for  Updating project by putting valid data
+            //TC 21.8 Verify the working of  Admin for Updating project by entering valid data.
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(4000);
             ProjectPageObj.SearchProjectAdmin();
@@ -228,7 +229,7 @@ public class UpdateProjectTest extends BasePage{
             ProjectPageObj.ClickOnUpdateProject();
             Thread.sleep(4000);
 
-            //to maintain script
+            //To maintain script.
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(4000);
             ProjectPageObj.SearchProjectAdmin();
@@ -249,7 +250,7 @@ public class UpdateProjectTest extends BasePage{
             ProjectPageObj.ClickOnUpdateProject();
             Thread.sleep(4000);
 
-            //Verify the working of admin for Update Project button  when role and user status is disabled
+            //TC 21.9 Verify the working of Admin for Update Project button  when role and user status is Disabled.
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(4000);
             ProjectPageObj.SearchProjectAdmin();
@@ -263,7 +264,7 @@ public class UpdateProjectTest extends BasePage{
             ProjectPageObj.ClickOnUpdateProject();
             Thread.sleep(4000);
 
-            // User Disable
+            //User Disable.
             ProjectPageObj.ClickUserBtn();
             Thread.sleep(3000);
             ProjectPageObj.SearchCreatedUser(ReadProps.readAttr("AdminRole"));
@@ -277,7 +278,7 @@ public class UpdateProjectTest extends BasePage{
             Thread.sleep(2000);
             System.out.println("User updated disable ");
 
-            //  Verify that all Disabled roles are not displayed in add role list while updating a project by admin
+            //TC 21.10 Verify that all Disabled roles are not displayed in add role list while updating a project by Admin.
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(4000);
             ProjectPageObj.SearchProjectAdmin();
@@ -296,7 +297,7 @@ public class UpdateProjectTest extends BasePage{
             ProjectPageObj.ClickOnUpdateProject();
             Thread.sleep(4000);
 
-            // User status is enabled
+            //User status is enabled
             ProjectPageObj.ClickUserBtn();
             Thread.sleep(3000);
             ProjectPageObj.SearchCreatedUser(ReadProps.readAttr("AdminRole"));
@@ -310,7 +311,7 @@ public class UpdateProjectTest extends BasePage{
             Thread.sleep(2000);
             System.out.println("User updated");
 
-            //Verify the working of  admin for Update Project button  when role and user status is enabled
+            //TC 21.11 Verify the working of Admin for Update Project button  when role and user status is enabled.
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(4000);
             ProjectPageObj.SearchProjectAdmin();
@@ -324,7 +325,7 @@ public class UpdateProjectTest extends BasePage{
             ProjectPageObj.ClickOnUpdateProject();
             Thread.sleep(4000);
 
-            //  Verify that all enabled roles are displayed in add role list while updating a project by platform admin
+            //TC 21.12 Verify that all enabled roles are displayed in add role list while updating a project by Platform Admin.
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(4000);
             ProjectPageObj.SearchProjectAdmin();
@@ -335,11 +336,11 @@ public class UpdateProjectTest extends BasePage{
             Thread.sleep(2000);
             ProjectPageObj.SelectOnLeadAdminBtn();
             Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectUpdate//Userdisplayedinlead.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectUpdate//UserDisplayedInLead.jpg");
             ProjectPageObj.ClickOnUpdateProject();
             Thread.sleep(4000);
 
-            //Verify that while updating project user should not able to add user when role is disabled for project
+            //TC 21.13 Verify that while updating project user should not able to add user when role is disabled for project for Supervisor.
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(4000);
             ProjectPageObj.SearchProjectAdmin();
@@ -356,14 +357,13 @@ public class UpdateProjectTest extends BasePage{
             Thread.sleep(2000);
             ProjectPageObj.ClickOnAddUser();
             TakesScreen.takeSnapShot(driver, "test-output//ProjectUpdate//AESupervisorRoleDisabled.jpg");
-
             ProjectPageObj.VerifyAssertForRoleDisable();
             Thread.sleep(2000);
             System.out.println("AE supervisor role is disable");
             ProjectPageObj.ClickOnCancelProject();
             Thread.sleep(4000);
 
-            //Verify that while updating project role should not have an empty user
+            //TC 21.14 Verify that while updating project role should not have an empty user for Supervisor.
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(4000);
             ProjectPageObj.SearchProjectAdmin();
@@ -384,7 +384,7 @@ public class UpdateProjectTest extends BasePage{
             ProjectPageObj.ClickOnCancelProject();
             Thread.sleep(5000);
 
-            // Verify that project status is disabled for admin when the action checkbox  of the status is false
+            //TC 21.15 Verify that project status is disabled for admin when the action checkbox  of the status is false.
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(4000);
             ProjectPageObj.SearchProjectAdmin();
@@ -397,8 +397,10 @@ public class UpdateProjectTest extends BasePage{
             ProjectPageObj.ClickOnUpdateProject();
             Thread.sleep(4000);
 
-            // Verify that project status is enabled for admin when the action checkbox  of the status is True
+            //TC 21.16 Verify that project status is enabled for admin when the action checkbox  of the status is True.
             ProjectPageObj.ClickOnProjectBtn();
+            Thread.sleep(4000);
+            ProjectPageObj.TableStructure();
             Thread.sleep(4000);
             ProjectPageObj.SearchProjectAdmin();
             Thread.sleep(2000);
@@ -410,7 +412,7 @@ public class UpdateProjectTest extends BasePage{
             ProjectPageObj.ClickOnUpdateProject();
             Thread.sleep(4000);
             ProjectPageObj.ClickLogout();
-            Thread.sleep(3000);
+            Thread.sleep(4000);
             driver.close();
         } catch (Exception e) {
             test.log(LogStatus.FAIL, e);

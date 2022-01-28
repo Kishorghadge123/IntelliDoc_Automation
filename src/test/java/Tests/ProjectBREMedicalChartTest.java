@@ -24,7 +24,6 @@ public class ProjectBREMedicalChartTest extends BasePage
             ProjectPage ProjectPageObj = new ProjectPage(driver);
             test.log(LogStatus.INFO, "ProjectBREMedicalChart");
             test.log(LogStatus.PASS, "TestPassed");
-
             //TC 1 Check all the Functionalities on the Project Page.
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(6000);

@@ -24,7 +24,7 @@ public class ProjectFlowMedicalChart extends BasePage {
             test.log(LogStatus.INFO, "ProjectFlowMedicalChart");
             test.log(LogStatus.PASS, "TestPassed");
 
-            //TC 17.1 Checking all the functionalities on the Project Page Platform Admin.
+            //TC 16.1 Checking all the functionalities on the Project Page Platform Admin.
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(6000);
             ProjectPageObj.ClickOnCreateProjectBtn();
@@ -52,13 +52,13 @@ public class ProjectFlowMedicalChart extends BasePage {
             ProjectPageObj.ClickOnDocumentAutoAssignBtn();
             Thread.sleep(2000);
 
-            //TC 17.2 Verify Create Project without Entities and Role.
+            //TC 16.2 Verify Create Project without Entities and Role.
             ProjectPageObj.ClickOnCreate();
             ProjectPageObj.VerifyAssertForEntities();
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowMedicalChart//ErrorEntites.jpg");
             Thread.sleep(2000);
 
-            //TC 17.3 Verify Create Project with Entities and without Role
+            //TC 16.3 Verify Create Project with Entities and without Role
             ProjectPageObj.ClickOnAddEntity();
             Thread.sleep(2000);
             ProjectPageObj.SelectPatientGraphics();
@@ -72,7 +72,7 @@ public class ProjectFlowMedicalChart extends BasePage {
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowMedicalChart//ErrorRole.jpg");
             Thread.sleep(2000);
 
-            //TC 17.4 Verify Create Project without User.
+            //TC 16.4 Verify Create Project without User.
             ProjectPageObj.ClickOnRolesBtn();
             Thread.sleep(2000);
             ProjectPageObj.ClickOnAddRoleBtn();
@@ -83,7 +83,7 @@ public class ProjectFlowMedicalChart extends BasePage {
             ProjectPageObj.VerifyAssertForUser();
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowMedicalChart//ErrorUser.jpg");
 
-            //TC 17.5 Verify Add User.
+            //TC 16.5 Verify Add User.
             ProjectPageObj.ClickOnAddUserBtn();
             Thread.sleep(2000);
             ProjectPageObj.ClickOnSelectUserBtn();
@@ -91,7 +91,7 @@ public class ProjectFlowMedicalChart extends BasePage {
             r.keyPress(KeyEvent.VK_ESCAPE);
             Thread.sleep(2000);
 
-            //17.6 Navigate Next to Data Page and Rules Page and Back also.
+            //16.6 Navigate Next to Data Page and Rules Page and Back also.
             ProjectPageObj.ClickNextPage();
             Thread.sleep(2000);
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowMedicalChart//DataPage.jpg");
@@ -102,14 +102,15 @@ public class ProjectFlowMedicalChart extends BasePage {
             Thread.sleep(4000);
             ProjectPageObj.ClickBackRulePage();
             Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowMedicalChart//BackRulepage.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowMedicalChart//BackRulePage.jpg");
             ProjectPageObj.CLickBackDataPage();
             Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowMedicalChart//BackDatapage.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowMedicalChart//BackDataPage.jpg");
 
-            //TC 17.7 Verify Create Project with Valid Details.
+            //TC 16.7 Verify Create Project with Valid Details.
             ProjectPageObj.ClickOnCreate();
-            Thread.sleep(8000);
+            Thread.sleep(9000);
+            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowMedicalChart//ProjectCreatedSuccess.jpg");
             driver.close();
         } catch (Exception e) {
             test.log(LogStatus.FAIL, e);

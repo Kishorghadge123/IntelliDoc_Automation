@@ -174,8 +174,9 @@ public class ProjectBREDataSetTest extends BasePage {
 //            ProjectBREPageObj.ClickOnCreateProjectButton();
 //            Thread.sleep(6000);
 //            TakesScreen.takeSnapShot(driver, "test-output//ProjectBRETest//ProjectCreatedSuccessfully.jpg");
-             // driver.close();
+            // driver.close();
             //Document should be uploaded from backend to check the output.
+
         }
         catch (Exception e) {
             test.log(LogStatus.FAIL, e);

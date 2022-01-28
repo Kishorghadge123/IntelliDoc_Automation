@@ -1,6 +1,8 @@
 package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+
 public class DocumentPage {
 
         WebDriver driver = null;
@@ -14,6 +16,7 @@ public class DocumentPage {
         By SelectFreeFormProject = By.xpath("//span[contains(text(),'QA-AutoProject-FreeForm')]");
         By SemiStructureDocument= By.xpath("//span[contains(text(),'QA-Automation-SemiStructured')]");
         By SelectMedicalChartProject = By.xpath("//span[contains(text(),'QA-AutoProject-MedicalChart')]");
+        By SelectMedicalChartProjectICD = By.xpath("//span[contains(text(),'J17012022')]");
         By SearchDocument = By.xpath("//mat-icon[contains(text(),'search')]");
         By CancelDoc2 = By.xpath("//span[contains(text(),'Cancel')]");
         By ViewDoc = By.xpath("//span[contains(text(),'BRE US Citizen.jpg')]");
@@ -22,6 +25,8 @@ public class DocumentPage {
         By ViewDoc3 = By.xpath("//span[contains(text(),'4.tif')]");
         By ViewDoc4 = By.xpath("//span[contains(text(),'3.tif')]");
         By ViewDoc5 = By.xpath("//span[contains(text(),'Processed.pdf')]");
+        By ViewFreeFormRejectedDoc = By.xpath("//span[contains(text(),'Pfizer4.jpg')]");
+        By ViewStructuredReadyDoc = By.xpath("//span[contains(text(),'Pfizer4.jpg')]");
 
         By ExpansionPanel = By.xpath("//mat-expansion-panel-header/span[2]");
         By ChangeEmail = By.xpath("/html[1]/body[1]/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-processed-forms[1]/div[1]/div[1]/div[2]/div[4]/mat-expansion-panel[1]/div[1]/div[1]/mat-table[1]/mat-row[1]/mat-cell[2]/div[1]/mat-form-field[1]/div[1]/div[1]/div[1]/input[1]");
@@ -69,23 +74,35 @@ public class DocumentPage {
         By ClickPercentage = By.xpath("//body/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-documents[1]/div[1]/mat-accordion[1]/mat-expansion-panel[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/circle-progress[1]/*[1]");
         By ClickAntiClkWise = By.xpath("//*[@id='rotate_left']/span[1]/i");
         By ClickClkWise = By.xpath("//*[@mattooltip='Clockwise']");
-        By ClickZoonIn = By.xpath("//*[@mattooltip='Zoom In']");
+        By ClickZoomIn = By.xpath("//*[@mattooltip='Zoom In']");
         By ClickZoomOut = By.xpath("//*[@class='fa fa-search-minus']");
         By ClickNavigateRight = By.xpath("//*[@mattooltip='Navigate Right']");
         By ClickNavigateLeft = By.xpath("//*[@mattooltip='Navigate Left']");
 
         By ChronicCondition = By.xpath("//div[contains(text(),' Chronic Conditions ')]");
         By AddCondition = By.xpath("//mat-icon[contains(text(),'add')]");
-        By NPINO = By.xpath("//input[@formcontrolname='npiNo']");
+        By NPINo = By.xpath("//input[@formcontrolname='npiNo']");
         By PhysicianName = By.xpath("//input[@formcontrolname='physicianName']");
         By StartDate = By.xpath("//*[@id='mat-dialog-0']/app-rcm-edit-header/div/form/div/div[2]/div[3]/div[1]/mat-form-field/div/div[1]/div[4]/mat-datepicker-toggle/button");
-        By SelectStartDate = By.xpath("//div[contains(text(),'11')]");
+        By SelectStartDate = By.xpath("//div[contains(text(),'28')]");
         By EndDate = By.xpath("//*[@id='mat-dialog-0']/app-rcm-edit-header/div/form/div/div[2]/div[3]/div[2]/mat-form-field/div/div[1]/div[4]/mat-datepicker-toggle/button");
-        By SelectEndDate = By.xpath("//div[contains(text(),'25')]");
+        By SelectEndDate = By.xpath("//div[contains(text(),'30')]");
         By SaveCondition = By.xpath("//*[@id='mat-dialog-0']/app-rcm-edit-header/div/form/div/div[2]/div[4]/button[2]/span[1]");
 
+        By AddData = By.xpath("//mat-label[contains(text(),'Data')]");
+        By AddAttribute = By.xpath("//span[contains(text(),'Attribute')]");
+        By AddPatientName = By.xpath("//span[contains(text(),' PatientName ')]");
+        By AddDOB = By.xpath("//span[contains(text(),' DOB ')]");
+        By clickAdd = By.xpath("//span[contains(text(),' Add ')]");
+        By addAttributeValue = By.xpath("//body[1]/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-processed-forms[1]/div[1]/div[1]/div[1]/as-split[1]/as-split-area[2]/div[4]/div[1]/mat-expansion-panel[1]/div[1]/div[1]/div[2]/mat-table[1]/mat-row[1]/mat-cell[2]/div[1]/mat-form-field[1]/div[1]/div[1]/div[1]/input[1]");
+        By SaveDraft = By.xpath("//span[contains(text(),'Save Draft')]");
+        By Submit = By.xpath("//span[contains(text(),'Submit')]");
+        By SubmitChanges = By.xpath("//*[@id='mat-dialog-0']/app-confirmation-dialog/div/div/div[2]/button[1]");
+        By StatusFreeFormDoc = By.xpath("//tbody[@role='rowgroup']/tr[1]/td[3]");
+        By UpdtAttributeValue = By.xpath("//mat-row[@id='tableRow'][2]/mat-cell[2]");
+        By SelectAddress = By.xpath("//span[contains(text(),' 2472 Rose Peak Drive Dietz ')]");
 
-
+        //Constructor
         public DocumentPage(WebDriver driver) { this.driver = driver;}
 
         public void ClickDocumentBtn(){ driver.findElement(DocumentBtn).click();}
@@ -95,7 +112,7 @@ public class DocumentPage {
         public void ClickSelectFreeFormProject(){driver.findElement(SelectFreeFormProject).click();}
         public void ClickSelectSemiStructuredProject(){driver.findElement(SelectSemiStructuredProject).click();}
         public void ClickSelectMedicalChartProject(){driver.findElement(SelectMedicalChartProject).click();}
-
+        public void ClickSelectMedicalChartProjectICD(){driver.findElement(SelectMedicalChartProjectICD).click();}
         public void ClickSearchBox(String text){ driver.findElement(SearchBox).sendKeys(text);}
         public void  ClickSearchDocument(){driver.findElement(SearchDocument).click();}
         public void ClickClearSearch(){driver.findElement(ClearSearchDocument);}
@@ -146,7 +163,7 @@ public class DocumentPage {
         public void ClickPercentageIcon(){driver.findElement(ClickPercentage).click();}
         public void ClickAntiWiseIcon(){driver.findElement(ClickAntiClkWise).click();}
         public void ClickClockWiseIcon(){driver.findElement(ClickClkWise).click();}
-        public void ClickZoomIn(){driver.findElement(ClickZoonIn).click();}
+        public void ClickZoomIN(){driver.findElement(ClickZoomIn).click();}
         public void ClickZoomOut(){driver.findElement(ClickZoomOut).click();}
         public void ClickNvgtRt(){driver.findElement(ClickNavigateRight).click();}
         public void ClickNvgtLft(){driver.findElement(ClickNavigateLeft).click();}
@@ -162,7 +179,7 @@ public class DocumentPage {
 
         public void AddNPINumber ()
         {
-                driver.findElement(NPINO).sendKeys("3216549871");
+                driver.findElement(NPINo).sendKeys("3216549871");
         }
 
         public void AddPhysicianName ()
@@ -193,6 +210,41 @@ public class DocumentPage {
         {
                 driver.findElement(SaveCondition).click();
         }
+
+        public void ViewFreeFormRejectedDocument(){ driver.findElement(ViewFreeFormRejectedDoc).click();}
+        public void clickAddData() {driver.findElement(AddData).click();}
+        public void clickAddAttributes() { driver.findElement(AddAttribute).click();}
+        public void addAttributes() {driver.findElement(AddPatientName).click();}
+        public void clickADD() {driver.findElement(clickAdd).click();}
+        public void addAttributeValue() {driver.findElement(addAttributeValue).sendKeys("John Dey");}
+        public void clickSaveDraft() {driver.findElement(SaveDraft).click();}
+        public void clickSubmit() {driver.findElement(Submit).click();}
+        public void clickSubmitChanges () {driver.findElement(SubmitChanges).click();}
+        public void assertFreeFormDocument()
+        {String FreeFormDocStatus = driver.findElement(StatusFreeFormDoc).getText();
+               String ActualStatus = FreeFormDocStatus;
+               String ExpectedStatus = "Processed";
+                Assert.assertEquals(ActualStatus,ExpectedStatus);
+        }
+
+        public void assertAttributValue () {
+                String AttributeValue = driver.findElement(addAttributeValue).getText();
+                System.out.println(AttributeValue);
+                //String ActualValue = AttributeValue;
+                //String ExpectedValue = "John Dey";
+                // Assert.assertEquals(ActualValue,ExpectedValue);
+        }
+        public void viewStructuredReadyDoc()
+        {
+                driver.findElement(ViewStructuredReadyDoc).click();
+        }
+        public void updateAttributeValue(){
+                driver.findElement(UpdtAttributeValue).click();
+                driver.findElement(SelectAddress).click();
+
+        }
+
+
 
 
 }

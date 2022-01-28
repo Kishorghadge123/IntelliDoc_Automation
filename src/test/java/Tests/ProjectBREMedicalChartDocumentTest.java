@@ -23,7 +23,6 @@ public class ProjectBREMedicalChartDocumentTest extends BasePage {
             DocumentPage DocPageObj = new DocumentPage(driver);
             DocPageObj.ClickDocumentBtn();
             Thread.sleep(6000);
-
             //TC 1 Verifying the Save Draft option for Patient Demographics.
             DocPageObj.ClickDropDownBtn();
             Thread.sleep(2000);
