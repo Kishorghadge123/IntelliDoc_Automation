@@ -23,15 +23,10 @@ public class AnalyticsTest extends BasePage
         AnalyticsPageObj = new AnalyticsPage(driver);
         AnalyticsPageObj.ClickAnalyticsBtn();
         Thread.sleep(8000);
-        TakesScreen.takeSnapShot(driver, "test-output//Analytics//AnalyticsPage.jpg");
         // 1.1 Organization Statistics Hide and UnHide.
         AnalyticsPageObj.ClickOrganizationArrow();
         Thread.sleep(2000);
-        TakesScreen.takeSnapShot(driver, "test-output//Analytics//OrganizationStatisticsHide.jpg");
-        Thread.sleep(2000);
         AnalyticsPageObj.ClickOrganizationArrow();
-        Thread.sleep(2000);
-        TakesScreen.takeSnapShot(driver, "test-output//Analytics//OrganizationStatisticsUnHide.jpg");
         Thread.sleep(2000);
     }
     @Test(priority = 2)
@@ -39,42 +34,35 @@ public class AnalyticsTest extends BasePage
         // 1.2 Hover on Total Users.
         AnalyticsPageObj.HoverTotalUser();
         Thread.sleep(3000);
-        TakesScreen.takeSnapShot(driver, "test-output//Analytics//HoverTotalUsers.jpg");
-
     }
     @Test(priority = 3)
     public void hover_total_documents_on_Analytics_page() throws Exception {
         // 1.3 Hover on Total Documents.
         AnalyticsPageObj.HoverDocuments();
-        TakesScreen.takeSnapShot(driver, "test-output//Analytics//HoverTotalDocuments.jpg");
         Thread.sleep(3000);
     }
     @Test(priority = 4)
     public void hover_processed_documents_on_Analytics_page() throws Exception {
         // 1.4 Hover on Processed Documents.
         AnalyticsPageObj.HoverProcessed();
-        TakesScreen.takeSnapShot(driver, "test-output//Analytics//HoverProcessed.jpg");
         Thread.sleep(3000);
     }
     @Test(priority = 5)
     public void hover_ready_to_process_on_Analytics_page() throws Exception {
         // 1.5 Hover on Ready to Process Documents.
         AnalyticsPageObj.HoverReadyToProcess();
-        TakesScreen.takeSnapShot(driver, "test-output//Analytics//HoverReadyToProcess.jpg");
         Thread.sleep(3000);
     }
     @Test(priority = 6)
     public void hover_ready_to_rejected_documents_on_Analytics_page() throws Exception {
         // 1.6 Hover on Ready to Rejected Documents.
         AnalyticsPageObj.HoverRejected();
-        TakesScreen.takeSnapShot(driver, "test-output//Analytics//HoverRejected.jpg");
         Thread.sleep(3000);
     }
     @Test(priority = 7)
     public void hover_validation_time_on_Analytics_page() throws Exception {
         // 1.7 Hover on Validation Time.
         AnalyticsPageObj.HoverValidationTime();
-        TakesScreen.takeSnapShot(driver, "test-output//Analytics//HoverValidationTime.jpg");
         Thread.sleep(3000);
     }
     @Test(priority = 8)
@@ -82,15 +70,11 @@ public class AnalyticsTest extends BasePage
         // 1.8 Hover on Structured.
         AnalyticsPageObj.HoverStructuredBar();
         Thread.sleep(3000);
-        TakesScreen.takeSnapShot(driver, "test-output//Analytics//HoverStructureBar.jpg");
-        Thread.sleep(2000);
     }
     @Test(priority = 9)
     public void hover_on_semistructured_on_Analytics_page() throws Exception {
         // 1.9 Hover on Semi-Structured.
         AnalyticsPageObj.HoverSemiStructured();
-        Thread.sleep(3000);
-        TakesScreen.takeSnapShot(driver, "test-output//Analytics//HoverSemi-StructureBar.jpg");
         Thread.sleep(3000);
     }
     @Test(priority = 10)
@@ -98,20 +82,14 @@ public class AnalyticsTest extends BasePage
         // 1.10 Hover on Free-Form.
         AnalyticsPageObj.HoverFreeForm();
         Thread.sleep(3000);
-        TakesScreen.takeSnapShot(driver, "test-output//Analytics//HoverFree-FormBar.jpg");
-        Thread.sleep(3000);
     }
     @Test(priority = 11)
     public void hover_on_medicalchart_on_Analytics_page() throws Exception {
         // 1.11 Hover on Medical-Chart.
         AnalyticsPageObj.HoverMedicalChart();
         Thread.sleep(3000);
-        TakesScreen.takeSnapShot(driver, "test-output//Analytics//HoverMedicalChartBar.jpg");
-        Thread.sleep(3000);
         //Project Statistics.
         AnalyticsPageObj.ClickOrganizationArrow();
-        Thread.sleep(3000);
-        TakesScreen.takeSnapShot(driver, "test-output//Analytics//ProjectStatisticsVisible.jpg");
         Thread.sleep(3000);
         AnalyticsPageObj.ClickProjectDownArrow();
         Thread.sleep(2000);
@@ -123,8 +101,6 @@ public class AnalyticsTest extends BasePage
         Thread.sleep(2000);
         AnalyticsPageObj.ClickSelectProject();
         Thread.sleep(2000);
-        TakesScreen.takeSnapShot(driver, "test-output//Analytics//ProjectSelected.jpg");
-        Thread.sleep(3000);
         AnalyticsPageObj.ClickSelectDropDown();
         Thread.sleep(3000);
     }
@@ -157,8 +133,6 @@ public class AnalyticsTest extends BasePage
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,10000)", "");
         Thread.sleep(3000);
-        TakesScreen.takeSnapShot(driver, "test-output//Analytics//WeeklyStatus.jpg");
-        Thread.sleep(3000);
         AnalyticsPageObj.ClickSelectDropDown();
         Thread.sleep(3000);
     }
@@ -170,15 +144,9 @@ public class AnalyticsTest extends BasePage
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,10000)", "");
         Thread.sleep(3000);
-        TakesScreen.takeSnapShot(driver, "test-output//Analytics//DailyStatus.jpg");
-        Thread.sleep(3000);
         AnalyticsPageObj.ClickOnSortByReceived();
-        Thread.sleep(3000);
-        TakesScreen.takeSnapShot(driver, "test-output//Analytics//SortByDocuments.jpg");
         Thread.sleep(3000);
         AnalyticsPageObj.ClickOnSortByDocuments();
         Thread.sleep(3000);
-        TakesScreen.takeSnapShot(driver, "test-output//Analytics//SortByReceived.jpg");
-        Thread.sleep(2000);
     }
 }

@@ -2,9 +2,7 @@ package Tests;
 import Base.BasePage;
 import Pages.CreateRolePage;
 import Utilities.ReadProps;
-import Utilities.TakesScreen;
 import org.testng.annotations.*;
-
 import java.awt.*;
 import java.awt.event.KeyEvent;
 @Listeners(Utilities.TestListeners.class)
@@ -27,11 +25,8 @@ public class CreateUpdateRolePlatformAdminTest extends BasePage
         Thread.sleep(6000);
         CreateRolePageObj.ClickCreateRoleBtn();
         Thread.sleep(2000);
-        TakesScreen.takeSnapShot(driver, "test-output//PlatformAdminRoles//Role button clicked.jpg");
-        Thread.sleep(2000);
         //TC 3.1 Create Role with Blank RoleName and Permission.
         CreateRolePageObj.ClickCreateButton();
-        TakesScreen.takeSnapShot(driver, "test-output//PlatformAdminRoles//BlankRoleNameCreated.jpg");
         Thread.sleep(3000);
         driver.navigate().refresh();
         Thread.sleep(5000);
@@ -44,7 +39,6 @@ public class CreateUpdateRolePlatformAdminTest extends BasePage
         CreateRolePageObj.ClickActiveRole();
         Thread.sleep(2000);
         CreateRolePageObj.ClickCreateButton();
-        TakesScreen.takeSnapShot(driver, "test-output//PlatformAdminRoles//ValidName_BLankPermissionRole.jpg");
         Thread.sleep(2000);
         driver.navigate().refresh();
         Thread.sleep(5000);
@@ -63,7 +57,6 @@ public class CreateUpdateRolePlatformAdminTest extends BasePage
         r.keyPress(KeyEvent.VK_ESCAPE);
         Thread.sleep(1000);
         CreateRolePageObj.ClickCreateButton();
-        TakesScreen.takeSnapShot(driver, "test-output//PlatformAdminRoles//BlankName_ValidPermission.jpg");
         Thread.sleep(3000);
         CreateRolePageObj.ClickCancelButton();
         Thread.sleep(4000);
@@ -97,8 +90,6 @@ public class CreateUpdateRolePlatformAdminTest extends BasePage
             Thread.sleep(1000);
             r.keyPress(KeyEvent.VK_ESCAPE);
             Thread.sleep(1000);
-            TakesScreen.takeSnapShot(driver,"test-output//Roles//RoleDetails.jpg");
-            System.out.println("Role with valid rolename valid permission");
             CreateRolePageObj.ClickCreateButton();
             Thread.sleep(4000);
 */
@@ -118,8 +109,6 @@ public class CreateUpdateRolePlatformAdminTest extends BasePage
             Thread.sleep(1000);
             r.keyPress(KeyEvent.VK_ESCAPE);
             Thread.sleep(1000);
-            TakesScreen.takeSnapShot(driver,"test-output//Roles//RoleDetails.jpg");
-            System.out.println("Role with valid RoleName valid permission");
             CreateRolePageObj.ClickCreateButton();
             Thread.sleep(4000);*/
 
@@ -136,8 +125,6 @@ public class CreateUpdateRolePlatformAdminTest extends BasePage
      Thread.sleep(2000);
      r.keyPress(KeyEvent.VK_ESCAPE);
      Thread.sleep(1000);
-     TakesScreen.takeSnapShot(driver,"test-output//Roles//RoleDetails.jpg");
-     System.out.println("Role with valid rolename valid permission");
      CreateRolePageObj.ClickCreateButton();
      Thread.sleep(4000);*/
     @Test(priority = 4)
@@ -155,7 +142,6 @@ public class CreateUpdateRolePlatformAdminTest extends BasePage
         r.keyPress(KeyEvent.VK_ESCAPE);
         Thread.sleep(1000);
         CreateRolePageObj.ClickCreateButton();
-        TakesScreen.takeSnapShot(driver, "test-output//PlatformAdminRoles//RoleCreatedSuccessfully.jpg");
         Thread.sleep(5000);
     }
     @Test(priority = 5)
@@ -173,7 +159,6 @@ public class CreateUpdateRolePlatformAdminTest extends BasePage
         r.keyPress(KeyEvent.VK_ESCAPE);
         Thread.sleep(1000);
         CreateRolePageObj.ClickCreateButton();
-        TakesScreen.takeSnapShot(driver, "test-output//PlatformAdminRoles//RepeatedRole.jpg");
         Thread.sleep(4000);
         CreateRolePageObj.ClickCancelButton();
         Thread.sleep(3000);
@@ -182,7 +167,6 @@ public class CreateUpdateRolePlatformAdminTest extends BasePage
     public void search_created_role() throws Exception {
         //TC 3.6 Search the Created Role.
         CreateRolePageObj.SearchCreatedRole(ReadProps.readAttr("RoleNamePA"));
-        TakesScreen.takeSnapShot(driver, "test-output//PlatformAdminRoles//SearchRole.jpg");
         Thread.sleep(3000);
     }
     @Test(priority = 7)
@@ -201,8 +185,6 @@ public class CreateUpdateRolePlatformAdminTest extends BasePage
         Thread.sleep(1000);
         CreateRolePageObj.ClickUpdateBtn();
         Thread.sleep(3000);
-        TakesScreen.takeSnapShot(driver, "test-output//PlatformAdminRoles//UpdateRole.jpg");
-        Thread.sleep(3000);
         //CreateRolePageObj.UpdateTimeAssert();
         //Thread.sleep(2000);
     }
@@ -215,8 +197,6 @@ public class CreateUpdateRolePlatformAdminTest extends BasePage
         Thread.sleep(2000);
         CreateRolePageObj.ClickUpdateBtn();
         Thread.sleep(2000);
-        TakesScreen.takeSnapShot(driver, "test-output//PlatformAdminRoles//BlankPermission.jpg");
-        Thread.sleep(2000);
         CreateRolePageObj.ClickCancelButton();
         Thread.sleep(3000);
     }
@@ -226,9 +206,7 @@ public class CreateUpdateRolePlatformAdminTest extends BasePage
         CreateRolePageObj.ClickEditRole1();
         Thread.sleep(5000);
         CreateRolePageObj.ClickActiveRole();
-        Thread.sleep(1000);
-        TakesScreen.takeSnapShot(driver, "test-output//PlatformAdminRoles//ActiveRole.jpg");
-        Thread.sleep(3000);
+        Thread.sleep(2000);
         CreateRolePageObj.ClickUpdateBtn();
         Thread.sleep(4000);
     }
@@ -239,12 +217,9 @@ public class CreateUpdateRolePlatformAdminTest extends BasePage
         Thread.sleep(5000);
         CreateRolePageObj.ClickActiveRole();
         Thread.sleep(2000);
-        TakesScreen.takeSnapShot(driver,"test-output//PlatformAdminRoles//InactiveRole.jpg");
-        Thread.sleep(3000);
         CreateRolePageObj.ClickUpdateBtn();
         Thread.sleep(3000);
         CreateRolePageObj.ClickLogout();
         Thread.sleep(5000);
     }
 }
-

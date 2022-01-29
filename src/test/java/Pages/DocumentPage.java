@@ -25,8 +25,8 @@ public class DocumentPage {
         By ViewDoc3 = By.xpath("//span[contains(text(),'4.tif')]");
         By ViewDoc4 = By.xpath("//span[contains(text(),'3.tif')]");
         By ViewDoc5 = By.xpath("//span[contains(text(),'Processed.pdf')]");
-        By ViewFreeFormRejectedDoc = By.xpath("//span[contains(text(),'Pfizer7.jpg')]");
-        By ViewStructuredReadyDoc = By.xpath("//span[contains(text(),'Pfizer7.jpg')]");
+        By ViewFreeFormRejectedDoc = By.xpath("//span[contains(text(),'Pfizer6.jpg')]");//rejected
+        By ViewStructuredReadyDoc = By.xpath("//span[contains(text(),'Pfizer7.jpg')]");//ready
 
         By ExpansionPanel = By.xpath("//mat-expansion-panel-header/span[2]");
         By ChangeEmail = By.xpath("/html[1]/body[1]/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-processed-forms[1]/div[1]/div[1]/div[2]/div[4]/mat-expansion-panel[1]/div[1]/div[1]/mat-table[1]/mat-row[1]/mat-cell[2]/div[1]/mat-form-field[1]/div[1]/div[1]/div[1]/input[1]");
@@ -84,9 +84,9 @@ public class DocumentPage {
         By NPINo = By.xpath("//input[@formcontrolname='npiNo']");
         By PhysicianName = By.xpath("//input[@formcontrolname='physicianName']");
         By StartDate = By.xpath("//*[@id='mat-dialog-0']/app-rcm-edit-header/div/form/div/div[2]/div[3]/div[1]/mat-form-field/div/div[1]/div[4]/mat-datepicker-toggle/button");
-        By SelectStartDate = By.xpath("//div[contains(text(),'29')]");
+        By SelectStartDate = By.xpath("//div[contains(text(),'27')]");
         By EndDate = By.xpath("//*[@id='mat-dialog-0']/app-rcm-edit-header/div/form/div/div[2]/div[3]/div[2]/mat-form-field/div/div[1]/div[4]/mat-datepicker-toggle/button");
-        By SelectEndDate = By.xpath("//div[contains(text(),'29')]");
+        By SelectEndDate = By.xpath("//div[contains(text(),'31')]");
         By SaveCondition = By.xpath("//*[@id='mat-dialog-0']/app-rcm-edit-header/div/form/div/div[2]/div[4]/button[2]/span[1]");
 
         By AddData = By.xpath("//mat-label[contains(text(),'Data')]");
@@ -97,7 +97,7 @@ public class DocumentPage {
         By addAttributeValue = By.xpath("//body[1]/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-processed-forms[1]/div[1]/div[1]/div[1]/as-split[1]/as-split-area[2]/div[4]/div[1]/mat-expansion-panel[1]/div[1]/div[1]/div[2]/mat-table[1]/mat-row[1]/mat-cell[2]/div[1]/mat-form-field[1]/div[1]/div[1]/div[1]/input[1]");
         By SaveDraft = By.xpath("//span[contains(text(),'Save Draft')]");
         By Submit = By.xpath("//span[contains(text(),'Submit')]");
-        By SubmitChanges = By.xpath("//*[@id='mat-dialog-0']/app-confirmation-dialog/div/div/div[2]/button[1]");
+        By SubmitChanges = By.xpath("//body/div[1]/div[2]/div[1]/mat-dialog-container[1]/app-confirmation-dialog[1]/div[1]/div[1]/div[2]/button[1]/span[1]");
         By StatusFreeFormDoc = By.xpath("//tbody[@role='rowgroup']/tr[1]/td[3]");
         By UpdtAttributeValue = By.xpath("//mat-row[@id='tableRow'][2]/mat-cell[2]");
         By SelectAddress = By.xpath("//span[contains(text(),' 2472 Rose Peak Drive Dietz ')]");
@@ -196,7 +196,6 @@ public class DocumentPage {
         {
                 driver.findElement(EndDate).click();
         }
-
         public void SelectEndDate()
         {
                 driver.findElement(SelectEndDate).click();

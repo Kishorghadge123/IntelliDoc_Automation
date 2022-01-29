@@ -1,11 +1,9 @@
 package Tests;
-
 import Base.BasePage;
 import Pages.ProjectBREDataSetPage;
 import Pages.ProjectBREPage;
 import Pages.ProjectPage;
 import Utilities.ReadProps;
-import Utilities.TakesScreen;
 import org.testng.annotations.*;
 import org.openqa.selenium.JavascriptExecutor;
 import java.awt.*;
@@ -21,8 +19,8 @@ public class ProjectBREDataSetTest extends BasePage {
     public void cleanUp() throws Exception {
         driver.quit();
     }
-    @Test
-    public void ProjectBREDataSetFlow() throws Exception {
+    @Test(priority = 1)
+    public void bre_applied_to_name_using_dataset_fail() throws Exception {
             ProjectPage ProjectPageObj = new ProjectPage(driver);
             //Object creation
             ProjectBREDataSetPage ProjectBREDataSetPageObj = new ProjectBREDataSetPage(driver);
@@ -31,7 +29,7 @@ public class ProjectBREDataSetTest extends BasePage {
             ProjectPageObj.ClickOnCreateProjectBtn();
             Thread.sleep(3000);
             //Navigate to Project Page.
-            ProjectPageObj.ClickOnProjectNameBtn(ReadProps.readAttr("BREProjectNameWithDataSet"));
+            ProjectPageObj.ClickOnProjectNameBtn(ReadProps.readAttr("BREProjectName"));
             Thread.sleep(2000);
             ProjectPageObj.ClickOnLeadBtn();
             Thread.sleep(2000);
@@ -80,7 +78,6 @@ public class ProjectBREDataSetTest extends BasePage {
             Thread.sleep(1000);
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("window.scrollBy(0,-1000)", "");
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectBREDataSetTest//ProjectDetails.jpg");
             Thread.sleep(2000);
             js.executeScript("window.scrollBy(0,1000)", "");
             Thread.sleep(1000);
@@ -95,8 +92,6 @@ public class ProjectBREDataSetTest extends BasePage {
             Thread.sleep(1000);
             ProjectBREDataSetPageObj.SelectDataSet();
             Thread.sleep(1000);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectBREDataSetTest//DataSetAdded.jpg");
-            Thread.sleep(2000);
             ProjectBREPage ProjectBREPageObj = new ProjectBREPage(driver);
             //Navigate to Rules Page.
             ProjectBREPageObj.ClickOnNextPageButton();
@@ -114,22 +109,14 @@ public class ProjectBREDataSetTest extends BasePage {
             ProjectBREPageObj.ClickOnThreeDotsButton();
             Thread.sleep(2000);
             ProjectBREPageObj.ClickOnAddRulesButton();
-            Thread.sleep(1000);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectBREDataSetTest//AddRule1.jpg");
             Thread.sleep(2000);
             ProjectBREPageObj.ClickOnDeleteRulesButton();
-            Thread.sleep(1000);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectBREDataSetTest//DeleteRule1.jpg");
             Thread.sleep(2000);
             ProjectBREPageObj.ClickOnAddRulesButton();
             Thread.sleep(2000);
             ProjectBREPageObj.ClickOnExpandFirstRule();
-            Thread.sleep(1000);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectBREDataSetTest//ExpandRule1.jpg");
             Thread.sleep(2000);
             ProjectBREPageObj.ClickOnContractRuleButton();
-            Thread.sleep(1000);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectBREDataSetTest//ContractRule.jpg");
             Thread.sleep(2000);
             ProjectBREPageObj.ClickOnVisibility();
             Thread.sleep(2000);
@@ -167,16 +154,10 @@ public class ProjectBREDataSetTest extends BasePage {
             ProjectBREDataSetPageObj.SelectDataSetHeader();
             Thread.sleep(1000);
             ProjectBREPageObj.ClickOnSave();
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectBREDataSetTest//ConditionSavedSuccessfully.jpg");
             Thread.sleep(1000);
             ProjectBREDataSetPageObj.ClickOnFirstDataSetBox();
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectBREDataSetTest//FirstConditionBox.jpg");
             Thread.sleep(4000);
-//            ProjectBREPageObj.ClickOnCreateProjectButton();
-//            Thread.sleep(6000);
-//            TakesScreen.takeSnapShot(driver, "test-output//ProjectBRETest//ProjectCreatedSuccessfully.jpg");
-            // driver.close();
-            //Document should be uploaded from backend to check the output.
+    //Document should be uploaded from backend to check the output.
 
         }
         }

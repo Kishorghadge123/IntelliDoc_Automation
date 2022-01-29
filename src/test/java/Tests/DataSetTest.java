@@ -2,7 +2,6 @@ package Tests;
 import Base.BasePage;
 import Pages.DatasetPage;
 import Utilities.ReadProps;
-import Utilities.TakesScreen;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.*;
@@ -27,15 +26,11 @@ public class DataSetTest extends BasePage {
         //TC 6.1 - Create category with blank name.
         DatasetPageObj.ClickAddCategoryBtn();
         Thread.sleep(2000);
-        TakesScreen.takeSnapShot(driver, "test-output//Datasets//Category-BlankName.jpg");
-        Thread.sleep(2000);
     }
     @Test(priority = 2)
     public void create_category_with_invalid_name() throws Exception {
         //TC 6.2 - Create Category with Invalid Name.
         DatasetPageObj.ClickCategoryName(ReadProps.readAttr("Invalid_Name"));
-        Thread.sleep(1000);
-        TakesScreen.takeSnapShot(driver, "test-output//Datasets//Category-InvalidName.jpg");
         Thread.sleep(1000);
         DatasetPageObj.ClickCategoryCancelBtn();
         Thread.sleep(2000);
@@ -49,15 +44,11 @@ public class DataSetTest extends BasePage {
         Thread.sleep(2000);
         DatasetPageObj.ClickCreateCategory();
         Thread.sleep(1000);
-        TakesScreen.takeSnapShot(driver, "test-output//Datasets//CategoryCreated.jpg");
-        Thread.sleep(2000);
     }
     @Test(priority = 4)
     public void add_dataset_with_blank_and_no_chosen_file() throws Exception {
         //TC 6.4 - Perform action to add dataset with blank name and no chosen file.
         DatasetPageObj.ClickActionBtn();
-        Thread.sleep(1000);
-        TakesScreen.takeSnapShot(driver, "test-output//Datasets//Action-NoInput.jpg");
         Thread.sleep(1000);
         DatasetPageObj.ClickAddDatasetCancelBtn();
         Thread.sleep(2000);
@@ -68,8 +59,6 @@ public class DataSetTest extends BasePage {
         DatasetPageObj.ClickActionBtn();
         Thread.sleep(1000);
         DatasetPageObj.ClickDatasetName(ReadProps.readAttr("DName"));//Change before executing.
-        Thread.sleep(1000);
-        TakesScreen.takeSnapShot(driver, "test-output//Datasets//Action-Name+NoFile.jpg");
         Thread.sleep(1000);
         DatasetPageObj.ClickAddDatasetCancelBtn();
         Thread.sleep(2000);
@@ -83,8 +72,6 @@ public class DataSetTest extends BasePage {
         Thread.sleep(1000);
         WebElement upload_file = driver.findElement(By.xpath("//body/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-dataset-editor[1]/div[4]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/input[1]"));
         upload_file.sendKeys("C:\\Users\\kishor_ghadge\\IdeaProjects\\sampledata.csv");
-        Thread.sleep(1000);
-        TakesScreen.takeSnapShot(driver, "test-output//Datasets//Action-Name+File_NoValidation.jpg");
         Thread.sleep(1000);
         DatasetPageObj.ClickAddDatasetCancelBtn();
         Thread.sleep(2000);
@@ -107,8 +94,6 @@ public class DataSetTest extends BasePage {
         Thread.sleep(2000);
         DatasetPageObj.ClickValidationName();
         Thread.sleep(2000);
-        TakesScreen.takeSnapShot(driver, "test-output//Datasets//DatasetDetails.jpg");
-        Thread.sleep(2000);
     }
     @Test(priority = 9)
     public void validation_type_as_phone_role_to_create_new_dataset() throws Exception {
@@ -117,10 +102,7 @@ public class DataSetTest extends BasePage {
         Thread.sleep(2000);
         DatasetPageObj.ClickValidationRoles();
         Thread.sleep(2000);
-        TakesScreen.takeSnapShot(driver, "test-output//Datasets//DatasetDetails.jpg");
-        Thread.sleep(2000);
         DatasetPageObj.ClickCreateDataset();
-        TakesScreen.takeSnapShot(driver, "test-output//Datasets//DatasetAdded.jpg");
         Thread.sleep(4000);
     }
     @Test(priority = 10)
@@ -136,8 +118,6 @@ public class DataSetTest extends BasePage {
         //TC 6.11 - Select file to open it and cancel.
         DatasetPageObj.ClickDatasetFileName();
         Thread.sleep(2000);
-        TakesScreen.takeSnapShot(driver, "test-output//Datasets//OpenDataset.jpg");
-        Thread.sleep(2000);
         DatasetPageObj.ClickCancelDatasetFileName();
         Thread.sleep(2000);
     }
@@ -148,7 +128,5 @@ public class DataSetTest extends BasePage {
         Thread.sleep(2000);
         DatasetPageObj.ClickDisableUser();
         Thread.sleep(1000);
-        TakesScreen.takeSnapShot(driver, "test-output//Datasets//DatasetDisabled.jpg");
-        Thread.sleep(3000);
     }
 }

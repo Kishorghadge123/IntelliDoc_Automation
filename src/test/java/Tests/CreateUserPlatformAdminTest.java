@@ -2,7 +2,6 @@ package Tests;
 import Base.BasePage;
 import Pages.CreateUserPage;
 import Utilities.ReadProps;
-import Utilities.TakesScreen;
 import org.testng.annotations.*;
 
 @Listeners(Utilities.TestListeners.class)
@@ -26,8 +25,6 @@ public class CreateUserPlatformAdminTest extends BasePage {
         UserPageObj.ClickCreateUserBtn();
         Thread.sleep(2000);
         UserPageObj.ClickCreateBtn();
-        Thread.sleep(500);
-        TakesScreen.takeSnapShot(driver, "test-output//PlatformAdminUserCreation//BlankNameID.jpg");
         Thread.sleep(2000);
         driver.navigate().refresh();
         Thread.sleep(5000);
@@ -38,7 +35,6 @@ public class CreateUserPlatformAdminTest extends BasePage {
         UserPageObj.EnterUserName(ReadProps.readAttr("CUName"));
         Thread.sleep(2000);
         UserPageObj.ClickCreateBtn();
-        TakesScreen.takeSnapShot(driver, "test-output//PlatformAdminUserCreation//ValidUserNameBlankID.jpg");
         // UserPageObj.UserBlankAssert();
         Thread.sleep(3000);
         driver.navigate().refresh();
@@ -51,7 +47,6 @@ public class CreateUserPlatformAdminTest extends BasePage {
         Thread.sleep(2000);
         UserPageObj.ClickCreateBtn();
         // UserPageObj.UserBlankAssert();
-        TakesScreen.takeSnapShot(driver, "test-output//PlatformAdminUserCreation//BlankUsernameValidID.jpg");
         Thread.sleep(2000);
         driver.navigate().refresh();
         Thread.sleep(5000);
@@ -63,7 +58,6 @@ public class CreateUserPlatformAdminTest extends BasePage {
         Thread.sleep(2000);
         UserPageObj.ClickCreateBtn();
         //UserPageObj.UserBlankAssert();
-        TakesScreen.takeSnapShot(driver, "test-output//PlatformAdminUserCreation//InvalidUsernameBlankID.jpg");
         Thread.sleep(2000);
         driver.navigate().refresh();
         Thread.sleep(5000);
@@ -75,7 +69,6 @@ public class CreateUserPlatformAdminTest extends BasePage {
         Thread.sleep(2000);
         UserPageObj.ClickCreateBtn();
         //UserPageObj.UserBlankAssert();
-        TakesScreen.takeSnapShot(driver, "test-output//PlatformAdminUserCreation//BlankUserNameInvalidId.jpg");
         Thread.sleep(2000);
         driver.navigate().refresh();
         Thread.sleep(5000);
@@ -88,7 +81,6 @@ public class CreateUserPlatformAdminTest extends BasePage {
         UserPageObj.EnterEmail(ReadProps.readAttr("CUemail"));
         Thread.sleep(2000);
         UserPageObj.ClickCreateBtn();
-        TakesScreen.takeSnapShot(driver,"test-output//PlatformAdminUserCreation//InvalidCredentials.jpg");
         //UserPageObj.UserBlankAssert();
         Thread.sleep(2000);
         driver.navigate().refresh();
@@ -105,7 +97,6 @@ public class CreateUserPlatformAdminTest extends BasePage {
         Thread.sleep(2000);
         UserPageObj.ClickCreateBtn();
         Thread.sleep(1000);
-        TakesScreen.takeSnapShot(driver, "test-output//PlatformAdminUserCreation//ValidUsernameValidID.jpg");
         //UserPageObj.UserExistAssert();
         Thread.sleep(2000);
         UserPageObj.ClickOnCancelBtn();
@@ -122,13 +113,10 @@ public class CreateUserPlatformAdminTest extends BasePage {
             Thread.sleep(2000);
             UserPageObj.ClickCreateBtn();
             Thread.sleep(3000);
-            TakesScreen.takeSnapShot(driver,"test-output//PlatformAdminUserCreation//PlatformAdminUserCreate.jpg");
             Thread.sleep(2000);
-            System.out.println("User Created Successfully");
             Thread.sleep(2000);
             UserPageObj.CreateUserAssert();
             Thread.sleep(2000);
-            System.out.println("User Created");
 
             // At the time of create user need to remove comment from assertion.
             //1 AE Admin
@@ -141,10 +129,6 @@ public class CreateUserPlatformAdminTest extends BasePage {
             UserPageObj.ClickActiveUser();
             Thread.sleep(2000);
             UserPageObj.ClickCreateBtn();
-            Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver,"test-output//PlatformAdminUserCreation//AdminUserCreate.jpg");
-            Thread.sleep(2000);
-            System.out.println("User Created Successfully");
             Thread.sleep(2000);
             driver.navigate().refresh();
             Thread.sleep(3000);
@@ -163,17 +147,13 @@ public class CreateUserPlatformAdminTest extends BasePage {
             Thread.sleep(2000);
             UserPageObj.ClickCreateBtn();
             Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver,"test-output//PlatformAdminUserCreation//SupervisorUserCreate.jpg");
             Thread.sleep(2000);
-            System.out.println("User Created Successfully");
             Thread.sleep(2000);
             driver.navigate().refresh();
             Thread.sleep(3000);
-
             // At the time of create user need to remove comment from assertion
             UserPageObj.CreateTimeAssert();
             Thread.sleep(2000);
-            System.out.println("Time Assert Pass ");
 
             //3 AE Operator
             UserPageObj.ClickCreateUserBtn();
@@ -186,9 +166,7 @@ public class CreateUserPlatformAdminTest extends BasePage {
             Thread.sleep(2000);
             UserPageObj.ClickCreateBtn();
             Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver,"test-output//PlatformAdminUserCreation//OpratorUserCreate.jpg");
             Thread.sleep(2000);
-            System.out.println("User Created Successfully");
             Thread.sleep(2000);
             driver.navigate().refresh();
             Thread.sleep(3000);
@@ -204,8 +182,6 @@ public class CreateUserPlatformAdminTest extends BasePage {
         UserPageObj.SelectSearchedUser();
         Thread.sleep(2000);
         UserPageObj.ClickOnCancelBtn();
-        Thread.sleep(2000);
-        TakesScreen.takeSnapShot(driver,"test-output//PlatformAdminUserCreation//OpenCreatedUser.jpg");
         Thread.sleep(2000);
         UserPageObj.SelectSearchedUser();
         Thread.sleep(2000);
