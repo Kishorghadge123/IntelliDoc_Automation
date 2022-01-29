@@ -1,5 +1,6 @@
 package Base;
 import Pages.LoginPage;
+import Pages.ProjectPage;
 import Utilities.ReadProps;
 import com.relevantcodes.extentreports.ExtentTest;
 import org.openqa.selenium.WebDriver;
@@ -9,12 +10,12 @@ public class BasePage {
 
     public static WebDriver driver;
     public static ExtentTest test;
-
+    static ProjectPage ProjectPageObj;
     public static void LoginTest() throws Exception {
         LoginPage loginPageObjects = new LoginPage(driver);
         driver.get(ReadProps.readAttr("URL"));
         driver.manage().window().maximize();
-        loginPageObjects.setUsername(ReadProps.readAttr("UserID"));
+        ProjectPageObj.EnterUsername(ReadProps.readAttr("UserID"));
         loginPageObjects.setPassword(ReadProps.readAttr("Password"));
         loginPageObjects.clickLoginButton();
         Thread.sleep(8000);

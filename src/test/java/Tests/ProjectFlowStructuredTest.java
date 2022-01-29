@@ -514,7 +514,7 @@ public class ProjectFlowStructuredTest extends BasePage {
         public void table_structure() throws Exception {
                 //TC 18.20 Table Structure.
                 LoginPage loginPageObjects = new LoginPage(driver);
-                loginPageObjects.setUsername(ReadProps.readAttr("UserID"));
+                ProjectPageObj.EnterUsername(ReadProps.readAttr("UserID"));
                 Thread.sleep(1000);
                 loginPageObjects.setPassword(ReadProps.readAttr("Password"));
                 loginPageObjects.clickLoginButton();

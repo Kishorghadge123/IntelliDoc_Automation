@@ -2,12 +2,15 @@ package Tests;
 import Base.BasePage;
 import Pages.EditProfilePage;
 import Pages.LoginPage;
+import Pages.ProjectPage;
 import Utilities.ReadProps;
 import org.testng.annotations.*;
 @Listeners(Utilities.TestListeners.class)
 public class EditProfileTest extends BasePage {
     static LoginPage loginPageObjects;
     static EditProfilePage EditProfileObj;
+    static ProjectPage ProjectPageObj;
+
     @BeforeClass
     public void login() throws Exception {
         BasePage.driverInit();
@@ -24,7 +27,7 @@ public class EditProfileTest extends BasePage {
            EditProfileObj = new EditProfilePage(driver);
             loginPageObjects = new LoginPage(driver);
             //TC 11.1 Visible Password On.
-            loginPageObjects.setUsername(ReadProps.readAttr("UserID"));
+        ProjectPageObj.EnterUsername(ReadProps.readAttr("UserID"));
             Thread.sleep(1000);
             loginPageObjects.setPassword(ReadProps.readAttr("Password"));
             Thread.sleep(1000);
