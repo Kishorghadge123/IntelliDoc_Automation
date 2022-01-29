@@ -19,8 +19,8 @@ public class EditProfileTest extends BasePage {
         driver.quit();
     }
     @Test
-    public void EditProfileFlow() throws InterruptedException, IOException {
-        try {
+    public void EditProfileFlow() throws Exception {
+
             driver.get(ReadProps.readAttr("URL"));
             driver.manage().window().maximize();
             Thread.sleep(8000);
@@ -70,10 +70,7 @@ public class EditProfileTest extends BasePage {
             Thread.sleep(1000);
             TakesScreen.takeSnapShot(driver, "test-output//EditProfileTest//Cancel.jpg");
             Thread.sleep(2000);
-        }
-        catch (Exception e) {
-            test.log(LogStatus.FAIL, e);
+
         }
 
     }
-}

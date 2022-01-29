@@ -24,8 +24,7 @@ public class ProjectBREMedicalChartTest extends BasePage
         driver.quit();
     }
     @Test
-    public void ProjectBREMedicalChartFlow() throws InterruptedException, IOException {
-        try {
+    public void ProjectBREMedicalChartFlow() throws Exception {
             Robot r = new Robot();
             //Initializing Object for Project Page.
             ProjectPage ProjectPageObj = new ProjectPage(driver);
@@ -231,10 +230,8 @@ public class ProjectBREMedicalChartTest extends BasePage
             TakesScreen.takeSnapShot(driver, "test-output//ProjectBREMedicalChart/MedicalChartProjectCreatedSuccessfully.jpg");
             Thread.sleep(2000);
             //for the Result please upload the Document from Backend.
-        } catch (Exception e) {
-            test.log(LogStatus.FAIL, e);
         }
 
     }
-}
+
 

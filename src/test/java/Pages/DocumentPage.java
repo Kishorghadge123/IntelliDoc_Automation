@@ -25,8 +25,8 @@ public class DocumentPage {
         By ViewDoc3 = By.xpath("//span[contains(text(),'4.tif')]");
         By ViewDoc4 = By.xpath("//span[contains(text(),'3.tif')]");
         By ViewDoc5 = By.xpath("//span[contains(text(),'Processed.pdf')]");
-        By ViewFreeFormRejectedDoc = By.xpath("//span[contains(text(),'Pfizer5.jpg')]");
-        By ViewStructuredReadyDoc = By.xpath("//span[contains(text(),'Pfizer5.jpg')]");
+        By ViewFreeFormRejectedDoc = By.xpath("//span[contains(text(),'Pfizer7.jpg')]");
+        By ViewStructuredReadyDoc = By.xpath("//span[contains(text(),'Pfizer7.jpg')]");
 
         By ExpansionPanel = By.xpath("//mat-expansion-panel-header/span[2]");
         By ChangeEmail = By.xpath("/html[1]/body[1]/app-root[1]/div[1]/app-landing[1]/div[1]/div[1]/main[1]/div[1]/app-processed-forms[1]/div[1]/div[1]/div[2]/div[4]/mat-expansion-panel[1]/div[1]/div[1]/mat-table[1]/mat-row[1]/mat-cell[2]/div[1]/mat-form-field[1]/div[1]/div[1]/div[1]/input[1]");
@@ -84,9 +84,9 @@ public class DocumentPage {
         By NPINo = By.xpath("//input[@formcontrolname='npiNo']");
         By PhysicianName = By.xpath("//input[@formcontrolname='physicianName']");
         By StartDate = By.xpath("//*[@id='mat-dialog-0']/app-rcm-edit-header/div/form/div/div[2]/div[3]/div[1]/mat-form-field/div/div[1]/div[4]/mat-datepicker-toggle/button");
-        By SelectStartDate = By.xpath("//div[contains(text(),'28')]");
+        By SelectStartDate = By.xpath("//div[contains(text(),'29')]");
         By EndDate = By.xpath("//*[@id='mat-dialog-0']/app-rcm-edit-header/div/form/div/div[2]/div[3]/div[2]/mat-form-field/div/div[1]/div[4]/mat-datepicker-toggle/button");
-        By SelectEndDate = By.xpath("//div[contains(text(),'30')]");
+        By SelectEndDate = By.xpath("//div[contains(text(),'29')]");
         By SaveCondition = By.xpath("//*[@id='mat-dialog-0']/app-rcm-edit-header/div/form/div/div[2]/div[4]/button[2]/span[1]");
 
         By AddData = By.xpath("//mat-label[contains(text(),'Data')]");
@@ -150,17 +150,13 @@ public class DocumentPage {
 
         //status filter
         public void ClickStatusFilter(){driver.findElement(StatusFilter).click();}
-        public void ClickUncheckRejected(){driver.findElement(UncheckRejected).click();}
         public void ClickCheckProcessed(){driver.findElement(CheckProcessed).click();}
-        public void ClickArrowRight(){driver.findElement(ArrowRight).click();}
-        public void ClickArrowLeft(){driver.findElement(ArrowLeft).click();}
         public void ClickItemsPerPage(){driver.findElement(ItemsPerPage).click();}
         public void SelectItemsPerPage(){driver.findElement(SelectItems).click();}
         public void ClickNextPage(){driver.findElement(NextPage).click();}
         public void ClickLastPage(){driver.findElement(LastPage).click();}
         public void ClickPreviousPage(){driver.findElement(PreviousPage).click();}
         public void ClickFirstPage(){driver.findElement(FirstPage).click();}
-        public void ClickPercentageIcon(){driver.findElement(ClickPercentage).click();}
         public void ClickAntiWiseIcon(){driver.findElement(ClickAntiClkWise).click();}
         public void ClickClockWiseIcon(){driver.findElement(ClickClkWise).click();}
         public void ClickZoomIN(){driver.findElement(ClickZoomIn).click();}

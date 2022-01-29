@@ -4,11 +4,9 @@ import Base.BasePage;
 import Pages.ProjectPage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
-import com.relevantcodes.extentreports.LogStatus;
 import org.testng.annotations.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
-import java.io.IOException;
 @Listeners(Utilities.TestListeners.class)
 
 public class UpdateProjectTest extends BasePage{
@@ -22,8 +20,8 @@ public class UpdateProjectTest extends BasePage{
         driver.quit();
     }
     @Test
-    public void UpdateProjectFlow() throws InterruptedException, IOException {
-        try {
+    public void UpdateProjectFlow() throws Exception {
+
             Robot r = new Robot();
             ProjectPage ProjectPageObj = new ProjectPage(driver);
             //TC 21.1 Verify the working of Platform Admin for  Updating Project by entering Valid Data.
@@ -41,7 +39,6 @@ public class UpdateProjectTest extends BasePage{
             Thread.sleep(2000);
             r.keyPress(KeyEvent.VK_ESCAPE);
             Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectTest//UpdateProjectPageDetails.jpg");
             ProjectPageObj.ClickOnUpdateProject();
             Thread.sleep(4000);
 
@@ -62,7 +59,6 @@ public class UpdateProjectTest extends BasePage{
             Thread.sleep(2000);
             ProjectPageObj.SelectOnProcessingEngineBtn();
             Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectTest//Lead.jpg");
             ProjectPageObj.ClickOnUpdateProject();
             Thread.sleep(4000);
 
@@ -104,7 +100,6 @@ public class UpdateProjectTest extends BasePage{
             ProjectPageObj.ClickOnLeadBtn();
             Thread.sleep(2000);
             ProjectPageObj.ClickSearchLead("admin@test.com");
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectUpdate//UserNotDisplayed.jpg");
             Thread.sleep(2000);
             ProjectPageObj.ClearSearchLead();
             Thread.sleep(2000);
@@ -152,7 +147,6 @@ public class UpdateProjectTest extends BasePage{
             ProjectPageObj.ClickOnLeadBtn();
             Thread.sleep(2000);
             ProjectPageObj.SelectOnLeadAdminBtn();
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectUpdate//UserDisplayedInLead.jpg");
             Thread.sleep(2000);
             ProjectPageObj.ClickOnUpdateProject();
             Thread.sleep(4000);
@@ -173,7 +167,6 @@ public class UpdateProjectTest extends BasePage{
             ProjectPageObj.ClickOnSupervisorRoleDisable();
             Thread.sleep(3000);
             ProjectPageObj.ClickOnAddUser();
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectUpdate//AESupervisorRoleDisabled.jpg");
             ProjectPageObj.VerifyAssertForRoleDisable();
             Thread.sleep(2000);
             System.out.println("AE supervisor role is disable");
@@ -194,7 +187,6 @@ public class UpdateProjectTest extends BasePage{
             ProjectPageObj.ClickOnSelectSupervisorRoleBtn();
             Thread.sleep(2000);
             ProjectPageObj.ClickOnUpdateProject();
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectUpdate//EmptyUser.jpg");
             ProjectPageObj.VerifyAssertForUser();
             Thread.sleep(4000);
             System.out.println("empty user");
@@ -228,7 +220,6 @@ public class UpdateProjectTest extends BasePage{
             Thread.sleep(2000);
             r.keyPress(KeyEvent.VK_ESCAPE);
             Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectUpdate//Lead&ProcessingEngine.jpg");
             ProjectPageObj.ClickOnUpdateProject();
             Thread.sleep(4000);
 
@@ -249,7 +240,6 @@ public class UpdateProjectTest extends BasePage{
             Thread.sleep(2000);
             ProjectPageObj.SelectOnProcessingEngineBtn();
             Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectUpdate//Lead.jpg");
             ProjectPageObj.ClickOnUpdateProject();
             Thread.sleep(4000);
 
@@ -292,7 +282,6 @@ public class UpdateProjectTest extends BasePage{
             Thread.sleep(2000);
             ProjectPageObj.ClickSearchLead("admin@test.com");
             Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectUpdate//UserNotDisplayed.jpg");
             ProjectPageObj.ClearSearchLead();
             Thread.sleep(2000);
             r.keyPress(KeyEvent.VK_ESCAPE);
@@ -359,7 +348,6 @@ public class UpdateProjectTest extends BasePage{
             ProjectPageObj.ClickOnSupervisorRoleDisable();
             Thread.sleep(2000);
             ProjectPageObj.ClickOnAddUser();
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectUpdate//AESupervisorRoleDisabled.jpg");
             ProjectPageObj.VerifyAssertForRoleDisable();
             Thread.sleep(2000);
             System.out.println("AE supervisor role is disable");
@@ -396,7 +384,6 @@ public class UpdateProjectTest extends BasePage{
             Thread.sleep(2000);
             ProjectPageObj.ClickOnStatusBtn();
             Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectUpdate//DisableProjectStatus.jpg");
             ProjectPageObj.ClickOnUpdateProject();
             Thread.sleep(4000);
 
@@ -411,14 +398,10 @@ public class UpdateProjectTest extends BasePage{
             Thread.sleep(2000);
             ProjectPageObj.ClickOnStatusBtn();
             Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectUpdate//EnableProjectStatus.jpg");
             ProjectPageObj.ClickOnUpdateProject();
             Thread.sleep(4000);
             ProjectPageObj.ClickLogout();
             Thread.sleep(4000);
-        } catch (Exception e) {
-            test.log(LogStatus.FAIL, e);
-        }
 
     }
 }

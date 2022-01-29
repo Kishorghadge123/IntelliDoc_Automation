@@ -6,12 +6,10 @@ import Pages.ProjectBREPage;
 import Pages.ProjectPage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
-import com.relevantcodes.extentreports.LogStatus;
 import org.testng.annotations.*;
 import org.openqa.selenium.JavascriptExecutor;
 import java.awt.*;
 import java.awt.event.KeyEvent;
-import java.io.IOException;
 @Listeners(Utilities.TestListeners.class)
 public class ProjectBREDataSetTest extends BasePage {
     @BeforeClass
@@ -24,9 +22,7 @@ public class ProjectBREDataSetTest extends BasePage {
         driver.quit();
     }
     @Test
-    public void ProjectBREDataSetFlow() throws InterruptedException, IOException {
-        try {
-
+    public void ProjectBREDataSetFlow() throws Exception {
             ProjectPage ProjectPageObj = new ProjectPage(driver);
             //Object creation
             ProjectBREDataSetPage ProjectBREDataSetPageObj = new ProjectBREDataSetPage(driver);
@@ -183,8 +179,4 @@ public class ProjectBREDataSetTest extends BasePage {
             //Document should be uploaded from backend to check the output.
 
         }
-        catch (Exception e) {
-            test.log(LogStatus.FAIL, e);
         }
-    }
-}

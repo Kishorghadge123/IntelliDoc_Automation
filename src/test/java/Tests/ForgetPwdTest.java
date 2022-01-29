@@ -18,8 +18,7 @@ public class ForgetPwdTest extends BasePage {
         driver.quit();
     }
     @Test(priority = 1)
-    public void click_on_cancel_button_on_forgot_password() throws InterruptedException, IOException {
-        try {
+    public void click_on_cancel_button_on_forgot_password() throws Exception {
             driver.get(ReadProps.readAttr("URL"));
             driver.manage().window().maximize();
             Thread.sleep(8000);
@@ -31,8 +30,6 @@ public class ForgetPwdTest extends BasePage {
             FwdPwdObj.ClickCancelBtn();
             TakesScreen.takeSnapShot(driver, "test-output//ForgotPassword//CancelLoginScreen.jpg");
             Thread.sleep(2000);
-            test.log(LogStatus.INFO, "click on cancel button on forgot password");
-            test.log(LogStatus.PASS, "TestPassed");
             //TC 12.2 First Login is not Done By the User.
             FwdPwdObj.ClickForgetPwdBtn();
             Thread.sleep(2000);
@@ -41,8 +38,6 @@ public class ForgetPwdTest extends BasePage {
             Thread.sleep(950);
             TakesScreen.takeSnapShot(driver, "test-output//ForgotPassword//FirstLoginNotDone.jpg");
             Thread.sleep(2000);
-            test.log(LogStatus.INFO, "First login is not done by the user");
-            test.log(LogStatus.PASS, "TestPassed");
             //TC 12.3 Invalid EmailID.
             FwdPwdObj.ClickForgetPwdBtn();
             Thread.sleep(2000);
@@ -51,8 +46,6 @@ public class ForgetPwdTest extends BasePage {
             FwdPwdObj.VerifyAssertEmailID();
             FwdPwdObj.ClickCancelBtn();
             Thread.sleep(2000);
-            test.log(LogStatus.INFO, "invalid email id");
-            test.log(LogStatus.PASS, "TestPassed");
             //12.4 User Does not Exist.
             FwdPwdObj.ClickForgetPwdBtn();
             Thread.sleep(2000);
@@ -63,8 +56,6 @@ public class ForgetPwdTest extends BasePage {
             TakesScreen.takeSnapShot(driver, "test-output//ForgotPassword//UserDoesn'tExist.jpg");
             FwdPwdObj.ClickCancelBtn();
             Thread.sleep(2000);
-            test.log(LogStatus.INFO, "user doesn't exists");
-            test.log(LogStatus.PASS, "TestPassed");
             //TC 12.5 Disable user.
             FwdPwdObj.ClickForgetPwdBtn();
             Thread.sleep(2000);
@@ -75,8 +66,5 @@ public class ForgetPwdTest extends BasePage {
             Thread.sleep(2000);
             FwdPwdObj.ClickCancelBtn();
             Thread.sleep(4000);
-            test.log(LogStatus.INFO, "Disable User");
-            test.log(LogStatus.PASS, "TestPassed");
-        } catch (Exception e) {
-            test.log(LogStatus.FAIL, e);
-        }}}
+
+        }}

@@ -4,9 +4,7 @@ import Pages.DocumentPage;
 import Pages.ProjectBREMedicalChartDocumentPage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
-import com.relevantcodes.extentreports.LogStatus;
 import org.testng.annotations.*;
-import java.io.IOException;
 
 @Listeners(Utilities.TestListeners.class)
 public class ProjectBREMedicalChartDocumentTest1 extends BasePage {
@@ -20,8 +18,8 @@ public class ProjectBREMedicalChartDocumentTest1 extends BasePage {
         driver.quit();
     }
     @Test(priority = 1)
-    public void verify_rejected_document_no_data_extracted_on_medical_chart() throws InterruptedException, IOException {
-        try {
+    public void verify_rejected_document_no_data_extracted_on_medical_chart() throws Exception {
+
             //Object Creation.
             ProjectBREMedicalChartDocumentPage ProjectBREMedicalChartDocumentPageObj = new ProjectBREMedicalChartDocumentPage(driver);
             //TC 1.1 Open Ready Document and verify the Patient Demographics and Chronic conditions.
@@ -48,14 +46,9 @@ public class ProjectBREMedicalChartDocumentTest1 extends BasePage {
             Thread.sleep(5000);
             TakesScreen.takeSnapShot(driver, "test-output//ProjectBREMedicalChartDocumentTest1//CancelBtn.jpg");
             Thread.sleep(1000);
-            test.log(LogStatus.INFO, "ProjectBREMedicalChartDocument1TC1");
-            test.log(LogStatus.PASS, "TestPassed");
-        } catch (Exception e) {
-            test.log(LogStatus.FAIL, e);
-        }}
+        }
     @Test(priority = 2)
-    public void edit_encounter_detail_and_enter_invalid_npi_physician_on_medical_chart() throws InterruptedException, IOException {
-        try {
+    public void edit_encounter_detail_and_enter_invalid_npi_physician_on_medical_chart() throws Exception {
             //Object Creation.
             ProjectBREMedicalChartDocumentPage ProjectBREMedicalChartDocumentPageObj = new ProjectBREMedicalChartDocumentPage(driver);
             //TC 1.2 Edit Encounter Details and save with Invalid NPI number and Physicians name.
@@ -89,14 +82,9 @@ public class ProjectBREMedicalChartDocumentTest1 extends BasePage {
             //Error message for NPI and Physician details.
             TakesScreen.takeSnapShot(driver, "test-output//ProjectBREMedicalChartDocumentTest1//ErrorNPI&Physician.jpg");
             Thread.sleep(1000);
-            test.log(LogStatus.INFO, "ProjectBREMedicalChartDocument1TC2");
-            test.log(LogStatus.PASS, "TestPassed");
-        } catch (Exception e) {
-            test.log(LogStatus.FAIL, e);
-        }}
+        }
     @Test(priority = 3)
-    public void run_rule_for_invalid_physicians_sign_on_medical_chart() throws InterruptedException, IOException {
-        try {
+    public void run_rule_for_invalid_physicians_sign_on_medical_chart() throws Exception {
             ProjectBREMedicalChartDocumentPage ProjectBREMedicalChartDocumentPageObj = new ProjectBREMedicalChartDocumentPage(driver);
             //TC 1.3 Perform Run rule.
             //Entering valid NPI number.
@@ -120,14 +108,10 @@ public class ProjectBREMedicalChartDocumentTest1 extends BasePage {
             Thread.sleep(5000);
             TakesScreen.takeSnapShot(driver, "test-output//ProjectBREMedicalChartDocumentTest1//Cancel.jpg");
             Thread.sleep(1000);
-            test.log(LogStatus.INFO, "ProjectBREMedicalChartDocument1TC3");
-            test.log(LogStatus.PASS, "TestPassed");
-        } catch (Exception e) {
-            test.log(LogStatus.FAIL, e);
-    }}
+        }
     @Test(priority = 4)
-    public void verify_icd_on_medical_chart() throws InterruptedException, IOException {
-        try {
+    public void verify_icd_on_medical_chart() throws Exception {
+
             ProjectBREMedicalChartDocumentPage ProjectBREMedicalChartDocumentPageObj = new ProjectBREMedicalChartDocumentPage(driver);
             //TC 1.4 verify all conditions for ICD Code.
             //Open Ready document
@@ -180,28 +164,19 @@ public class ProjectBREMedicalChartDocumentTest1 extends BasePage {
             Thread.sleep(1000);
             TakesScreen.takeSnapShot(driver, "test-output//ProjectBREMedicalChartDocumentTest1//SelectValidICDCode.jpg");
             Thread.sleep(1000);
-            test.log(LogStatus.INFO, "ProjectBREMedicalChartDocument1TC4");
-            test.log(LogStatus.PASS, "TestPassed");
-        } catch (Exception e) {
-            test.log(LogStatus.FAIL, e);
-        }}
+        }
     @Test(priority = 5)
-    public void save_without_hcc_comments_on_medical_chart() throws InterruptedException, IOException {
-        try {
+    public void save_without_hcc_comments_on_medical_chart() throws Exception {
+
             ProjectBREMedicalChartDocumentPage ProjectBREMedicalChartDocumentPageObj = new ProjectBREMedicalChartDocumentPage(driver);
             Thread.sleep(1000);
             //Save without HCC and Comments.
             ProjectBREMedicalChartDocumentPageObj.ClickOnSaveEditDiagnosisDetails();
             TakesScreen.takeSnapShot(driver, "test-output//ProjectBREMedicalChartDocumentTest1//HCC&CommentsError.jpg");
             Thread.sleep(1000);
-            test.log(LogStatus.INFO, "ProjectBREMedicalChartDocument1TC5");
-            test.log(LogStatus.PASS, "TestPassed");
-        } catch (Exception e) {
-            test.log(LogStatus.FAIL, e);
-        }}
+        }
     @Test(priority = 6)
-    public void save_with_hcc_comments_on_medical_chart() throws InterruptedException, IOException {
-        try {
+    public void save_with_hcc_comments_on_medical_chart() throws Exception {
             ProjectBREMedicalChartDocumentPage ProjectBREMedicalChartDocumentPageObj = new ProjectBREMedicalChartDocumentPage(driver);
             Thread.sleep(1000);
             //Enter valid HCC code.
@@ -220,9 +195,5 @@ public class ProjectBREMedicalChartDocumentTest1 extends BasePage {
             Thread.sleep(2000);
             ProjectBREMedicalChartDocumentPageObj.ClickOnCancelButtonICD();
             Thread.sleep(2000);
-            test.log(LogStatus.INFO, "ProjectBREMedicalChartDocument1TC6");
-            test.log(LogStatus.PASS, "TestPassed");
-        } catch (Exception e) {
-            test.log(LogStatus.FAIL, e);
+
         }}
-        }

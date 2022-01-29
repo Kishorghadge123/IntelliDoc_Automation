@@ -21,7 +21,6 @@ public class LoginTest extends BasePage {
     }
     @Test
     public static void LoginTestFlow() throws Exception {
-        try {
             //Object creation
             LoginPage loginPageObjects = new LoginPage(driver);
             driver.get(ReadProps.readAttr("URL"));
@@ -316,8 +315,4 @@ public class LoginTest extends BasePage {
             loginPageObjects.ClickLogoutBtn();
             Thread.sleep(5000);
         }
-        catch (Exception e) {
-            test.log(LogStatus.FAIL, e);
-        }
     }
-}

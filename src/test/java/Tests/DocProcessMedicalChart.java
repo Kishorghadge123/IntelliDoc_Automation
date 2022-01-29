@@ -196,16 +196,16 @@ public class DocProcessMedicalChart extends BasePage
         Thread.sleep(2000);
         DocPageObj.ClickStartDate();
         Thread.sleep(3000);
-        DocPageObj.SelectStartDate();
-        Thread.sleep(2000);
-        DocPageObj.ClickEndDate();
-        Thread.sleep(2000);
-        DocPageObj.SelectEndDate();
-        Thread.sleep(2000);
-        TakesScreen.takeSnapShot(driver, "test-output//MedicalChartProject//ChronicConditionPage.jpg");
-        DocPageObj.SaveChronicCondition();
-        Thread.sleep(3000);
-        ProjectBREMedicalChartDocumentPageObj.ClickOnSaveDraft();
-        Thread.sleep(4000);
+//        DocPageObj.SelectStartDate();
+//        Thread.sleep(2000);
+//        DocPageObj.ClickEndDate();
+//        Thread.sleep(2000);
+//        DocPageObj.SelectEndDate();
+//        Thread.sleep(2000);
+//        TakesScreen.takeSnapShot(driver, "test-output//MedicalChartProject//ChronicConditionPage.jpg");
+//        DocPageObj.SaveChronicCondition();
+//        Thread.sleep(3000);
+//        ProjectBREMedicalChartDocumentPageObj.ClickOnSaveDraft();
+//        Thread.sleep(4000);
     }
 }

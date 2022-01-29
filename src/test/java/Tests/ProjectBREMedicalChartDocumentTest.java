@@ -20,13 +20,9 @@ public class ProjectBREMedicalChartDocumentTest extends BasePage {
         driver.quit();
     }
     @Test
-    public void ProjectBREMedicalChartDocumentFlow() throws InterruptedException, IOException {
-        try {
-
+    public void ProjectBREMedicalChartDocumentFlow() throws Exception {
             //Object Creation.
             ProjectBREMedicalChartDocumentPage ProjectBREMedicalChartDocumentPageObj = new ProjectBREMedicalChartDocumentPage(driver);
-            test.log(LogStatus.INFO, "ProjectBREMedicalChartDocument");
-            test.log(LogStatus.PASS, "TestPassed");
             DocumentPage DocPageObj = new DocumentPage(driver);
             DocPageObj.ClickDocumentBtn();
             Thread.sleep(6000);
@@ -106,31 +102,28 @@ public class ProjectBREMedicalChartDocumentTest extends BasePage {
             Thread.sleep(2000);
             TakesScreen.takeSnapShot(driver, "test-output//ProjectBREMedicalChartDocumentTest//ChronicConditionExpanded.jpg");
             Thread.sleep(2000);
-            ProjectBREMedicalChartDocumentPageObj.ClickOnEditChronicCondition();
-            Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectBREMedicalChartDocumentTest//ChronicConditionEditView.jpg");
-            Thread.sleep(2000);
-            ProjectBREMedicalChartDocumentPageObj.ClickOnSaveEditEncounterDetails();
-            Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectBREMedicalChartDocumentTest//SaveEditEncounterDetails.jpg");
-            Thread.sleep(1000);
-            ProjectBREMedicalChartDocumentPageObj.ClickOnAddedChronicCondition();
-            Thread.sleep(2000);
-            ProjectBREMedicalChartDocumentPageObj.ClickOnEditChronicCondition();
-            Thread.sleep(2000);
-            ProjectBREMedicalChartDocumentPageObj.ClickOnCancelEditEncounterDetails();
-            Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectBREMedicalChartDocumentTest//CancelEditEncounterDetails.jpg");
-            Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectBREMedicalChartDocumentTest//AddDiagnosisDetails.jpg");
-            Thread.sleep(2000);
-            ProjectBREMedicalChartDocumentPageObj.ClickOnDeleteChronicCondition();
-            Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectBREMedicalChartDocumentTest//DeleteChronicCondition.jpg");
-            Thread.sleep(2000);
-        } catch (Exception e) {
-            test.log(LogStatus.FAIL, e);
-        }
+//            ProjectBREMedicalChartDocumentPageObj.ClickOnEditChronicCondition();
+//            Thread.sleep(2000);
+//            TakesScreen.takeSnapShot(driver, "test-output//ProjectBREMedicalChartDocumentTest//ChronicConditionEditView.jpg");
+//            Thread.sleep(2000);
+//            ProjectBREMedicalChartDocumentPageObj.ClickOnSaveEditEncounterDetails();
+//            Thread.sleep(2000);
+//            TakesScreen.takeSnapShot(driver, "test-output//ProjectBREMedicalChartDocumentTest//SaveEditEncounterDetails.jpg");
+//            Thread.sleep(1000);
+//            ProjectBREMedicalChartDocumentPageObj.ClickOnAddedChronicCondition();
+//            Thread.sleep(2000);
+//            ProjectBREMedicalChartDocumentPageObj.ClickOnEditChronicCondition();
+//            Thread.sleep(2000);
+//            ProjectBREMedicalChartDocumentPageObj.ClickOnCancelEditEncounterDetails();
+//            Thread.sleep(2000);
+//            TakesScreen.takeSnapShot(driver, "test-output//ProjectBREMedicalChartDocumentTest//CancelEditEncounterDetails.jpg");
+//            Thread.sleep(2000);
+//            TakesScreen.takeSnapShot(driver, "test-output//ProjectBREMedicalChartDocumentTest//AddDiagnosisDetails.jpg");
+//            Thread.sleep(2000);
+//            ProjectBREMedicalChartDocumentPageObj.ClickOnDeleteChronicCondition();
+//            Thread.sleep(2000);
+//            TakesScreen.takeSnapShot(driver, "test-output//ProjectBREMedicalChartDocumentTest//DeleteChronicCondition.jpg");
+//            Thread.sleep(2000);
     }
 }
 

@@ -25,8 +25,7 @@ public class ProjectBRETest extends BasePage {
         driver.quit();
     }
     @Test
-    public void ProjectBREFlow() throws InterruptedException, IOException {
-        try {
+    public void ProjectBREFlow() throws Exception {
             Robot r = new Robot();
             ProjectPage ProjectPageObj = new ProjectPage(driver);
             //Object Creation.
@@ -471,9 +470,4 @@ public class ProjectBRETest extends BasePage {
             Thread.sleep(3000);
             //Upload the Document in this Project for the Results.
         }
-        catch (Exception e) {
-            test.log(LogStatus.FAIL, e);
-        }
     }
-
-}

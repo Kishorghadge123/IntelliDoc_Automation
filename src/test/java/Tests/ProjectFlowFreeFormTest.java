@@ -25,8 +25,7 @@ public class ProjectFlowFreeFormTest extends BasePage {
         driver.quit();
     }
     @Test
-    public void FreeFormProjectFlow(){
-        try {
+    public void FreeFormProjectFlow() throws Exception {
 
             Robot r = new Robot();
             ProjectPage ProjectPageObj = new ProjectPage(driver);
@@ -120,7 +119,4 @@ public class ProjectFlowFreeFormTest extends BasePage {
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowFree-Form//ProjectCreatedSuccess.jpg");
         }
 
-        catch (Exception e) {
-            test.log(LogStatus.FAIL, e);
-        }}
 }

@@ -4,9 +4,7 @@ import Base.BasePage;
 import Pages.CreateUserPage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
-import com.relevantcodes.extentreports.LogStatus;
 import org.testng.annotations.*;
-import java.io.IOException;
 @Listeners(Utilities.TestListeners.class)
 
 public class UpdateUserPlatformAdminTest extends BasePage {
@@ -21,8 +19,7 @@ public class UpdateUserPlatformAdminTest extends BasePage {
         driver.quit();
     }
     @Test
-    public void PlatformAdminUpdateUserFlow() throws InterruptedException, IOException {
-        try {
+    public void PlatformAdminUpdateUserFlow() throws Exception {
             CreateUserPage UserPageObj1 = new CreateUserPage(driver);
             UserPageObj1.ClickUserBtn();
             Thread.sleep(5000);
@@ -328,9 +325,7 @@ public class UpdateUserPlatformAdminTest extends BasePage {
 //            UserPageObj1.ClickUpdateUser();
 //            Thread.sleep(4000);
 //            UserPageObj1.LogOut();
-            Thread.sleep(2000);
-        } catch (Exception e) {
-            test.log(LogStatus.FAIL, e);
+
         }
     }
-}
+

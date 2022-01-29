@@ -19,7 +19,7 @@ public class UpdateUserAdminTest extends BasePage {
     }
     @Test
     public void UpdateUserAdminFlow() throws InterruptedException, IOException {
-        try {
+
             driver.get(ReadProps.readAttr("URL"));
             driver.manage().window().maximize();
             Thread.sleep(8000);
@@ -35,12 +35,8 @@ public class UpdateUserAdminTest extends BasePage {
             Thread.sleep(2000);
             UserPageObj1.clickLoginButton();
             Thread.sleep(6000);
-            TakesScreen.takeSnapShot(driver, "test-output//AdminUpdateUser//AdminValid.jpg");
-            Thread.sleep(2000);
             UserPageObj1.ClickUserBtn();
             Thread.sleep(3000);
-            UserPageObj1.SearchCreatedUser(ReadProps.readAttr("AdminUserName"));
-            Thread.sleep(2000);
             UserPageObj1.SelectSearchedAdminUser();
             Thread.sleep(2000);
 
@@ -48,8 +44,6 @@ public class UpdateUserAdminTest extends BasePage {
             UserPageObj1.ClickDisableUser();
             Thread.sleep(2000);
             UserPageObj1.ClickUpdateUser();
-            Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver, "test-output//AdminUpdateUser//AdminDisableUserFile.jpg");
             Thread.sleep(2000);
             UserPageObj1.SelectSearchedAdminUser();
             Thread.sleep(2000);
@@ -59,8 +53,6 @@ public class UpdateUserAdminTest extends BasePage {
             Thread.sleep(2000);
             UserPageObj1.ClickUpdateUser();
             Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver, "test-output//AdminUpdateUser//AdminEnableUser.jpg");
-            Thread.sleep(2000);
 
             //TC 22.4 Update with Blank Name.
             UserPageObj1.SelectSearchedAdminUser();
@@ -69,7 +61,6 @@ public class UpdateUserAdminTest extends BasePage {
             Thread.sleep(2000);
             UserPageObj1.ClickUpdateUser();
             Thread.sleep(1000);
-            TakesScreen.takeSnapShot(driver, "test-output//AdminUpdateUser//AdminBlankName.jpg");
             //UserPageObj1.UserBlankAssert();
             Thread.sleep(2000);
             UserPageObj1.ClickOnCancelBtn();
@@ -83,7 +74,6 @@ public class UpdateUserAdminTest extends BasePage {
             UserPageObj1.EnterUserName(ReadProps.readAttr("EnterName"));
             Thread.sleep(2000);
             UserPageObj1.ClickUpdateUser();
-            TakesScreen.takeSnapShot(driver, "test-output//AdminUpdateUser//AdminInvalidCredentials.jpg");
             //UserPageObj1.UserBlankAssert();
             Thread.sleep(2000);
             UserPageObj1.ClickOnCancelBtn();
@@ -98,9 +88,6 @@ public class UpdateUserAdminTest extends BasePage {
             Thread.sleep(2000);
             UserPageObj1.ClickUpdateUser();
             Thread.sleep(2000);
-            TakesScreen.takeSnapShot(driver, "test-output//AdminUpdateUser//UpdateWithValid.jpg");
-            Thread.sleep(2000);
-
             //Remove Update for script maintains only.
             UserPageObj1.SearchCreatedUser(ReadProps.readAttr("ValidNameUP"));
             Thread.sleep(2000);
@@ -114,8 +101,6 @@ public class UpdateUserAdminTest extends BasePage {
             Thread.sleep(4000);
             UserPageObj1.LogOut();
             Thread.sleep(4000);
-        } catch (Exception e) {
-            test.log(LogStatus.FAIL, e);
         }
     }
-}
+

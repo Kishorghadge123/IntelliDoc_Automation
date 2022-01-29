@@ -4,11 +4,9 @@ import Base.BasePage;
 import Pages.CreateRolePage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
-import com.relevantcodes.extentreports.LogStatus;
 import org.testng.annotations.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
-import java.io.IOException;
 @Listeners(Utilities.TestListeners.class)
 public class CreateUpdateRoleAdminTest extends BasePage {
     @BeforeClass
@@ -20,8 +18,7 @@ public class CreateUpdateRoleAdminTest extends BasePage {
         driver.quit();
     }
     @Test
-    public void CreateRoleAdminFlow() throws InterruptedException, IOException {
-        try {
+    public void CreateRoleAdminFlow() throws Exception {
             driver.get(ReadProps.readAttr("URL"));
             driver.manage().window().maximize();
             Thread.sleep(8000);
@@ -158,7 +155,7 @@ public class CreateUpdateRoleAdminTest extends BasePage {
             CreateRolePageObj.ClickEditRole();
             Thread.sleep(5000);
             CreateRolePageObj.ClickActiveRole();
-            TakesScreen.takeSnapShot(driver, "test-output//AdminRoles//ActiveRole.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//AdminRoles//Inactive.jpg");
             Thread.sleep(2000);
             CreateRolePageObj.ClickUpdateBtn();
             Thread.sleep(4000);
@@ -167,14 +164,11 @@ public class CreateUpdateRoleAdminTest extends BasePage {
             CreateRolePageObj.ClickEditRole();//Change This
             Thread.sleep(5000);
             CreateRolePageObj.ClickActiveRole();
-            TakesScreen.takeSnapShot(driver, "test-output//AdminRoles//InactiveRole.jpg");
+            TakesScreen.takeSnapShot(driver, "test-output//AdminRoles//ActiveRole.jpg");
             Thread.sleep(2000);
             CreateRolePageObj.ClickUpdateBtn();
             Thread.sleep(4000);
             CreateRolePageObj.ClickLogout();
             Thread.sleep(4000);
-        } catch (Exception e) {
-            test.log(LogStatus.FAIL, e);
-        }
     }
 }

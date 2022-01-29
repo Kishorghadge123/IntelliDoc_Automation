@@ -23,13 +23,11 @@ public class ProjectFlowSemiStructureTest extends BasePage{
         driver.quit();
     }
     @Test
-    public void ProjectFlowSemiStructure() throws InterruptedException, IOException {
-        try {
+    public void ProjectFlowSemiStructure() throws Exception {
+
             Robot r = new Robot();
             ProjectPage ProjectPageObj = new ProjectPage(driver);
             DocumentPage DocPageObj = new DocumentPage(driver);
-            test.log(LogStatus.INFO, "ProjectFlowSemiStructure");
-            test.log(LogStatus.PASS, "TestPassed");
 
             //TC 17.1 Checking all the functionalities on the Project Page.
             Thread.sleep(2000);
@@ -109,8 +107,4 @@ public class ProjectFlowSemiStructureTest extends BasePage{
             Thread.sleep(9000);
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowSemi-Structured//ProjectCreatedSuccess.jpg");
         }
-        catch (Exception e) {
-            test.log(LogStatus.FAIL, e);
         }
-    }
-}

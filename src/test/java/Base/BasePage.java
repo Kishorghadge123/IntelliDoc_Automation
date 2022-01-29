@@ -26,13 +26,11 @@ public class BasePage {
         loginPageObjects.setUsername(ReadProps.readAttr("UserID"));
         loginPageObjects.setPassword(ReadProps.readAttr("Password"));
         loginPageObjects.clickLoginButton();
-        Thread.sleep(10000);
+        Thread.sleep(8000);
     }
     public static void driverInit() throws Exception {
         String projectPath = System.getProperty("user.dir");
         System.setProperty("webdriver.chrome.driver", projectPath + ".\\Drivers\\chromedriver.exe");
         driver = new ChromeDriver();
-        //driver.manage().window().maximize();
-        //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 }

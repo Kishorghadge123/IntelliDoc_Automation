@@ -37,7 +37,7 @@ public class ManualInterventionDocument extends BasePage {
         Thread.sleep(2000);
         documentPageObj.ClickSelectFreeFormProject();
         Thread.sleep(2000);
-        documentPageObj.ClickSearchBox("Pfizer5.jpg");
+        documentPageObj.ClickSearchBox("Pfizer7.jpg");
         Thread.sleep(2000);
         documentPageObj.ClickSearchDocument();
         Thread.sleep(2000);
@@ -89,7 +89,7 @@ public class ManualInterventionDocument extends BasePage {
         Thread.sleep(2000);
         documentPageObj.ClickSelectStructuredProject();
         Thread.sleep(2000);
-        documentPageObj.ClickSearchBox("Pfizer5.jpg");
+        documentPageObj.ClickSearchBox("Pfizer7.jpg");
         Thread.sleep(2000);
         documentPageObj.ClickSearchDocument();
         Thread.sleep(3000);

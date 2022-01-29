@@ -5,12 +5,10 @@ import Pages.LoginPage;
 import Pages.ProjectPage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
-import com.relevantcodes.extentreports.LogStatus;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
-import java.io.IOException;
 @Listeners(Utilities.TestListeners.class)
 
 public class ProjectFlowStructuredTest extends BasePage {
@@ -24,13 +22,9 @@ public class ProjectFlowStructuredTest extends BasePage {
         driver.quit();
     }
     @Test
-    public void ProjectFlow() throws InterruptedException, IOException {
-        try {
+    public void ProjectFlow() throws Exception {
             Robot r = new Robot();
             ProjectPage ProjectPageObj = new ProjectPage(driver);
-            test.log(LogStatus.INFO, "ProjectFlow");
-            test.log(LogStatus.PASS, "TestPassed");
-
             //TC 18.1 Create new project with Blank information and also Verify 'Create' button for Platform Admin.
             ProjectPageObj.ClickOnCreateProjectBtn();
             Thread.sleep(4000);
@@ -50,7 +44,6 @@ public class ProjectFlowStructuredTest extends BasePage {
             js.executeScript("window.scrollBy(0,10000)", "");
             Thread.sleep(1000);
             ProjectPageObj.ClickNextPage();
-            TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowStructured//ProjectCreateBlankNext.jpg");
             Thread.sleep(2000);
 
             //TC 18.3 Verify Cancel button with Blank information for Platform Admin.
@@ -525,8 +518,5 @@ public class ProjectFlowStructuredTest extends BasePage {
             Thread.sleep(1000);
             r.keyPress(KeyEvent.VK_ESCAPE);
             Thread.sleep(3000);
-        } catch (Exception e) {
-            test.log(LogStatus.FAIL, e);
         }
     }
-}

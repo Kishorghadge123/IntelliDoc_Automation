@@ -4,7 +4,6 @@ import Base.BasePage;
 import Pages.DocumentPage;
 import Utilities.ReadProps;
 import Utilities.TakesScreen;
-import com.relevantcodes.extentreports.LogStatus;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.*;
 
@@ -28,8 +27,6 @@ public class DocProcessStructuredTest extends BasePage {
         DocPageObj = new DocumentPage(driver);
         Robot r = new Robot();
         DocumentPage DocPageObj = new DocumentPage(driver);
-        test.log(LogStatus.INFO, "DocProcessStructuredTest");
-        test.log(LogStatus.PASS, "TestPassed");
         DocPageObj.ClickDocumentBtn();
         Thread.sleep(5000);
         //TC 10.1 Search Project.

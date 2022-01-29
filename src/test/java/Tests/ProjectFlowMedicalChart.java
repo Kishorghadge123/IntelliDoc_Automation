@@ -23,8 +23,7 @@ public class ProjectFlowMedicalChart extends BasePage {
         driver.quit();
     }
     @Test
-    public void ProjectFlow() throws InterruptedException, IOException {
-        try {
+    public void ProjectFlow() throws Exception {
             Robot r = new Robot();
             ProjectPage ProjectPageObj = new ProjectPage(driver);
             //TC 16.1 Checking all the functionalities on the Project Page Platform Admin.
@@ -114,9 +113,5 @@ public class ProjectFlowMedicalChart extends BasePage {
             ProjectPageObj.ClickOnCreate();
             Thread.sleep(9000);
             TakesScreen.takeSnapShot(driver, "test-output//ProjectFlowMedicalChart//ProjectCreatedSuccess.jpg");
-        } catch (Exception e) {
-            test.log(LogStatus.FAIL, e);
-        }
-
     }
 }
