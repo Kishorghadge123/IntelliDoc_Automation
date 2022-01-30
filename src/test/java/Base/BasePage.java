@@ -11,8 +11,11 @@ public class BasePage {
     public static WebDriver driver;
     public static ExtentTest test;
     static ProjectPage ProjectPageObj;
+    static LoginPage loginPageObjects;
     public static void LoginTest() throws Exception {
-        LoginPage loginPageObjects = new LoginPage(driver);
+
+        loginPageObjects = new LoginPage(driver);
+        ProjectPageObj = new ProjectPage(driver);
         driver.get(ReadProps.readAttr("URL"));
         driver.manage().window().maximize();
         ProjectPageObj.EnterUsername(ReadProps.readAttr("UserID"));

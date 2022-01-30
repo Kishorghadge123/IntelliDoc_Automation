@@ -391,9 +391,9 @@ public class ProjectPage {
     }
 
     //Project Homepage
-    public void ClickOnTableStructure() {
-        driver.findElement(ClickTableStructure).click();
-    }
+//    public void ClickOnTableStructure() {
+//        driver.findElement(ClickTableStructure).click();
+//    }
 
     public void ClickOnGridStructure() {
         driver.findElement(ClickGridStructure).click();

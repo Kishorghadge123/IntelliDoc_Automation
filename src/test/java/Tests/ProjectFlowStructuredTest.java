@@ -26,7 +26,7 @@ public class ProjectFlowStructuredTest extends BasePage {
                 ProjectPageObj = new ProjectPage(driver);
                 //TC 18.1 Create new project with Blank information and also Verify 'Create' button for Platform Admin.
                 ProjectPageObj.ClickOnCreateProjectBtn();
-                Thread.sleep(4000);
+                Thread.sleep(3000);
                 JavascriptExecutor js = (JavascriptExecutor) driver;
                 js.executeScript("window.scrollBy(0,10000)", "");
                 Thread.sleep(1000);
@@ -40,7 +40,7 @@ public class ProjectFlowStructuredTest extends BasePage {
                 ProjectPageObj.ClickOnProjectBtn();
                 Thread.sleep(6000);
                 ProjectPageObj.ClickOnCreateProjectBtn();
-                Thread.sleep(2000);
+                Thread.sleep(3000);
                 JavascriptExecutor js = (JavascriptExecutor) driver;
                 js.executeScript("window.scrollBy(0,10000)", "");
                 Thread.sleep(1000);
@@ -53,7 +53,7 @@ public class ProjectFlowStructuredTest extends BasePage {
                 ProjectPageObj.ClickOnProjectBtn();
                 Thread.sleep(6000);
                 ProjectPageObj.ClickOnCreateProjectBtn();
-                Thread.sleep(2000);
+                Thread.sleep(3000);
                 JavascriptExecutor js = (JavascriptExecutor) driver;
                 js.executeScript("window.scrollBy(0,10000)", "");
                 Thread.sleep(1000);
@@ -66,7 +66,7 @@ public class ProjectFlowStructuredTest extends BasePage {
                 ProjectPageObj.ClickOnProjectBtn();
                 Thread.sleep(6000);
                 ProjectPageObj.ClickOnCreateProjectBtn();
-                Thread.sleep(4000);
+                Thread.sleep(3000);
                 ProjectPageObj.ClickOnProjectNameBtn(ReadProps.readAttr("ProjectInvalidName"));
                 Thread.sleep(1000);
                 ProjectPageObj.ClickOnLeadBtn();
@@ -125,7 +125,7 @@ public class ProjectFlowStructuredTest extends BasePage {
                 ProjectPageObj.ClickOnProjectBtn();
                 Thread.sleep(6000);
                 ProjectPageObj.ClickOnCreateProjectBtn();
-                Thread.sleep(4000);
+                Thread.sleep(3000);
                 ProjectPageObj.ClickOnProjectNameBtn(ReadProps.readAttr("StructuredProjectName1"));//Change this
                 Thread.sleep(1000);
                 ProjectPageObj.ClickOnLeadBtn();
@@ -200,7 +200,7 @@ public class ProjectFlowStructuredTest extends BasePage {
                 ProjectPageObj.ClickOnProjectBtn();
                 Thread.sleep(6000);
                 ProjectPageObj.ClickOnCreateProjectBtn();
-                Thread.sleep(2000);
+                Thread.sleep(3000);
                 ProjectPageObj.ClickOnProjectNameBtn(ReadProps.readAttr("ProjectDisabledNameFA"));//change this name in Obj file.
                 Thread.sleep(2000);
                 ProjectPageObj.ClickOnLeadBtn();
@@ -250,10 +250,12 @@ public class ProjectFlowStructuredTest extends BasePage {
                 Thread.sleep(9000);
         }
         @Test(priority = 9)
-        public void create_project_with_only_with_role_info() throws Exception {
+        public void create_project_only_with_role_info() throws Exception {
                 //TC 18.10  Create Project only with Role information for Platform Admin.
+                ProjectPageObj.ClickOnProjectBtn();
+                Thread.sleep(6000);
                 ProjectPageObj.ClickOnCreateProjectBtn();
-                Thread.sleep(4000);
+                Thread.sleep(3000);
                 ProjectPageObj.ClickOnRolesBtn();
                 Thread.sleep(2000);
                 ProjectPageObj.ClickOnAddRoleBtn();
@@ -282,7 +284,7 @@ public class ProjectFlowStructuredTest extends BasePage {
                 ProjectPageObj.ClickLoginButton();
                 Thread.sleep(6000);
                 ProjectPageObj.ClickOnCreateProjectBtn();
-                Thread.sleep(4000);
+                Thread.sleep(3000);
                 ProjectPageObj.ClickOnCreate();
                 ProjectPageObj.VerifyAssertForBlank();
                 Thread.sleep(2000);
@@ -293,7 +295,7 @@ public class ProjectFlowStructuredTest extends BasePage {
                 ProjectPageObj.ClickOnProjectBtn();
                 Thread.sleep(6000);
                 ProjectPageObj.ClickOnCreateProjectBtn();
-                Thread.sleep(4000);
+                Thread.sleep(3000);
                 ProjectPageObj.ClickNextPage();
                 Thread.sleep(2000);
         }
@@ -303,7 +305,7 @@ public class ProjectFlowStructuredTest extends BasePage {
                 ProjectPageObj.ClickOnProjectBtn();
                 Thread.sleep(6000);
                 ProjectPageObj.ClickOnCreateProjectBtn();
-                Thread.sleep(4000);
+                Thread.sleep(3000);
                 ProjectPageObj.ClickOnCancelProject();
                 Thread.sleep(5000);
         }
@@ -313,7 +315,7 @@ public class ProjectFlowStructuredTest extends BasePage {
             ProjectPageObj.ClickOnProjectBtn();
             Thread.sleep(6000);
             ProjectPageObj.ClickOnCreateProjectBtn();
-            Thread.sleep(2000);
+            Thread.sleep(3000);
             ProjectPageObj.ClickOnProjectNameBtn(ReadProps.readAttr("ProjectInvalidName"));
             Thread.sleep(1000);
             ProjectPageObj.ClickOnLeadBtn();
@@ -371,7 +373,7 @@ public class ProjectFlowStructuredTest extends BasePage {
                 ProjectPageObj.ClickOnProjectBtn();
                 Thread.sleep(6000);
                 ProjectPageObj.ClickOnCreateProjectBtn();
-                Thread.sleep(4000);
+                Thread.sleep(3000);
                 ProjectPageObj.ClickOnProjectNameBtn(ReadProps.readAttr("StructuredProjectName"));
                 Thread.sleep(1000);
                 ProjectPageObj.ClickOnLeadBtn();
@@ -438,7 +440,7 @@ public class ProjectFlowStructuredTest extends BasePage {
                 ProjectPageObj.ClickOnProjectBtn();
                 Thread.sleep(6000);
                 ProjectPageObj.ClickOnCreateProjectBtn();
-                Thread.sleep(2000);
+                Thread.sleep(3000);
                 ProjectPageObj.ClickOnProjectNameBtn(ReadProps.readAttr("ProjectDisabledNameA"));//change this name in Obj file.
                 Thread.sleep(2000);
                 ProjectPageObj.ClickOnLeadBtn();
@@ -490,8 +492,10 @@ public class ProjectFlowStructuredTest extends BasePage {
         @Test(priority = 18)
         public void create_project_only_with_role_info_for_admin() throws Exception {
                 //TC 18.19  Create Project only with Role information for Admin.
+                ProjectPageObj.ClickOnProjectBtn();
+                Thread.sleep(6000);
                 ProjectPageObj.ClickOnCreateProjectBtn();
-                Thread.sleep(5000);
+                Thread.sleep(3000);
                 ProjectPageObj.ClickOnRolesBtn();
                 Thread.sleep(2000);
                 ProjectPageObj.ClickOnAddRoleBtn();
@@ -517,13 +521,10 @@ public class ProjectFlowStructuredTest extends BasePage {
                 ProjectPageObj.EnterUsername(ReadProps.readAttr("UserID"));
                 Thread.sleep(1000);
                 loginPageObjects.setPassword(ReadProps.readAttr("Password"));
+                Thread.sleep(1000);
                 loginPageObjects.clickLoginButton();
-                Thread.sleep(10000);
-                ProjectPageObj.ClickOnTableStructure();
-                Thread.sleep(6000);
-                driver.navigate().refresh();
-                Thread.sleep(6000);
-                ProjectPageObj.ClickOnTableStructure();
+                Thread.sleep(8000);
+                ProjectPageObj.TableStructure();
                 Thread.sleep(6000);
         }
         @Test(priority = 20)
