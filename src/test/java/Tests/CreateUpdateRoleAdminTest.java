@@ -66,13 +66,11 @@ public class CreateUpdateRoleAdminTest extends BasePage {
         CreateRolePageObj.AddPermissionPlusBtn();
         Thread.sleep(2000);
         CreateRolePageObj.SelectViewDocumentPermission();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         Robot r = new Robot();
         r.keyPress(KeyEvent.VK_ESCAPE);
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         CreateRolePageObj.ClickCreateButton();
-        Thread.sleep(1000);
-        //CreateRolePageObj.BlankName();
         Thread.sleep(2000);
         CreateRolePageObj.ClickCancelButton();
         Thread.sleep(3000);
@@ -89,10 +87,10 @@ public class CreateUpdateRoleAdminTest extends BasePage {
         CreateRolePageObj.AddPermissionPlusBtn();
         Thread.sleep(2000);
         CreateRolePageObj.ClickProcessDocPermission();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         Robot r = new Robot();
         r.keyPress(KeyEvent.VK_ESCAPE);
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         CreateRolePageObj.ClickCreateButton();
         Thread.sleep(5000);
 
@@ -109,12 +107,12 @@ public class CreateUpdateRoleAdminTest extends BasePage {
         CreateRolePageObj.AddPermissionPlusBtn();
         Thread.sleep(2000);
         CreateRolePageObj.ClickProcessDocPermission();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         Robot r = new Robot();
         r.keyPress(KeyEvent.VK_ESCAPE);
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         CreateRolePageObj.ClickCreateButton();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         //CreateRolePageObj.RoleNameExist();
         Thread.sleep(2000);
         CreateRolePageObj.ClickCancelButton();
@@ -136,10 +134,10 @@ public class CreateUpdateRoleAdminTest extends BasePage {
         CreateRolePageObj.ClickProcessDocPermission();
         Thread.sleep(2000);
         CreateRolePageObj.SelectViewDocumentPermission();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         Robot r = new Robot();
         r.keyPress(KeyEvent.VK_ESCAPE);
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         CreateRolePageObj.ClickUpdateBtn();
         Thread.sleep(4000);
         CreateRolePageObj.UpdateTimeAssert();

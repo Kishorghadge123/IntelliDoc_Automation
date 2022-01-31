@@ -26,13 +26,13 @@ public class UpdateProjectTest extends BasePage{
             ProjectPageObj.SearchProject();
             Thread.sleep(2000);
             ProjectPageObj.ClickOnEditProject();
-            Thread.sleep(2000);
+            Thread.sleep(3000);
             ProjectPageObj.ClickOnLeadBtn();
             Thread.sleep(2000);
             ProjectPageObj.SelectOnLeadSampleBtn();
             Thread.sleep(2000);
             ProjectPageObj.ClickOnProcessingEngineBtn();
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             ProjectPageObj.SelectOnProcessingEngineLowBtn();
             Thread.sleep(2000);
             r.keyPress(KeyEvent.VK_ESCAPE);
@@ -48,7 +48,7 @@ public class UpdateProjectTest extends BasePage{
                 ProjectPageObj.SearchProject();
                 Thread.sleep(2000);
                 ProjectPageObj.ClickOnEditProject();
-                Thread.sleep(2000);
+                Thread.sleep(3000);
                 ProjectPageObj.ClickOnLeadBtn();
                 Thread.sleep(2000);
                 ProjectPageObj.ClickSearchLead("admin@test.com");
@@ -70,7 +70,7 @@ public class UpdateProjectTest extends BasePage{
                 ProjectPageObj.SearchProject();
                 Thread.sleep(2000);
                 ProjectPageObj.ClickOnEditProject();
-                Thread.sleep(2000);
+                Thread.sleep(3000);
                 ProjectPageObj.ClickOnRolesBtn();
                 Thread.sleep(2000);
                 ProjectPageObj.ClickOnRoleUserDisableEnable();
@@ -97,7 +97,7 @@ public class UpdateProjectTest extends BasePage{
                 ProjectPageObj.SearchProject();
                 Thread.sleep(2000);
                 ProjectPageObj.ClickOnEditProject();
-                Thread.sleep(2000);
+                Thread.sleep(3000);
                 ProjectPageObj.ClickOnLeadBtn();
                 Thread.sleep(2000);
                 ProjectPageObj.ClickSearchLead("admin@test.com");
@@ -161,7 +161,7 @@ public class UpdateProjectTest extends BasePage{
                 ProjectPageObj.SearchProject();
                 Thread.sleep(4000);
                 ProjectPageObj.ClickOnEditProject();
-                Thread.sleep(2000);
+                Thread.sleep(3000);
                 ProjectPageObj.ClickOnRolesBtn();
                 Thread.sleep(4000);
                 ProjectPageObj.ClickOnAddRoleBtn();
@@ -214,7 +214,7 @@ public class UpdateProjectTest extends BasePage{
                 ProjectPageObj.SearchProjectAdmin();
                 Thread.sleep(5000);
                 ProjectPageObj.ClickOnEditProject();
-                Thread.sleep(2000);
+                Thread.sleep(3000);
                 ProjectPageObj.ClickOnLeadBtn();
                 Thread.sleep(2000);
                 ProjectPageObj.SelectOnLeadSampleBtn();
@@ -237,7 +237,7 @@ public class UpdateProjectTest extends BasePage{
                 ProjectPageObj.SearchProjectAdmin();
                 Thread.sleep(2000);
                 ProjectPageObj.ClickOnEditProject();
-                Thread.sleep(2000);
+                Thread.sleep(3000);
                 ProjectPageObj.ClickOnLeadBtn();
                 Thread.sleep(2000);
                 ProjectPageObj.ClickSearchLead("admin@test.com");
@@ -259,7 +259,7 @@ public class UpdateProjectTest extends BasePage{
                 ProjectPageObj.SearchProjectAdmin();
                 Thread.sleep(4000);
                 ProjectPageObj.ClickOnEditProject();
-                Thread.sleep(2000);
+                Thread.sleep(3000);
                 ProjectPageObj.ClickOnRolesBtn();
                 Thread.sleep(2000);
                 ProjectPageObj.ClickOnRoleUserDisableEnable();
@@ -286,7 +286,7 @@ public class UpdateProjectTest extends BasePage{
                 ProjectPageObj.SearchProjectAdmin();
                 Thread.sleep(2000);
                 ProjectPageObj.ClickOnEditProject();
-                Thread.sleep(2000);
+                Thread.sleep(3000);
                 ProjectPageObj.ClickOnLeadBtn();
                 Thread.sleep(2000);
                 ProjectPageObj.ClickSearchLead("admin@test.com");
@@ -318,7 +318,7 @@ public class UpdateProjectTest extends BasePage{
                 ProjectPageObj.SearchProjectAdmin();
                 Thread.sleep(2000);
                 ProjectPageObj.ClickOnEditProject();
-                Thread.sleep(2000);
+                Thread.sleep(3000);
                 ProjectPageObj.ClickOnRolesBtn();
                 Thread.sleep(2000);
                 ProjectPageObj.ClickOnRoleUserDisableEnable();
@@ -334,7 +334,7 @@ public class UpdateProjectTest extends BasePage{
                 ProjectPageObj.SearchProjectAdmin();
                 Thread.sleep(2000);
                 ProjectPageObj.ClickOnEditProject();
-                Thread.sleep(2000);
+                Thread.sleep(3000);
                 ProjectPageObj.ClickOnLeadBtn();
                 Thread.sleep(2000);
                 ProjectPageObj.SelectOnLeadAdminBtn();
@@ -350,7 +350,7 @@ public class UpdateProjectTest extends BasePage{
                 ProjectPageObj.SearchProjectAdmin();
                 Thread.sleep(2000);
                 ProjectPageObj.ClickOnEditProject();
-                Thread.sleep(2000);
+                Thread.sleep(3000);
                 ProjectPageObj.ClickOnRolesBtn();
                 Thread.sleep(2000);
                 ProjectPageObj.ClickOnAddRoleBtn();
@@ -373,7 +373,7 @@ public class UpdateProjectTest extends BasePage{
                 ProjectPageObj.SearchProjectAdmin();
                 Thread.sleep(2000);
                 ProjectPageObj.ClickOnEditProject();
-                Thread.sleep(2000);
+                Thread.sleep(3000);
                 ProjectPageObj.ClickOnRolesBtn();
                 Thread.sleep(2000);
                 ProjectPageObj.ClickOnAddRoleBtn();
@@ -394,7 +394,7 @@ public class UpdateProjectTest extends BasePage{
                 ProjectPageObj.SearchProjectAdmin();
                 Thread.sleep(2000);
                 ProjectPageObj.ClickOnEditProject();
-                Thread.sleep(2000);
+                Thread.sleep(3000);
                 ProjectPageObj.ClickOnStatusBtn();
                 Thread.sleep(2000);
                 ProjectPageObj.ClickOnUpdateProject();
@@ -410,7 +410,7 @@ public class UpdateProjectTest extends BasePage{
             ProjectPageObj.SearchProjectAdmin();
             Thread.sleep(2000);
             ProjectPageObj.ClickOnEditProject();
-            Thread.sleep(2000);
+            Thread.sleep(3000);
             ProjectPageObj.ClickOnStatusBtn();
             Thread.sleep(2000);
             ProjectPageObj.ClickOnUpdateProject();

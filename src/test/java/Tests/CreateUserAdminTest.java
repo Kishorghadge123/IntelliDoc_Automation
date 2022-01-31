@@ -46,20 +46,24 @@ public class CreateUserAdminTest extends BasePage {
         public void create_user_with_valid_data() throws Exception {
                 //TC 4.3 Create User with Valid data.
                 UserPageObj.ClickCreateUserBtn();
-                Thread.sleep(1000);
+                Thread.sleep(2000);
+                UserPageObj.EnterUserName(ReadProps.readAttr("AdminUserName"));
+                 Thread.sleep(2000);
+                UserPageObj.EnterEmail(ReadProps.readAttr("AdminID"));
+                 Thread.sleep(2000);
                 UserPageObj.ClickActiveUser();
-                Thread.sleep(1000);
+                Thread.sleep(2000);
                 UserPageObj.ClickCreateBtn();
-                Thread.sleep(5000);
+                Thread.sleep(6000);
         }
         @Test(priority = 4)
         public void create_user_with_invalid_data() throws Exception {
                 //TC 4.4 Create user with Invalid data.
                 UserPageObj.ClickCreateUserBtn();
                 Thread.sleep(2000);
-                UserPageObj.EnterUserName(ReadProps.readAttr("CUname"));
+                UserPageObj.EnterUserName(ReadProps.readAttr("InvalidUsernameU"));
                 Thread.sleep(2000);
-                UserPageObj.EnterEmail(ReadProps.readAttr("CUemail"));
+                UserPageObj.EnterEmail(ReadProps.readAttr("InvalidEmailU"));
                 Thread.sleep(2000);
                 UserPageObj.ClickCreateBtn();
                 Thread.sleep(2000);

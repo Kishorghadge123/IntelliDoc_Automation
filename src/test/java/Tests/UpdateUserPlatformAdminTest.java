@@ -179,41 +179,41 @@ public class UpdateUserPlatformAdminTest extends BasePage {
                 Thread.sleep(1000);
                 UserPageObj1.ClearPassword();
                 Thread.sleep(3000);
-                UserPageObj1.EnterPassword(ReadProps.readAttr("UpperLowerCasethrows ExceptionPwd"));
+                UserPageObj1.EnterPassword(ReadProps.readAttr("UpperLowerCasePwd"));
                 Thread.sleep(2000);
                 UserPageObj1.ClickUpdateUser();
-                Thread.sleep(4000);
+                Thread.sleep(5000);
         }
 
         @Test(priority = 11)
         public void password_field_must_have_length_to_be_minimum_eight() throws Exception{
         //TC 23.11 The password field length has to be minimum 8.
             UserPageObj1.SelectSearchedUser();
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             UserPageObj1.ClearPassword();
             Thread.sleep(3000);
             UserPageObj1.EnterPassword(ReadProps.readAttr("UpperLowerCasePwd"));
             Thread.sleep(2000);
             UserPageObj1.ClickUpdateUser();
-            Thread.sleep(4000);
+            Thread.sleep(5000);
 }
 @Test(priority = 12)
         public void password_field_length_max_length_twelve() throws Exception {
         //TC 23.12 The password field length has to be maximum 12.
         UserPageObj1.SelectSearchedUser();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         UserPageObj1.ClearPassword();
         Thread.sleep(3000);
         UserPageObj1.EnterPassword(ReadProps.readAttr("MaxLimit"));
         Thread.sleep(2000);
         UserPageObj1.ClickUpdateUser();
-        Thread.sleep(4000);
+        Thread.sleep(5000);
 }
 @Test(priority = 13)
         public void only_alphabets() throws Exception {
         //TC 23.13 Only Alphabets.
         UserPageObj1.SelectSearchedUser();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         UserPageObj1.ClearPassword();
         Thread.sleep(3000);
         UserPageObj1.EnterPassword(ReadProps.readAttr("OnlyAlphabets"));

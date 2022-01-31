@@ -113,7 +113,7 @@ public class ProjectFlowStructuredTest extends BasePage {
                 Thread.sleep(2000);
                 Robot r = new Robot();
                 r.keyPress(KeyEvent.VK_ESCAPE);
-                Thread.sleep(2000);
+                Thread.sleep(3000);
                 ProjectPageObj.ClickOnCreate();
                 ProjectPageObj.VerifyAssertForData();
                 Thread.sleep(2000);
@@ -172,7 +172,7 @@ public class ProjectFlowStructuredTest extends BasePage {
                 Thread.sleep(2000);
         }
         @Test(priority = 7)
-        public void create_project_with_blank_without_user_and_with_valid_data_() throws Exception {
+        public void create_project_without_user_and_with_valid_data() throws Exception {
                 //TC 18.7 Create Project without User for Platform Admin and
                 //TC 18.8 Create Project with Valid Data.
                 ProjectPageObj.ClickOnRolesBtn();
@@ -190,7 +190,7 @@ public class ProjectFlowStructuredTest extends BasePage {
                 Thread.sleep(2000);
                 Robot r = new Robot();
                 r.keyPress(KeyEvent.VK_ESCAPE);
-                Thread.sleep(2000);
+                Thread.sleep(3000);
                 ProjectPageObj.ClickOnCreate();
                 Thread.sleep(9000);
         }
@@ -245,7 +245,7 @@ public class ProjectFlowStructuredTest extends BasePage {
                 Thread.sleep(2000);
                 Robot r = new Robot();
                 r.keyPress(KeyEvent.VK_ESCAPE);
-                Thread.sleep(2000);
+                Thread.sleep(3000);
                 ProjectPageObj.ClickOnCreate();
                 Thread.sleep(9000);
         }
@@ -268,7 +268,7 @@ public class ProjectFlowStructuredTest extends BasePage {
                 Thread.sleep(2000);
                 Robot r = new Robot();
                 r.keyPress(KeyEvent.VK_ESCAPE);
-                Thread.sleep(2000);
+                Thread.sleep(3000);
                 ProjectPageObj.ClickOnCreate();
                 Thread.sleep(2000);
                 ProjectPageObj.ClickLogout();
@@ -362,7 +362,7 @@ public class ProjectFlowStructuredTest extends BasePage {
             Thread.sleep(2000);
                 Robot r = new Robot();
                 r.keyPress(KeyEvent.VK_ESCAPE);
-            Thread.sleep(2000);
+            Thread.sleep(3000);
             ProjectPageObj.ClickOnCreate();
             ProjectPageObj.VerifyAssertForData();
             Thread.sleep(2000);
@@ -485,7 +485,7 @@ public class ProjectFlowStructuredTest extends BasePage {
                 Thread.sleep(2000);
                 Robot r = new Robot();
                 r.keyPress(KeyEvent.VK_ESCAPE);
-                Thread.sleep(2000);
+                Thread.sleep(3000);
                 ProjectPageObj.ClickOnCreate();
                 Thread.sleep(6000);
         }
@@ -508,11 +508,11 @@ public class ProjectFlowStructuredTest extends BasePage {
                 Thread.sleep(2000);
                 Robot r = new Robot();
                 r.keyPress(KeyEvent.VK_ESCAPE);
-                Thread.sleep(2000);
+                Thread.sleep(3000);
                 ProjectPageObj.ClickOnCreate();
                 Thread.sleep(2000);
                 ProjectPageObj.ClickLogout();
-                Thread.sleep(5000);
+                Thread.sleep(8000);
         }
         @Test(priority = 19)
         public void table_structure() throws Exception {

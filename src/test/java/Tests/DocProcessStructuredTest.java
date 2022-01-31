@@ -5,7 +5,6 @@ import Pages.DocumentPage;
 import Utilities.ReadProps;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.*;
-
 import java.awt.*;
 import java.awt.event.KeyEvent;
 @Listeners(Utilities.TestListeners.class)
@@ -80,7 +79,7 @@ public class DocProcessStructuredTest extends BasePage {
         DocPageObj.ClickSearchFilterDoc("BRE");
         Thread.sleep(2000);
         DocPageObj.ClickFilterSearchIcon();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         Robot r = new Robot();
         r.keyPress(KeyEvent.VK_ESCAPE);
         Thread.sleep(2000);

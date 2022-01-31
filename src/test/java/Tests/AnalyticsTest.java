@@ -1,7 +1,6 @@
 package Tests;
 import Base.BasePage;
 import Pages.AnalyticsPage;
-import Utilities.TakesScreen;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.*;
 @Listeners(Utilities.TestListeners.class)
@@ -119,8 +118,6 @@ public class AnalyticsTest extends BasePage
         Thread.sleep(3000);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,10000)", "");
-        Thread.sleep(3000);
-        TakesScreen.takeSnapShot(driver, "test-output//Analytics//MonthlyStatus.jpg");
         Thread.sleep(3000);
         AnalyticsPageObj.ClickSelectDropDown();
         Thread.sleep(3000);

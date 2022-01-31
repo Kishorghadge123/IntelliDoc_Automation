@@ -44,7 +44,7 @@ public class DocProcessMedicalChartTest extends BasePage
         DocPageObj.ClickSearchBox("Processed");
         Thread.sleep(2000);
         DocPageObj.ClickSearchDocument();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
     }
     @Test(priority = 3)
     public void update_document_cancel() throws Exception {
@@ -76,7 +76,7 @@ public class DocProcessMedicalChartTest extends BasePage
         DocPageObj.ClickSearchFilterDoc("Processed");
         Thread.sleep(2000);
         DocPageObj.ClickFilterSearchIcon();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         Robot r = new Robot();
         r.keyPress(KeyEvent.VK_ESCAPE);
         Thread.sleep(2000);

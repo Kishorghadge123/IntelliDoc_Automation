@@ -52,10 +52,10 @@ public class CreateUpdateRolePlatformAdminTest extends BasePage
         CreateRolePageObj.AddPermissionPlusBtn();
         Thread.sleep(2000);
         CreateRolePageObj.SelectViewDocumentPermission();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         Robot r = new Robot();
         r.keyPress(KeyEvent.VK_ESCAPE);
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         CreateRolePageObj.ClickCreateButton();
         Thread.sleep(3000);
         CreateRolePageObj.ClickCancelButton();
@@ -87,9 +87,9 @@ public class CreateUpdateRolePlatformAdminTest extends BasePage
             CreateRolePageObj.SelectCreateRole();
             Thread.sleep(1000);
             CreateRolePageObj.SelectViewAnalytics();
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             r.keyPress(KeyEvent.VK_ESCAPE);
-            Thread.sleep(1000);
+            Thread.sleep(3000);
             CreateRolePageObj.ClickCreateButton();
             Thread.sleep(4000);
 */
@@ -106,9 +106,9 @@ public class CreateUpdateRolePlatformAdminTest extends BasePage
             CreateRolePageObj.SelectCreateTemplate();
             Thread.sleep(1000);
             CreateRolePageObj.ClickProcessDocPermission();
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             r.keyPress(KeyEvent.VK_ESCAPE);
-            Thread.sleep(1000);
+            Thread.sleep(3000);
             CreateRolePageObj.ClickCreateButton();
             Thread.sleep(4000);*/
 
@@ -124,7 +124,7 @@ public class CreateUpdateRolePlatformAdminTest extends BasePage
      CreateRolePageObj.ClickProcessDocPermission();
      Thread.sleep(2000);
      r.keyPress(KeyEvent.VK_ESCAPE);
-     Thread.sleep(1000);
+     Thread.sleep(3000);
      CreateRolePageObj.ClickCreateButton();
      Thread.sleep(4000);*/
     @Test(priority = 4)
@@ -137,10 +137,10 @@ public class CreateUpdateRolePlatformAdminTest extends BasePage
         CreateRolePageObj.AddPermissionPlusBtn();
         Thread.sleep(2000);
         CreateRolePageObj.SelectViewDocumentPermission();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         Robot r = new Robot();
         r.keyPress(KeyEvent.VK_ESCAPE);
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         CreateRolePageObj.ClickCreateButton();
         Thread.sleep(5000);
     }
@@ -154,10 +154,10 @@ public class CreateUpdateRolePlatformAdminTest extends BasePage
         CreateRolePageObj.AddPermissionPlusBtn();
         Thread.sleep(2000);
         CreateRolePageObj.SelectViewDocumentPermission();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         Robot r = new Robot();
         r.keyPress(KeyEvent.VK_ESCAPE);
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         CreateRolePageObj.ClickCreateButton();
         Thread.sleep(4000);
         CreateRolePageObj.ClickCancelButton();
@@ -179,10 +179,10 @@ public class CreateUpdateRolePlatformAdminTest extends BasePage
         CreateRolePageObj.AddPermissionPlusBtn();
         Thread.sleep(2000);
         CreateRolePageObj.ClickProcessDocPermission();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         Robot r = new Robot();
         r.keyPress(KeyEvent.VK_ESCAPE);
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         CreateRolePageObj.ClickUpdateBtn();
         Thread.sleep(3000);
         //CreateRolePageObj.UpdateTimeAssert();

@@ -4,7 +4,6 @@ import Pages.DocumentPage;
 import Utilities.ReadProps;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.*;
-
 import java.awt.*;
 import java.awt.event.KeyEvent;
 @Listeners(Utilities.TestListeners.class)
@@ -81,7 +80,7 @@ public class DocProcessFreeFormTest extends BasePage {
         DocPageObj.ClickFilterDoc();
         Thread.sleep(2000);
         DocPageObj.ClickCancelFilterSearch();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         r.keyPress(KeyEvent.VK_ESCAPE);
         Thread.sleep(2000);
     }

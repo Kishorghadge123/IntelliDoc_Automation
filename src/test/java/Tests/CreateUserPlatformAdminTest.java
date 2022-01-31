@@ -32,7 +32,7 @@ public class CreateUserPlatformAdminTest extends BasePage {
     @Test(priority = 2)
     public void valid_username_blank_password() throws Exception {
         //TC 5.2 Valid Username Blank Password.
-        UserPageObj.EnterUserName(ReadProps.readAttr("CUName"));
+        UserPageObj.EnterUserName(ReadProps.readAttr("InvalidUsernameU"));
         Thread.sleep(2000);
         UserPageObj.ClickCreateBtn();
         // UserPageObj.UserBlankAssert();
@@ -43,7 +43,7 @@ public class CreateUserPlatformAdminTest extends BasePage {
     @Test(priority = 3)
     public void blank_username_valid_password() throws Exception {
         //TC 5.3 Blank Username Valid Password.
-        UserPageObj.EnterEmail(ReadProps.readAttr("CUEmail"));
+        UserPageObj.EnterEmail(ReadProps.readAttr("InvalidEmailU"));
         Thread.sleep(2000);
         UserPageObj.ClickCreateBtn();
         // UserPageObj.UserBlankAssert();
@@ -54,7 +54,7 @@ public class CreateUserPlatformAdminTest extends BasePage {
     @Test(priority = 4)
     public void invalid_username_blank_password() throws Exception {
         //TC 5.4 Invalid UserName Blank Password.
-        UserPageObj.EnterUserName(ReadProps.readAttr("CUname"));
+        UserPageObj.EnterUserName(ReadProps.readAttr("InvalidUsernameU"));
         Thread.sleep(2000);
         UserPageObj.ClickCreateBtn();
         //UserPageObj.UserBlankAssert();
@@ -65,7 +65,7 @@ public class CreateUserPlatformAdminTest extends BasePage {
     @Test(priority = 5)
     public void blank_username_invalid_password() throws Exception {
         //TC 5.5 Blank UserName Invalid Password.
-        UserPageObj.EnterEmail(ReadProps.readAttr("CUemail"));
+        UserPageObj.EnterEmail(ReadProps.readAttr("InvalidEmailU"));
         Thread.sleep(2000);
         UserPageObj.ClickCreateBtn();
         //UserPageObj.UserBlankAssert();
@@ -76,9 +76,9 @@ public class CreateUserPlatformAdminTest extends BasePage {
     @Test(priority = 6)
     public void invalid_credentials() throws Exception {
         //TC 5.6 Invalid Credentials.
-        UserPageObj.EnterUserName(ReadProps.readAttr("CUname"));
+        UserPageObj.EnterUserName(ReadProps.readAttr("InvalidUsernameU"));
         Thread.sleep(2000);
-        UserPageObj.EnterEmail(ReadProps.readAttr("CUemail"));
+        UserPageObj.EnterEmail(ReadProps.readAttr("InvalidEmailU"));
         Thread.sleep(2000);
         UserPageObj.ClickCreateBtn();
         //UserPageObj.UserBlankAssert();
@@ -89,9 +89,9 @@ public class CreateUserPlatformAdminTest extends BasePage {
     @Test(priority = 7)
     public void create_user_with_existing_username_password() throws Exception {
         //TC 5.7 Create User with Existing Username and Password.
-        UserPageObj.EnterUserName(ReadProps.readAttr("CUName"));
+        UserPageObj.EnterUserName(ReadProps.readAttr("InvalidUsernameU"));
         Thread.sleep(2000);
-        UserPageObj.EnterEmail(ReadProps.readAttr("CUEmail"));
+        UserPageObj.EnterEmail(ReadProps.readAttr("InvalidEmailU"));
         Thread.sleep(2000);
         UserPageObj.ClickActiveUser();
         Thread.sleep(2000);

@@ -5,7 +5,6 @@ import Pages.DocumentPage;
 import Utilities.ReadProps;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.*;
-
 import java.awt.*;
 import java.awt.event.KeyEvent;
 @Listeners(Utilities.TestListeners.class)
@@ -56,9 +55,9 @@ public class DocProcessSemiStructuredTest extends BasePage {
         DocPageObj.ClickViewDocIcon2();
         Thread.sleep(10000);
         DocPageObj.ClickDocumentBtn();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         DocPageObj.ClickClearSearch();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         DocPageObj.ClickRefreshDocument();
         Thread.sleep(5000);
     }

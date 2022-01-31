@@ -23,14 +23,15 @@ public class EditProfileTest extends BasePage {
     public void visible_password_on() throws Exception {
             driver.get(ReadProps.readAttr("URL"));
             driver.manage().window().maximize();
-            Thread.sleep(8000);
+            Thread.sleep(7000);
            EditProfileObj = new EditProfilePage(driver);
             loginPageObjects = new LoginPage(driver);
+            ProjectPageObj = new ProjectPage(driver);
             //TC 11.1 Visible Password On.
         ProjectPageObj.EnterUsername(ReadProps.readAttr("UserID"));
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             loginPageObjects.setPassword(ReadProps.readAttr("Password"));
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             EditProfileObj.clickVisible();
             Thread.sleep(2000);
     }
@@ -40,7 +41,7 @@ public class EditProfileTest extends BasePage {
         EditProfileObj.clickVisible();
         Thread.sleep(2000);
         loginPageObjects.clickLoginButton();
-        Thread.sleep(10000);
+        Thread.sleep(7000);
     }
     @Test(priority = 3)
     public void profile_icon() throws Exception {

@@ -423,7 +423,7 @@ public class ProjectBRETest extends BasePage {
             ProjectBREPageObj.ClickOnSave();
             Thread.sleep(2000);
             ProjectBREPageObj.ClickOnFalseBoxButton3();
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             //Upload the Document in this Project for the Results.
         }
     }
